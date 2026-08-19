@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIT SciBowl Trainer</title>
+<style>
+:root{
+  --bg:#1a1b26; --bg2:#24283b; --bg3:#292e42; --fg:#c0caf5; --muted:#565f89;
+  --blue:#7aa2f7; --purple:#bb9af7; --green:#9ece6a; --red:#f7768e;
+  --yellow:#e0af68; --cyan:#7dcfff; --orange:#ff9e64;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--blue)}
+header{display:flex;align-items:center;gap:1rem;padding:.8rem 1.2rem;
+  background:var(--bg2);border-bottom:1px solid var(--bg3);flex-wrap:wrap}
+header h1{font-size:1.05rem;margin:0;font-weight:700}
+header h1 .m{color:var(--purple)} header h1 .s{color:var(--blue)}
+.tabs{display:flex;gap:.3rem;margin-left:auto}
+.tab{padding:.4rem .9rem;border-radius:8px;cursor:pointer;background:transparent;
+  border:1px solid transparent;color:var(--muted);font-weight:600;font-size:.9rem}
+.tab.active{background:var(--bg3);color:var(--fg);border-color:var(--blue)}
+main{max-width:820px;margin:0 auto;padding:1.2rem}
+.bar{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem;
+  font-size:.85rem}
+.bar .grp{display:flex;gap:.25rem;align-items:center;background:var(--bg2);
+  padding:.3rem .5rem;border-radius:8px}
+.chip{padding:.2rem .6rem;border-radius:6px;cursor:pointer;background:var(--bg3);
+  color:var(--muted);border:1px solid transparent;user-select:none}
+.chip.on{color:var(--bg);font-weight:700}
+.chip.math.on{background:var(--purple)} .chip.chemistry.on{background:var(--cyan)}
+.chip.biology.on{background:var(--green)} .chip.on{background:var(--blue)}
+select,input[type=range]{background:var(--bg3);color:var(--fg);border:1px solid var(--muted);
+  border-radius:6px;padding:.2rem}
+.card{background:var(--bg2);border:1px solid var(--bg3);border-radius:14px;
+  padding:1.4rem;min-height:220px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.meta{display:flex;gap:.5rem;align-items:center;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--muted);margin-bottom:.8rem;flex-wrap:wrap}
+.badge{padding:.15rem .5rem;border-radius:20px;background:var(--bg3);font-weight:700}
+.badge.math{color:var(--purple)} .badge.chemistry{color:var(--cyan)}
+.badge.biology{color:var(--green)}
+.qtext{font-size:1.25rem;line-height:1.55}
+.choices{margin:1rem 0 0;padding:0;list-style:none}
+.choices li{padding:.5rem .8rem;margin:.35rem 0;background:var(--bg3);border-radius:8px}
+.answer{margin-top:1rem;padding:1rem;border-left:3px solid var(--green);
+  background:var(--bg3);border-radius:0 8px 8px 0;font-size:1.1rem}
+.answer b{color:var(--green)}
+.explain{margin-top:1rem;padding:1rem;border-left:3px solid var(--purple);
+  background:var(--bg3);border-radius:0 8px 8px 0;white-space:pre-wrap}
+.explain b{color:var(--purple)}
+.row{display:flex;gap:.6rem;margin-top:1.2rem;flex-wrap:wrap}
+button.act{padding:.6rem 1.1rem;border-radius:10px;border:none;cursor:pointer;
+  font-weight:700;font-size:.95rem;background:var(--bg3);color:var(--fg)}
+button.act:hover{filter:brightness(1.15)}
+button.primary{background:var(--blue);color:var(--bg)}
+button.good{background:var(--green);color:var(--bg)}
+button.bad{background:var(--red);color:var(--bg)}
+button.ghost{background:transparent;border:1px solid var(--muted);color:var(--muted)}
+button:disabled{opacity:.4;cursor:default}
+.stats{font-size:.8rem;color:var(--muted);margin-top:1rem;text-align:center}
+.buzz-stage{font-size:1.7rem;line-height:1.6;min-height:180px;font-weight:500}
+.buzz-stage .w{opacity:.12;transition:opacity .05s} .buzz-stage .w.shown{opacity:1}
+.buzz-stage .w.now{color:var(--yellow)}
+.buzzed{color:var(--orange);font-weight:800;letter-spacing:.03em}
+.hint{color:var(--muted);font-size:.8rem}
+kbd{background:var(--bg3);border:1px solid var(--muted);border-radius:4px;
+  padding:.05rem .4rem;font-size:.8rem}
+.md h2{color:var(--blue);border-bottom:1px solid var(--bg3);padding-bottom:.3rem}
+.md h3{color:var(--purple)} .md code{background:var(--bg3);padding:.1rem .3rem;border-radius:4px}
+.md li{margin:.2rem 0}
+.empty{color:var(--muted);text-align:center;padding:3rem}
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="m">MIT</span> <span class="s">SciBowl</span> Trainer</h1>
+  <div class="tabs">
+    <button class="tab active" data-mode="flash">Flashcards</button>
+    <button class="tab" data-mode="buzz">Buzz Trainer</button>
+    <button class="tab" data-mode="plan">Study Plan</button>
+  </div>
+</header>
+<main>
+  <div id="filters" class="bar"></div>
+  <div id="view"></div>
+</main>
+<script>
+const $=(s,e=document)=>e.querySelector(s);
+const el=(t,c,h)=>{const n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n};
+const state={
+  mode:'flash', all:[], deck:[], idx:0, revealed:false,
+  subjects:new Set(['Math','Chemistry','Biology']),
+  qtype:'all', kind:'all', year:'all', noVisual:true,
+  stats:JSON.parse(localStorage.getItem('sb_stats')||'{}'),
+  wpm:180, tts:false,
+};
+const saveStats=()=>localStorage.setItem('sb_stats',JSON.stringify(state.stats));
+
+async function boot(){
+  state.all=await (await fetch('questions.json')).json();
+  document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>setMode(t.dataset.mode));
+  document.addEventListener('keydown',onKey);
+  renderFilters(); rebuild(); render();
+}
+function setMode(m){
+  state.mode=m; stopBuzz();
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.mode===m));
+  renderFilters(); if(m!=='plan'){rebuild();} render();
+}
+
+// ---------- filtering ----------
+function rebuild(){
+  let d=state.all.filter(q=>state.subjects.has(q.category));
+  if(state.qtype!=='all') d=d.filter(q=>q.qtype===state.qtype);
+  if(state.kind!=='all') d=d.filter(q=>q.kind===state.kind);
+  if(state.year!=='all') d=d.filter(q=>q.year==state.year);
+  if(state.noVisual) d=d.filter(q=>!q.visual);
+  for(let i=d.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[d[i],d[j]]=[d[j],d[i]];}
+  state.deck=d; state.idx=0; state.revealed=false;
+}
+function renderFilters(){
+  const f=$('#filters'); f.innerHTML='';
+  if(state.mode==='plan') return;
+  const subj=el('div','grp');
+  ['Math','Chemistry','Biology'].forEach(s=>{
+    const c=el('span','chip '+s.toLowerCase()+(state.subjects.has(s)?' on':''),s);
+    c.onclick=()=>{state.subjects.has(s)?state.subjects.delete(s):state.subjects.add(s);
+      if(!state.subjects.size)state.subjects.add(s);renderFilters();rebuild();render();};
+    subj.append(c);
+  });
+  f.append(subj);
+  const mk=(label,key,opts)=>{
+    const g=el('div','grp'); g.append(el('span','',label));
+    const sel=el('select');
+    opts.forEach(([v,t])=>{const o=el('option',null,t);o.value=v;if(state[key]==v)o.selected=true;sel.append(o);});
+    sel.onchange=()=>{state[key]=sel.value;rebuild();render();}; g.append(sel); return g;
+  };
+  f.append(mk('Type','qtype',[['all','All'],['sa','Short answer'],['mc','Multiple choice']]));
+  f.append(mk('Set','kind',[['all','Toss-up + Bonus'],['tossup','Toss-up'],['bonus','Bonus']]));
+  f.append(mk('Year','year',[['all','All years'],['2023','2023'],['2024','2024'],['2025','2025']]));
+  const vg=el('div','grp');
+  const vc=el('span','chip'+(state.noVisual?' on':''),'Hide image Qs');
+  vc.onclick=()=>{state.noVisual=!state.noVisual;renderFilters();rebuild();render();};
+  vg.append(vc); f.append(vg);
+  if(state.mode==='buzz'){
+    const bg=el('div','grp');
+    bg.append(el('span','',`Speed ${state.wpm}wpm`));
+    const r=el('input');r.type='range';r.min=60;r.max=400;r.step=10;r.value=state.wpm;
+    r.oninput=()=>{state.wpm=+r.value;bg.firstChild.textContent=`Speed ${state.wpm}wpm`;};
+    bg.append(r); f.append(bg);
+    const tg=el('div','grp');
+    const tc=el('span','chip'+(state.tts?' on':''),'🔊 Read aloud');
+    tc.onclick=()=>{state.tts=!state.tts;renderFilters();};
+    tg.append(tc); f.append(tg);
+  }
+}
+
+// ---------- render dispatch ----------
+function render(){
+  if(state.mode==='plan') return renderPlan();
+  if(!state.deck.length){$('#view').innerHTML='<div class="empty">No questions match these filters.</div>';return;}
+  state.mode==='flash'?renderFlash():renderBuzz();
+}
+function curr(){return state.deck[state.idx];}
+function metaEl(q){
+  const cl=q.category.toLowerCase();
+  return `<div class="meta">
+    <span class="badge ${cl}">${q.category}</span>
+    <span>${q.year} · R${q.round}</span>
+    <span>${q.kind}</span>
+    <span>${q.qtype==='mc'?'multiple choice':'short answer'}</span>
+    ${q.visual?'<span style="color:var(--orange)">⚠ image</span>':''}
+  </div>`;
+}
+function subjStat(){
+  const key=[...state.subjects].sort().join('+');
+  const s=state.stats[key]||{seen:0,right:0};
+  return `Session deck: ${state.deck.length} · lifetime ${key}: ${s.right}/${s.seen} (${s.seen?Math.round(100*s.right/s.seen):0}%)`;
+}
+function record(right){
+  const key=[...state.subjects].sort().join('+');
+  const s=state.stats[key]||(state.stats[key]={seen:0,right:0});
+  s.seen++; if(right)s.right++; saveStats();
+}
+
+// ---------- flashcards ----------
+function renderFlash(){
+  const q=curr(); const v=$('#view'); v.innerHTML='';
+  const card=el('div','card');
+  let html=metaEl(q)+`<div class="qtext">${q.question}</div>`;
+  if(q.qtype==='mc'&&q.choices) html+='<ul class="choices">'+
+    Object.entries(q.choices).map(([k,t])=>`<li><b>${k})</b> ${t}</li>`).join('')+'</ul>';
+  card.innerHTML=html;
+  if(state.revealed){
+    card.append(el('div','answer',`<b>Answer:</b> ${q.answer}`));
+    const exp=el('div','explain','');exp.id='exp';exp.style.display='none';card.append(exp);
+    const row=el('div','row');
+    row.append(mkBtn('✓ Got it','act good',()=>{record(true);next();}));
+    row.append(mkBtn('✗ Missed','act bad',()=>{record(false);next();}));
+    row.append(mkBtn('💡 Explain approach','act ghost',explain));
+    card.append(row);
+  }else{
+    const row=el('div','row');
+    row.append(mkBtn('Show answer','act primary',()=>{state.revealed=true;render();}));
+    row.append(mkBtn('Skip','act ghost',next));
+    card.append(row);
+    card.append(el('div','hint','<kbd>space</kbd> reveal · <kbd>→</kbd> skip'));
+  }
+  v.append(card);
+  v.append(el('div','stats',subjStat()));
+}
+function mkBtn(label,cls,fn){const b=el('button',cls,label);b.onclick=fn;return b;}
+function next(){state.idx=(state.idx+1)%state.deck.length;state.revealed=false;
+  if(state.idx===0)rebuild();render();}
+
+async function explain(){
+  const q=curr(); const exp=$('#exp'); if(!exp)return;
+  exp.style.display='block'; exp.innerHTML='<b>Thinking…</b>';
+  try{
+    const r=await fetch('explain',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({id:q.id})});
+    if(!r.ok){exp.innerHTML='<b>⚠</b> '+(await r.text());return;}
+    const d=await r.json();
+    exp.innerHTML='<b>Fast approach:</b>\n'+d.explanation;
+  }catch(e){exp.innerHTML='<b>⚠</b> '+e.message;}
+}
+
+// ---------- buzz trainer ----------
+let buzzTimer=null,buzzWords=[],buzzPos=0,buzzed=false;
+function renderBuzz(){
+  const q=curr(); const v=$('#view'); v.innerHTML='';
+  const card=el('div','card');
+  card.innerHTML=metaEl(q);
+  const stage=el('div','buzz-stage');stage.id='stage';
+  buzzWords=q.question.split(/\s+/);
+  stage.innerHTML=buzzWords.map((w,i)=>`<span class="w" data-i="${i}">${w}</span>`).join(' ');
+  card.append(stage);
+  const row=el('div','row');
+  row.append(mkBtn('▶ Start','act primary',startBuzz));
+  row.append(mkBtn('🔔 BUZZ','act good',doBuzz));
+  row.append(mkBtn('Next','act ghost',next));
+  card.append(row);
+  card.append(el('div','hint','<kbd>enter</kbd> start · <kbd>space</kbd> buzz · <kbd>→</kbd> next'));
+  const ans=el('div','answer');ans.id='bans';ans.style.display='none';card.append(ans);
+  v.append(card);
+  v.append(el('div','stats',subjStat()));
+  buzzPos=0;buzzed=false;
+}
+function startBuzz(){
+  stopBuzz(); buzzPos=0;buzzed=false;
+  const q=curr();
+  if(state.tts&&window.speechSynthesis){
+    const u=new SpeechSynthesisUtterance(q.question);
+    u.rate=Math.max(.5,Math.min(2,state.wpm/150));
+    u.onboundary=(e)=>{ if(e.name==='word'||e.charIndex!=null){ revealUpTo(charToWord(e.charIndex)); } };
+    u.onend=()=>{revealUpTo(buzzWords.length-1);};
+    window.speechSynthesis.speak(u);
+  }else{
+    const ms=60000/state.wpm;
+    buzzTimer=setInterval(()=>{
+      revealUpTo(buzzPos); buzzPos++;
+      if(buzzPos>=buzzWords.length)stopBuzz();
+    },ms);
+  }
+}
+function charToWord(ci){ // map a char index in the question to a word index
+  const q=curr().question; let count=0;
+  for(let i=0;i<buzzWords.length;i++){count+=buzzWords[i].length+1;if(ci<count)return i;}
+  return buzzWords.length-1;
+}
+function revealUpTo(i){
+  const stage=$('#stage');if(!stage)return;
+  stage.querySelectorAll('.w').forEach(w=>{
+    const wi=+w.dataset.i;
+    w.classList.toggle('shown',wi<=i);
+    w.classList.toggle('now',wi===i);
+  });
+  buzzPos=Math.max(buzzPos,i+1);
+}
+function stopBuzz(){
+  if(buzzTimer){clearInterval(buzzTimer);buzzTimer=null;}
+  if(window.speechSynthesis)window.speechSynthesis.cancel();
+}
+function doBuzz(){
+  if(buzzed)return; buzzed=true; stopBuzz();
+  const q=curr(); const shown=buzzPos;
+  const pct=Math.round(100*shown/buzzWords.length);
+  const ans=$('#bans'); if(!ans)return;
+  // reveal full question so you can self-check
+  $('#stage').querySelectorAll('.w').forEach(w=>{w.classList.add('shown');w.classList.remove('now');});
+  ans.style.display='block';
+  ans.innerHTML=`<span class="buzzed">🔔 Buzzed at word ${shown}/${buzzWords.length} (${pct}% in)</span><br>
+    <b>Answer:</b> ${q.answer}`;
+}
+
+// ---------- keyboard ----------
+function onKey(e){
+  if(state.mode==='flash'){
+    if(e.code==='Space'){e.preventDefault(); state.revealed?null:(state.revealed=true,render());}
+    else if(e.code==='ArrowRight'){e.preventDefault();next();}
+  }else if(state.mode==='buzz'){
+    if(e.code==='Space'){e.preventDefault();doBuzz();}
+    else if(e.code==='Enter'){e.preventDefault();startBuzz();}
+    else if(e.code==='ArrowRight'){e.preventDefault();next();}
+  }
+}
+
+// ---------- study plan ----------
+async function renderPlan(){
+  const v=$('#view'); v.innerHTML='<div class="empty">Loading plan…</div>';
+  try{
+    const md=await (await fetch('study-plan.md')).text();
+    v.innerHTML='<div class="md card">'+mdToHtml(md)+'</div>';
+  }catch(e){ v.innerHTML='<div class="empty">Study plan not generated yet.</div>'; }
+}
+function mdToHtml(md){
+  const lines=md.split('\n'); let html='',inList=false;
+  const inline=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>')
+    .replace(/\*(.+?)\*/g,'<i>$1</i>');
+  for(let l of lines){
+    if(/^### /.test(l)){html+=(inList?'</ul>':'')+'<h3>'+inline(l.slice(4))+'</h3>';inList=false;}
+    else if(/^## /.test(l)){html+=(inList?'</ul>':'')+'<h2>'+inline(l.slice(3))+'</h2>';inList=false;}
+    else if(/^# /.test(l)){html+=(inList?'</ul>':'')+'<h1>'+inline(l.slice(2))+'</h1>';inList=false;}
+    else if(/^\s*[-*] /.test(l)){if(!inList){html+='<ul>';inList=true;}html+='<li>'+inline(l.replace(/^\s*[-*] /,''))+'</li>';}
+    else if(/^\s*\d+\. /.test(l)){if(!inList){html+='<ul>';inList=true;}html+='<li>'+inline(l.replace(/^\s*\d+\. /,''))+'</li>';}
+    else if(l.trim()===''){html+=(inList?'</ul>':'');inList=false;}
+    else{html+=(inList?'</ul>':'')+'<p>'+inline(l)+'</p>';inList=false;}
+  }
+  return html+(inList?'</ul>':'');
+}
+
+boot();
+</script>
+</body>
+</html>

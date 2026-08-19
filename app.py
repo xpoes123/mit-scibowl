@@ -48,7 +48,9 @@ SYSTEM = (
     "gives ~5 seconds to buzz on tossups. In 3-5 tight sentences cover: (1) the "
     "recognition trigger — the few words that tell you what's being asked, (2) the "
     "fastest solution path or mental-math shortcut to the answer, (3) what to "
-    "memorize cold so it's instant next time. Be concrete and terse. No preamble."
+    "memorize cold so it's instant next time. Be concrete and terse. No preamble. "
+    "Format with markdown (short **bold** lead-ins, a bullet list if it helps) and "
+    "write ALL math as LaTeX in $...$ (inline) or $$...$$ (display) so it renders."
 )
 
 

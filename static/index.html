@@ -51,8 +51,11 @@ select,input[type=range]{background:var(--bg3);color:var(--fg);border:1px solid 
   background:var(--bg3);border-radius:0 8px 8px 0;font-size:1.1rem}
 .answer b{color:var(--green)}
 .explain{margin-top:1rem;padding:1rem;border-left:3px solid var(--purple);
-  background:var(--bg3);border-radius:0 8px 8px 0;white-space:pre-wrap}
-.explain b{color:var(--purple)}
+  background:var(--bg3);border-radius:0 8px 8px 0;line-height:1.6}
+.explain b{color:var(--fg)}
+.explain .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;font-weight:800;color:var(--purple);margin-bottom:.4rem}
+.explain p{margin:.5rem 0} .explain p:first-of-type{margin-top:0}
+.explain ul,.explain ol{margin:.5rem 0;padding-left:1.3rem} .explain li{margin:.3rem 0}
 .row{display:flex;gap:.6rem;margin-top:1.2rem;flex-wrap:wrap}
 button.act{padding:.6rem 1.1rem;border-radius:10px;border:none;cursor:pointer;
   font-weight:700;font-size:.95rem;background:var(--bg3);color:var(--fg)}
@@ -160,6 +163,7 @@ function typeset(node){
 const state={
   mode:'learn', all:[], deck:[], idx:0, revealed:false,
   lessons:null, lessonOpen:null,
+  expCache:JSON.parse(localStorage.getItem('sb_exp')||'{}'),
   subjects:new Set(['Math','Chemistry','Biology']),
   qtype:'all', kind:'all', year:'all', noVisual:true,
   stats:JSON.parse(localStorage.getItem('sb_stats')||'{}'),
@@ -288,15 +292,22 @@ function mkBtn(label,cls,fn){const b=el('button',cls,label);b.onclick=fn;return 
 function next(){state.idx=(state.idx+1)%state.deck.length;state.revealed=false;
   if(state.idx===0)rebuild();render();}
 
+function showExplanation(exp,text){
+  exp.innerHTML='<div class="k">Fast approach</div>'+mdToHtml(text); typeset(exp);
+}
 async function explain(){
   const q=curr(); const exp=$('#exp'); if(!exp)return;
-  exp.style.display='block'; exp.innerHTML='<b>Thinking…</b>';
+  exp.style.display='block';
+  if(state.expCache[q.id]){ showExplanation(exp,state.expCache[q.id]); return; } // client cache -> instant
+  exp.innerHTML='<b>Thinking…</b>';
   try{
     const r=await fetch('explain',{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({id:q.id})});
     if(!r.ok){exp.innerHTML='<b>⚠</b> '+(await r.text());return;}
     const d=await r.json();
-    exp.innerHTML='<b>Fast approach:</b>\n'+d.explanation; typeset(exp);
+    state.expCache[q.id]=d.explanation;
+    localStorage.setItem('sb_exp',JSON.stringify(state.expCache));
+    showExplanation(exp,d.explanation);
   }catch(e){exp.innerHTML='<b>⚠</b> '+e.message;}
 }
 

@@ -84,6 +84,27 @@ table.res td,table.res th{padding:.4rem .6rem;border-bottom:1px solid var(--bg3)
 table.res .ok{color:var(--green)} table.res .no{color:var(--red)}
 table.res .t-slow{color:var(--orange)}
 .score{font-size:2rem;font-weight:800;color:var(--blue)}
+.lesson-list{display:grid;gap:.7rem}
+.lesson-card{background:var(--bg2);border:1px solid var(--bg3);border-radius:12px;padding:1rem 1.2rem;cursor:pointer;display:flex;gap:.9rem;align-items:flex-start}
+.lesson-card:hover{border-color:var(--blue)}
+.lesson-card .pri{font-size:.65rem;font-weight:800;padding:.2rem .5rem;border-radius:20px;background:var(--bg3);white-space:nowrap}
+.lesson-card .pri.p1{color:var(--red)} .lesson-card .pri.p2{color:var(--yellow)} .lesson-card .pri.p3{color:var(--muted)}
+.lesson-card h3{margin:0 0 .2rem;color:var(--blue)}
+.lesson-card p{margin:0;color:var(--muted);font-size:.88rem}
+.lcard{border-left:3px solid var(--bg3);background:var(--bg2);border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:.7rem 0}
+.lcard .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;font-weight:800;margin-bottom:.3rem}
+.lcard.concept{border-color:var(--blue)} .lcard.concept .k{color:var(--blue)}
+.lcard.formula{border-color:var(--green);background:var(--bg3)} .lcard.formula .k{color:var(--green)}
+.lcard.trigger{border-color:var(--cyan)} .lcard.trigger .k{color:var(--cyan)}
+.lcard.example{border-color:var(--purple)} .lcard.example .k{color:var(--purple)}
+.lcard.pitfall{border-color:var(--red)} .lcard.pitfall .k{color:var(--red)}
+.lcard b{color:var(--fg)}
+.flip{background:var(--bg3);border-radius:8px;padding:.7rem .9rem;margin:.4rem 0;cursor:pointer}
+.flip .t{color:var(--cyan);font-weight:600} .flip .a{color:var(--green);margin-top:.35rem;display:none}
+.flip.on .a{display:block}
+.sec-h{color:var(--purple);margin:1.6rem 0 .5rem;font-size:1.05rem}
+.pq{background:var(--bg2);border:1px solid var(--bg3);border-radius:10px;padding:1rem;margin:.7rem 0}
+.pq .tgt{font-size:.72rem;color:var(--orange);font-weight:700;float:right}
 .md h2{color:var(--blue);border-bottom:1px solid var(--bg3);padding-bottom:.3rem}
 .md h3{color:var(--purple)} .md code{background:var(--bg3);padding:.1rem .3rem;border-radius:4px}
 .md li{margin:.2rem 0}
@@ -94,7 +115,8 @@ table.res .t-slow{color:var(--orange)}
 <header>
   <h1><span class="m">MIT</span> <span class="s">SciBowl</span> Trainer</h1>
   <div class="tabs">
-    <button class="tab active" data-mode="flash">Flashcards</button>
+    <button class="tab active" data-mode="learn">Learn</button>
+    <button class="tab" data-mode="flash">Flashcards</button>
     <button class="tab" data-mode="buzz">Buzz Trainer</button>
     <button class="tab" data-mode="test">Placement Test</button>
     <button class="tab" data-mode="plan">Study Plan</button>
@@ -108,7 +130,8 @@ table.res .t-slow{color:var(--orange)}
 const $=(s,e=document)=>e.querySelector(s);
 const el=(t,c,h)=>{const n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n};
 const state={
-  mode:'flash', all:[], deck:[], idx:0, revealed:false,
+  mode:'learn', all:[], deck:[], idx:0, revealed:false,
+  lessons:null, lessonOpen:null,
   subjects:new Set(['Math','Chemistry','Biology']),
   qtype:'all', kind:'all', year:'all', noVisual:true,
   stats:JSON.parse(localStorage.getItem('sb_stats')||'{}'),
@@ -127,7 +150,7 @@ async function boot(){
 function setMode(m){
   state.mode=m; stopBuzz();
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.mode===m));
-  renderFilters(); if(m!=='plan'&&m!=='test'){rebuild();} render();
+  renderFilters(); if(m==='flash'||m==='buzz'){rebuild();} render();
 }
 
 // ---------- filtering ----------
@@ -142,7 +165,7 @@ function rebuild(){
 }
 function renderFilters(){
   const f=$('#filters'); f.innerHTML='';
-  if(state.mode==='plan'||state.mode==='test') return;
+  if(state.mode==='plan'||state.mode==='test'||state.mode==='learn') return;
   const subj=el('div','grp');
   ['Math','Chemistry','Biology'].forEach(s=>{
     const c=el('span','chip '+s.toLowerCase()+(state.subjects.has(s)?' on':''),s);
@@ -179,6 +202,7 @@ function renderFilters(){
 
 // ---------- render dispatch ----------
 function render(){
+  if(state.mode==='learn') return renderLearn();
   if(state.mode==='plan') return renderPlan();
   if(state.mode==='test') return renderTest();
   if(!state.deck.length){$('#view').innerHTML='<div class="empty">No questions match these filters.</div>';return;}
@@ -500,6 +524,70 @@ async function generatePlan(){
     out.innerHTML='<div class="card">'+mdToHtml(d.plan)+'</div>';
     localStorage.setItem('sb_plan',d.plan);
   }catch(e){ out.innerHTML='<p class="hint">⚠ '+e.message+'</p>'; }
+}
+
+// ---------- learn ----------
+async function renderLearn(){
+  const v=$('#view');
+  if(state.lessons===null){
+    v.innerHTML='<div class="empty">Loading lessons…</div>';
+    try{ state.lessons=await (await fetch('lessons.json')).json(); }
+    catch(e){ state.lessons=[]; }
+  }
+  if(!state.lessons.length){ v.innerHTML='<div class="empty">Lessons are still being generated — check back shortly.</div>'; return; }
+  if(state.lessonOpen) return renderLesson(v, state.lessonOpen);
+  v.innerHTML='<p class="hint">Speed-focused Science Bowl lessons built from your placement test. Priority 1 = your highest-leverage gaps. Each ends with real questions to answer as you learn.</p>';
+  const list=el('div','lesson-list');
+  [...state.lessons].sort((a,b)=>a.priority-b.priority).forEach(L=>{
+    const c=el('div','lesson-card');
+    c.innerHTML=`<span class="pri p${L.priority}">P${L.priority}</span>
+      <div><h3>${L.topic}</h3><p>${L.why}</p></div>`;
+    c.onclick=()=>{state.lessonOpen=L.slug;render();};
+    list.append(c);
+  });
+  v.append(list);
+}
+function renderLesson(v,slug){
+  const L=state.lessons.find(x=>x.slug===slug); if(!L){state.lessonOpen=null;return renderLearn(v);}
+  v.innerHTML='';
+  const back=mkBtn('← All lessons','act ghost',()=>{state.lessonOpen=null;render();});
+  v.append(back);
+  const head=el('div','card');
+  head.innerHTML=`<h2 style="margin:0 0 .3rem;color:var(--blue)">${L.topic}</h2><p class="hint" style="margin:0">${L.why}</p>`;
+  v.append(head);
+  (L.cards||[]).forEach(card=>{
+    const c=el('div','lcard '+card.kind);
+    c.innerHTML=`<div class="k">${card.kind}</div><b>${card.title}</b><div>${mdToHtml(card.body)}</div>`;
+    v.append(c);
+  });
+  if((L.memorize||[]).length){
+    v.append(el('div','sec-h','⚡ Memorize cold — tap to check (drill to under 2 seconds)'));
+    L.memorize.forEach(m=>{
+      const f=el('div','flip',`<div class="t">${m.trigger}</div><div class="a">→ ${m.answer}</div>`);
+      f.onclick=()=>f.classList.toggle('on');
+      v.append(f);
+    });
+  }
+  if((L.practice||[]).length){
+    v.append(el('div','sec-h','📝 Practice — answer these as you learn'));
+    L.practice.forEach(p=>{
+      const q=state.byId[p.id]; if(!q)return;
+      const tgt=q.kind==='tossup'?'tossup · aim &lt;5s':'bonus · aim &lt;20s';
+      const c=el('div','pq');
+      let html=`<span class="tgt">${tgt}</span><div class="qtext" style="font-size:1.05rem">${q.question}</div>`;
+      if(q.qtype==='mc'&&q.choices) html+='<ul class="choices">'+
+        Object.entries(q.choices).map(([k,x])=>`<li><b>${k})</b> ${x}</li>`).join('')+'</ul>';
+      c.innerHTML=html;
+      const rev=el('div','answer');rev.style.display='none';
+      rev.innerHTML=`<b>Answer:</b> ${q.answer}`+(p.note?`<div class="hint" style="margin-top:.4rem">${p.note}</div>`:'');
+      const row=el('div','row');
+      row.append(mkBtn('Reveal answer','act primary',()=>{rev.style.display='block';}));
+      c.append(row); c.append(rev);
+      v.append(c);
+    });
+  }
+  const b2=mkBtn('← All lessons','act ghost',()=>{state.lessonOpen=null;render();});
+  const wrap=el('div','row');wrap.append(b2);v.append(wrap);
 }
 
 // ---------- study plan ----------

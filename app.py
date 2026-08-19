@@ -20,6 +20,7 @@ BY_ID = {q["id"]: q for q in QUESTIONS}
 CACHE_FILE = ROOT / "data" / "explanations.json"
 CACHE = json.loads(CACHE_FILE.read_text()) if CACHE_FILE.exists() else {}
 PLACEMENT_FILE = ROOT / "data" / "placement-math.json"
+LESSONS_FILE = ROOT / "data" / "lessons.json"
 
 MODEL = "claude-sonnet-5"
 client = anthropic.Anthropic() if os.getenv("ANTHROPIC_API_KEY") else None
@@ -80,6 +81,13 @@ def placement():
     if not PLACEMENT_FILE.exists():
         raise HTTPException(404, "placement test not generated")
     return JSONResponse(json.loads(PLACEMENT_FILE.read_text()))
+
+
+@app.get("/lessons.json")
+def lessons():
+    if not LESSONS_FILE.exists():
+        raise HTTPException(404, "lessons not generated")
+    return JSONResponse(json.loads(LESSONS_FILE.read_text()))
 
 
 ANALYZE_SYSTEM = (

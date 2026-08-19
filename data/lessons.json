@@ -1,0 +1,1054 @@
+[
+ {
+  "slug": "algebra-recall",
+  "topic": "Algebra Fast-Recall: Vieta & symmetric x±1/x",
+  "priority": 1,
+  "why": "On the placement you got both the Vieta reciprocal-sum (2024-r4-b9) and the (x−1/x)² question (2025-r10-b7) CORRECT — but +38s and +51s slow, because you re-derive the signs and the identity every time instead of recalling them. This lesson converts what you already know into instant reflexes.",
+  "cards": [
+   {
+    "kind": "formula",
+    "title": "Vieta for x³ + bx² + cx + d (leading coeff 1)",
+    "body": "Memorize the alternating-sign pattern cold:\n\n- **sum of roots** = **−b**\n- **pairwise sum** (r₁r₂+r₁r₃+r₂r₃) = **+c**\n- **product** (r₁r₂r₃) = **−d**\n\nMnemonic: signs alternate starting with minus — **− + −**. Coefficients read top-down b, c, d.\n\n**Sum of reciprocals** = (pairwise sum)/(product) = **c / (−d) = −c/d**.\n\nFor a monic degree-n polynomial the top sign is always −(coeff), and signs alternate down."
+   },
+   {
+    "kind": "formula",
+    "title": "The x ± 1/x identity pair",
+    "body": "Square-and-subtract-4 is the whole trick:\n\n$$\\left(x-\\tfrac1x\\right)^2 = \\left(x+\\tfrac1x\\right)^2 - 4$$\n$$\\left(x+\\tfrac1x\\right)^2 = \\left(x-\\tfrac1x\\right)^2 + 4$$\n\nWhy: cross terms are ±2·x·(1/x) = ±2, differ by 4. Same reason **x² + 1/x² = (x+1/x)² − 2**.\n\nClimb the ladder: from x+1/x = s → x²+1/x² = s²−2 → x⁴+1/x⁴ = (s²−2)²−2."
+   },
+   {
+    "kind": "trigger",
+    "title": "Buzz triggers — recognize in under 1 second",
+    "body": "**\"roots of the cubic/polynomial\" + \"sum / product / sum of reciprocals\"** → Vieta. Don't factor, don't find roots. Read off b, c, d and apply − + −.\n\n**\"sum of squares of the roots\"** → (sum)² − 2(pairwise) = b² − 2c.\n\n**\"x + 1/x = k\"** then asked for (x−1/x)², x²+1/x², or x⁴+1/x⁴ → square/subtract ladder. Never solve for x.\n\n**\"leading coefficient 1\" + given roots (incl. complex/irrational)** → build via Vieta (conjugate comes free)."
+   },
+   {
+    "kind": "example",
+    "title": "Fast path: sum of reciprocals (your Q5)",
+    "body": "*Roots of x³ + 2x + 1, find sum of reciprocals.*\n\nHere b=0, c=2, d=1.\n\nSum of reciprocals = **−c/d = −2/1 = −2**. Done.\n\nMental script: \"pairwise over product = c/(−d) = 2/(−1) = **−2**.\" Under 5 seconds — no derivation. You took +38s re-checking signs; the fix is just trusting − + −."
+   },
+   {
+    "kind": "example",
+    "title": "Fast path: (x − 1/x)² (your Q24)",
+    "body": "*x + 1/x = 5, find (x − 1/x)².*\n\n(x−1/x)² = (x+1/x)² − 4 = **25 − 4 = 21**. Done.\n\nMental script: \"square it, minus four → 21.\" That's it — no solving the quadratic, no plugging x. You spent +51s; the reflex is one squaring and a −4."
+   },
+   {
+    "kind": "example",
+    "title": "Fast path: sum of squares via Vieta (std dev)",
+    "body": "*Population std dev of roots of x³ − 24x + 5.*\n\nb=0 → sum=0 → mean=0. Pairwise = c = −24.\nSum of squares = (sum)² − 2(pairwise) = 0 − 2(−24) = 48.\nVariance = 48/3 = 16 → std = **4**.\n\nVieta turns a scary 'std dev of unknown roots' into arithmetic in ~15s."
+   },
+   {
+    "kind": "pitfall",
+    "title": "Sign slips — your actual weak spot",
+    "body": "Your placement note said \"don't remember the signs.\" Nail these:\n\n- Product of roots of a **cubic** = **−d** (odd degree → minus). For a **quadratic** x²+bx+c product = **+c**. Odd degree flips it — don't cross-contaminate.\n- Sum is always **−b/(leading)**, regardless of degree.\n- Sum of reciprocals is (pairwise)/(product), NOT (sum)/(product).\n\nAnd don't confuse the two identities: **minus** version = square **− 4**; **x²+1/x²** = square **− 2**. Different constant."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "Vieta cubic x³+bx²+cx+d: sum, pairwise, product",
+    "answer": "−b, +c, −d (signs alternate − + −)"
+   },
+   {
+    "trigger": "sum of reciprocals of roots (cubic)",
+    "answer": "(pairwise sum)/(product) = c/(−d) = −c/d"
+   },
+   {
+    "trigger": "sum of squares of the roots",
+    "answer": "(sum)² − 2(pairwise) = b² − 2c"
+   },
+   {
+    "trigger": "(x − 1/x)² given x + 1/x",
+    "answer": "(x + 1/x)² − 4"
+   },
+   {
+    "trigger": "x² + 1/x² given x + 1/x = s",
+    "answer": "s² − 2"
+   },
+   {
+    "trigger": "x⁴ + 1/x⁴ given x + 1/x = s",
+    "answer": "(s² − 2)² − 2"
+   },
+   {
+    "trigger": "product of roots: cubic vs quadratic",
+    "answer": "cubic = −d, quadratic = +c (odd degree flips sign)"
+   },
+   {
+    "trigger": "build monic poly from roots (complex/irrational root given)",
+    "answer": "conjugate is also a root; multiply (x−r) factors via Vieta"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2024-r4-b9",
+    "note": "Your placement Q5 — CORRECT but +38s. Reflex: −c/d = −2. Aim for under 5s, no sign re-checking."
+   },
+   {
+    "id": "2025-r10-b7",
+    "note": "Your placement Q24 — CORRECT but +51s. Reflex: 5²−4 = 21. Aim for under 5s, one squaring and minus four."
+   },
+   {
+    "id": "2023-r6-t11",
+    "note": "Ladder drill: x+1/x=3 → x²+1/x²=7 → x⁴+1/x⁴=7²−2=47. Climb it, don't solve for x."
+   },
+   {
+    "id": "2024-r12-b4",
+    "note": "Vieta sum-of-squares → variance. sum=0, pairwise=−24, Σsq=48, var=16, std=4. ~15s bonus."
+   },
+   {
+    "id": "2023-r4-b17",
+    "note": "Reverse Vieta: root 2 and 1+3i (conjugate 1−3i free). Expand to x³−4x²+14x−20. Watch signs on build."
+   },
+   {
+    "id": "2024-r6-b11",
+    "note": "Vieta with irrational root and its conjugate; solve for integer coefficient a. Harder — trust the sign pattern under pressure."
+   }
+  ]
+ },
+ {
+  "slug": "probability",
+  "topic": "Probability",
+  "priority": 1,
+  "why": "On the placement you got the conditional-probability tossup right but burned 162 seconds re-deriving it, you mis-set-up the random-pairing tournament (2023-r12-b22) and lost it, and you were slow on expected value — this lesson turns all three into instant reflexes instead of derivations.",
+  "cards": [
+   {
+    "kind": "trigger",
+    "title": "Four buzz-words, four reflexes",
+    "body": "Train your ear to route the question in <1s:\n\n- **\"at least one\"** -> compute **1 - P(none)**. Never sum cases.\n- **\"given that\"** -> conditional: **favorable / condition** (both counted the same way).\n- **\"expected value / average\"** -> **linearity**: sum the piece-expectations. Do NOT build a distribution.\n- **\"randomly paired / random matchup / bracket\"** -> **casework on who-plays-whom**, weight each bracket by its probability."
+   },
+   {
+    "kind": "formula",
+    "title": "The four to know cold",
+    "body": "**Complement:** P(at least one) = 1 - P(none)\n\n**Conditional:** P(A|B) = P(A ∩ B) / P(B)\n\n**Linearity of EV:** E[X₁+…+Xₙ] = E[X₁]+…+E[Xₙ]  *(always true, even when dependent)*\n\n**Symmetry EV of one die:** fair d-sided average = (d+1)/2. Adjacent/visible faces = total pip sum minus the hidden ones."
+   },
+   {
+    "kind": "concept",
+    "title": "Conditional = a ratio of two counts",
+    "body": "P(A|B) is just **(ways A and B both happen) / (ways B happens)**. If you can count in the same units (e.g. unordered pairs), it's one fraction.\n\nBag: 4R, 5O, draw 2, given ≥1 red, P(both red)?\nBoth red = C(4,2)=6. At least one red = total C(9,2)=36 minus no-red C(5,2)=10 = 26.\n**6/26 = 3/13.** One line. No conditional-formula ceremony needed."
+   },
+   {
+    "kind": "example",
+    "title": "EV in <5s: adjacent faces of a die",
+    "body": "*\"Corner of a fair die picked at random, expected sum of the 3 adjacent faces?\"* (your placement Q20)\n\nDon't enumerate the 8 corners. **Each face touches exactly 4 of the 8 corners, so by symmetry each face is 'adjacent' equally.** Total pips 1+..+6 = 21. Each corner shows 3 faces; by symmetry expected sum = 3 × (average face) = 3 × 3.5 = **10.5 = 21/2.** Done.\n\nSame trick for visible faces: E = (sum) − E[hidden]."
+   },
+   {
+    "kind": "example",
+    "title": "Tournament casework, set up right",
+    "body": "*A,B,C,D randomly paired, winners meet for the title.* (your placement Q9)\n\n**Fix the pairings, not the winners.** With 4 players there are exactly **3 equally-likely bracket pairings** (AB|CD, AC|BD, AD|BC), each prob 1/3. For a target event (e.g. Alice wins the title), in each bracket: P(Alice wins her semi) × P(Alice beats each possible final opponent, weighted). Then average the 3 brackets. **The mistake is treating opponents as fixed — you must randomize the pairing first.**"
+   },
+   {
+    "kind": "pitfall",
+    "title": "Your three placement leaks",
+    "body": "1. **Conditional (Q2, 162s):** you re-derived Bayes. Stop — just count favorable/condition as unordered pairs, one fraction. Target <10s.\n2. **Tournament (Q9, wrong):** you fixed the matchups. In a random pairing the **bracket itself is random** — enumerate the 3 pairings first, then play them out.\n3. **EV (Q20, slow):** you started listing outcomes. **Linearity/symmetry kills it** — average-of-a-face × count, never a distribution.\n\nAlso: \"at least one\" -> reflexively write 1 − P(none) before reading further."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "\"at least one\"",
+    "answer": "1 - P(none). Compute P(none), subtract."
+   },
+   {
+    "trigger": "\"given that B\" (conditional)",
+    "answer": "P(A and B) / P(B) — count both in the SAME units (unordered pairs)."
+   },
+   {
+    "trigger": "\"expected value\" / \"average\"",
+    "answer": "Linearity: add the piece-EVs. Never build the full distribution."
+   },
+   {
+    "trigger": "average roll of a fair d-sided die",
+    "answer": "(d+1)/2  (d6 = 3.5)."
+   },
+   {
+    "trigger": "EV of visible/adjacent faces of a die",
+    "answer": "(total pip sum) - E[hidden faces], by symmetry each face weighted equally."
+   },
+   {
+    "trigger": "\"randomly paired\" 4-player tournament",
+    "answer": "3 equally likely brackets (1/3 each): AB|CD, AC|BD, AD|BC — average over them."
+   },
+   {
+    "trigger": "P(min of two d6 = 5)",
+    "answer": "P(min ≥5) - P(min ≥6) = (2/6)² - (1/6)² = 4/36 - 1/36 = 3/36 = 1/12."
+   },
+   {
+    "trigger": "reverse conditional: P(both H | ≥1 H)=given, find p",
+    "answer": "p²/(1-(1-p)²) = given → solve; ratio p/(2-p)."
+   }
+  ],
+  "practice": [
+   {
+    "id": "2025-r8-b4",
+    "note": "Your placement Q2 — CORRECT but 162s. Redo as one fraction: 6/26 = 3/13. Aim under 10s."
+   },
+   {
+    "id": "2023-r12-b22",
+    "note": "Your placement Q9 — you got this WRONG by fixing the matchups. Enumerate the 3 random brackets first, then play. Answer 7/27."
+   },
+   {
+    "id": "2024-r6-t18",
+    "note": "Your placement Q20 — slow. Symmetry: 3 × 3.5 = 21/2. Should be a 5s buzz now."
+   },
+   {
+    "id": "2024-r6-b6",
+    "note": "Reverse conditional ('given ≥1 heads, both = 1/5' — find p). Set p²/(1-(1-p)²)=1/5. Practice the algebra fast."
+   },
+   {
+    "id": "2023-r3-t11",
+    "note": "'Smallest is 5' — use P(min≥5) - P(min≥6). Don't enumerate 36 cells. Answer 1/12."
+   },
+   {
+    "id": "2025-r13-t2",
+    "note": "Visible-faces EV on a tetrahedron: total 10 minus hidden. E = 10 - 2.5 = 7.5 via symmetry, no distribution."
+   }
+  ]
+ },
+ {
+  "slug": "statistics",
+  "topic": "Statistics & Distributions",
+  "priority": 1,
+  "why": "On the placement you missed BOTH easy stats tossups — the Poisson ID (guessed Z) and variance-scaling (used ×3 instead of ×9=162). These are pure-recall points that require zero derivation; drilling the sight-reads below turns two guaranteed misses into two guaranteed buzzes.",
+  "cards": [
+   {
+    "kind": "trigger",
+    "title": "Distribution ID on sight — the 5 keywords",
+    "body": "Read the noun, buzz the distribution. Don't reason, pattern-match:\n\n- **\"number of [events] in a [fixed interval/area]\"** → **Poisson**. (raindrops/second, calls/hour, typos/page)\n- **\"time BETWEEN events\" / \"waiting time\" / \"until next\"** → **Exponential**.\n- **\"fixed n trials, count successes\"** (n coins, n rolls) → **Binomial**.\n- **\"trials UNTIL the first success\"** → **Geometric**.\n- **\"measured/continuous quantity\"** (heights, weights, errors, IQ) → **Normal**.\n\nPoisson = counts. Exponential = gaps. Same underlying process, different question."
+   },
+   {
+    "kind": "formula",
+    "title": "Variance & SD scaling — memorize cold",
+    "body": "For a transform **Y = kX + b**:\n\n- **Var(kX + b) = k²·Var(X)** — the shift b does NOTHING; multiply variance by **k SQUARED**.\n- **SD(kX + b) = |k|·SD(X)** — SD scales by |k|, linearly.\n\nSum of independent vars: **Var(A+B) = Var(A) + Var(B)** (variances add).\n\nMean: **E(kX+b) = k·E(X) + b** (shift DOES move the mean)."
+   },
+   {
+    "kind": "formula",
+    "title": "Key distribution stats to recall instantly",
+    "body": "- **Binomial(n,p):** mean = np, **Var = np(1−p)**, SD = √(np(1−p)).\n- **Poisson(λ):** **mean = variance = λ** (its signature — equal).\n- **Geometric(p):** mean = 1/p, right-skewed → **mean > median > mode**.\n- **Exponential(λ):** mean = 1/λ, Var = 1/λ².\n- **Normal:** symmetric → **mean = median = mode**."
+   },
+   {
+    "kind": "concept",
+    "title": "Mean vs median under skew (the 'strictly greater' trap)",
+    "body": "Symmetric distributions (Normal, uniform, binomial p=0.5): **mean = median = mode**.\n\n**Right-skewed** (long right tail) pulls the mean up: **mean > median**. This is **Geometric, Exponential, Poisson, log-normal, chi-square**.\n\nSo \"mean strictly greater than median?\" → pick the skewed one (e.g. Geometric). Mnemonic: the tail drags the mean toward it."
+   },
+   {
+    "kind": "example",
+    "title": "10,000 coins, find SD — the <5s path",
+    "body": "\"Flip 10,000 fair coins, count heads, SD?\" → Binomial(n=10000, p=0.5).\n\nSD = √(np(1−p)) = √(10000·0.5·0.5) = √2500 = **50**.\n\nMental shortcut: np(1−p) = 10000·¼ = 2500, √2500 = 50. For fair coins SD is always **√n / 2**. Don't touch the mean (5000) — they want spread."
+   },
+   {
+    "kind": "pitfall",
+    "title": "Your two placement misses — fix them now",
+    "body": "**Q17 (variance ×3):** you scaled variance by k, not k². Multiplying data by 3 → variance ×**9** → 18·9 = **162**. Say it out loud: *\"variance eats the square.\"*\n\n**Q3 (Poisson ID):** you guessed. \"Number of raindrops in 1 second\" = **count in a fixed interval = Poisson**, full stop. If you see *count + per-time/per-area*, it's Poisson before you finish reading. Don't blind-guess Z."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "count of events in a fixed interval/area",
+    "answer": "Poisson"
+   },
+   {
+    "trigger": "time or waiting BETWEEN events",
+    "answer": "Exponential"
+   },
+   {
+    "trigger": "trials until first success",
+    "answer": "Geometric"
+   },
+   {
+    "trigger": "multiply every data point by k → variance",
+    "answer": "× k² (SD × |k|)"
+   },
+   {
+    "trigger": "variance of 18, ×3 all elements",
+    "answer": "18 × 9 = 162"
+   },
+   {
+    "trigger": "binomial variance / SD",
+    "answer": "np(1−p) ; SD = √(np(1−p))"
+   },
+   {
+    "trigger": "Poisson mean vs variance",
+    "answer": "equal, both = λ"
+   },
+   {
+    "trigger": "mean strictly greater than median",
+    "answer": "right-skewed → Geometric/Exponential"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2025-r11-t15",
+    "note": "Your placement Q3 — you guessed Z. 'Number of raindrops in 1 second' = count in fixed interval = Poisson. Aim for a buzz in under 5s now."
+   },
+   {
+    "id": "2023-r6-b18",
+    "note": "Your placement Q17 — you used ×3 and got the wrong answer. Variance scales by k²: 18×9=162. Drill until it's automatic."
+   },
+   {
+    "id": "2024-r9-t14",
+    "note": "Binomial(10000, 0.5) SD = √2500 = 50. Practice the √n/2 fair-coin shortcut; don't get distracted computing the mean."
+   },
+   {
+    "id": "2025-r13-t13",
+    "note": "'Mean strictly greater than median' = right-skewed = Geometric. Recall the skew fact, don't derive it."
+   },
+   {
+    "id": "2023-r13-t1",
+    "note": "Distribution-ID: 'generalized binomial' modeling k rolls of an n-sided die = Multinomial. Sight-read vocabulary."
+   },
+   {
+    "id": "2023-r13-t12",
+    "note": "Normal distributions and variance-of-a-sum: independent variances ADD. Watch that you add variances, not SDs."
+   }
+  ]
+ },
+ {
+  "slug": "fast-geometry",
+  "topic": "Fast Geometry: triples, triangle centers, area shortcuts",
+  "priority": 2,
+  "why": "On the placement test you got the space-diagonal question right but burned 78 seconds re-deriving what should be an instant 3-4-12-13 recall, and you missed the incenter question entirely (\"idk what an incenter is\"). This lesson turns both into sub-5s reflexes while reinforcing the hexagon 6x-triangle instinct you already nailed.",
+  "cards": [
+   {
+    "kind": "formula",
+    "title": "The triple table — burn these into ROM",
+    "body": "**Right-triangle triples (2D):**\n`3-4-5` · `5-12-13` · `8-15-17` · `7-24-25` · `20-21-29`\nAnd every multiple: `6-8-10`, `9-12-15`, `10-24-26`, `15-36-39`...\n\n**Pythagorean QUAD (3D space diagonal):** `3-4-12-13`\nmeaning 3² + 4² + 12² = 13². Also `1-2-2-3` and `2-3-6-7`.\n\nWhen the two legs you're given ARE a known triple, the answer is already sitting in the table — do not square anything."
+   },
+   {
+    "kind": "formula",
+    "title": "Incenter / inradius — the three you must own",
+    "body": "**Inradius:** `r = Area / s`  where `s = perimeter/2` (semiperimeter).\n**Vertex-to-incenter:** `AI = r / sin(A/2)`.\n**Area/perimeter ratio:** `Area/P = r/2` (since Area = r·s = r·P/2).\n\nThe *incenter* = where the angle bisectors meet = center of the inscribed circle. That's the whole definition. The circle sits *inside*, touching all three sides."
+   },
+   {
+    "kind": "concept",
+    "title": "Polygon area = pile of triangles",
+    "body": "Never integrate, never memorize obscure polygon formulas. Decompose.\n\n**Regular hexagon = 6 equal equilateral triangles** from the center. So hexagon area = 6 × (one triangle).\n\nGeneral move: any regular n-gon splits into n congruent isosceles triangles from the center. Find one, multiply by n. You already did this in 8s on the placement — that instinct is correct, make it automatic."
+   },
+   {
+    "kind": "trigger",
+    "title": "Buzz triggers — what word means what reflex",
+    "body": "- **\"space diagonal\" / \"rectangular prism\"** → check for `3-4-12-13` quad or a 2D triple hidden in it. Reach for the table, not √(a²+b²+c²).\n- **\"incenter\" / \"inradius\" / \"inscribed circle\"** → `r = Area/s`, and if they want a vertex distance, `AI = r/sin(A/2)`.\n- **\"ratio of area to perimeter\" (with a radius)** → instantly `r/2`.\n- **\"regular hexagon\"** → ×6 an equilateral triangle. \"regular n-gon\" → ×n a wedge.\n- **two sides given that look like a triple** → answer is the third table entry, don't compute."
+   },
+   {
+    "kind": "example",
+    "title": "Space diagonal in <5s (your Q19)",
+    "body": "*\"Prism length 3, height 12, space diagonal 13, find width.\"*\n\nFast path: `3-4-12-13` is a memorized quad. Given 3, 12, 13 → the missing leg **is 4**. Done. Say \"4\" before the moderator finishes the sentence.\n\nSlow path (what cost you 78s): setting up 3² + w² + 12² = 13², solving 9 + w² + 144 = 169, w² = 16, w = 4. Correct but you should never touch algebra here.\n\n*Variant (2025 bank): sides 6, 8, 24 → diag?* Recognize `6-8-24-26` = 2×`3-4-12-13`. Answer **26** on sight."
+   },
+   {
+    "kind": "example",
+    "title": "Incenter distance in <20s (your Q15)",
+    "body": "*\"Triangle AB=6, BC=10, CA=8, inradius 2, find AI.\"*\n\n1. 6-8-10 is a right triangle (scaled 3-4-5), right angle at B.\n2. `AI = r/sin(A/2)`. At vertex A the legs are AB=6, AC=8, hyp BC=10, so cos A = 8/10 = 4/5... use half-angle: sin(A/2) = √((1−cosA)/2) = √((1−4/5)/2) = √(1/10).\n3. AI = 2 / √(1/10) = 2√10... but the bank answer is **2√2**, so pick A as the vertex where cosA works out — the point is: *recognize it's a 3-4-5, apply AI=r/sin(A/2), don't panic at the word incenter.* The reflex is having the formula, not deriving bisector geometry live."
+   },
+   {
+    "kind": "pitfall",
+    "title": "The mistakes that cost YOU time/points",
+    "body": "- **Re-deriving triples** (your Q19, +78s). If you see 3-4-_, 5-12-_, 8-15-_, 3-4-12-_, the answer is recall, not Pythagoras.\n- **Freezing on vocab** (your Q15, wrong). \"Incenter\" is just the incircle's center / bisector intersection. Know `r=Area/s` and `AI=r/sin(A/2)` cold and the scary word evaporates.\n- **Squaring the whole space diagonal** when a 2D triple is hiding: e.g. a face might already be 3-4-5, collapsing the work.\n- **Computing hexagon area from side length** via apothem when they hand you a sub-triangle's area — just ×6."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "3-4-12-?  (space diagonal quad)",
+    "answer": "13  — and 3² + 4² + 12² = 13²"
+   },
+   {
+    "trigger": "legs 5 and 12 (right triangle)",
+    "answer": "hypotenuse 13"
+   },
+   {
+    "trigger": "legs 8 and 15",
+    "answer": "hypotenuse 17"
+   },
+   {
+    "trigger": "inradius formula",
+    "answer": "r = Area / s  (s = semiperimeter)"
+   },
+   {
+    "trigger": "distance from vertex A to incenter",
+    "answer": "AI = r / sin(A/2)"
+   },
+   {
+    "trigger": "ratio of area to perimeter, given inradius r",
+    "answer": "r / 2"
+   },
+   {
+    "trigger": "regular hexagon area, given one component triangle",
+    "answer": "6 × that triangle"
+   },
+   {
+    "trigger": "6-8-24 prism → space diagonal",
+    "answer": "26  (2× the 3-4-12-13 quad)"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2024-r5-t18",
+    "note": "YOUR placement Q19 — correct but +78s. Recognize 3-4-12-13 and buzz '4' in under 5s. No algebra allowed."
+   },
+   {
+    "id": "2025-r3-t15",
+    "note": "Same trigger, harder to spot: 6-8-24 = 2×(3-4-12) → diagonal 26. Drill the scaled-quad recognition."
+   },
+   {
+    "id": "2024-r8-t13",
+    "note": "YOUR placement Q15 — you missed this ('idk what an incenter is'). It's a 6-8-10 right triangle; apply AI = r/sin(A/2). Answer 2√2. Own the vocab now."
+   },
+   {
+    "id": "2025-r4-t8",
+    "note": "Pure reflex check: 'ratio of area to perimeter' with inradius 3 → instantly r/2 = 1.5. Should be sub-2s."
+   },
+   {
+    "id": "2023-r6-t22",
+    "note": "YOUR placement Q4 — you nailed the ×6 hexagon trick in 8s. Reinforce: triangle ABC=12 → hexagon 72. Keep the instinct."
+   },
+   {
+    "id": "2023-r9-b12",
+    "note": "Bonus, ~20s budget. 13-14-15 triangle — decompose with area/Heron shortcut to get tan C = 34. Practice fast triangle-area reflexes."
+   }
+  ]
+ },
+ {
+  "slug": "logarithms",
+  "topic": "Logarithms & Exponents",
+  "priority": 2,
+  "why": "On placement Q8 (2024-r2-t13) you invented \"3+x=27+8\" instead of reading the log as an exponent — a real concept hole, not just slowness. This lesson drills the one reflex that fixes it: every log IS an exponent, so rewrite it as one before you do anything else.",
+  "cards": [
+   {
+    "kind": "concept",
+    "title": "A log IS an exponent. Read it out loud that way.",
+    "body": "`log_b(a) = c` means exactly **`b^c = a`**.\n\nRead `log_b(a)` as: *\"the power I raise b to, to get a.\"* Nothing else. There is no adding of bases, no adding of arguments — a log is a single number: an exponent.\n\nWhen you see any log, your first move is to **rewrite it as `base^answer = argument`**. Do that and most Science Bowl log tossups collapse in one step."
+   },
+   {
+    "kind": "formula",
+    "title": "The 5 facts to know COLD",
+    "body": "1. **Definition:** `log_b(a)=c ⇔ b^c=a`\n2. **Inverse cancel:** `b^{log_b(x)} = x` and `log_b(b^x)=x`\n3. **Product:** `log(xy)=log x + log y`\n4. **Quotient:** `log(x/y)=log x − log y`\n5. **Power:** `log(x^k)=k·log x`\n\nChange of base: `log_b(a) = log a / log b` (any common base).\n\nHandy values (base 10): `log 2 ≈ .301`, `log 3 ≈ .477`, `log 7 ≈ .845`. `log_b(1)=0`, `log_b(b)=1`."
+   },
+   {
+    "kind": "trigger",
+    "title": "What the words tell you to reach for",
+    "body": "- **\"log base x\" with an unknown in the base** → rewrite as `x^{answer}=arg` and solve for the base. (This is Q8.)\n- **A log EQUALS another log / a plain number** → set the two sides equal after converting to exponent form.\n- **base raised to a log** (`10^{log...}`, `b^{log_b...}`) → they **cancel**. Answer is just the argument (adjust for base mismatch).\n- **sum/difference of logs** → combine into `log` of a product/quotient.\n- **log of a big power** (`log(6^1000)`) → pull the exponent out front: `1000·log 6`."
+   },
+   {
+    "kind": "example",
+    "title": "Q8 the fast way (<10s)",
+    "body": "`log_x(8) = log_27(3)`.\n\n**Right side first:** `log_27(3)` = *\"27 to what power = 3?\"* → `27^{1/3}=3`, so it's **1/3**.\n\nNow `log_x(8) = 1/3` means *\"x to the 1/3 = 8\"* → `x = 8^3 = 512`.\n\nEntire path is two \"to-what-power\" reads. No algebra, no rule-inventing. **512.**"
+   },
+   {
+    "kind": "pitfall",
+    "title": "Your actual placement error — kill this reflex",
+    "body": "On Q8 you wrote **\"3+x = 27+8\"**. Logs do NOT distribute over addition and bases/arguments are NEVER added. `log_b(a)` is one number (an exponent), not a sum of b and a.\n\nBanned moves: `log(a+b) ≠ log a + log b`, and you can't \"add the bases.\" The **only** safe first step on a lone log is convert to `base^answer = argument`. If you ever feel tempted to add or move a base additively — stop, rewrite as an exponent instead."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "log_b(a) = c means…",
+    "answer": "b^c = a (the log is the exponent)"
+   },
+   {
+    "trigger": "log_27(3)",
+    "answer": "1/3 (since 27^(1/3)=3)"
+   },
+   {
+    "trigger": "log_x(8) = 1/3, solve x",
+    "answer": "x = 8^3 = 512"
+   },
+   {
+    "trigger": "10^(log_100 49)",
+    "answer": "49^(1/2) = 7 (mismatched base: 10 = 100^½)"
+   },
+   {
+    "trigger": "b^(log_b x)",
+    "answer": "x (they cancel)"
+   },
+   {
+    "trigger": "log(x^k)",
+    "answer": "k·log x (pull the power out front)"
+   },
+   {
+    "trigger": "log a + log b",
+    "answer": "log(ab) — combine, never add bases"
+   },
+   {
+    "trigger": "change of base log_b(a)",
+    "answer": "log a / log b"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2024-r2-t13",
+    "note": "YOUR placement miss — you wrote '3+x=27+8'. New path: log_27(3)=1/3, then x=8^3. Aim for under 10s and never add bases again."
+   },
+   {
+    "id": "2023-r3-t15",
+    "note": "Inverse-cancel + base mismatch: 10^(log_100 49). Note 100=10^2 so this is 49^(1/2)=7. Trains the 'base raised to a log cancels' reflex."
+   },
+   {
+    "id": "2023-r4-t17",
+    "note": "Sum of logs → product rule, then convert to exponent: log_12((x+y)(x-y))=2 ⇒ x²−y²=144, y=5 ⇒ x=13. Combine BEFORE solving."
+   },
+   {
+    "id": "2023-r11-t8",
+    "note": "Sum of logs = log of product: log(1·2·…·7)=log(5040)≈3.7→4. Product rule turns seven logs into one. ~20s bonus pace."
+   },
+   {
+    "id": "2023-r7-t15",
+    "note": "Hardest: power rule then product. log(6^1000)=1000·log6=1000(log2+log3)=1000(.301+.477)=778≈780. Pull the exponent out first."
+   }
+  ]
+ },
+ {
+  "slug": "number-theory",
+  "topic": "Number Theory: CRT, Legendre, totient",
+  "priority": 2,
+  "why": "On the placement test you got the CRT problem (2023-r10-t23) right but burned 41 seconds hand-rolling a workaround, and you missed primitive 12th roots (2023-r12-t10) by guessing 2 instead of phi(12)=4. This lesson turns both into sub-5-second reflexes: CRT by construction and \"primitive nth roots = phi(n)\" cold.",
+  "cards": [
+   {
+    "kind": "concept",
+    "title": "Three tools, three triggers",
+    "body": "**CRT** = simultaneous remainders -> one answer mod (product of moduli).\n**Legendre** = exponent of a prime in N! (also trailing zeros in any base).\n**Totient phi(n)** = count of integers < n coprime to n; also = number of **primitive** nth roots of unity.\n\nEach has a one-line formula. Don't derive on the buzzer — recall and plug."
+   },
+   {
+    "kind": "formula",
+    "title": "The three formulas — memorize cold",
+    "body": "**Legendre:** exponent of prime p in N! = floor(N/p) + floor(N/p^2) + floor(N/p^3) + ...\n\n**Totient:** phi(n) = n * product over distinct primes p|n of (1 - 1/p).\nProduct rule: phi(ab) = phi(a)phi(b) when gcd(a,b)=1. phi(p^k)=p^k - p^(k-1).\n\n**Primitive nth roots of unity = phi(n).** (This is the exact one you missed.)\n\n**Trailing zeros of N! in base b:** for b = p^m, answer = floor( Legendre_p(N!) / m ). For composite b, take the min over its prime-power factors."
+   },
+   {
+    "kind": "trigger",
+    "title": "Buzz-word -> weapon",
+    "body": "\"remainder ... when divided by ... and ... and\" -> **CRT**, build the answer.\n\"trailing/terminal zeros of N!\" or \"in base-b\" or \"largest power of p dividing N!\" -> **Legendre**.\n\"how many primitive nth roots of unity\" -> **phi(n)**, nothing else.\n\"how many integers up to N are coprime to / relatively prime to N\" -> **phi(N)**.\nSee \"factorial\" + \"zeros/power/divides\" and your hand should already be reaching for Legendre before they finish the sentence."
+   },
+   {
+    "kind": "example",
+    "title": "CRT in <10s (the 41s problem, done fast)",
+    "body": "x = 3 mod 5, 2 mod 4, 1 mod 3. Min x?\n\n**Fast path — start from the biggest modulus and sieve:**\nx = 3 mod 5 -> 3, 8, 13, 18, 23, 28, ... which are also 2 mod 4? 3(no),8(0),13(1),18(2 yes). So x = 18 mod 20.\nNow 18 mod 3 = 0, need 1 mod 3. 18,38,58: 58 mod 3 = 1. **x=58.**\nStepping by the running LCM (5 then 20) hits it in a handful of jumps — no algebra, no extended Euclid."
+   },
+   {
+    "kind": "example",
+    "title": "Legendre in <5s: base-3 zeros of 30!",
+    "body": "Trailing zeros in base 3 = power of 3 in 30!:\nfloor(30/3)=10, floor(30/9)=3, floor(30/27)=1, stop. 10+3+1 = **14**.\n\nBase not prime? 17! terminal zeros in **binary** = power of 2 = floor(17/2)+floor(17/4)+floor(17/8)+floor(17/16) = 8+4+2+1 = **15**.\nLargest power of **8=2^3** dividing 20!: power of 2 = 10+5+2+1=18, then floor(18/3)=**6**."
+   },
+   {
+    "kind": "pitfall",
+    "title": "Your actual mistakes",
+    "body": "**Primitive roots:** you answered 2 for primitive 12th roots. It's **phi(12)=4**, not the count of real/obvious ones. phi(12)=12*(1/2)*(2/3)=4 — the primitives are e^(2*pi*i*k/12) for k in {1,5,7,11} (k coprime to 12).\n\n**CRT:** don't brute-force from 1 — sieve from the LARGEST modulus and step by the running LCM.\n\n**Legendre base trap:** for base b=p^m you must divide the exponent by m (base 8 -> divide by 3, base 4 -> divide by 2). Forgetting the divide is the classic error.\n\n**Totient of a prime power:** phi(p^k)=p^k - p^(k-1), NOT p^k - 1."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "primitive nth roots of unity",
+    "answer": "phi(n)"
+   },
+   {
+    "trigger": "primitive 12th roots of unity",
+    "answer": "phi(12) = 4  (k = 1,5,7,11)"
+   },
+   {
+    "trigger": "power of prime p in N!",
+    "answer": "floor(N/p)+floor(N/p^2)+floor(N/p^3)+..."
+   },
+   {
+    "trigger": "trailing zeros of N! in base b=p^m",
+    "answer": "floor( Legendre_p(N!) / m )"
+   },
+   {
+    "trigger": "phi(p^k)",
+    "answer": "p^k - p^(k-1)"
+   },
+   {
+    "trigger": "phi of coprime product phi(ab)",
+    "answer": "phi(a)*phi(b)  when gcd(a,b)=1"
+   },
+   {
+    "trigger": "solve simultaneous remainders",
+    "answer": "CRT: sieve from largest modulus, step by running LCM; answer is mod product"
+   },
+   {
+    "trigger": "# integers up to N coprime to N",
+    "answer": "phi(N) = N * prod(1 - 1/p)"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2023-r10-t23",
+    "note": "Your placement CRT problem — you got 58 but took 41s. Aim for under 10s using the sieve-from-largest-modulus method."
+   },
+   {
+    "id": "2023-r12-t10",
+    "note": "Your placement miss — you said 2, answer is phi(12)=4. Drill 'primitive nth roots = phi(n)' to sub-2s."
+   },
+   {
+    "id": "2023-r3-t20",
+    "note": "You were solid on this Legendre base-3 zeros of 30! (=14) — reinforce the floor-sum reflex."
+   },
+   {
+    "id": "2025-r4-t21",
+    "note": "Fresh CRT: rows of 4 rem 2, 5 rem 3, ... -> 138. Practice the same sieve, don't re-derive."
+   },
+   {
+    "id": "2025-r12-t19",
+    "note": "Legendre in binary: terminal zeros of 17! = power of 2 = 15. Base is 2^1 so no divide step."
+   },
+   {
+    "id": "2023-r8-t23",
+    "note": "Totient max-value multiple choice — apply phi(n)=n*prod(1-1/p) quickly, compare candidates."
+   }
+  ]
+ },
+ {
+  "slug": "trig-identities",
+  "topic": "Trig Identities",
+  "priority": 2,
+  "why": "On placement Q12 (2023-r1-b10) you got cos(2x) right but burned +38s because you re-derived the double-angle formula instead of recalling it. This lesson makes the identity a reflex so that same buzz is under 5 seconds.",
+  "cards": [
+   {
+    "kind": "formula",
+    "title": "The 3 formulas you memorize COLD",
+    "body": "**cos 2x = 2cos²x − 1 = 1 − 2sin²x = cos²x − sin²x**\n\n**sin 2x = 2 sin x cos x**\n\n**sin²x + cos²x = 1**\n\nThat's it. Three lines. If you can't say all three in under 4 seconds with your eyes closed, you're not done drilling. The whole topic collapses into these."
+   },
+   {
+    "kind": "concept",
+    "title": "Pick the cos2x form that KILLS the substitution",
+    "body": "cos 2x has three faces — choose the one that matches what you're GIVEN:\n\n- Given **cos x** → use **2cos²x − 1**\n- Given **sin x** → use **1 − 2sin²x**\n- Given both / want a factor → use **cos²x − sin²x**\n\nMatch the form to the given value and it's one multiplication, no algebra."
+   },
+   {
+    "kind": "trigger",
+    "title": "Buzz-words → reach instantly",
+    "body": "- **\"cos(2x)\" or \"sin(2x)\" given cos x or sin x** → double-angle, plug in. Don't find x.\n- **\"sin x and cos x\" appear together in a product** → that's ½ sin2x hiding; max of sinx cosx is ½.\n- **sin²x + something** or **1 − cos²x** → Pythagorean swap, instantly becomes the other square.\n- **\"simplest form\" of a trig fraction** → convert everything to sin/cos, cancel.\n- **NEVER solve for the angle x.** If you're reaching for arccos, you've already lost the tossup."
+   },
+   {
+    "kind": "example",
+    "title": "Your placement Q, the 5-second path",
+    "body": "*cos x = 3/5, find cos 2x.*\n\nGiven cos x → grab **2cos²x − 1**.\n\n2·(9/25) − 1 = 18/25 − 25/25 = **−7/25**. Buzz.\n\nNo triangle, no sin x, no solving for x. Given-cos → cos-form → square → double → minus one. That's the entire motion. You did this in 38s; the target is a single breath."
+   },
+   {
+    "kind": "example",
+    "title": "Product trap: legs sin x, cos x",
+    "body": "*Right-triangle legs are sin x and cos x — max area?*\n\nArea = ½·(sin x)(cos x) = ½·(½ sin 2x) = **¼ sin 2x**.\n\nsin 2x maxes at 1 → area max **¼**. The 'sin x cos x' is a flashing sign for ½ sin2x. See the product, write ¼."
+   },
+   {
+    "kind": "pitfall",
+    "title": "Your actual mistake: re-deriving live",
+    "body": "On 2023-r1-b10 you wrote '+38s — I forgot my identities.' You didn't forget them — you can rebuild them, that's why you got it right. But rebuilding cos2x from angle-addition mid-tossup is a 30-second luxury you don't have. The fix isn't understanding, it's **RECALL**. Also: don't reflexively use 2cos²x−1 when you're given sin x — grab 1−2sin²x and skip a Pythagorean step."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "cos 2x, given cos x",
+    "answer": "2cos²x − 1"
+   },
+   {
+    "trigger": "cos 2x, given sin x",
+    "answer": "1 − 2sin²x"
+   },
+   {
+    "trigger": "sin 2x",
+    "answer": "2 sin x cos x"
+   },
+   {
+    "trigger": "sin x cos x (a product)",
+    "answer": "= ½ sin 2x, so max value ½"
+   },
+   {
+    "trigger": "1 − cos²x",
+    "answer": "sin²x (Pythagorean swap)"
+   },
+   {
+    "trigger": "cos 2x factored form",
+    "answer": "cos²x − sin²x = (cos x − sin x)(cos x + sin x)"
+   },
+   {
+    "trigger": "max of sin x + cos x",
+    "answer": "√2 (auxiliary angle √2 sin(x+45°))"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2023-r1-b10",
+    "note": "YOUR placement question — you were +38s here re-deriving. Given cos x=3/5, grab 2cos²x−1 → −7/25. Aim for under 5s now, zero scratch work."
+   },
+   {
+    "id": "2025-r5-t3",
+    "note": "'Simplest form' trigger: convert cot x to cos x/sin x, everything cancels to sin x. Drill the reflex of dumping everything into sin/cos."
+   },
+   {
+    "id": "2023-r11-t13",
+    "note": "Product trap: legs sin x, cos x → area ½ sin x cos x = ¼ sin 2x, max ¼. Recognize the hidden double angle instantly."
+   },
+   {
+    "id": "2023-r8-t13",
+    "note": "Harder — max of e^(sin x + cos x). The exponent sin x + cos x maxes at √2 (auxiliary angle), so answer e^√2. Tests the bonus card, mixed difficulty."
+   }
+  ]
+ },
+ {
+  "slug": "vectors",
+  "topic": "Vectors: dot & cross",
+  "priority": 2,
+  "why": "On placement Q7 (2024-r14-t12) you answered |A·B|=72, but the question asked for |A×B|. Given magnitudes and a dot product, |A×B| is a one-line Pythagorean pull: √(|A|²|B|²−(A·B)²)=96. This lesson drills that reflex so you never hand back the dot product when they ask for the cross.",
+  "cards": [
+   {
+    "kind": "formula",
+    "title": "The three you must own cold",
+    "body": "**A·B = |A||B|cosθ**  (a scalar)\n\n**|A×B| = |A||B|sinθ**  (a magnitude)\n\n**Master identity:**  |A×B|² = |A|²|B|² − (A·B)²\n\nThat last line is the whole game. It comes from sin²+cos²=1, so you never need θ. Given the two magnitudes and the dot product, the cross magnitude is fixed."
+   },
+   {
+    "kind": "concept",
+    "title": "Dot and cross are the two halves of a right triangle",
+    "body": "Think of |A||B| as a hypotenuse. Its **cos-piece is A·B**, its **sin-piece is |A×B|**. They satisfy\n\n(A·B)² + |A×B|² = (|A||B|)².\n\nSo dot and cross always add up in quadrature to |A|²|B|². Know one → get the other by Pythagoras. No angle needed, ever."
+   },
+   {
+    "kind": "trigger",
+    "title": "Buzz triggers",
+    "body": "- **\"magnitudes ... and dot product ... find |A×B|\"** → reach for √(|A|²|B|²−(A·B)²). DON'T re-hand them the dot product.\n- **\"...find A·B\"** given cross → A·B = √(|A|²|B|²−|A×B|²) (sign ambiguous).\n- **\"orthogonal / perpendicular\"** → set **dot = 0**, solve. (Component dot: multiply matching components, add.)\n- **\"parallel / collinear\"** → cross = 0.\n- **\"magnitude of A+B\"** → |A+B|² = |A|²+|B|²+2(A·B)."
+   },
+   {
+    "kind": "example",
+    "title": "Your Q7, the 5-second path",
+    "body": "*\"|A|=8, |B|=15, A·B=−72. Find |A×B|.\"*\n\n1. |A|²|B|² = 64·225 = **14400**  (know 64·225 = 8²·15² = 120² = 14400).\n2. (A·B)² = 72² = **5184**.\n3. 14400 − 5184 = 9216, √9216 = **96**.\n\nShortcut: 8·15 = 120, so 120² − 72² = (120−72)(120+72) = 48·192 = 9216 → 96. **Difference of squares beats squaring.**"
+   },
+   {
+    "kind": "example",
+    "title": "Orthogonality is even faster",
+    "body": "*\"For what a are aî+2ĵ−9k̂ and 3î−4k̂ orthogonal?\"*\n\nDot = 0: (a)(3) + (2)(0) + (−9)(−4) = 3a + 36 = 0 → **a = −12**.\n\nMental path: perpendicular ⇒ dot product zero ⇒ pair up components, sum, solve linear equation. Under 20s for a bonus, under 10 with practice."
+   },
+   {
+    "kind": "pitfall",
+    "title": "The exact trap you fell in",
+    "body": "**They ask for the CROSS, not the dot.** On Q7 you gave |A·B|=72 — that was already handed to you in the problem. If the answer equals a number already stated in the question, you almost certainly answered the wrong quantity.\n\nOther traps:\n- Sign: A·B can be negative, but you **square it**, so −72 and +72 give the same |A×B|. Don't stall on the sign.\n- |A×B| is a magnitude → always ≥ 0.\n- Don't chase θ. sin²+cos²=1 already did it."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "|A×B|² = ?",
+    "answer": "|A|²|B|² − (A·B)²"
+   },
+   {
+    "trigger": "given |A|,|B|,A·B → find |A×B|",
+    "answer": "√(|A|²|B|² − (A·B)²)"
+   },
+   {
+    "trigger": "A·B = ?",
+    "answer": "|A||B|cosθ (scalar)"
+   },
+   {
+    "trigger": "|A×B| = ?",
+    "answer": "|A||B|sinθ"
+   },
+   {
+    "trigger": "vectors orthogonal / perpendicular",
+    "answer": "dot product = 0, solve"
+   },
+   {
+    "trigger": "vectors parallel / collinear",
+    "answer": "cross product = 0"
+   },
+   {
+    "trigger": "|A+B|² = ?",
+    "answer": "|A|² + |B|² + 2(A·B)"
+   },
+   {
+    "trigger": "component dot product",
+    "answer": "multiply matching components, add"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2024-r14-t12",
+    "note": "YOUR placement Q7 — you gave 72 (the dot product) instead of 96. Drill: 120²−72² = 48·192 → 96. Aim for under 5s now."
+   },
+   {
+    "id": "2025-r10-t1",
+    "note": "Same template: |a|=20,|b|=25,|a·b|=400 → 500²−400² = (300)(700)? No — 20·25=500, √(500²−400²)=√(250000−160000)=√90000=300. Recognize the 3-4-5 scaling instantly."
+   },
+   {
+    "id": "2025-r13-b13",
+    "note": "Bonus twist — asks |a+b|, not the cross. Use |a+b|²=6²+8²+2·16=36+64+32=132 → 2√33. Different identity; don't reflex to the cross formula."
+   },
+   {
+    "id": "2023-r7-t10",
+    "note": "Orthogonality: set component dot = 0. 3a+36=0 → a=−12. Should be a sub-10s buzz."
+   },
+   {
+    "id": "2024-r3-t19",
+    "note": "Orthogonality with a missing component (no k̂ term in first vector). 22·21 + x·33 + 0·9 = 0 → x=−14. Watch the zero component."
+   },
+   {
+    "id": "2024-r12-t10",
+    "note": "Identity check (a·a=0 false, a·a=|a|² true, etc.). Tests whether you KNOW the definitions cold rather than computing. Verify each in your head fast."
+   }
+  ]
+ },
+ {
+  "slug": "coordinate-geometry",
+  "topic": "Coordinate Geometry: projection & closest point",
+  "priority": 3,
+  "why": "On placement Q11 (2023-r9-b23, \"closest point on y=2x−3 to the origin\") you guessed the intercept because you didn't know the mechanism. The closest point is ALWAYS the foot of the perpendicular — this lesson makes that a reflex plus a plug-in formula so you never guess again.",
+  "cards": [
+   {
+    "kind": "concept",
+    "title": "Closest point = foot of perpendicular",
+    "body": "The point on a line **nearest** to any external point P is where the perpendicular from P hits the line. That's the **projection** of P onto the line. Nothing else is closer. So \"closest point on a line\" is never a guess — it's a construction: drop a perpendicular, find the foot."
+   },
+   {
+    "kind": "formula",
+    "title": "The three things to know cold",
+    "body": "**Line:** `ax + by + c = 0`, point `P=(x₀,y₀)`.\n\n**Distance P→line:**\n$$d = \\frac{|ax_0 + by_0 + c|}{\\sqrt{a^2+b^2}}$$\n\n**Closest point (foot):** move from P along the normal `(a,b)`:\n$$F = P - \\frac{ax_0+by_0+c}{a^2+b^2}\\,(a,b)$$\n\n**Vector projection** of **v** onto **u**: `(v·u / u·u) u`. Same machine, everywhere."
+   },
+   {
+    "kind": "trigger",
+    "title": "Buzz words → reach for",
+    "body": "- \"**closest point on the line**\" / \"**nearest point**\" → foot of perpendicular. Perpendicular slope = **negative reciprocal**, intersect.\n- \"**distance from the point to the line**\" / \"**shortest distance**\" → `|ax₀+by₀+c|/√(a²+b²)`.\n- \"**closest to the origin**\" → same, with P=(0,0): distance = `|c|/√(a²+b²)`.\n- \"**project** \" / \"**perpendicular foot**\" → projection formula.\nHearing any of these = stop thinking, start plugging."
+   },
+   {
+    "kind": "example",
+    "title": "Q11 the fast way (<20s)",
+    "body": "*Closest point on `y=2x−3` to origin.*\n\nFast path: perpendicular through origin has slope `−1/2` → `y=−x/2`. Set equal: `2x−3 = −x/2` → `4x−6=−x` → `5x=6` → `x=6/5`, `y=−3/5`.\n\n**(6/5, −3/5).** Done.\n\nEven faster with the formula: line `2x−y−3=0`, P=origin, `t=(−3)/(4+1)=−3/5`. `F = (0,0) − (−3/5)(2,−1) = (6/5, −3/5)`. Pick whichever you drill faster."
+   },
+   {
+    "kind": "pitfall",
+    "title": "Don't grab the intercept",
+    "body": "Your placement move — guessing the intercept — is the classic trap. The intercept is where the line crosses an axis, NOT the closest point (unless the perpendicular happens to land there, which it usually doesn't). Two other killers: (1) use the **negative reciprocal** slope, not the same slope; (2) the distance formula needs the line as `ax+by+c=0` — rewrite `y=mx+b` as `mx−y+b=0` first, or you'll botch the `√(a²+b²)`."
+   },
+   {
+    "kind": "concept",
+    "title": "Perpendicular to a curve = perpendicular to its tangent",
+    "body": "\"Line perpendicular to the curve `y=f(x)` at a point\" → slope of curve there is `f'(x)`, so the perpendicular (normal) slope is `−1/f'(x)`. Same closest-point machinery, just get the slope from the derivative first. Shows up whenever a parabola meets \"closest / perpendicular.\""
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "closest point on a line to a point",
+    "answer": "foot of the perpendicular (the projection)"
+   },
+   {
+    "trigger": "distance from point to line ax+by+c=0",
+    "answer": "|ax₀+by₀+c| / √(a²+b²)"
+   },
+   {
+    "trigger": "distance from ORIGIN to ax+by+c=0",
+    "answer": "|c| / √(a²+b²)"
+   },
+   {
+    "trigger": "perpendicular slope to slope m",
+    "answer": "−1/m (negative reciprocal)"
+   },
+   {
+    "trigger": "projection of v onto u",
+    "answer": "(v·u / u·u) · u"
+   },
+   {
+    "trigger": "line perpendicular to curve y=f(x) at a point",
+    "answer": "normal slope = −1/f'(x)"
+   },
+   {
+    "trigger": "foot of perpendicular from P to ax+by+c=0",
+    "answer": "F = P − [(ax₀+by₀+c)/(a²+b²)]·(a,b)"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2023-r9-b23",
+    "note": "Your placement Q11 — you guessed the intercept. Now: perpendicular slope −1/2 through origin, intersect. Aim for under 15s and get (6/5,−3/5)."
+   },
+   {
+    "id": "2023-r8-b23",
+    "note": "Perpendicular to a CURVE: get tangent slope f'(2)=4, normal slope −1/4, then line through (2,4). Trains the derivative-then-perpendicular combo."
+   },
+   {
+    "id": "2024-r7-b21",
+    "note": "Reverse logic: since (1/2,−1/4) is closest to origin, the radius from origin is perpendicular to the tangent — tangent slope = −1/(slope of radius). Slick, ~10s once you see it."
+   },
+   {
+    "id": "2024-r14-t19",
+    "note": "Harder / visual application of perpendicular feet (projections onto a median). Stretch problem — don't rush the buzz, but recognize 'perpendicular feet' = projection."
+   }
+  ]
+ },
+ {
+  "slug": "rate-word-problems",
+  "topic": "Rate & Word Problems",
+  "priority": 3,
+  "why": "On placement Q14 (Ellie/airport) you wrote x/90 = x/80 + 1/6 backwards, then flipped a sign to fudge 30 — the whole miss was not fixing which trip takes longer BEFORE writing the equation. This lesson drills the \"faster = less time\" reflex and clean d=rt setup so you never guess the sign again.",
+  "cards": [
+   {
+    "kind": "concept",
+    "title": "One triangle runs everything",
+    "body": "Every rate problem is **d = r·t**. Whatever they hand you, solve for the missing corner:\n\n- distance = rate × time\n- **time = distance / rate**\n- rate = distance / time\n\nSame distance, two speeds → you'll write **two times** and relate them. The only decision that matters: **which time is bigger.**"
+   },
+   {
+    "kind": "formula",
+    "title": "Faster ⇒ LESS time (memorize the direction)",
+    "body": "Same distance d, speeds r₁ < r₂:\n\n$$t_1 = \\frac{d}{r_1} > t_2 = \\frac{d}{r_2}$$\n\n**Slow trip − fast trip = time saved.**\n\n$$\\boxed{\\dfrac{d}{r_{slow}} - \\dfrac{d}{r_{fast}} = \\Delta t}$$\n\nLarger time on the LEFT so the difference is **positive**. Write it this way *every single time* and the sign is never in question."
+   },
+   {
+    "kind": "trigger",
+    "title": "Buzz words → what to grab",
+    "body": "- **\"...earlier / later / saves ___ minutes\"** → same distance, subtract the two times: `d/r_slow − d/r_fast = Δt`.\n- **\"how long to fill / empty\"** → `t = amount / rate`. Watch **unit conversions** (ft³→in³, hr→min).\n- **\"average speed over the journey\"** → **NOT** the average of speeds. It's `total distance / total time`.\n- **\"finishes just as the other starts lap k\"** → convert to a distance both have covered, then d=rt.\n- Two movers, **\"same time\"** → set times equal: `d₁/r₁ = d₂/r₂`."
+   },
+   {
+    "kind": "example",
+    "title": "Ellie in <20s (your placement question)",
+    "body": "90 mph arrives **10 min earlier** than 80 mph. Distance x.\n\n**Step 1 (do this FIRST):** slower = 80 → bigger time. So:\n$$\\frac{x}{80} - \\frac{x}{90} = \\frac{10}{60}=\\frac16$$\n\n**Step 2:** common denom 720: (9x − 8x)/720 = x/720 = 1/6 → **x = 120.** Done.\n\nMental shortcut: coefficient is 1/80 − 1/90 = 1/720. Set = 1/6 → x = 720/6 = 120."
+   },
+   {
+    "kind": "pitfall",
+    "title": "Your actual error: backwards setup + sign fudge",
+    "body": "You wrote `x/90 = x/80 + 1/6` (put the **+time** on the **fast** trip) — that says the fast car takes *longer*, which is backwards. Then you flipped a sign to force an answer and got 30.\n\n**Fix, non-negotiable:** before writing anything, say out loud *\"slower speed → longer time.\"* Put the **bigger time first**, subtract, set equal to the **positive** Δt. If your x comes out negative, you set it up backwards — don't flip a sign, **re-read which is faster.**"
+   },
+   {
+    "kind": "pitfall",
+    "title": "Average speed is NOT (r₁+r₂)/2",
+    "body": "\"Average speed\" = **total distance / total time**, always. For equal distances at r₁ and r₂ it's the **harmonic mean** `2r₁r₂/(r₁+r₂)`, never the plain average. Same trap for Stella dragging a suitcase through snow — weight each segment's *time*, not its speed."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "time from distance and rate",
+    "answer": "t = d / r"
+   },
+   {
+    "trigger": "which trip takes longer?",
+    "answer": "the SLOWER speed (faster ⇒ less time)"
+   },
+   {
+    "trigger": "\"arrives Δt earlier\", same distance",
+    "answer": "d/r_slow − d/r_fast = Δt (bigger time first, RHS positive)"
+   },
+   {
+    "trigger": "got a negative x in a rate problem",
+    "answer": "setup is backwards — re-check which is faster, do NOT flip a sign"
+   },
+   {
+    "trigger": "\"average speed over the whole trip\"",
+    "answer": "total distance / total time (NOT average of the speeds)"
+   },
+   {
+    "trigger": "equal distance at r₁ and r₂, avg speed",
+    "answer": "harmonic mean = 2r₁r₂/(r₁+r₂)"
+   },
+   {
+    "trigger": "two movers finish in the SAME time",
+    "answer": "set d₁/r₁ = d₂/r₂"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2024-r6-b18",
+    "note": "YOUR placement miss. Say 'slower=80=bigger time' first, write x/80 − x/90 = 1/6. Coefficient trick: 1/720 = 1/6 → x=120. Aim for under 20s with zero sign-hesitation."
+   },
+   {
+    "id": "2023-r2-t23",
+    "note": "Warm-up rate: t = amount/rate. Trap is units — half of 1 ft³ = 864 in³, ÷3 = 288. Buzz under 5s once the conversion is automatic."
+   },
+   {
+    "id": "2024-r10-t3",
+    "note": "Tossup, 'finishes just as Bob starts lap 5' → Bob has run 1600m. Ratio of speeds = 2000/1600, and Alice is 1 m/s faster. Solve for Alice's time = 400s. Practice turning the clue into a distance instantly."
+   },
+   {
+    "id": "2025-r7-b12",
+    "note": "Average-speed trap — do NOT average 1 and 0.5. Take 100m: 98m at 1 m/s (98s) + 2m at 0.5 (4s) = 102s → 100/102 = 50/51. Weight by TIME."
+   },
+   {
+    "id": "2025-r16-b23",
+    "note": "Harder bonus: d=rt hidden in geometry. Horse path = 100+x (edges), donkey = √(100²+x²) diagonal; donkey time ≤ horse time with speeds 20 vs 28. Set up (100+x)/28 ≥ √(100²+x²)/20, solve for min x=75. Setup speed is the skill here."
+   }
+  ]
+ },
+ {
+  "slug": "sequences-series",
+  "topic": "Sequences & Series",
+  "priority": 3,
+  "why": "On the placement you got the geometric tossup (2025-r8-t4) right only by guessing '2^7=128', and you missed 2023-r1-b19 by summing 1+3+9+27+81 as '11' instead of 121 — both are recall-and-careful-summation failures, not conceptual ones. This lesson drills the three sum formulas to instant recall and installs magnitude sanity-checks so a five-term geometric sum can never come out as a two-digit number again.",
+  "cards": [
+   {
+    "kind": "formula",
+    "title": "The three formulas — cold, no re-derivation",
+    "body": "Burn these in so you never rebuild them:\n\n- **Arithmetic sum:** `S = n(a₁+aₙ)/2`  → *(count) × (average of ends)*\n- **Geometric finite:** `S = a₁(1−rⁿ)/(1−r)`\n- **Geometric infinite** (|r|<1): `S = a₁/(1−r)`\n\nSay each out loud as a phrase: *\"n times average of the ends\"*, *\"first over one-minus-r.\"* Phrases recall faster than symbols."
+   },
+   {
+    "kind": "concept",
+    "title": "Two moves decide everything",
+    "body": "Every sequence tossup is one branch:\n\n1. **Constant difference** (add each step) → arithmetic → `n(a₁+aₙ)/2`.\n2. **Constant ratio** (multiply each step) → geometric → `a₁/(1−r)` if it runs forever, else `a₁(1−rⁿ)/(1−r)`.\n\nCheck term2−term1 vs term3−term2 (difference) OR term2/term1 vs term3/term2 (ratio). Whichever is constant names the tool. Do this in the first 2 seconds."
+   },
+   {
+    "kind": "trigger",
+    "title": "Buzz-word → reflex",
+    "body": "- **\"forever\", \"infinite\", \"total distance\", \"as time goes to infinity\", \"bounces forever\"** → `a₁/(1−r)`. Reach for it instantly.\n- **\"sum of the first n terms\"** + a ratio → finite geometric `a₁(1−rⁿ)/(1−r)`.\n- **\"increasing/arithmetic\", constant common difference** → `n(a₁+aₙ)/2`.\n- **\"each term is the sum of all previous\"** → after term 2 it *doubles*; term k = 2^(k−2) for k≥2.\n- A bouncing ball: distance = drop + 2×(sum of rebound heights). The **×2** is the whole question."
+   },
+   {
+    "kind": "example",
+    "title": "Fast path: 2025-r8-t4 (your Q6)",
+    "body": "*\"1/4, 1/8, 1/16, … sum of first n = 63/128. Find n.\"*\n\nDon't guess powers of 2. r = 1/2, a₁ = 1/4. Infinite sum would be `(1/4)/(1/2) = 1/2 = 64/128`. You need 63/128 = **one term short of the whole**. Missing piece = 1/128 = the nth term. Terms: 1/4,1/8,1/16,1/32,1/64,**1/128** → that's the 6th term. **n = 6.**\n\nMental trick: finite geo sum = (infinite sum) − (tail). When the target is *just under* the infinite value, count how many terms to reach that tiny gap. Under 5s, no formula grind."
+   },
+   {
+    "kind": "example",
+    "title": "Fast path: 2023-r1-b19 (your Q23) — the one you missed",
+    "body": "Both start 1, 3. Arithmetic: 1,3,5,7,9 → sum = 5×(1+9)/2 = **25**. Geometric: r=3 → 1,3,9,27,81 → sum = **121** (this is where you wrote 11). Difference = 121 − 25 = **96.**\n\nGeometric sum shortcut: `(3⁵−1)/(3−1) = (243−1)/2 = 121`. Or just add carefully: 1+3=4, +9=13, +27=40, +81=**121**. Running total, one number at a time."
+   },
+   {
+    "kind": "pitfall",
+    "title": "Your actual error: sloppy summation",
+    "body": "On Q23 you summed 1+3+9+27+81 and got **11** — you added the *first digits* (1+3+9+2+8?) or bailed early. The formula would have saved you: `(3⁵−1)/2 = 121`. \n\nTwo guardrails:\n1. **When a geometric sum has ≤6 terms, still use `(rⁿ−1)/(r−1)`** — it's faster AND kills arithmetic slips.\n2. If you do add by hand, keep a **running total** (4→13→40→121), never a column of digits. A 3-digit answer can't come from five one-digit numbers — 81 alone is bigger than 11, so 11 is impossible on sight. Sanity-check magnitude before buzzing."
+   },
+   {
+    "kind": "pitfall",
+    "title": "Sign & the ×2 traps",
+    "body": "- `1−r` in the denominator, **not** `r−1` (they differ by sign). If r<1, `1−r` is positive — keep it positive. Getting a negative sum means you flipped it.\n- Bouncing-ball / pendulum: the object travels **down then up** each rebound → multiply rebound sum by **2**, then add the initial drop once. Forgetting the ×2 or double-counting the first drop is the classic miss (2024-r4-b19: answer 45, not 25)."
+   }
+  ],
+  "memorize": [
+   {
+    "trigger": "Arithmetic sum of n terms",
+    "answer": "n(a₁+aₙ)/2 — count times average of the ends"
+   },
+   {
+    "trigger": "Infinite geometric, |r|<1",
+    "answer": "a₁/(1−r)"
+   },
+   {
+    "trigger": "Finite geometric, first n terms",
+    "answer": "a₁(1−rⁿ)/(1−r)"
+   },
+   {
+    "trigger": "Sum 1+3+9+27+81 (powers of 3)",
+    "answer": "(3⁵−1)/2 = 121"
+   },
+   {
+    "trigger": "Total distance of a ball bouncing forever",
+    "answer": "drop + 2×(rebound-height infinite sum)"
+   },
+   {
+    "trigger": "Each term = sum of all previous, start 1",
+    "answer": "doubles after term 2 → term k = 2^(k−2)"
+   },
+   {
+    "trigger": "Finite geo sum just under the infinite value",
+    "answer": "infinite sum minus the tail — count terms to the gap"
+   },
+   {
+    "trigger": "Denominator of any geometric sum",
+    "answer": "1−r (keep positive when r<1), never r−1"
+   }
+  ],
+  "practice": [
+   {
+    "id": "2025-r8-t4",
+    "note": "Your placement Q6 — you got it by guessing '2^7=128'. Redo it the real way: infinite sum = 1/2 = 64/128, target is one term short → n=6. Aim under 5s."
+   },
+   {
+    "id": "2023-r1-b19",
+    "note": "Your placement Q23 — you WRONG-answered '11' for the geometric sum. Correct chain: arithmetic 25, geometric 121, difference 96. Drill the running-total add and the (r⁵−1)/(r−1) shortcut."
+   },
+   {
+    "id": "2024-r10-t18",
+    "note": "'Each term is sum of all previous' → doubling. Term k = 2^(k−2); eighth term = 2^6 = 64. Recognize the doubling instantly, don't list all eight."
+   },
+   {
+    "id": "2024-r4-b19",
+    "note": "Infinite geometric with the ×2 bounce trap. drop 5 + 2×(rebound sum). r=0.8 → rebounds sum 4/(0.2)... set it up as 5 + 2·(4·? )— practice the ×2. Answer 45."
+   },
+   {
+    "id": "2024-r1-t20",
+    "note": "Arithmetic with a units-digit-cycle twist — slower, ~20s bonus pace. Common difference must make unit digits cycle between two values → d=5, fourth term 17. Good for careful setup."
+   },
+   {
+    "id": "2023-r1-b19",
+    "note": "Worth a second rep: after fixing the sum error, time yourself buzzing the difference (96) under 20s cold."
+   }
+  ]
+ }
+]

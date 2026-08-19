@@ -1,0 +1,146 @@
+[
+ {
+  "id": "2023-r10-t23",
+  "topic": "Number Theory",
+  "difficulty": "medium",
+  "why": "Solve simultaneous congruences via CRT"
+ },
+ {
+  "id": "2025-r8-b4",
+  "topic": "Probability",
+  "difficulty": "medium",
+  "why": "Conditional probability given at-least-one event"
+ },
+ {
+  "id": "2025-r11-t15",
+  "topic": "Statistics",
+  "difficulty": "easy",
+  "why": "Identify Poisson distribution from description"
+ },
+ {
+  "id": "2023-r6-t22",
+  "topic": "Plane Geometry",
+  "difficulty": "medium",
+  "why": "Regular hexagon area by triangle decomposition"
+ },
+ {
+  "id": "2024-r4-b9",
+  "topic": "Polynomials/Vieta",
+  "difficulty": "medium",
+  "why": "Sum of reciprocals of roots via Vieta"
+ },
+ {
+  "id": "2025-r8-t4",
+  "topic": "Sequences & Series",
+  "difficulty": "medium",
+  "why": "Solve for term count of geometric partial sum"
+ },
+ {
+  "id": "2024-r14-t12",
+  "topic": "Vectors",
+  "difficulty": "medium",
+  "why": "Cross-product magnitude from dot product"
+ },
+ {
+  "id": "2024-r2-t13",
+  "topic": "Exponents & Logarithms",
+  "difficulty": "medium",
+  "why": "Solve equation across logarithm bases"
+ },
+ {
+  "id": "2023-r12-b22",
+  "topic": "Probability",
+  "difficulty": "hard",
+  "why": "Multi-stage tournament win probability"
+ },
+ {
+  "id": "2024-r2-t21",
+  "topic": "Calculus",
+  "difficulty": "medium",
+  "why": "Limit of trig ratio near zero"
+ },
+ {
+  "id": "2023-r9-b23",
+  "topic": "Coordinate Geometry",
+  "difficulty": "medium",
+  "why": "Closest point on line to origin"
+ },
+ {
+  "id": "2023-r1-b10",
+  "topic": "Trigonometry",
+  "difficulty": "medium",
+  "why": "Double-angle cosine identity"
+ },
+ {
+  "id": "2023-r3-t20",
+  "topic": "Number Theory",
+  "difficulty": "hard",
+  "why": "Trailing zeros of factorial via Legendre"
+ },
+ {
+  "id": "2024-r6-b18",
+  "topic": "Algebra",
+  "difficulty": "medium",
+  "why": "Distance-rate-time word equation"
+ },
+ {
+  "id": "2024-r8-t13",
+  "topic": "Plane Geometry",
+  "difficulty": "hard",
+  "why": "Incenter distance in a triangle"
+ },
+ {
+  "id": "2023-r2-b7",
+  "topic": "Combinatorics",
+  "difficulty": "hard",
+  "why": "Count integers containing a digit block"
+ },
+ {
+  "id": "2023-r6-b18",
+  "topic": "Statistics",
+  "difficulty": "easy",
+  "why": "Variance under scalar multiplication"
+ },
+ {
+  "id": "2025-r3-b10",
+  "topic": "Functions",
+  "difficulty": "medium",
+  "why": "Evaluate functional equation by substitution"
+ },
+ {
+  "id": "2024-r5-t18",
+  "topic": "Solid Geometry",
+  "difficulty": "medium",
+  "why": "Space diagonal of rectangular prism"
+ },
+ {
+  "id": "2024-r6-t18",
+  "topic": "Probability",
+  "difficulty": "medium",
+  "why": "Expected value over die faces"
+ },
+ {
+  "id": "2023-r10-t11",
+  "topic": "Calculus",
+  "difficulty": "hard",
+  "why": "Tangent-line approximation and concavity"
+ },
+ {
+  "id": "2023-r12-t10",
+  "topic": "Complex numbers/roots of unity",
+  "difficulty": "medium",
+  "why": "Count primitive roots of unity"
+ },
+ {
+  "id": "2023-r1-b19",
+  "topic": "Sequences & Series",
+  "difficulty": "medium",
+  "why": "Compare arithmetic and geometric sums"
+ },
+ {
+  "id": "2025-r10-b7",
+  "topic": "Algebra",
+  "difficulty": "medium",
+  "why": "Manipulate symmetric x-plus-reciprocal expression"
+ }
+]

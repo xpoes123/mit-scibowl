@@ -236,9 +236,10 @@ function renderFilters(){
 function render(){
   if(state.mode==='learn') return renderLearn();
   if(state.mode==='plan') return renderPlan();
-  if(state.mode==='test') return renderTest();
+  if(state.mode==='test'){ renderTest(); return typeset($('#view')); }
   if(!state.deck.length){$('#view').innerHTML='<div class="empty">No questions match these filters.</div>';return;}
   state.mode==='flash'?renderFlash():renderBuzz();
+  typeset($('#view'));
 }
 function curr(){return state.deck[state.idx];}
 function metaEl(q){
@@ -318,7 +319,7 @@ function renderBuzz(){
   const card=el('div','card');
   card.innerHTML=metaEl(q);
   const stage=el('div','buzz-stage');stage.id='stage';
-  buzzWords=q.question.split(/\s+/);
+  buzzWords=q.question.match(/\$[^$]+\$|\S+/g)||[]; // keep $...$ math as one token
   stage.innerHTML='<span class="ph">Press <b>Start</b> (or <kbd>enter</kbd>) — the question reads one word at a time. '
     +'Hit <b>Buzz</b> (<kbd>space</kbd>) the instant you know it.</span>'
     +buzzWords.map((w,i)=>`<span class="w" data-i="${i}">${w}</span>`).join(' ');

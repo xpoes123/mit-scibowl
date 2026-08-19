@@ -61,8 +61,9 @@ button.ghost{background:transparent;border:1px solid var(--muted);color:var(--mu
 button:disabled{opacity:.4;cursor:default}
 .stats{font-size:.8rem;color:var(--muted);margin-top:1rem;text-align:center}
 .buzz-stage{font-size:1.7rem;line-height:1.6;min-height:180px;font-weight:500}
-.buzz-stage .w{opacity:.12;transition:opacity .05s} .buzz-stage .w.shown{opacity:1}
+.buzz-stage .w{display:none} .buzz-stage .w.shown{display:inline}
 .buzz-stage .w.now{color:var(--yellow)}
+.buzz-stage .ph{color:var(--muted);font-size:1rem;font-weight:400}
 .buzzed{color:var(--orange);font-weight:800;letter-spacing:.03em}
 .hint{color:var(--muted);font-size:.8rem}
 kbd{background:var(--bg3);border:1px solid var(--muted);border-radius:4px;
@@ -235,7 +236,9 @@ function renderBuzz(){
   card.innerHTML=metaEl(q);
   const stage=el('div','buzz-stage');stage.id='stage';
   buzzWords=q.question.split(/\s+/);
-  stage.innerHTML=buzzWords.map((w,i)=>`<span class="w" data-i="${i}">${w}</span>`).join(' ');
+  stage.innerHTML='<span class="ph">Press <b>Start</b> (or <kbd>enter</kbd>) — the question reads one word at a time. '
+    +'Hit <b>Buzz</b> (<kbd>space</kbd>) the instant you know it.</span>'
+    +buzzWords.map((w,i)=>`<span class="w" data-i="${i}">${w}</span>`).join(' ');
   card.append(stage);
   const row=el('div','row');
   row.append(mkBtn('▶ Start','act primary',startBuzz));
@@ -250,6 +253,7 @@ function renderBuzz(){
 }
 function startBuzz(){
   stopBuzz(); buzzPos=0;buzzed=false;
+  const ph=$('#stage .ph'); if(ph)ph.style.display='none';
   const q=curr();
   if(state.tts&&window.speechSynthesis){
     const u=new SpeechSynthesisUtterance(q.question);

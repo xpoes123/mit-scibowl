@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MIT SciBowl Trainer</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
 <style>
 :root{
   --bg:#1a1b26; --bg2:#24283b; --bg3:#292e42; --fg:#c0caf5; --muted:#565f89;
@@ -112,6 +115,11 @@ table.res .t-slow{color:var(--orange)}
 .md h2{color:var(--blue);border-bottom:1px solid var(--bg3);padding-bottom:.3rem}
 .md h3{color:var(--purple)} .md code{background:var(--bg3);padding:.1rem .3rem;border-radius:4px}
 .md li{margin:.2rem 0}
+.tbl{overflow-x:auto;margin:.6rem 0}
+.lcard table,.md table{border-collapse:collapse;width:100%;font-size:.9rem}
+.lcard th,.md th{text-align:left;color:var(--cyan);border-bottom:1px solid var(--muted);padding:.35rem .55rem;white-space:nowrap}
+.lcard td,.md td{border-bottom:1px solid var(--bg3);padding:.35rem .55rem;vertical-align:top}
+.katex{font-size:1.05em}
 .empty{color:var(--muted);text-align:center;padding:3rem}
 </style>
 </head>
@@ -133,6 +141,14 @@ table.res .t-slow{color:var(--orange)}
 <script>
 const $=(s,e=document)=>e.querySelector(s);
 const el=(t,c,h)=>{const n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n};
+function typeset(node){
+  if(!node)return;
+  if(window.renderMathInElement){
+    try{renderMathInElement(node,{throwOnError:false,delimiters:[
+      {left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},
+      {left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}]});}catch(e){}
+  }else{ setTimeout(()=>typeset(node),150); } // KaTeX loads via defer; retry until ready
+}
 const state={
   mode:'learn', all:[], deck:[], idx:0, revealed:false,
   lessons:null, lessonOpen:null,
@@ -272,7 +288,7 @@ async function explain(){
       body:JSON.stringify({id:q.id})});
     if(!r.ok){exp.innerHTML='<b>⚠</b> '+(await r.text());return;}
     const d=await r.json();
-    exp.innerHTML='<b>Fast approach:</b>\n'+d.explanation;
+    exp.innerHTML='<b>Fast approach:</b>\n'+d.explanation; typeset(exp);
   }catch(e){exp.innerHTML='<b>⚠</b> '+e.message;}
 }
 
@@ -525,7 +541,7 @@ async function generatePlan(){
       body:JSON.stringify({results:state.test.results})});
     if(!res.ok){out.innerHTML='<p class="hint">⚠ '+(await res.text())+'</p>';return;}
     const d=await res.json();
-    out.innerHTML='<div class="card">'+mdToHtml(d.plan)+'</div>';
+    out.innerHTML='<div class="card">'+mdToHtml(d.plan)+'</div>'; typeset(out);
     localStorage.setItem('sb_plan',d.plan);
   }catch(e){ out.innerHTML='<p class="hint">⚠ '+e.message+'</p>'; }
 }
@@ -596,6 +612,7 @@ function renderLesson(v,slug){
   }
   const b2=mkBtn('← All lessons','act ghost',()=>{state.lessonOpen=null;render();});
   const wrap=el('div','row');wrap.append(b2);v.append(wrap);
+  typeset(v);
 }
 
 // ---------- study plan ----------
@@ -608,24 +625,39 @@ async function renderPlan(){
     if(saved) html+='<div class="md card"><h2 style="margin-top:0">🧠 Your personalized plan (from your placement test)</h2>'+mdToHtml(saved)+'</div>';
     html+='<div class="md card"'+(saved?' style="margin-top:1rem"':'')+'>'+
       (saved?'<h2 style="margin-top:0">General high-leverage plan</h2>':'')+mdToHtml(md)+'</div>';
-    v.innerHTML=html;
+    v.innerHTML=html; typeset(v);
   }catch(e){ v.innerHTML=saved?'<div class="md card">'+mdToHtml(saved)+'</div>':'<div class="empty">Study plan not generated yet.</div>'; }
 }
 function mdToHtml(md){
-  const lines=md.split('\n'); let html='',inList=false;
-  const inline=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;')
-    .replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>')
-    .replace(/\*(.+?)\*/g,'<i>$1</i>');
-  for(let l of lines){
-    if(/^### /.test(l)){html+=(inList?'</ul>':'')+'<h3>'+inline(l.slice(4))+'</h3>';inList=false;}
-    else if(/^## /.test(l)){html+=(inList?'</ul>':'')+'<h2>'+inline(l.slice(3))+'</h2>';inList=false;}
-    else if(/^# /.test(l)){html+=(inList?'</ul>':'')+'<h1>'+inline(l.slice(2))+'</h1>';inList=false;}
+  const lines=(md||'').split('\n'); let html='',inList=false;
+  // escape only & and < (keeps LaTeX \, ^, _, {} intact for KaTeX). Bold/code/italic after.
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const inline=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>')
+    .replace(/`(.+?)`/g,'<code>$1</code>').replace(/(^|[^\\])\*(?!\s)(.+?)\*/g,'$1<i>$2</i>');
+  const closeList=()=>{ if(inList){html+='</ul>';inList=false;} };
+  const isRow=l=>/^\s*\|.*\|\s*$/.test(l);
+  const isSep=l=>/^\s*\|?[\s:|-]*-[\s:|-]*\|?\s*$/.test(l);
+  const cells=l=>l.trim().replace(/^\||\|$/g,'').split('|').map(c=>c.trim());
+  for(let i=0;i<lines.length;i++){
+    let l=lines[i];
+    if(isRow(l)&&i+1<lines.length&&isSep(lines[i+1])){
+      closeList();
+      const head=cells(l); i+=2; let body='';
+      while(i<lines.length&&isRow(lines[i])){body+='<tr>'+cells(lines[i]).map(c=>'<td>'+inline(c)+'</td>').join('')+'</tr>';i++;}
+      i--;
+      html+='<div class="tbl"><table><thead><tr>'+head.map(c=>'<th>'+inline(c)+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>';
+      continue;
+    }
+    if(/^### /.test(l)){closeList();html+='<h3>'+inline(l.slice(4))+'</h3>';}
+    else if(/^## /.test(l)){closeList();html+='<h2>'+inline(l.slice(3))+'</h2>';}
+    else if(/^# /.test(l)){closeList();html+='<h1>'+inline(l.slice(2))+'</h1>';}
     else if(/^\s*[-*] /.test(l)){if(!inList){html+='<ul>';inList=true;}html+='<li>'+inline(l.replace(/^\s*[-*] /,''))+'</li>';}
     else if(/^\s*\d+\. /.test(l)){if(!inList){html+='<ul>';inList=true;}html+='<li>'+inline(l.replace(/^\s*\d+\. /,''))+'</li>';}
-    else if(l.trim()===''){html+=(inList?'</ul>':'');inList=false;}
-    else{html+=(inList?'</ul>':'')+'<p>'+inline(l)+'</p>';inList=false;}
+    else if(l.trim()===''){closeList();}
+    else{closeList();html+='<p>'+inline(l)+'</p>';}
   }
-  return html+(inList?'</ul>':'');
+  closeList();
+  return html;
 }
 
 boot();

@@ -97,7 +97,11 @@ table.res .t-slow{color:var(--orange)}
 .lcard.formula{border-color:var(--green);background:var(--bg3)} .lcard.formula .k{color:var(--green)}
 .lcard.trigger{border-color:var(--cyan)} .lcard.trigger .k{color:var(--cyan)}
 .lcard.example{border-color:var(--purple)} .lcard.example .k{color:var(--purple)}
+.lcard.intuition{border-color:var(--yellow)} .lcard.intuition .k{color:var(--yellow)}
 .lcard.pitfall{border-color:var(--red)} .lcard.pitfall .k{color:var(--red)}
+.lesson-overview{background:var(--bg3);border-radius:10px;padding:.9rem 1.1rem;margin:.7rem 0 0;color:var(--fg)}
+.solution{margin-top:.6rem;padding:.8rem 1rem;border-left:3px solid var(--purple);background:var(--bg3);border-radius:0 8px 8px 0}
+.solution .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;font-weight:800;color:var(--purple);margin-bottom:.3rem}
 .lcard b{color:var(--fg)}
 .flip{background:var(--bg3);border-radius:8px;padding:.7rem .9rem;margin:.4rem 0;cursor:pointer}
 .flip .t{color:var(--cyan);font-weight:600} .flip .a{color:var(--green);margin-top:.35rem;display:none}
@@ -553,7 +557,8 @@ function renderLesson(v,slug){
   const back=mkBtn('← All lessons','act ghost',()=>{state.lessonOpen=null;render();});
   v.append(back);
   const head=el('div','card');
-  head.innerHTML=`<h2 style="margin:0 0 .3rem;color:var(--blue)">${L.topic}</h2><p class="hint" style="margin:0">${L.why}</p>`;
+  head.innerHTML=`<h2 style="margin:0 0 .3rem;color:var(--blue)">${L.topic}</h2><p class="hint" style="margin:0">${L.why}</p>`+
+    (L.overview?`<div class="lesson-overview">${mdToHtml(L.overview)}</div>`:'');
   v.append(head);
   (L.cards||[]).forEach(card=>{
     const c=el('div','lcard '+card.kind);
@@ -580,9 +585,12 @@ function renderLesson(v,slug){
       c.innerHTML=html;
       const rev=el('div','answer');rev.style.display='none';
       rev.innerHTML=`<b>Answer:</b> ${q.answer}`+(p.note?`<div class="hint" style="margin-top:.4rem">${p.note}</div>`:'');
+      const sol=el('div','solution');sol.style.display='none';
+      sol.innerHTML=`<div class="k">Fast solution</div>${mdToHtml(p.solution||'')}`;
       const row=el('div','row');
       row.append(mkBtn('Reveal answer','act primary',()=>{rev.style.display='block';}));
-      c.append(row); c.append(rev);
+      if(p.solution) row.append(mkBtn('Show fast solution','act ghost',()=>{rev.style.display='block';sol.style.display='block';}));
+      c.append(row); c.append(rev); c.append(sol);
       v.append(c);
     });
   }

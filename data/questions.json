@@ -8,7 +8,7 @@
   "qtype": "sa",
   "question": "If x is quadrupled and then increased by 13, the result is −5. What is the value of x?",
   "choices": {},
-  "answer": "−9/2",
+  "answer": "$-\\tfrac{9}{2}$",
   "visual": false
  },
  {
@@ -18,9 +18,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "A clock has an hour hand that is 6 inches long, and a minute hand that is 8 inches long. What is the ratio of the distance in inches traveled by the tip of the hour hand to the distance in inches traveled by the tip of the minute hand between noon and 3 PM on a given day? 1",
+  "question": "A clock has an hour hand that is 6 inches long, and a minute hand that is 8 inches long. What is the ratio of the distance in inches traveled by the tip of the hour hand to the distance in inches traveled by the tip of the minute hand between noon and 3 PM on a given day?",
   "choices": {},
-  "answer": "16",
+  "answer": "$\\tfrac{1}{16}$",
   "visual": false
  },
  {
@@ -124,9 +124,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "If cos(x) = 3/5 (read: cosine of x equals three over five), what is cos(2x) (read: cosine of two x )?",
+  "question": "If $\\cos(x) = \\tfrac{3}{5}$, what is $\\cos(2x)$?",
   "choices": {},
-  "answer": "−7/25",
+  "answer": "$-\\tfrac{7}{25}$",
   "visual": false
  },
  {
@@ -177,7 +177,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the molar mass of mercury (I) (read: mer- cury one) chloride to the nearest ten grams per mole, given that the molar mass of mercury is 200 grams per mole and that the molar mass of chlorine is 35 grams per mole?",
+  "question": "What is the molar mass of mercury (I) chloride to the nearest ten grams per mole, given that the molar mass of mercury is 200 grams per mole and that the molar mass of chlorine is 35 grams per mole?",
   "choices": {},
   "answer": "470",
   "visual": false
@@ -242,7 +242,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Let f (x) (read: f of x ) be the cubic function x3 − 6x2 + 11x − 6 (read: x cubed minus six x squared plus eleven x minus six ). If two of its roots are 2 and 3, what is the other root?",
+  "question": "Let $f(x)$ be the cubic function $x^3 - 6x^2 + 11x - 6$. If two of its roots are 2 and 3, what is the other root?",
   "choices": {
    "W": "−2",
    "X": "−1",
@@ -290,12 +290,12 @@
   "qtype": "mc",
   "question": "Which of the following quantum numbers cannot be assigned to any orbital?",
   "choices": {
-   "W": "n = 3, l = 2, ml (read: m sub l ) = 0",
-   "X": "n = 3, l = 3, ml = 2",
-   "Y": "n = 4, l = 1, ml = 1",
-   "Z": "n = 4, l = 3, ml = 3"
+   "W": "$n = 3$, $l = 2$, $m_l = 0$",
+   "X": "$n = 3$, $l = 3$, $m_l = 2$",
+   "Y": "$n = 4$, $l = 1$, $m_l = 1$",
+   "Z": "$n = 4$, $l = 3$, $m_l = 3$"
   },
-  "answer": "X) n = 3, l = 3, ml = 2",
+  "answer": "X) $n = 3$, $l = 3$, $m_l = 2$",
   "visual": false
  },
  {
@@ -334,7 +334,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Let the function f (x) = ⌊ x⌋ (read: f of x equal the floor of the square root of x ). If f (f (a)) (read: f of f of a) equals 1, what is the largest possible integer value of a?",
+  "question": "Let the function $f(x) = \\lfloor \\sqrt{x} \\rfloor$. If $f(f(a))$ equals 1, what is the largest possible integer value of a?",
   "choices": {
    "W": "9",
    "X": "11",
@@ -351,7 +351,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Let a be an integer. Suppose that 0 (1 + 2x)dx = 2 (read: the integral from 0 to a of the quantity one plus two x dx is equal to 2 ). What is the largest possible value of a?",
+  "question": "Let a be an integer. Suppose that $\\int_0^a (1 + 2x)\\,dx = 2$. What is the largest possible value of a?",
   "choices": {},
   "answer": "1",
   "visual": false
@@ -476,12 +476,12 @@
   "qtype": "mc",
   "question": "For a given function of x, Alexis takes the tangent line at x = 0 to approximate its value at x = 10. For which of the following functions would the approximation be greater than the true value?",
   "choices": {
-   "W": "y = x (read: y equals x )",
-   "X": "y = x2 (read: y equals x squared )",
-   "Y": "y = x1 (read: y equals one over x )",
-   "Z": "y = ln x (read: y equals the natural log of x )"
+   "W": "$y = x$",
+   "X": "$y = x^2$",
+   "Y": "$y = \\frac{1}{x}$",
+   "Z": "$y = \\ln x$"
   },
-  "answer": "Z) y = ln x",
+  "answer": "Z) $y = \\ln x$",
   "visual": false
  },
  {
@@ -573,14 +573,14 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "The polar coordinates of a point is (2, 12 ) (read: two comma pi over twelve). If the rectangular coordinates of the same point is (x, y), what is the value of x2 − y 2 (read: x squared minus y squared )? 1 √",
+  "question": "The polar coordinates of a point is $(2, \\tfrac{\\pi}{12})$. If the rectangular coordinates of the same point is $(x, y)$, what is the value of $x^2 - y^2$?",
   "choices": {
-   "W": "√",
-   "X": "3",
-   "Y": "2√",
-   "Z": "2 3"
+   "W": "$\\dfrac{1}{\\sqrt{3}}$",
+   "X": "$\\sqrt{3}$",
+   "Y": "$\\dfrac{2}{\\sqrt{3}}$",
+   "Z": "$2\\sqrt{3}$"
   },
-  "answer": "Z) 2 3",
+  "answer": "Z) $2\\sqrt{3}$",
   "visual": false
  },
  {
@@ -648,7 +648,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "An integer x has a remainder of three when divided by 5, two when divided by 4, and one when divided by 3. What is the minimum value of x?",
+  "question": "An integer $x$ has a remainder of three when divided by 5, two when divided by 4, and one when divided by 3. What is the minimum value of $x$?",
   "choices": {},
   "answer": "58",
   "visual": false
@@ -660,9 +660,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "A rectangle ABCD has sidelengths of 3 and 4. A point P inside the rectangle is chosen randomly such that P A is 3, P B is 4, and P C is 3. What is the length of P D? √",
+  "question": "A rectangle ABCD has sidelengths of 3 and 4. A point P inside the rectangle is chosen randomly such that P A is 3, P B is 4, and P C is 3. What is the length of P D?",
   "choices": {},
-  "answer": "2",
+  "answer": "$\\sqrt{2}$",
   "visual": false
  },
  {
@@ -730,7 +730,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "What is the remainder when 11! (read: eleven factorial ) is divided by 13?",
+  "question": "What is the remainder when $11!$ is divided by 13?",
   "choices": {},
   "answer": "1",
   "visual": false
@@ -783,7 +783,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "To the nearest whole number, what is the sum of the base- ten logarithm of each of the first seven positive integers?",
+  "question": "To the nearest whole number, what is the sum of the base-ten logarithm of each of the first seven positive integers?",
   "choices": {},
   "answer": "4",
   "visual": false
@@ -797,7 +797,7 @@
   "qtype": "sa",
   "question": "A weighted die has the weird property that rolling a two has half the probability of rolling a one, a three has a third of a one, a four has a fourth of a one, and so on. What is the probability that a 1 or 6 is rolled?",
   "choices": {},
-  "answer": "10/21",
+  "answer": "$\\tfrac{10}{21}$",
   "visual": false
  },
  {
@@ -841,9 +841,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Two of the legs of a right triangle are sin x and cos x for some value of x. What is the largest possible area of the triangle?",
+  "question": "Two of the legs of a right triangle are $\\sin x$ and $\\cos x$ for some value of x. What is the largest possible area of the triangle?",
   "choices": {},
-  "answer": "1/4",
+  "answer": "$\\tfrac{1}{4}$",
   "visual": false
  },
  {
@@ -930,7 +930,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "What value does the fraction with numerator x3 − 27 (read: x cubed minus 27 ) and denominator x − 3 (read: x minus 3 ) approach as x approaches 3?",
+  "question": "What value does the fraction $\\frac{x^3 - 27}{x - 3}$ approach as x approaches 3?",
   "choices": {
    "W": "9",
    "X": "18",
@@ -1147,14 +1147,14 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "A sphere’s radius is decreased from 16 units to 8 units. By how many square units is the surface area reduced?",
+  "question": "A sphere's radius is decreased from 16 units to 8 units. By how many square units is the surface area reduced?",
   "choices": {
-   "W": "192π",
-   "X": "384π",
-   "Y": "768π",
-   "Z": "1536π"
+   "W": "$192\\pi$",
+   "X": "$384\\pi$",
+   "Y": "$768\\pi$",
+   "Z": "$1536\\pi$"
   },
-  "answer": "Y) 768π",
+  "answer": "Y) $768\\pi$",
   "visual": false
  },
  {
@@ -1166,7 +1166,7 @@
   "qtype": "sa",
   "question": "What is the area of a truncated cone with a base radius of 3, top radius of 1, and height of 3?",
   "choices": {},
-  "answer": "13π",
+  "answer": "$13\\pi$",
   "visual": false
  },
  {
@@ -1292,9 +1292,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "A regular polygon with N sides has a side length of N1 . As N approaches infinity, the area of the polygon approaches what value? 1",
+  "question": "A regular polygon with N sides has a side length of $\\tfrac{1}{N}$. As N approaches infinity, the area of the polygon approaches what value?",
   "choices": {},
-  "answer": "4π",
+  "answer": "$\\frac{1}{4\\pi}$",
   "visual": false
  },
  {
@@ -1304,9 +1304,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Alice, Bob, Charlie, and David are all playing a basketball tournament such that they are randomly paired up and the winners of each pair best out of 1 for the title. When Alice plays Bob, she has a chance of 1/3 of winning. When Alice plays Charlie or David, she has a 2/3 chance of winning. When Bob plays Charlie or David, he has a 3/4 chance of winning. What is the probability that Alice wins the tournament?",
+  "question": "Alice, Bob, Charlie, and David are all playing a basketball tournament such that they are randomly paired up and the winners of each pair best out of 1 for the title. When Alice plays Bob, she has a chance of $\\tfrac{1}{3}$ of winning. When Alice plays Charlie or David, she has a $\\tfrac{2}{3}$ chance of winning. When Bob plays Charlie or David, he has a $\\tfrac{3}{4}$ chance of winning. What is the probability that Alice wins the tournament?",
   "choices": {},
-  "answer": "7/27",
+  "answer": "$\\tfrac{7}{27}$",
   "visual": false
  },
  {
@@ -1333,7 +1333,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Identify all of the following three operations acting on a three-dimensional vector that can be written in terms of matrix multiplication on that vector: 1) The dot product of the vector with (1, 1, 1) (read: one comma one comma one) 2) The cross product of the vector with (1, 1, 1) (read: one comma one comma one) 3) Squaring each term of the vector",
+  "question": "Identify all of the following three operations acting on a three-dimensional vector that can be written in terms of matrix multiplication on that vector: 1) The dot product of the vector with $(1, 1, 1)$ 2) The cross product of the vector with $(1, 1, 1)$ 3) Squaring each term of the vector",
   "choices": {},
   "answer": "1 and 2",
   "visual": false
@@ -1456,9 +1456,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "The distribution of the heights of men can be modeled as a normal model with a variance of 3 while the distribution of heights of women can be modeled as a normal model with a variance of 4. What is the standard deviation of the normal model produced from the difference of the heights of men and women? √",
+  "question": "The distribution of the heights of men can be modeled as a normal model with a variance of 3 while the distribution of heights of women can be modeled as a normal model with a variance of 4. What is the standard deviation of the normal model produced from the difference of the heights of men and women?",
   "choices": {},
-  "answer": "7",
+  "answer": "$\\sqrt{7}$",
   "visual": false
  },
  {
@@ -1468,9 +1468,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The function f (n) takes positive integer values of n and outputs the sum of the fifth powers of the integers from 1 to n inclusive. When f (n) is written as a polynomial in n, what is the coefficient of its leading term?",
+  "question": "The function $f(n)$ takes positive integer values of $n$ and outputs the sum of the fifth powers of the integers from 1 to $n$ inclusive. When $f(n)$ is written as a polynomial in $n$, what is the coefficient of its leading term?",
   "choices": {},
-  "answer": "1/6",
+  "answer": "$\\tfrac{1}{6}$",
   "visual": false
  },
  {
@@ -1509,7 +1509,7 @@
   "category": "Chemistry",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following best explains why many lead (IV) (read: lead four ) compounds spontaneously decompose at room tempera- ture? the large activation energy. tend to not participate in bonding. structure.",
+  "question": "Which of the following best explains why many lead (IV) compounds spontaneously decompose at room tempera- ture? the large activation energy. tend to not participate in bonding. structure.",
   "choices": {
    "W": "Group 14 elements tend to only form compounds in +2 state.",
    "X": "Lead is a heavy metal, which tend to not form compounds of +4 state due to",
@@ -1540,12 +1540,12 @@
   "qtype": "mc",
   "question": "Three cats and three dogs sit down at seats around a round table uniformly at random. What is the probability that all three cats sit in consecutive seats?",
   "choices": {
-   "W": "1/5",
-   "X": "1/4",
-   "Y": "3/10",
-   "Z": "7/20"
+   "W": "$\\tfrac{1}{5}$",
+   "X": "$\\tfrac{1}{4}$",
+   "Y": "$\\tfrac{3}{10}$",
+   "Z": "$\\tfrac{7}{20}$"
   },
-  "answer": "Y) 3/10",
+  "answer": "Y) $\\tfrac{3}{10}$",
   "visual": false
  },
  {
@@ -1555,9 +1555,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "ABC is a triangle with AB = 6, BC = 8, and CA = 10. The angle bisector of angle B intersects the circumcircle of ABC at point D. What is the length of BD? √",
+  "question": "$ABC$ is a triangle with $AB = 6$, $BC = 8$, and $CA = 10$. The angle bisector of angle $B$ intersects the circumcircle of $ABC$ at point $D$. What is the length of $BD$?",
   "choices": {},
-  "answer": "7 2",
+  "answer": "$7\\sqrt{2}$",
   "visual": false
  },
  {
@@ -1567,7 +1567,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "What is the period of the function defined as f (x) = ⌈x/2⌉ − x/2 (read: f of x is equal to the ceiling of x/2 minus x/2 )?",
+  "question": "What is the period of the function defined as $f(x) = \\lceil x/2 \\rceil - x/2$?",
   "choices": {},
   "answer": "2",
   "visual": false
@@ -1690,7 +1690,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The parabola y = x2 +9x (read: y equals x squared plus nine x ) intersects the line y = 36 at two points. What is the sum of the x-coordinates of those two points?",
+  "question": "The parabola $y = x^2 + 9x$ intersects the line $y = 36$ at two points. What is the sum of the x-coordinates of those two points?",
   "choices": {},
   "answer": "−9",
   "visual": false
@@ -1731,7 +1731,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "The base-3 representation of a number is 100210 (read: one-zero-zero-two-one-zero). When written in base-9, what is its final digit?",
+  "question": "The base-3 representation of a number is 100210. When written in base-9, what is its final digit?",
   "choices": {
    "W": "0",
    "X": "1",
@@ -1987,9 +1987,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "The roots of the function f (x) are −2, 3, and 4. What are the real roots of the function f (x2 ) (read: f of the quantity x squared )? √ √",
+  "question": "The roots of the function $f(x)$ are $-2$, $3$, and $4$. What are the real roots of the function $f(x^2)$?",
   "choices": {},
-  "answer": "−2, − 3, 3, 2",
+  "answer": "$-2, -\\sqrt{3}, \\sqrt{3}, 2$",
   "visual": false
  },
  {
@@ -2124,7 +2124,7 @@
   "qtype": "sa",
   "question": "Two fair six-sided dice are rolled. What is the probability that the smallest number rolled is a 5?",
   "choices": {},
-  "answer": "1/12",
+  "answer": "$\\tfrac{1}{12}$",
   "visual": false
  },
  {
@@ -2175,10 +2175,10 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "What is the value of 10log100 49 (read: ten raised to the power of log base 100 of 49 )?",
+  "question": "What is the value of $10^{\\log_{100} 49}$?",
   "choices": {
-   "W": "1/7",
-   "X": "1/2",
+   "W": "$\\tfrac{1}{7}$",
+   "X": "$\\tfrac{1}{2}$",
    "Y": "2",
    "Z": "7"
   },
@@ -2228,7 +2228,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "When the number 30! (read: thirty factorial ) is written in base-3, how many zeroes are at the end of its representation?",
+  "question": "When the number $30!$ is written in base-3, how many zeroes are at the end of its representation?",
   "choices": {},
   "answer": "14",
   "visual": false
@@ -2240,9 +2240,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Two numbers x and y are chosen uniformly at random between 0 and 1. What is the probability that x is greater than y 2 (read: y squared )?",
+  "question": "Two numbers x and y are chosen uniformly at random between 0 and 1. What is the probability that x is greater than $y^2$?",
   "choices": {},
-  "answer": "23",
+  "answer": "$\\tfrac{2}{3}$",
   "visual": false
  },
  {
@@ -2351,7 +2351,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the smallest three-digit prime number that evenly divides 1,000,343 (read: one million three hundred forty three)?",
+  "question": "What is the smallest three-digit prime number that evenly divides 1,000,343?",
   "choices": {},
   "answer": "107",
   "visual": false
@@ -2496,7 +2496,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Identify all of the following three reactions whose chemical driving force is enthalpy under standard conditions: 1) Cl2 + H2 −−→ 2 HCl (read: C-L-two plus H-two yields two H-C-L) 2) N2 + 3 H2 −−→ 2 NH3 (read: N-two plus three H-two yields two N-H-three) 3) O2 −−→ 2 O (read: O-two yields two O)",
+  "question": "Identify all of the following three reactions whose chemical driving force is enthalpy under standard conditions: 1) Cl$_2$ + H$_2$ $\\rightarrow$ 2 HCl; 2) N$_2$ + 3 H$_2$ $\\rightarrow$ 2 NH$_3$; 3) O$_2$ $\\rightarrow$ 2 O",
   "choices": {},
   "answer": "1 and 2",
   "visual": false
@@ -2508,12 +2508,12 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "x and y satisfy the equation log12 (x+y)+log12 (x−y) = 2 (read: log base 12 of open parentheses x plus y close parentheses plus log base 12 of open parentheses x minus y close parentheses equals 2 ). Given that y = 5, what is the value of x? √",
+  "question": "$x$ and $y$ satisfy the equation $\\log_{12}(x+y) + \\log_{12}(x-y) = 2$. Given that $y = 5$, what is the value of $x$?",
   "choices": {
-   "W": "119",
+   "W": "$\\sqrt{119}$",
    "X": "13",
-   "Y": "√14",
-   "Z": "197"
+   "Y": "$\\sqrt{14}$",
+   "Z": "$\\sqrt{197}$"
   },
   "answer": "X) 13",
   "visual": false
@@ -2525,9 +2525,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the equation of the unique cubic polynomial f (x) (read: f of x ) with a leading coefficient of 1, a real root 2, and a complex root 1 + 3i (read: one plus three i)?",
+  "question": "What is the equation of the unique cubic polynomial $f(x)$ with a leading coefficient of 1, a real root 2, and a complex root $1 + 3i$?",
   "choices": {},
-  "answer": "x3 − 4x2 + 14x − 20 (read: x cubed minus four x squared plus fourteen x minus twenty)",
+  "answer": "$x^3 - 4x^2 + 14x - 20$",
   "visual": false
  },
  {
@@ -2607,7 +2607,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "Which of the following best describes how aqua regia dissolves gold? gold (I) (read: gold one) cation gold (III) cation gold (I) cation gold (III) cation",
+  "question": "Which of the following best describes how aqua regia dissolves gold? gold (I) cation gold (III) cation gold (I) cation gold (III) cation",
   "choices": {
    "W": "Hydrochloric acid oxidizes gold and nitric acid stabilizes it by complexing the",
    "X": "Hydrochloric acid oxidizes gold and nitric acid stabilizes it by complexing the",
@@ -2653,7 +2653,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "What is the smallest positive integer that is equivalent to 1/9 (read: one over nine) mod 13?",
+  "question": "What is the smallest positive integer that is equivalent to $\\frac{1}{9}$ mod 13?",
   "choices": {},
   "answer": "3",
   "visual": false
@@ -2665,7 +2665,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "The product of all prime numbers less than 100 is P . What is the remainder when P is divided by 60?",
+  "question": "The product of all prime numbers less than 100 is $P$. What is the remainder when $P$ is divided by 60?",
   "choices": {
    "W": "20",
    "X": "30",
@@ -2773,7 +2773,7 @@
   "qtype": "mc",
   "question": "Which of the following is true about the lagging strand in DNA replication? discontinuous",
   "choices": {
-   "W": "It is synthesized in a 5’ (read: 5 prime) to 3’ (read: 3 prime) direction and is",
+   "W": "It is synthesized in a 5’ to 3’ direction and is",
    "X": "It is synthesized in a 5’ to 3’ direction and is continuous",
    "Y": "It is synthesized in a 3’ to 5’ direction and is discontinuous",
    "Z": "It is synthesized in a 5’ to 3’ direction and is discontinuous"
@@ -2800,7 +2800,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The largest real root to the quadratic equation x√ − 20x = 2023 (read: x squared minus twenty x equals 2023 ) can be written as a + b (read: a plus the square root of b) for positive integers a and b. What is the value of a + b (read: a plus b)?",
+  "question": "The largest real root to the quadratic equation $x^2 - 20x = 2023$ can be written as $a + \\sqrt{b}$ for positive integers $a$ and $b$. What is the value of $a + b$?",
   "choices": {},
   "answer": "2133",
   "visual": false
@@ -2841,7 +2841,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following is always true of matrix multipli- cation?",
+  "question": "Which of the following is always true of matrix multiplication?",
   "choices": {
    "W": "Commutative and associative",
    "X": "Commutative but not associative",
@@ -2913,7 +2913,7 @@
   "qtype": "sa",
   "question": "Maisy chooses 2 different integers without replacement from 1 through 20 inclusive at random. What is the probability that both numbers are prime?",
   "choices": {},
-  "answer": "14/95",
+  "answer": "$\\tfrac{14}{95}$",
   "visual": false
  },
  {
@@ -3026,12 +3026,12 @@
   "qtype": "mc",
   "question": "A fair coin is flipped seven times. Which of the following is the probability it shows heads at least five of the seven times?",
   "choices": {
-   "W": "27/128",
-   "X": "7/32",
-   "Y": "29/128",
-   "Z": "15/64"
+   "W": "$\\tfrac{27}{128}$",
+   "X": "$\\tfrac{7}{32}$",
+   "Y": "$\\tfrac{29}{128}$",
+   "Z": "$\\tfrac{15}{64}$"
   },
-  "answer": "Y) 29/128",
+  "answer": "Y) $\\tfrac{29}{128}$",
   "visual": false
  },
  {
@@ -3116,7 +3116,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "What is the value of x4 + x14 (read: x to the fourth plus one over x to the fourth) given that x + x1 = 3 (read: x plus one over x equals three) ?",
+  "question": "What is the value of $x^4 + \\tfrac{1}{x^4}$ given that $x + \\tfrac{1}{x} = 3$?",
   "choices": {},
   "answer": "47",
   "visual": false
@@ -3128,7 +3128,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "A scientist is numerically computing the integral from 0 to 7 of 1+e5−x (read: the fraction with numerator 5 and denominator 1 plus the quantity e raised to the negative x ). Which of the following Riemann sums of the integral would give the smallest answer?",
+  "question": "A scientist is numerically computing $\\int_0^7 \\frac{5}{1+e^{-x}}\\,dx$. Which of the following Riemann sums of the integral would give the smallest answer?",
   "choices": {
    "W": "Left-handed Riemann sum",
    "X": "Right-handed Riemann sum",
@@ -3210,12 +3210,12 @@
   "qtype": "mc",
   "question": "Arjun randomly chooses a divisor of 80. What is the probability it is divisible by 2?",
   "choices": {
-   "W": "1/2",
-   "X": "3/5",
-   "Y": "4/5",
-   "Z": "9/10"
+   "W": "$\\tfrac{1}{2}$",
+   "X": "$\\tfrac{3}{5}$",
+   "Y": "$\\tfrac{4}{5}$",
+   "Z": "$\\tfrac{9}{10}$"
   },
-  "answer": "Y) 4/5",
+  "answer": "Y) $\\tfrac{4}{5}$",
   "visual": false
  },
  {
@@ -3254,7 +3254,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Given that iron is a group 8 transition metal, how many unpaired electrons are in the complex Fe(CN)4 2− (read: iron tetracyanide two minus)?",
+  "question": "Given that iron is a group 8 transition metal, how many unpaired electrons are in the complex $\\mathrm{Fe(CN)_4^{2-}}$?",
   "choices": {},
   "answer": "0",
   "visual": false
@@ -3266,7 +3266,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "A regular hexagon has vertices A, B, C, D, E, and F in that order. If the area of triangle ABC is 12, what is the area of hexagon ABCDEF ?",
+  "question": "A regular hexagon has vertices A, B, C, D, E, and F in that order. If the area of triangle ABC is 12, what is the area of hexagon ABCDEF?",
   "choices": {},
   "answer": "72",
   "visual": false
@@ -3278,9 +3278,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The point (2, 2) (read: two comma two) is rotated by 60 degrees counterclockwise around the origin. What are the coordinates of the resulting point? √ √",
+  "question": "The point $(2, 2)$ is rotated by 60 degrees counterclockwise around the origin. What are the coordinates of the resulting point?",
   "choices": {},
-  "answer": "(1 − 3, 1 + 3)",
+  "answer": "$(1 - \\sqrt{3},\\ 1 + \\sqrt{3})$",
   "visual": false
  },
  {
@@ -3384,9 +3384,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The vector (a, a2 , 2) (read: a comma a squared comma two) is orthogonal to the vector (a, a2 , −3) (read: a comma a squared comma negative three). What is the largest possible real value of a? √",
+  "question": "The vector $(a, a^2, 2)$ is orthogonal to the vector $(a, a^2, -3)$. What is the largest possible real value of $a$?",
   "choices": {},
-  "answer": "2",
+  "answer": "$\\sqrt{2}$",
   "visual": false
  },
  {
@@ -3396,7 +3396,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "For what value of a are the vectors aî + 2ĵ − 9k̂ (read: a i hat plus two j hat minus nine k hat) and 3î − 4k̂ (read: three i hat minus four k hat) orthogonal?",
+  "question": "For what value of a are the vectors $a\\hat{\\imath} + 2\\hat{\\jmath} - 9\\hat{k}$ and $3\\hat{\\imath} - 4\\hat{k}$ orthogonal?",
   "choices": {},
   "answer": "−12",
   "visual": false
@@ -3408,9 +3408,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the volume formed when the area between the function f (x) = x2 (read: f of x equals x squared ) and the x-axis from x = 0 to x = 4 is revolved about the y-axis?",
+  "question": "What is the volume formed when the area between the function $f(x) = x^2$ and the x-axis from $x = 0$ to $x = 4$ is revolved about the y-axis?",
   "choices": {},
-  "answer": "128π",
+  "answer": "$128\\pi$",
   "visual": false
  },
  {
@@ -3502,7 +3502,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "If the base ten logarithm of 2 is 0.301 and the base ten logarithm of 3 is 0.477, then which of the following whole numbers is closest to the base ten logarithm of 61000 (read: 6 raised to the power of 1000 )?",
+  "question": "If the base ten logarithm of 2 is 0.301 and the base ten logarithm of 3 is 0.477, then which of the following whole numbers is closest to the base ten logarithm of $6^{1000}$?",
   "choices": {
    "W": "770",
    "X": "780",
@@ -3580,11 +3580,11 @@
   "question": "Which of the following pairs of systems would have the same total entropy as a 2 liter box with 2 moles of gas?",
   "choices": {
    "W": "2 boxes of volume 1 liter, each with 1 mole of gas",
-   "X": "2 boxes of volume 1 liter, each with ln(2) (read: natural log of 2 ) moles of gas",
-   "Y": "2 boxes of volume ln(2), each with 1 mole of gas",
+   "X": "2 boxes of volume 1 liter, each with $\\ln(2)$ moles of gas",
+   "Y": "2 boxes of volume $\\ln(2)$, each with 1 mole of gas",
    "Z": "2 boxes of volume 1 liter, each with 2 moles of gas"
   },
-  "answer": "X) 2 boxes of volume 1 liter, each with ln(2) moles of gas",
+  "answer": "W) 2 boxes of volume 1 liter, each with 1 mole of gas",
   "visual": false
  },
  {
@@ -3606,9 +3606,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "In a particular sequence ai (read: a sub i ), every term is the sum of the previous two terms. Let a2 equal 5 and a6 equal 1. What is the value of a1 ?",
+  "question": "In a particular sequence $a_i$, every term is the sum of the previous two terms. Let $a_2$ equal 5 and $a_6$ equal 1. What is the value of $a_1$?",
   "choices": {},
-  "answer": "−8",
+  "answer": "$-8$",
   "visual": false
  },
  {
@@ -3729,7 +3729,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "What is the smallest positive integer that can be written in the form 2023x + 13y (read: two thousand twenty three x plus thirteen y) where x and y are integers?",
+  "question": "What is the smallest positive integer that can be written in the form $2023x + 13y$ where $x$ and $y$ are integers?",
   "choices": {
    "W": "1",
    "X": "2",
@@ -3746,7 +3746,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The base-6 representation of a number ends in 120 (read: one two zero). In base-10, what is the largest number which it must be a multiple of?",
+  "question": "The base-6 representation of a number ends in 120. In base-10, what is the largest number which it must be a multiple of?",
   "choices": {},
   "answer": "24",
   "visual": false
@@ -3816,9 +3816,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "What is the maximum value over real values of x for the expression esin (x)+cos (x) (read: e raised to the power of the quantity sine x plus cosine x )? √",
+  "question": "What is the maximum value over real values of x for the expression $e^{\\sin(x)+\\cos(x)}$?",
   "choices": {},
-  "answer": "e 2",
+  "answer": "$e^{\\sqrt{2}}$",
   "visual": false
  },
  {
@@ -3961,7 +3961,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Euler’s (oiler’s) totient function counts the number of positive integers up to a given integer N that are relatively prime to N . Which of the following is the largest value that the Euler’s totient function attains over the first one hundred positive integers?",
+  "question": "Euler’s (oiler’s) totient function counts the number of positive integers up to a given integer $N$ that are relatively prime to $N$. Which of the following is the largest value that the Euler’s totient function attains over the first one hundred positive integers?",
   "choices": {
    "W": "95",
    "X": "96",
@@ -3978,9 +3978,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "In slope-intercept form, what is the equation for the line perpendicular to the curve of y = x2 (read: y equals x squared ) at the point (2, 4) (read: two comma four )?",
+  "question": "In slope-intercept form, what is the equation for the line perpendicular to the curve of $y = x^2$ at the point $(2, 4)$?",
   "choices": {},
-  "answer": "y = − 41 x + 29 (read: y equals negative one fourth x plus nine halves)",
+  "answer": "$y = -\\tfrac{1}{4}x + \\tfrac{9}{2}$",
   "visual": false
  },
  {
@@ -3990,7 +3990,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "What is the coefficient of x2 y 2 (read: x squared y squared ) in the expansion of (x + 3y)4 (read: the quantity x plus three y all to the fourth power )?",
+  "question": "What is the coefficient of $x^2 y^2$ in the expansion of $(x + 3y)^4$?",
   "choices": {
    "W": "6",
    "X": "18",
@@ -4007,7 +4007,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "When the base 16 number 3333316 is written in base 2, how many base 2 digits does it have?",
+  "question": "When the base 16 number $33333_{16}$ is written in base 2, how many base 2 digits does it have?",
   "choices": {},
   "answer": "18",
   "visual": false
@@ -4144,7 +4144,7 @@
   "qtype": "sa",
   "question": "Triangle ABC is constructed such that side AB has length 13, side BC has length 14, and side AC has length 15. What is the tangent of angle C?",
   "choices": {},
-  "answer": "34",
+  "answer": "$\\tfrac{4}{3}$",
   "visual": false
  },
  {
@@ -4168,7 +4168,7 @@
   "qtype": "sa",
   "question": "Let S be the set of the first five positive integers. Let P be the power set of S. To the nearest power of 10, how many subsets of P are there?",
   "choices": {},
-  "answer": "109",
+  "answer": "$10^9$",
   "visual": false
  },
  {
@@ -4316,9 +4316,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What are the coordinates of the point on the line y = 2x−3 (read: y equals two x minus three) that is closest to the origin?",
+  "question": "What are the coordinates of the point on the line $y = 2x - 3$ that is closest to the origin?",
   "choices": {},
-  "answer": "( 65 , − 35 ) (read: six over five comma negative three over five)",
+  "answer": "$\\left(\\tfrac{6}{5}, -\\tfrac{3}{5}\\right)$",
   "visual": false
  },
  {
@@ -4386,7 +4386,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Katelyn makes the following remark: \"if A = 10, then I like chemistry.\" Which of the following sets of conditions, if met, makes Katelyn’s remark false?",
+  "question": "Katelyn makes the following remark: \"if $A = 10$, then I like chemistry.\" Which of the following sets of conditions, if met, makes Katelyn’s remark false?",
   "choices": {
    "W": "A does not equal 10 and Katelyn likes chemistry",
    "X": "A equals 10 and Katelyn does not like chemistry",
@@ -4504,12 +4504,12 @@
   "qtype": "mc",
   "question": "Three letters are picked at random without replacement from a scrabble bag containing two Ms, two Is, and two Ts. What is the probability the letters to form MIT are drawn in order?",
   "choices": {
-   "W": "1/27",
-   "X": "1/15",
-   "Y": "1/9",
-   "Z": "1/6"
+   "W": "$\\tfrac{1}{27}$",
+   "X": "$\\tfrac{1}{15}$",
+   "Y": "$\\tfrac{1}{9}$",
+   "Z": "$\\tfrac{1}{6}$"
   },
-  "answer": "X) 1/15",
+  "answer": "X) $\\tfrac{1}{15}$",
   "visual": false
  },
  {
@@ -4661,7 +4661,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Alice runs 1m/s (read: one meter per second ) faster than Bob. In a 2000 meter race, Alice finishes the race just as Bob starts his fifth lap of the 400 meter track. How many seconds did Alice take to finish the race? Assume Alice and Bob run at constant speeds.",
+  "question": "Alice runs 1 m/s faster than Bob. In a 2000 meter race, Alice finishes the race just as Bob starts his fifth lap of the 400 meter track. How many seconds did Alice take to finish the race? Assume Alice and Bob run at constant speeds.",
   "choices": {},
   "answer": "400 (ACCEPT: 400s, 6min 40s)",
   "visual": false
@@ -4818,7 +4818,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "If f ′ (x) = |2x − 4| (read: f prime of x equals the absolute value of open parentheses 2 x minus 4 close parentheses), then what is the value of f (3) − f (−3) (read: f of 3 minus f of negative 3 )?",
+  "question": "If $f'(x) = |2x - 4|$, then what is the value of $f(3) - f(-3)$?",
   "choices": {},
   "answer": "26",
   "visual": false
@@ -4900,14 +4900,14 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "Points A and B are distance 6 apart. The locus of points P such that the sum of distances PA and PB is 10 traces a shape. What is the area of this shape?",
+  "question": "Points $A$ and $B$ are distance 6 apart. The locus of points $P$ such that the sum of distances $PA$ and $PB$ is 10 traces a shape. What is the area of this shape?",
   "choices": {
-   "W": "5π",
-   "X": "10π",
-   "Y": "15π",
-   "Z": "20π"
+   "W": "$5\\pi$",
+   "X": "$10\\pi$",
+   "Y": "$15\\pi$",
+   "Z": "$20\\pi$"
   },
-  "answer": "Z) 20π",
+  "answer": "Z) $20\\pi$",
   "visual": false
  },
  {
@@ -4958,7 +4958,7 @@
   "category": "Biology",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Identify all of the following three types of coated vesi- cles involved in transport away from the Golgi apparatus: 1) Clathrin-coated 2) COP I (read: COP one) 3) COP II (read: COP two)",
+  "question": "Identify all of the following three types of coated vesi- cles involved in transport away from the Golgi apparatus: 1) Clathrin-coated 2) COP I 3) COP II",
   "choices": {},
   "answer": "1 and 2",
   "visual": false
@@ -4970,7 +4970,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "In base 7, the five digit number 2024x (read: two zero two four x ) is a multiple of 8. What is the value of the digit x?",
+  "question": "In base 7, the five digit number $\\overline{2024x}$ is a multiple of 8. What is the value of the digit $x$?",
   "choices": {},
   "answer": "0",
   "visual": false
@@ -4982,7 +4982,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "If n is a positive integer, which of the following cannot be a possible value of the totient of n?",
+  "question": "If $n$ is a positive integer, which of the following cannot be a possible value of the totient of $n$?",
   "choices": {
    "W": "42",
    "X": "46",
@@ -5047,7 +5047,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "How many real values of x satisfy cos(sin x) = 0 (read: the cosine of the sine of x equals zero)?",
+  "question": "How many real values of x satisfy $\\cos(\\sin x) = 0$?",
   "choices": {
    "W": "0",
    "X": "1",
@@ -5064,7 +5064,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Polynomial x3 + 4x + 1 (read: x cubed plus 4 x plus 1 ) has 3 roots a, b, c. When two is subtracted from each root, what is the product of these 3 resulting numbers?",
+  "question": "Polynomial $x^3 + 4x + 1$ has 3 roots a, b, c. When two is subtracted from each root, what is the product of these 3 resulting numbers?",
   "choices": {},
   "answer": "−17",
   "visual": false
@@ -5117,7 +5117,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "A parametric curve defined by x = t2 − 4 and y = t3 − 5t + 4 crosses itself. Compute the ordered pair (x, y) where this crossing occurs.",
+  "question": "A parametric curve defined by $x = t^2 - 4$ and $y = t^3 - 5t + 4$ crosses itself. Compute the ordered pair (x, y) where this crossing occurs.",
   "choices": {},
   "answer": "(1, 4)",
   "visual": false
@@ -5264,7 +5264,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Let f (n) (read: f of n) denote the sum of the reciprocals of the factors of n. For which value of n does f (n) = 2?",
+  "question": "Let $f(n)$ denote the sum of the reciprocals of the factors of $n$. For which value of $n$ does $f(n) = 2$?",
   "choices": {
    "W": "24",
    "X": "26",
@@ -5334,7 +5334,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Find the population standard deviation of the roots of the polynomial x3 − 24x + 5 (read: x cubed minus twenty-four x plus five).",
+  "question": "Find the population standard deviation of the roots of the polynomial $x^3 - 24x + 5$.",
   "choices": {},
   "answer": "4",
   "visual": false
@@ -5357,7 +5357,7 @@
   "visual": false
  },
  {
-  "id": "2024-r12-t5",
+  "id": "2024-r12-t5x2",
   "year": 2024,
   "round": 12,
   "category": "Chemistry",
@@ -5415,7 +5415,7 @@
   "visual": false
  },
  {
-  "id": "2024-r12-t8",
+  "id": "2024-r12-t8x2",
   "year": 2024,
   "round": 12,
   "category": "Chemistry",
@@ -5433,7 +5433,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Identify all of the following three identities involving vector products which are true for all vectors a and b: 1) a · a = 0 (read: a dot a equals zero) 2) a × a = 0 (read: a cross a equals the zero vector ) 3) a · (a × b) = 0 (read: a dot the quantity a cross b equals 0 )",
+  "question": "Identify all of the following three identities involving vector products which are true for all vectors $\\vec{a}$ and $\\vec{b}$: 1) $\\vec{a} \\cdot \\vec{a} = 0$ 2) $\\vec{a} \\times \\vec{a} = \\vec{0}$ 3) $\\vec{a} \\cdot (\\vec{a} \\times \\vec{b}) = 0$",
   "choices": {},
   "answer": "2 and 3",
   "visual": false
@@ -5447,7 +5447,7 @@
   "qtype": "sa",
   "question": "Tim has 2 blue balls and 4 red balls. He divides the balls into two groups of 3 at random, then finds the positive difference between the number of red balls in each group. What is the expected value of this difference?",
   "choices": {},
-  "answer": "45 (ACCEPT: 0.8, 80%)",
+  "answer": "$\\frac{4}{5}$",
   "visual": false
  },
  {
@@ -5491,7 +5491,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Penelope chooses a real number l. She draws the points (0, 0) (read: zero comma zero), (1, 0), and (l, 1) in the Cartesian plane. As l increases from negative infinity to infinity, which of the following describes the inradius of the triangle?",
+  "question": "Penelope chooses a real number l. She draws the points (0, 0), (1, 0), and (l, 1) in the Cartesian plane. As l increases from negative infinity to infinity, which of the following describes the inradius of the triangle?",
   "choices": {
    "W": "Decreases monotonically",
    "X": "Increases monotonically",
@@ -5508,7 +5508,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Identify all of the following three sets that have a conver- gent sum: 1) The reciprocals of every positive integer that ends in the digit 9 2) The reciprocals of every positive integer that does not contain the digit 9 3) The reciprocals of every positive integer that begins in the digit 9",
+  "question": "Identify all of the following three sets that have a convergent sum: 1) The reciprocals of every positive integer that ends in the digit 9 2) The reciprocals of every positive integer that does not contain the digit 9 3) The reciprocals of every positive integer that begins in the digit 9",
   "choices": {},
   "answer": "2 only",
   "visual": false
@@ -5526,7 +5526,7 @@
   "visual": false
  },
  {
-  "id": "2024-r12-t15",
+  "id": "2024-r12-t15x2",
   "year": 2024,
   "round": 12,
   "category": "Biology",
@@ -5613,7 +5613,7 @@
   "visual": false
  },
  {
-  "id": "2024-r12-t21",
+  "id": "2024-r12-t21x2",
   "year": 2024,
   "round": 12,
   "category": "Biology",
@@ -5631,22 +5631,10 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "What is the ratio of the sum of all the odd divisors of 48 to the sum of all the even divisors of 48? 1",
+  "question": "What is the ratio of the sum of all the odd divisors of 48 to the sum of all the even divisors of 48?",
   "choices": {},
-  "answer": "30",
+  "answer": "$\\tfrac{1}{30}$",
   "visual": false
- },
- {
-  "id": "2024-r12-t22",
-  "year": 2024,
-  "round": 12,
-  "category": "Math",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. The image shown is a repre- sentation of the Lorenz Attractor. Answer the following two questions: 1) What is the general type of system this attractor falls under, characterized by strong sensi- tivity to initial conditions 2) What is the term for the space in which the attractor is represented in the graph?",
-  "choices": {},
-  "answer": "1) Chaotic; 2) Phase space",
-  "visual": true
  },
  {
   "id": "2024-r13-t1",
@@ -5660,7 +5648,7 @@
    "W": "5000",
    "X": "100,000",
    "Y": "5,000,000",
-   "Z": "101000 (read: ten to the thousandth power )"
+   "Z": "$10^{1000}$"
   },
   "answer": "Y) 5,000,000",
   "visual": false
@@ -5700,18 +5688,6 @@
   "visual": false
  },
  {
-  "id": "2024-r13-t2",
-  "year": 2024,
-  "round": 13,
-  "category": "Biology",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. Shown is an image of an MRI scan. Answer the following two questions about this image: 1) Arrow A highlights a loss in signal in the left side of what brain structure, which resulted in having the acute onset of right-sided weakness and right hemisensory loss as well as partial memory impairment? 2) Arrow B points to the accumulation of blood within a structure of the limbic system responsible for consolidation of short term memories. What is this structure?",
-  "choices": {},
-  "answer": "1) Thalamus; 2) Hippocampus",
-  "visual": true
- },
- {
   "id": "2024-r13-t5",
   "year": 2024,
   "round": 13,
@@ -5729,7 +5705,7 @@
   "visual": false
  },
  {
-  "id": "2024-r13-t5",
+  "id": "2024-r13-t5x2",
   "year": 2024,
   "round": 13,
   "category": "Chemistry",
@@ -5782,7 +5758,7 @@
   "visual": false
  },
  {
-  "id": "2024-r13-t9",
+  "id": "2024-r13-t9x2",
   "year": 2024,
   "round": 13,
   "category": "Chemistry",
@@ -5802,12 +5778,12 @@
   "qtype": "mc",
   "question": "Ricky shuffles a deck of 52 cards and starts drawing cards from the top. How many kings would he expect to draw before he draws his first ace?",
   "choices": {
-   "W": "3/5",
-   "X": "3/4",
-   "Y": "4/5",
+   "W": "$\\tfrac{3}{5}$",
+   "X": "$\\tfrac{3}{4}$",
+   "Y": "$\\tfrac{4}{5}$",
    "Z": "1"
   },
-  "answer": "Y) 4/5",
+  "answer": "Y) $\\tfrac{4}{5}$",
   "visual": false
  },
  {
@@ -5817,7 +5793,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Evie scored a 90 on her calculus final, which is one standard deviation above the class mean of 80. The final is broken into two equally weighted parts A and B so that the sum of the scores on both parts is the final score. If her score on Part A had a z-score of 1 and her score on Part B a z-score of 1/2, what is the standard deviation of the class’s scores on Part B, assuming both parts to be normally distributed?",
+  "question": "Evie scored a 90 on her calculus final, which is one standard deviation above the class mean of 80. The final is broken into two equally weighted parts A and B so that the sum of the scores on both parts is the final score. If her score on Part A had a z-score of 1 and her score on Part B a z-score of $\\tfrac{1}{2}$, what is the standard deviation of the class’s scores on Part B, assuming both parts to be normally distributed?",
   "choices": {},
   "answer": "8",
   "visual": false
@@ -5840,7 +5816,7 @@
   "visual": false
  },
  {
-  "id": "2024-r13-t15",
+  "id": "2024-r13-t15x2",
   "year": 2024,
   "round": 13,
   "category": "Biology",
@@ -5887,7 +5863,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "An algorithm with one positive integer input n has runtime O(n2 ) (read: O n squared ) in big O notation. Identify all of the following three statements that could be true. 1) The runtime decreases as n increases when n is less than a hundred 2) The runtime goes to a constant as n goes to infinity 3) Whenever n increases by 1, the runtime doubles",
+  "question": "An algorithm with one positive integer input n has runtime $O(n^2)$ in big O notation. Identify all of the following three statements that could be true. 1) The runtime decreases as n increases when n is less than a hundred 2) The runtime goes to a constant as n goes to infinity 3) Whenever n increases by 1, the runtime doubles",
   "choices": {},
   "answer": "1 and 2",
   "visual": false
@@ -5901,20 +5877,8 @@
   "qtype": "sa",
   "question": "In acute triangle ABC with orthocenter H and circumcenter O, angle HAC is 30 degrees. What is the measure of angle OAB?",
   "choices": {},
-  "answer": "30",
+  "answer": "$30^\\circ$",
   "visual": false
- },
- {
-  "id": "2024-r13-t21",
-  "year": 2024,
-  "round": 13,
-  "category": "Math",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. The diagram depicts a fractal- like object composed of infinitely many rectangles such that the largest rectangle has a width of 1 unit and height of 0.5 units. Each rectangle has half the width and half the height of the previous rectangle, and every rectangle has an edge on the right side of the figure. Answer the following two questions regarding this fractal: 1) What is the perimeter of the figure? 2) What is the area of the figure?",
-  "choices": {},
-  "answer": "1) 5, 2) 2/3",
-  "visual": true
  },
  {
   "id": "2024-r13-t22",
@@ -5987,7 +5951,7 @@
   "visual": false
  },
  {
-  "id": "2024-r14-t3",
+  "id": "2024-r14-t3x2",
   "year": 2024,
   "round": 14,
   "category": "Chemistry",
@@ -6007,7 +5971,7 @@
   "qtype": "sa",
   "question": "Four real numbers are chosen at random uniformly and independently in the interval from 0 to 1. Given that the first number is larger than the second and third number, what is the probability that the first number is larger than the fourth number as well?",
   "choices": {},
-  "answer": "43",
+  "answer": "$\\tfrac{3}{4}$",
   "visual": false
  },
  {
@@ -6059,7 +6023,7 @@
   "visual": false
  },
  {
-  "id": "2024-r14-t8",
+  "id": "2024-r14-t8x2",
   "year": 2024,
   "round": 14,
   "category": "Chemistry",
@@ -6088,7 +6052,7 @@
   "visual": false
  },
  {
-  "id": "2024-r14-t11",
+  "id": "2024-r14-t11x2",
   "year": 2024,
   "round": 14,
   "category": "Biology",
@@ -6106,7 +6070,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Vectors A and B have magnitudes 8 and 15, respectively. If A · B = −72 (read: A dot B is negative seventy-two), what is the magnitude of A × B (read: A cross B )?",
+  "question": "Vectors $\\vec{A}$ and $\\vec{B}$ have magnitudes 8 and 15, respectively. If $\\vec{A} \\cdot \\vec{B} = -72$, what is the magnitude of $\\vec{A} \\times \\vec{B}$?",
   "choices": {},
   "answer": "96",
   "visual": false
@@ -6118,7 +6082,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the sum of all possible values for x among the integer solutions to the equation xy − x − y = 22024 − 1?",
+  "question": "What is the sum of all possible values for $x$ among the integer solutions to the equation $xy - x - y = 2^{2024} - 1$?",
   "choices": {},
   "answer": "4050",
   "visual": false
@@ -6171,7 +6135,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "Alex is estimating the complex-valued function f (z) = ez − z − 1. In which of the quadrants of the complex plane does f (0.01 + 0.02i) (read: f of the quantity 0.01 + 0.02 i ) lie?",
+  "question": "Alex is estimating the complex-valued function $f(z) = e^z - z - 1$. In which of the quadrants of the complex plane does $f(0.01 + 0.02i)$ lie?",
   "choices": {
    "W": "Quadrant 1",
    "X": "Quadrant 2",
@@ -6217,22 +6181,10 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Expressed as a simplified fraction and in terms of π (read: 2 2 pregion x + y ≤ 4 (read: x squared plus y squared pi ), find the area integral over the 2 2 is less than or equal to four ) of 4 − x − y (read: the square root of the quantity four minus x squared minus y squared ).",
+  "question": "Expressed as a simplified fraction and in terms of $\\pi$, find the area integral over the region $x^2 + y^2 \\le 4$ of $\\sqrt{4 - x^2 - y^2}$.",
   "choices": {},
-  "answer": "16π/3 (read: sixteen pi over three)",
+  "answer": "$\\tfrac{16\\pi}{3}$",
   "visual": false
- },
- {
-  "id": "2024-r14-t19",
-  "year": 2024,
-  "round": 14,
-  "category": "Math",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. In right triangle ABC, X and Y are the perpendicular feet of B and C to median AM, respectively. If XY = 14 and BC = 50, then what is AC?",
-  "choices": {},
-  "answer": "40",
-  "visual": true
  },
  {
   "id": "2024-r14-t21",
@@ -6325,7 +6277,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Rank the following three fractions from least to greatest: 1) 110/111, 2) 222/223, 3) 331/334",
+  "question": "Rank the following three fractions from least to greatest: 1) $\\tfrac{110}{111}$, 2) $\\tfrac{222}{223}$, 3) $\\tfrac{331}{334}$",
   "choices": {},
   "answer": "1, 3, 2",
   "visual": false
@@ -6434,7 +6386,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Given that the six numbers (read slowly) 2, 0, 2, 4, a, and b have an average of 15, what is the average of a and b?",
+  "question": "Given that the six numbers (read slowly) 2, 0, 2, 4, $a$, and $b$ have an average of 15, what is the average of $a$ and $b$?",
   "choices": {},
   "answer": "41",
   "visual": false
@@ -6458,7 +6410,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Find the value of x such that logx (8) = log27 (3) (read: log base x of eight is equal to log base twenty seven of three).",
+  "question": "Find the value of x such that $\\log_x(8) = \\log_{27}(3)$.",
   "choices": {},
   "answer": "512",
   "visual": false
@@ -6470,7 +6422,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Elle chooses real numbers x and y such that y + ⌊x⌋ = 5.4 (read: y plus the floor of x equals five point four ) and x + ⌊y⌋ = 5.7 (read: x plus the floor of y equals five point seven). Find the sum of x and y.",
+  "question": "Elle chooses real numbers $x$ and $y$ such that $y + \\lfloor x \\rfloor = 5.4$ and $x + \\lfloor y \\rfloor = 5.7$. Find the sum of $x$ and $y$.",
   "choices": {},
   "answer": "6.1",
   "visual": false
@@ -6564,9 +6516,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Find the limit as x approaches zero of the quantity sin(7x)/ sin(4x) (read: sine of seven x divided by sine of four x ).",
+  "question": "Find the limit as $x$ approaches zero of the quantity $\\sin(7x)/\\sin(4x)$.",
   "choices": {},
-  "answer": "47",
+  "answer": "$\\tfrac{7}{4}$",
   "visual": false
  },
  {
@@ -6576,7 +6528,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Brian and Luke randomly, independently, and uniformly select two points A and B on unit circle O. Expressed as a fraction in simplest √ form, 3 what is the probability that the area of triangle ABO is greater than 4 (read: the fraction with numerator square root of three and denominator four )?",
+  "question": "Brian and Luke randomly, independently, and uniformly select two points A and B on unit circle O. Expressed as a fraction in simplest form, what is the probability that the area of triangle ABO is greater than $\\tfrac{\\sqrt{3}}{4}$?",
   "choices": {},
   "answer": "13",
   "visual": false
@@ -6634,9 +6586,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Given that the four numbers 20, 24, a, and b (read: 20 comma 24 comma a comma b) have a median of 15 and range of 15, what is the average of all possible values of a?",
+  "question": "Given that the four numbers 20, 24, $a$, and $b$ have a median of 15 and range of 15, what is the average of all possible values of $a$?",
   "choices": {},
-  "answer": "19/2 (ACCEPT: 9.5)",
+  "answer": "$\\tfrac{19}{2}$ (ACCEPT: 9.5)",
   "visual": false
  },
  {
@@ -6822,7 +6774,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Given that n is a positive integer such that the roots of the quadratic x2 + 2024x + n = 0 are integers, find the number of possible values for n.",
+  "question": "Given that $n$ is a positive integer such that the roots of the quadratic $x^2 + 2024x + n = 0$ are integers, find the number of possible values for $n$.",
   "choices": {},
   "answer": "1012",
   "visual": false
@@ -6863,9 +6815,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "For what value of x will the vectors 22i + xj (read: 22 i hat plus x j hat) and 21i + 33j + 9k (read: 21 i hat plus 33 j hat plus 9 k hat) be orthogonal?",
+  "question": "For what value of x will the vectors $22\\hat{i} + x\\hat{j}$ and $21\\hat{i} + 33\\hat{j} + 9\\hat{k}$ be orthogonal?",
   "choices": {},
-  "answer": "-14",
+  "answer": "$-14$",
   "visual": false
  },
  {
@@ -6877,7 +6829,7 @@
   "qtype": "sa",
   "question": "Alice rolls a fair 6-sided die numbered 1 to 6 and Bob rolls a fair 10-sided die numbered 1 to 10. What is the probability that Alice rolls a number strictly larger than Bob’s number?",
   "choices": {},
-  "answer": "41 (DO NOT ACCEPT: 15/60)",
+  "answer": "$\\tfrac{1}{4}$",
   "visual": false
  },
  {
@@ -6916,7 +6868,7 @@
   "category": "Chemistry",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "When potassium permanganate (per-mang-uh-nate), KMnO4 (read: K M N O four ), is added to oxalic acid, H2 C2 O4 (read: H two C two O four ), in acidic aqueous solution, a redox reaction occurs. Given that the perman- ganate ion is reduced to manganese (II) ions, Mn2+ , and oxalic acid is oxidized to carbon dioxide, how many electrons are exchanged in the full balanced equation for this reaction?",
+  "question": "When potassium permanganate (per-mang-uh-nate), $\\text{KMnO}_4$, is added to oxalic acid, $\\text{H}_2\\text{C}_2\\text{O}_4$, in acidic aqueous solution, a redox reaction occurs. Given that the permanganate ion is reduced to manganese (II) ions, $\\text{Mn}^{2+}$, and oxalic acid is oxidized to carbon dioxide, how many electrons are exchanged in the full balanced equation for this reaction?",
   "choices": {},
   "answer": "10",
   "visual": false
@@ -6945,7 +6897,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Consider the statement \"If n is a prime, then 2n + 1 is prime.” Which of the following values of n is a counterexample of this statement?",
+  "question": "Consider the statement \"If $n$ is a prime, then $2n + 1$ is prime.\" Which of the following values of $n$ is a counterexample of this statement?",
   "choices": {
    "W": "3",
    "X": "5",
@@ -6962,7 +6914,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "At MIT Science Bowl, two thirds of teams have an alternate, and three quarters of teams are from Cambridge. What is the minimum fraction of teams at MIT Science Bowl that have an alternate and are from Cambridge? 5",
+  "question": "At MIT Science Bowl, two thirds of teams have an alternate, and three quarters of teams are from Cambridge. What is the minimum fraction of teams at MIT Science Bowl that have an alternate and are from Cambridge?",
   "choices": {},
   "answer": "12",
   "visual": false
@@ -7068,7 +7020,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Given that the roots of the cubic polynomial (read: slowly) x3 + 2x + 1 (read: x cubed plus 2 times x plus 1 ) are distinct, what is the sum of the reciprocals of the roots?",
+  "question": "Given that the roots of the cubic polynomial (read: slowly) $x^3 + 2x + 1$ are distinct, what is the sum of the reciprocals of the roots?",
   "choices": {},
   "answer": "−2",
   "visual": false
@@ -7109,7 +7061,7 @@
   "category": "Chemistry",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "For the reaction 2 NO2 −−→ N2 O4 (read: N O two yields N two O four ), the rate constant of the forward reaction is 180 M-1s-1(read: inverse molar seconds) while the rate constant of the reverse reaction is 12 s-1(read: inverse seconds). What is the equilibrium constant of the reaction?",
+  "question": "For the reaction $2\\,\\mathrm{NO_2} \\rightarrow \\mathrm{N_2O_4}$, the rate constant of the forward reaction is $180\\ \\mathrm{M^{-1}s^{-1}}$ while the rate constant of the reverse reaction is $12\\ \\mathrm{s^{-1}}$. What is the equilibrium constant of the reaction?",
   "choices": {},
   "answer": "15",
   "visual": false
@@ -7181,7 +7133,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "How many distinct prime factors does 20! (read: twenty factorial ) have?",
+  "question": "How many distinct prime factors does $20!$ have?",
   "choices": {},
   "answer": "8",
   "visual": false
@@ -7256,7 +7208,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Ammonia is produced in the Haber process through the balanced reaction N2 + 3 H2 −−→ 2 NH3 (read: N two plus three H two yields two N H three), which has a change in enthalpy of -92 kilojoules per mole. Given that the forward reaction has an activation energy of 30 kilojoules per mole, what is the activation energy of the reverse reaction in kilojoules per mole?",
+  "question": "Ammonia is produced in the Haber process through the balanced reaction $N_2 + 3\\,H_2 \\rightarrow 2\\,NH_3$, which has a change in enthalpy of -92 kilojoules per mole. Given that the forward reaction has an activation energy of 30 kilojoules per mole, what is the activation energy of the reverse reaction in kilojoules per mole?",
   "choices": {},
   "answer": "122",
   "visual": false
@@ -7285,7 +7237,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Find the sum of all positive integers m less than 13 such that 12 × m is a perfect square.",
+  "question": "Find the sum of all positive integers $m$ less than 13 such that $12 \\times m$ is a perfect square.",
   "choices": {},
   "answer": "15",
   "visual": false
@@ -7374,7 +7326,7 @@
   "category": "Biology",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "What part of the human brain secretes Thyrotropin- releasing hormone, Corticotropin-releasing hormone, and Growth-hormone releasing hormone and is attached to the posterior pituitary via the infundibulum (read: in- fuhn-di-byoo-luhm)?",
+  "question": "What part of the human brain secretes Thyrotropin-releasing hormone, Corticotropin-releasing hormone, and Growth-hormone releasing hormone and is attached to the posterior pituitary via the infundibulum (read: in-fuhn-di-byoo-luhm)?",
   "choices": {},
   "answer": "Hypothalamus (ACCEPT: Diencephalon)",
   "visual": false
@@ -7619,7 +7571,7 @@
   "qtype": "sa",
   "question": "Pompe’s (read: Pomp-s) disease is almost always fatal before reproductive age and has a prevalence of roughly one in four hundred. In- dividuals are equally likely to be affected regardless of sex. Assuming short-term Hardy-Weinberg equilibrium and expressing your answer as a fraction in simplest form, what fraction of the population are heterozygotes?",
   "choices": {},
-  "answer": "19/200",
+  "answer": "$\\tfrac{19}{200}$",
   "visual": false
  },
  {
@@ -7643,7 +7595,7 @@
   "qtype": "sa",
   "question": "Vigyan flips an unfair coin twice. Given that at least one coin was heads, the probability that both were heads is one-fifth. What is the probability that a single flip of his coin is heads?",
   "choices": {},
-  "answer": "31",
+  "answer": "$\\tfrac{1}{3}$",
   "visual": false
  },
  {
@@ -7699,7 +7651,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "While tin (IV)(read: four ) chloride is stable at room temperature, lead (IV) chloride can only be stored at cryogenic temperatures. What effect, which describes the difficulty of ionizing s electrons of heavier main group elements, accounts for this observation?",
+  "question": "While tin (IV) chloride is stable at room temperature, lead (IV) chloride can only be stored at cryogenic temperatures. What effect, which describes the difficulty of ionizing s electrons of heavier main group elements, accounts for this observation?",
   "choices": {},
   "answer": "Inert pair effect (ACCEPT: Lazy pair effect)",
   "visual": false
@@ -7723,7 +7675,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "One of the roots of the cubic polynomial x3 + 2 √ax + bx − 2 (read: x cubed plus a times x squared plus b times x minus 2 ) is −1 − 2. If both a and b are integers, what is the value of a?",
+  "question": "One of the roots of the cubic polynomial $x^3 + ax^2 + bx - 2$ is $-1 - \\sqrt{2}$. If both a and b are integers, what is the value of a?",
   "choices": {},
   "answer": "4",
   "visual": false
@@ -7800,7 +7752,7 @@
   "qtype": "sa",
   "question": "If a corner of a fair six sided die is picked at random, what is the expected value of the sum on the three adjacent faces?",
   "choices": {},
-  "answer": "21/2 (ACCEPT: 10.5)",
+  "answer": "$\\tfrac{21}{2}$ (ACCEPT: 10.5)",
   "visual": false
  },
  {
@@ -7851,14 +7803,14 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following pairs of coordinates√ and coordi- nate systems is equivalent to the cartesian coordinate point (−2, 2, 6)? √ √",
+  "question": "Which of the following pairs of coordinates and coordinate systems is equivalent to the cartesian coordinate point $(-2, 2, \\sqrt{6})$?",
   "choices": {
-   "W": "Cylindrical, (2,√3π/4, 6)√",
-   "X": "Cylindrical,√(2 2, π/4, 6)",
-   "Y": "Spherical, (√14, π/4, π/3)",
-   "Z": "Spherical, ( 14, 3π/4, π/3)"
+   "W": "Cylindrical, $(2, \\tfrac{3\\pi}{4}, \\sqrt{6})$",
+   "X": "Cylindrical, $(2\\sqrt{2}, \\tfrac{\\pi}{4}, \\sqrt{6})$",
+   "Y": "Spherical, $(\\sqrt{14}, \\tfrac{\\pi}{4}, \\tfrac{\\pi}{3})$",
+   "Z": "Spherical, $(\\sqrt{14}, \\tfrac{3\\pi}{4}, \\tfrac{\\pi}{3})$"
   },
-  "answer": "Z) Spherical, ( 14, 3π/4, π/3)",
+  "answer": "Z) Spherical, $(\\sqrt{14}, \\tfrac{3\\pi}{4}, \\tfrac{\\pi}{3})$",
   "visual": false
  },
  {
@@ -7984,7 +7936,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Given r is a real number, what is the maximum number of intersections between the equations y = x2 − 4x + 7 and x2 + y 2 − 4x − 6y = r?",
+  "question": "Given r is a real number, what is the maximum number of intersections between the equations $y = x^2 - 4x + 7$ and $x^2 + y^2 - 4x - 6y = r$?",
   "choices": {},
   "answer": "2",
   "visual": false
@@ -8117,7 +8069,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "How many times does the curve x = 3y 2 − 5y + 4 (read: x equals three y squared minus five y plus four ) intersect the x- and y-axes, respectively?",
+  "question": "How many times does the curve $x = 3y^2 - 5y + 4$ intersect the x- and y-axes, respectively?",
   "choices": {
    "W": "0, 0",
    "X": "0, 2",
@@ -8204,14 +8156,14 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following expressions is a factor of the expression a210 + b210 (read: quantity a to the power of two hundred ten plus quantity b to the power of two hundred ten)? two) three) five) seven)",
+  "question": "Which of the following expressions is a factor of the expression $a^{210} + b^{210}$?",
   "choices": {
-   "W": "a2 + b2 (read: quantity a to the power of two plus quantity b to the power of",
-   "X": "a3 + b3 (read: quantity a to the power of three plus quantity b to the power of",
-   "Y": "a5 + b5 (read: quantity a to the power of five plus quantity b to the power of",
-   "Z": "a7 + b7 (read: quantity a to the power of seven plus quantity b to the power of"
+   "W": "$a^2 + b^2$",
+   "X": "$a^3 + b^3$",
+   "Y": "$a^5 + b^5$",
+   "Z": "$a^7 + b^7$"
   },
-  "answer": "W) a2 + b2 (read: quantity a to the power of two plus quantity b to the power of two)",
+  "answer": "W) $a^2 + b^2$",
   "visual": false
  },
  {
@@ -8221,7 +8173,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "The point at which the quadratic ax2 + bx + c is closest to the origin is the point ( 21 , − 14 ) (read: One-half comma negative one-fourth). What is the slope of the tangent line to the quadratic at this point?",
+  "question": "The point at which the quadratic $ax^2 + bx + c$ is closest to the origin is the point $\\left(\\tfrac{1}{2}, -\\tfrac{1}{4}\\right)$. What is the slope of the tangent line to the quadratic at this point?",
   "choices": {
    "W": "−2",
    "X": "−0.5",
@@ -8327,12 +8279,12 @@
   "qtype": "mc",
   "question": "Which of the following functions has the greatest average value on the closed interval from zero to one?",
   "choices": {
-   "W": "sec x (read: secant of x )",
-   "X": "sin x (read: sine of x )",
-   "Y": "cos x (read: cosine of x )",
-   "Z": "tan x (read: tangent of x )"
+   "W": "$\\sec x$",
+   "X": "$\\sin x$",
+   "Y": "$\\cos x$",
+   "Z": "$\\tan x$"
   },
-  "answer": "W) sec x (read: secant of x )",
+  "answer": "W) $\\sec x$",
   "visual": false
  },
  {
@@ -8354,14 +8306,14 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "What is the area bounded by the curve y = x21+1 (read: y equals 1 over open bracket x squared plus one close bracket), x = 1, x = −1 and the x-axis?",
+  "question": "What is the area bounded by the curve $y = \\tfrac{1}{x^2+1}$, $x = 1$, $x = -1$ and the x-axis?",
   "choices": {
-   "W": "1/4",
-   "X": "π/4",
-   "Y": "1/2",
-   "Z": "π/2"
+   "W": "$\\tfrac{1}{4}$",
+   "X": "$\\tfrac{\\pi}{4}$",
+   "Y": "$\\tfrac{1}{2}$",
+   "Z": "$\\tfrac{\\pi}{2}$"
   },
-  "answer": "Z) π/2",
+  "answer": "Z) $\\tfrac{\\pi}{2}$",
   "visual": false
  },
  {
@@ -8371,9 +8323,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "In triangle ABC, angles A and B have measures 30 and 45 degrees, respectively, and side BC has length 4 units. What is the area of triangle ABC? √",
+  "question": "In triangle ABC, angles A and B have measures 30 and 45 degrees, respectively, and side BC has length 4 units. What is the area of triangle ABC?",
   "choices": {},
-  "answer": "4 + 4 3",
+  "answer": "$4 + 4\\sqrt{3}$",
   "visual": false
  },
  {
@@ -8446,9 +8398,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Consider a triangle ABC, where AB = 6, BC = 10, and CA = 8, with incenter I and inradius 2. In simplest radical form, what is the distance AI? √ √",
+  "question": "Consider a triangle ABC, where AB = 6, BC = 10, and CA = 8, with incenter I and inradius 2. In simplest radical form, what is the distance AI?",
   "choices": {},
-  "answer": "2 2 (DO NOT ACCEPT: 8)",
+  "answer": "$2\\sqrt{2}$",
   "visual": false
  },
  {
@@ -8458,7 +8410,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Square M AST is drawn outside triangle M IT such that I lies inside M AST . Given triangles M IT and AIS have areas of 36 and 14 respec- tively, find the length of M T .",
+  "question": "Square $MAST$ is drawn outside triangle $MIT$ such that $I$ lies inside $MAST$. Given triangles $MIT$ and $AIS$ have areas of 36 and 14 respec- tively, find the length of $MT$.",
   "choices": {},
   "answer": "10",
   "visual": false
@@ -8516,14 +8468,14 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "What is the average oxidation state of copper in the high temperature superconductor YBCO with chemical formula YBa2 Cu3 O7 (read: Y B A two C U three O seven), assuming that all other ions are in their usual oxidation state and Yttrium is in the same periodic group as Scandium?",
+  "question": "What is the average oxidation state of copper in the high temperature superconductor YBCO with chemical formula $\\mathrm{YBa_2Cu_3O_7}$, assuming that all other ions are in their usual oxidation state and Yttrium is in the same periodic group as Scandium?",
   "choices": {
    "W": "2",
-   "X": "7/3",
-   "Y": "8/3",
+   "X": "$\\tfrac{7}{3}$",
+   "Y": "$\\tfrac{8}{3}$",
    "Z": "3"
   },
-  "answer": "X) 7/3",
+  "answer": "X) $\\tfrac{7}{3}$",
   "visual": false
  },
  {
@@ -8608,9 +8560,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "A continuous function f (x) (read: f of x ) defined on the 1 \u0001 positive real numbers satisfies 2f (x) + f x = x (read: two f of x plus f of one over x equals x ) for all values of x. Find f (2) (read: f of two).",
+  "question": "A continuous function $f(x)$ defined on the positive real numbers satisfies $2f(x) + f\\!\\left(\\tfrac{1}{x}\\right) = x$ for all values of $x$. Find $f(2)$.",
   "choices": {},
-  "answer": "67",
+  "answer": "$\\tfrac{7}{6}$",
   "visual": false
  },
  {
@@ -8620,9 +8572,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Let z equal 3 − i (read: the square root of three minus i ). What is z 3 (read: z cubed )?",
+  "question": "Let z equal $\\sqrt{3} - i$. What is $z^3$?",
   "choices": {},
-  "answer": "-8i (DO NOT ACCEPT: 8i)",
+  "answer": "$-8i$ (DO NOT ACCEPT: $8i$)",
   "visual": false
  },
  {
@@ -8632,7 +8584,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "To the nearest hundredth, what is cos( 51 ) (read: cosine of one fifth)?",
+  "question": "To the nearest hundredth, what is $\\cos\\left(\\tfrac{1}{5}\\right)$?",
   "choices": {},
   "answer": "0.98",
   "visual": false
@@ -8769,7 +8721,7 @@
   "qtype": "sa",
   "question": "In Timlandia, two-thirds of the population always tell the truth, while the remaining one-third always lie. Emmy asks four inhabitants of Timlandia whether it is snowing currently, and three of them say yes. What is the probability that it is snowing, given that Emmy’s prior is that it is equally likely to snow or not snow in Timlandia?",
   "choices": {},
-  "answer": "4/5",
+  "answer": "$\\tfrac{4}{5}$",
   "visual": false
  },
  {
@@ -8798,7 +8750,7 @@
   "qtype": "sa",
   "question": "An equilaterial triangle is inscribed inside a regular hexagon with side length 1. What is the ratio of the minimum possible area of the triangle to the maximum possible area?",
   "choices": {},
-  "answer": "3/4",
+  "answer": "$\\tfrac{3}{4}$",
   "visual": false
  },
  {
@@ -8946,9 +8898,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Vigyan writes the sequence 1, 2, 2, 3, 3, 3, and so on, in which every positive integer k appears k times. Find the limit as n approaches infinity of the nth term of this sequence divided by the square root of n. √",
+  "question": "Vigyan writes the sequence 1, 2, 2, 3, 3, 3, and so on, in which every positive integer $k$ appears $k$ times. Find the limit as $n$ approaches infinity of the $n$th term of this sequence divided by the square root of $n$.",
   "choices": {},
-  "answer": "2",
+  "answer": "$\\sqrt{2}$",
   "visual": false
  },
  {
@@ -9021,7 +8973,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Half of 1616 (read: the quantity 16 to the power of 16) can be expressed as 2 raised to what power?",
+  "question": "Half of $16^{16}$ can be expressed as 2 raised to what power?",
   "choices": {},
   "answer": "63",
   "visual": false
@@ -9226,9 +9178,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "A regular hexagon has side lengths of 2 meters. What is the ratio between the length from the midpoint of a side to the center and a vertex to the center? √",
+  "question": "A regular hexagon has side lengths of 2 meters. What is the ratio between the length from the midpoint of a side to the center and a vertex to the center?",
   "choices": {},
-  "answer": "3/2",
+  "answer": "$\\tfrac{\\sqrt{3}}{2}$",
   "visual": false
  },
  {
@@ -9325,7 +9277,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Vector 𝑎® (read: a) has magnitude 20 and vector 𝑏® (read: b) has magnitude 25. If the magnitude of 𝑎® · 𝑏® (read: a dot b) is 400, what is the magnitude of 𝑎® × 𝑏® (read: a cross b)?",
+  "question": "Vector $\\vec{a}$ has magnitude 20 and vector $\\vec{b}$ has magnitude 25. If the magnitude of $\\vec{a} \\cdot \\vec{b}$ is 400, what is the magnitude of $\\vec{a} \\times \\vec{b}$?",
   "choices": {},
   "answer": "300",
   "visual": false
@@ -9339,7 +9291,7 @@
   "qtype": "sa",
   "question": "The MIT Engineers and Harvard Crimsons are playing a best-of- seven series against each other, where the first team to win four games wins the series. If both teams have an equal probability of winning a game, what is the probability the MIT Engineers win the series in game 7?",
   "choices": {},
-  "answer": "5/32",
+  "answer": "$\\tfrac{5}{32}$",
   "visual": false
  },
  {
@@ -9385,12 +9337,12 @@
   "qtype": "mc",
   "question": "Which of the following hydrocarbons must contain a pi bond?",
   "choices": {
-   "W": "C3 H4 (read: C three H four)",
-   "X": "C5 H8",
-   "Y": "C5 H10",
-   "Z": "C6 H10"
+   "W": "C$_3$H$_4$",
+   "X": "C$_5$H$_8$",
+   "Y": "C$_5$H$_{10}$",
+   "Z": "C$_6$H$_{10}$"
   },
-  "answer": "W) C3 H4 (READ: C THREE H FOUR)",
+  "answer": "W) C$_3$H$_4$",
   "visual": false
  },
  {
@@ -9417,7 +9369,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "The cone 𝑧 = 𝑥 2 + 𝑦 2 (read: z equals the square root of the quantity x squared plus y squared) is intersected by the plane 𝑧 = 2𝑥 − 1. Which of the following best describes the curve of intersection?",
+  "question": "The cone $z = \\sqrt{x^2 + y^2}$ is intersected by the plane $z = 2x - 1$. Which of the following best describes the curve of intersection?",
   "choices": {
    "W": "Hyperbola",
    "X": "Parabola",
@@ -9434,7 +9386,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "If 𝑥 is a positive real number such that 𝑥 + 1/𝑥 = 5 (read: x plus quantity one over x equals five), evaluate (𝑥 − 1/𝑥) 2 (read: open parentheses x minus quantity one over x close parentheses squared).",
+  "question": "If $x$ is a positive real number such that $x + \\tfrac{1}{x} = 5$, evaluate $\\left(x - \\tfrac{1}{x}\\right)^2$.",
   "choices": {},
   "answer": "21",
   "visual": false
@@ -9562,7 +9514,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Ethan has a set containing the first ten positive integers and computes the least common multiple of this set. He adds a number 𝑛 to this set, and finds that the least common multiple of the new set is greater. Which of the following could be the value of 𝑛?",
+  "question": "Ethan has a set containing the first ten positive integers and computes the least common multiple of this set. He adds a number $n$ to this set, and finds that the least common multiple of the new set is greater. Which of the following could be the value of $n$?",
   "choices": {
    "W": "14",
    "X": "16",
@@ -9620,7 +9572,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "When evaluated at 𝑥 = 0, what is the derivative with respect to 𝑥 of 𝑒 𝑥 (sin 𝑥 + cos 𝑥) (read: e to the power of x times open parantheses sin of x plus cosine of x close parantheses)?",
+  "question": "When evaluated at $x = 0$, what is the derivative with respect to $x$ of $e^x(\\sin x + \\cos x)$?",
   "choices": {},
   "answer": "2",
   "visual": false
@@ -9707,14 +9659,14 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following is closest to the limit as 𝑥 approaches 0 of 𝑒 𝑥 /sin(𝑒 𝑥 ) (read: the fraction with numerator e to the power of x and denominator sin of quantity e to the power of x)?",
+  "question": "Which of the following is closest to $\\lim_{x \\to 0} \\dfrac{e^x}{\\sin(e^x)}$?",
   "choices": {
    "W": "1",
-   "X": "sin(1) (read: sine one)",
-   "Y": "1/sin(1) (read: one divided by the quantity sine one)",
+   "X": "$\\sin(1)$",
+   "Y": "$\\tfrac{1}{\\sin(1)}$",
    "Z": "The limit does not exist"
   },
-  "answer": "Y) 1/SIN(1) (READ: ONE DIVIDED BY THE QUANTITY SINE ONE)",
+  "answer": "Y) $\\tfrac{1}{\\sin(1)}$",
   "visual": false
  },
  {
@@ -9726,7 +9678,7 @@
   "qtype": "sa",
   "question": "Three digits are selected at random, independently from the range 0 to 9. What is the probability that they can be arranged to form a three-digit number less than 300 without a leading zero?",
   "choices": {},
-  "answer": "61/125",
+  "answer": "$\\tfrac{61}{125}$",
   "visual": false
  },
  {
@@ -9796,7 +9748,7 @@
   "qtype": "sa",
   "question": "What is the length of the shortest possible path on the unit sphere centered at the origin between the points (1, 0, 0) and (0, 1, 0)?",
   "choices": {},
-  "answer": "𝜋/2",
+  "answer": "$\\tfrac{\\pi}{2}$",
   "visual": false
  },
  {
@@ -9859,7 +9811,7 @@
   "category": "Biology",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Identify all of the following three processes which azidothymi- dine (read: uh-zid-o-THY-mi-deen), an analogue of thymidine, would inhibit: 1) HIV replication; 2) Retrotransposon duplication; 3) Telomere extension.",
+  "question": "Identify all of the following three processes which azidothymi-dine (read: uh-zid-o-THY-mi-deen), an analogue of thymidine, would inhibit: 1) HIV replication; 2) Retrotransposon duplication; 3) Telomere extension.",
   "choices": {},
   "answer": "ALL",
   "visual": false
@@ -9917,7 +9869,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The point (3, 4, 8) is reflected over the line 𝑥 = 𝑦 = 𝑧. What are the coordinates of the new point?",
+  "question": "The point (3, 4, 8) is reflected over the line $x = y = z$. What are the coordinates of the new point?",
   "choices": {},
   "answer": "(7, 6, 2)",
   "visual": false
@@ -9953,7 +9905,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "What is the smallest positive integer 𝑛 such that 2𝑛 · 𝑛 (read: 2 to the power of n times n) is a multiple of 32?",
+  "question": "What is the smallest positive integer $n$ such that $2^n \\cdot n$ is a multiple of 32?",
   "choices": {},
   "answer": "4",
   "visual": false
@@ -9967,12 +9919,12 @@
   "qtype": "mc",
   "question": "Which of the following functions over the real line does NOT have an inverse?",
   "choices": {
-   "W": "𝑓 (𝑥) = log2√(𝑥) (read: f of x equals log base 2 of x)",
-   "X": "𝑓 (𝑥) = 𝑥 · 𝑥 2 (read: f of x equals x times the square root of quantity x squared)",
-   "Y": "𝑓 (𝑥) = 𝑥 + sin(𝑥) (read: f of x equals x plus the sine of x)",
-   "Z": "𝑓 (𝑥) = 1 + 1/𝑥 (read: f of x equals one plus quantity one over x)"
+   "W": "$f(x) = \\log_2(x)$",
+   "X": "$f(x) = x \\cdot \\sqrt{x^2}$",
+   "Y": "$f(x) = x + \\sin(x)$",
+   "Z": "$f(x) = 1 + \\frac{1}{x}$"
   },
-  "answer": "Z) 𝑓 (𝑥) = 1 + 1/𝑥 (READ: F OF X EQUALS ONE PLUS QUANTITY ONE OVER X)",
+  "answer": "Z) $f(x) = 1 + \\frac{1}{x}$",
   "visual": false
  },
  {
@@ -10079,7 +10031,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Identify all of the following three values for positive integer 𝑛 such that the equation 𝑥 𝑛 = 2025 has exactly 10 distinct non-real roots: 1) 10; 2) 11; 3) 12.",
+  "question": "Identify all of the following three values for positive integer $n$ such that the equation $x^n = 2025$ has exactly 10 distinct non-real roots: 1) 10; 2) 11; 3) 12.",
   "choices": {},
   "answer": "2 AND 3",
   "visual": false
@@ -10248,7 +10200,7 @@
   "qtype": "sa",
   "question": "The numbers 1, 2, 3, and 4 are written on a blackboard. Tim picks two numbers on the board, erases them, and writes their arithmetic mean. He repeats this until one number is left. What is the greatest possible value for the remaining number?",
   "choices": {},
-  "answer": "25/8",
+  "answer": "$\\tfrac{25}{8}$",
   "visual": false
  },
  {
@@ -10304,7 +10256,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Order the following three functions from smallest to largest based 2 on the value attained at their global maximum: 1) 𝑒 −𝑥 (read: 𝑒 to the power of quantity negative 𝑥 2 ); 2) sin(𝑥)/(𝑥 + 1) 4 (read: sine of 𝑥 divided by the quantity x+1 to the fourth power); 3) 𝑥𝑒 −𝑥 (read: 𝑥 times 𝑒 to the negative 𝑥).",
+  "question": "Order the following three functions from smallest to largest based on the value attained at their global maximum: 1) $e^{-x^2}$; 2) $\\sin(x)/(x + 1)^4$; 3) $xe^{-x}$.",
   "choices": {},
   "answer": "2, 3, 1",
   "visual": false
@@ -10352,7 +10304,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "If the five by five matrix 𝑀 has a determinant of 3, what is the determinant of the matrix 2𝑀 (read: 2 times M)?",
+  "question": "If the five by five matrix $M$ has a determinant of 3, what is the determinant of the matrix $2M$?",
   "choices": {},
   "answer": "96",
   "visual": false
@@ -10364,7 +10316,7 @@
   "category": "Biology",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Order the following three types of muscle by increasing maxi- mum Vmax (read: Vee-max) of their myosin ATPases: 1) Cardiac; 2) Skeletal; 3) Smooth.",
+  "question": "Order the following three types of muscle by increasing maxi- mum $V_{\\max}$ of their myosin ATPases: 1) Cardiac; 2) Skeletal; 3) Smooth.",
   "choices": {},
   "answer": "3, 1, 2",
   "visual": false
@@ -10419,20 +10371,8 @@
   "qtype": "sa",
   "question": "In order to translocate electrons from cytosolic NADH made during glycolysis to the electron transport chain, the import of malate into the mitochondrial matrix is coupled with the export of what intermediate formed from the transamination (read: trans-am-uh-NAY-shun) of oxaloacetate (read: ox-ah-low-ASS-uh-tayt)?",
   "choices": {},
-  "answer": "ASPARTATE",
+  "answer": "Aspartate",
   "visual": false
- },
- {
-  "id": "2025-r13-t1",
-  "year": 2025,
-  "round": 13,
-  "category": "Biology",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. Shown in the image is the common garden phlox (read: flox). Answer the following two questions: 1) To what order of insects do the pollinators of this flower belong to? 2) This plant would be expected to produce pollen with how many pores?",
-  "choices": {},
-  "answer": "1) LEPIDOPTERA; 2) 3",
-  "visual": true
  },
  {
   "id": "2025-r13-t2",
@@ -10500,7 +10440,7 @@
   "visual": false
  },
  {
-  "id": "2025-r13-t8",
+  "id": "2025-r13-t8x2",
   "year": 2025,
   "round": 13,
   "category": "Biology",
@@ -10524,7 +10464,7 @@
   "visual": false
  },
  {
-  "id": "2025-r13-t9",
+  "id": "2025-r13-t9x2",
   "year": 2025,
   "round": 13,
   "category": "Chemistry",
@@ -10542,7 +10482,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "If Tim’s bank account compounds 1% interest each month, which of the following is closest to the total percent increase in the account over the course of 100 months?",
+  "question": "If Tim's bank account compounds 1% interest each month, which of the following is closest to the total percent increase in the account over the course of 100 months?",
   "choices": {
    "W": "100%",
    "X": "135%",
@@ -10588,9 +10528,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Vectors 𝑎 and 𝑏 have magnitudes 6 and 8, respectively, and their dot product is 16. What is the magnitude of the vector 𝑎 + 𝑏? √",
+  "question": "Vectors $\\vec{a}$ and $\\vec{b}$ have magnitudes 6 and 8, respectively, and their dot product is 16. What is the magnitude of the vector $\\vec{a} + \\vec{b}$?",
   "choices": {},
-  "answer": "2 33",
+  "answer": "$2\\sqrt{33}$",
   "visual": false
  },
  {
@@ -10631,20 +10571,8 @@
   "qtype": "sa",
   "question": "A Winogradsky (read: WIN-no-GRAHD-skee) column is an open tube with mud and water containing a diverse microbial ecosystem. Assuming they can are able to grow in such a column, order the following three microbes by where they would be found from top to bottom. 1) C. difficile; 2) Cyanobacteria; 3) Yeast.",
   "choices": {},
-  "answer": "2, 3, 1",
+  "answer": "$2, 3, 1$",
   "visual": false
- },
- {
-  "id": "2025-r13-t18",
-  "year": 2025,
-  "round": 13,
-  "category": "Biology",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. Shown in the image is a Wright- Giemsa (read: rite-geem-sa) stain of a sample of blood cells collected from a patient with cancer. Answer the following two questions: 1) Identify the cells labeled A and B; 2) The cells known as B undergo what process to release cytotoxic compounds from secretory vesicles?",
-  "choices": {},
-  "answer": "1) 1 IS EOSINOPHIL, 2 IS LYMPHOCYTE (ACCEPT: B CELL, T CELL) 2) DE- GRANULATION",
-  "visual": true
  },
  {
   "id": "2025-r13-t20",
@@ -10701,7 +10629,7 @@
   "qtype": "sa",
   "question": "Two Science Bowl players form a team. Each player uniformly, randomly, and independently specializes in 2 of the 6 science bowl subjects. What is the expected number of unique subjects specialized in by at least one member of their team?",
   "choices": {},
-  "answer": "10/3",
+  "answer": "$\\tfrac{10}{3}$",
   "visual": false
  },
  {
@@ -10764,7 +10692,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Two concentric circles have radii 5 and 10, respectively. Point 𝐴 is picked on the outer circle, and the two tangent lines to the inner circle passing through A are drawn. In degrees, what is the smaller angle formed by these two lines?",
+  "question": "Two concentric circles have radii 5 and 10, respectively. Point $A$ is picked on the outer circle, and the two tangent lines to the inner circle passing through $A$ are drawn. In degrees, what is the smaller angle formed by these two lines?",
   "choices": {},
   "answer": "60",
   "visual": false
@@ -10776,7 +10704,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "Colin is standing on a 2-dimensional plane at the point (0, 1) facing in the positive 𝑥 direction. He steps forwards 1 unit, and then turns 90 degrees clockwise. He then steps forwards 2 units, turns 90 degrees clockwise, and continues this process, where the distance he steps each turn is equal to the sum of the distances traveled in his two previous steps. Which of the following is the closest to the number of turns Colin has taken by the time he reaches a distance 1000 units from the origin?",
+  "question": "Colin is standing on a 2-dimensional plane at the point $(0, 1)$ facing in the positive $x$ direction. He steps forwards 1 unit, and then turns 90 degrees clockwise. He then steps forwards 2 units, turns 90 degrees clockwise, and continues this process, where the distance he steps each turn is equal to the sum of the distances traveled in his two previous steps. Which of the following is the closest to the number of turns Colin has taken by the time he reaches a distance 1000 units from the origin?",
   "choices": {
    "W": "5",
    "X": "15",
@@ -10799,7 +10727,7 @@
   "visual": false
  },
  {
-  "id": "2025-r14-t4",
+  "id": "2025-r14-t4x2",
   "year": 2025,
   "round": 14,
   "category": "Chemistry",
@@ -10828,7 +10756,7 @@
   "visual": false
  },
  {
-  "id": "2025-r14-t5",
+  "id": "2025-r14-t5x2",
   "year": 2025,
   "round": 14,
   "category": "Biology",
@@ -10877,20 +10805,8 @@
    "Y": "The distribution of the product of two normally distributed random variables",
    "Z": "The distribution of the quotient of two normally distributed random variables"
   },
-  "answer": "Z) THE DISTRIBUTION OF THE QUOTIENT OF TWO NORMALLY DISTRIBUTED RANDOM VARIABLES",
+  "answer": "Z) The distribution of the quotient of two normally distributed random variables",
   "visual": false
- },
- {
-  "id": "2025-r14-t11",
-  "year": 2025,
-  "round": 14,
-  "category": "Math",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. A regular tetrahedron ABCD is inscribed in a sphere. Let 𝐴′ (read: A prime) be the point diametrically opposite to A on the sphere. In degrees, what is the measure of angle B𝐴′C (read: B A prime C)?",
-  "choices": {},
-  "answer": "90",
-  "visual": true
  },
  {
   "id": "2025-r14-t12",
@@ -10934,7 +10850,7 @@
   "visual": false
  },
  {
-  "id": "2025-r14-t13",
+  "id": "2025-r14-t13x2",
   "year": 2025,
   "round": 14,
   "category": "Biology",
@@ -10981,14 +10897,14 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following is not a property of an invertible 𝑛 × 𝑛 matrix 𝐴?",
+  "question": "Which of the following is not a property of an invertible $n \\times n$ matrix $A$?",
   "choices": {
-   "W": "The determinant of 𝐴 is nonzero",
-   "X": "The rows of 𝐴 are linearly independent",
-   "Y": "The transpose of 𝐴 is an invertible matrix.",
-   "Z": "The kernel of 𝐴 has dimension 𝑛"
+   "W": "The determinant of $A$ is nonzero",
+   "X": "The rows of $A$ are linearly independent",
+   "Y": "The transpose of $A$ is an invertible matrix.",
+   "Z": "The kernel of $A$ has dimension $n$"
   },
-  "answer": "Z) THE KERNEL OF 𝐴 HAS DIMENSION 𝑛",
+  "answer": "Z) The kernel of $A$ has dimension $n$",
   "visual": false
  },
  {
@@ -10998,7 +10914,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "The polynomial 𝑥 4 − 2𝑥 2 = 𝑎 (read: x to the power of 4 minus 2 x squared equals a), where 𝑎 is a real number, has 𝑛 distinct real roots. What is the sum of all possible values of 𝑛?",
+  "question": "The polynomial $x^4 - 2x^2 = a$, where $a$ is a real number, has $n$ distinct real roots. What is the sum of all possible values of $n$?",
   "choices": {
    "W": "2",
    "X": "4",
@@ -11015,7 +10931,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "The sum of the even divisors of a positive integer 𝑛, including 𝑛 itself, is 30 times the sum of the odd divisors of 𝑛. What is the largest power of 2 that is a divisor of 𝑛?",
+  "question": "The sum of the even divisors of a positive integer $n$, including $n$ itself, is 30 times the sum of the odd divisors of $n$. What is the largest power of 2 that is a divisor of $n$?",
   "choices": {},
   "answer": "16",
   "visual": false
@@ -11113,20 +11029,8 @@
   "qtype": "sa",
   "question": "Tim picks a random 3-digit number and squares it. What is the probability that its unit digit is a composite number?",
   "choices": {},
-  "answer": "3/5",
+  "answer": "$\\tfrac{3}{5}$",
   "visual": false
- },
- {
-  "id": "2025-r15-t1",
-  "year": 2025,
-  "round": 15,
-  "category": "Math",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. Edward and Anthony are travelling from city A to city B on the octahedral planet of Timlandia. Edward can only walk on the edges of the octahedron, while Anthony can travel over the surface of the planet. If Edward and Anthony both take their respective shortest possible paths, what is the ratio of their path lengths, in that order?",
-  "choices": {},
-  "answer": "4:3 (ACCEPT: 4/3)",
-  "visual": true
  },
  {
   "id": "2025-r15-t2",
@@ -11146,7 +11050,7 @@
   "visual": false
  },
  {
-  "id": "2025-r15-t2",
+  "id": "2025-r15-t2x2",
   "year": 2025,
   "round": 15,
   "category": "Chemistry",
@@ -11170,18 +11074,6 @@
   "visual": false
  },
  {
-  "id": "2025-r15-t4",
-  "year": 2025,
-  "round": 15,
-  "category": "Biology",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. You are studying the DNA replication fork in a cell using FRET (read: fret). A donor fluorophore is attached to DNA helicase, and acceptor fluorophores are attached on DNA polymerases. Answer the following two questions: 1) Which of the following diagrams represents the signal on the leading strand? 2) Which of the following diagrams represents the signal on the lagging strand?",
-  "choices": {},
-  "answer": "1) E; 2) B",
-  "visual": true
- },
- {
   "id": "2025-r15-t7",
   "year": 2025,
   "round": 15,
@@ -11190,7 +11082,7 @@
   "qtype": "sa",
   "question": "Four Science Bowl teams compete in a single elimination bracket such that all four teams have distinct skill levels, and the team of higher skill always wins a match. After finals, another match is played between the losers to determine third place. If seeding is random, what is the probability that the final ranking matches the true order of skill levels?",
   "choices": {},
-  "answer": "2/3",
+  "answer": "$\\tfrac{2}{3}$",
   "visual": false
  },
  {
@@ -11200,7 +11092,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Consider a differentiable function 𝑓 that passes through the origin. Identify all of the following three statements that must be true about its inverse, given that it exists: 1) 𝑓 inverse is continuous; 2) 𝑓 inverse is differentiable; 3) 𝑓 inverse passes through the origin.",
+  "question": "Consider a differentiable function $f$ that passes through the origin. Identify all of the following three statements that must be true about its inverse, given that it exists: 1) $f$ inverse is continuous; 2) $f$ inverse is differentiable; 3) $f$ inverse passes through the origin.",
   "choices": {},
   "answer": "1 AND 3",
   "visual": false
@@ -11218,7 +11110,7 @@
   "visual": false
  },
  {
-  "id": "2025-r15-t8",
+  "id": "2025-r15-t8x2",
   "year": 2025,
   "round": 15,
   "category": "Chemistry",
@@ -11247,7 +11139,7 @@
   "visual": false
  },
  {
-  "id": "2025-r15-t9",
+  "id": "2025-r15-t9x2",
   "year": 2025,
   "round": 15,
   "category": "Biology",
@@ -11267,20 +11159,8 @@
   "qtype": "sa",
   "question": "A circle in the cartesian plane is centered at (1, 8). If the circle is tangent to a line at (0, 6), what is the x coordinate of the x intercept of the line?",
   "choices": {},
-  "answer": "12",
+  "answer": "$12$",
   "visual": false
- },
- {
-  "id": "2025-r15-t13",
-  "year": 2025,
-  "round": 15,
-  "category": "Math",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. In graph theory, an Eulerian path is a path that visits every edge of a graph exactly once. The path may start and end on different vertices, and revisiting vertices is allowed. Identify, by number, all of the displayed graphs that have an Eulerian path.",
-  "choices": {},
-  "answer": "1 AND 3",
-  "visual": true
  },
  {
   "id": "2025-r15-t17",
@@ -11342,7 +11222,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "A list of numbers 𝑋 contains one 1, two 2s, and so on, where the number 𝑛 appears 𝑛 times for all 𝑛 from 1 to 2025. Which of the following statistics is the smallest for 𝑋?",
+  "question": "A list of numbers $X$ contains one 1, two 2s, and so on, where the number $n$ appears $n$ times for all $n$ from 1 to 2025. Which of the following statistics is the smallest for $X$?",
   "choices": {
    "W": "Range",
    "X": "Mean",
@@ -11361,7 +11241,7 @@
   "qtype": "sa",
   "question": "Cailyn draws a circle, then draws another circle that has the same center but half the radius. She then repeats this process indefinitely, with each circle’s radius equal to half the previous circle’s radius. An ant is placed at random inside the largest circle, and begins to crawl in a straight line away from the center. What is the probability that the ant eventually crosses an odd number of circles?",
   "choices": {},
-  "answer": "4/5 (ACCEPT: 0.8, 80%)",
+  "answer": "$\\tfrac{4}{5}$ (ACCEPT: 0.8, 80%)",
   "visual": false
  },
  {
@@ -11378,20 +11258,8 @@
    "Y": "Parkinson’s",
    "Z": "ADHD"
   },
-  "answer": "Y) PARKINSON’S",
+  "answer": "Y) Parkinson’s",
   "visual": false
- },
- {
-  "id": "2025-r15-t23",
-  "year": 2025,
-  "round": 15,
-  "category": "Biology",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. A cross is made between an Hfr trp+ leu+ arg+ (read: H F R trip plus lew plus arj plus) bacteria and a F- trp- leu- arg- (read: F minus trip minus lew minus arj minus) bacteria and allowed to recombine. Given that the genes are in order and that arg (read: arj) enters last, order the following three resulting genotypes for the resulting arg+ F- (read: arj plus F minus) bacteria from least to most likely. 1) trp- leu- arg+ (read: trip minus lew minus arj plus); 2) trp+ leu- arg+ (read: trip plus lew minus arj plus); 3) trp+ leu+ arg+ (read: trip plus lew plus arj plus) recombination.",
-  "choices": {},
-  "answer": "2, 1, 3",
-  "visual": true
  },
  {
   "id": "2025-r15-t24",
@@ -11435,7 +11303,7 @@
   "visual": false
  },
  {
-  "id": "2025-r16-t1",
+  "id": "2025-r16-t1x2",
   "year": 2025,
   "round": 16,
   "category": "Chemistry",
@@ -11453,22 +11321,10 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Let 𝑓 (𝑥) = 𝑎 𝑥 + 𝑏 𝑥 , where 𝑎 and 𝑏 are positive integers. Given that 𝑓 (1) = 9 and 𝑓 (3) = 351, find the value of 𝑓 (2).",
+  "question": "Let $f(x) = a^x + b^x$, where $a$ and $b$ are positive integers. Given that $f(1) = 9$ and $f(3) = 351$, find the value of $f(2)$.",
   "choices": {},
-  "answer": "53",
+  "answer": "$53$",
   "visual": false
- },
- {
-  "id": "2025-r16-t5",
-  "year": 2025,
-  "round": 16,
-  "category": "Math",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. Katherine and Selena are playing the game \"Kokushi Challenge,\" which uses a set of 52 tiles with four identical copies of each tile. However, Katherine has identified that there is a 50% chance that Selena has tampered with the set, painting one of the four \"haku\" tiles into another tile. He shuffles the set randomly and draws three tiles at random, and finds that they are all \"haku\" tiles. With this knowledge, what is the new probability that Selena has cheated?",
-  "choices": {},
-  "answer": "1/5",
-  "visual": true
  },
  {
   "id": "2025-r16-t6",
@@ -11484,20 +11340,8 @@
    "Y": "Cushing syndrome",
    "Z": "Hemolytic anemia"
   },
-  "answer": "W) SYSTEMIC LUPUS ERYTHEMATOSUS (READ: SIS-TEM-IC LOO-PUS AIR- UH-THEEM-UH-TO-SIS)",
+  "answer": "W) Systemic lupus erythematosus",
   "visual": false
- },
- {
-  "id": "2025-r16-t6",
-  "year": 2025,
-  "round": 16,
-  "category": "Biology",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. Shown in the image is a cross section of a specific type of leaf. Answer the following two questions: 1) Is this plant a xerophyte, hydrophyte, or mesophyte? 2) Identify the structure labeled.",
-  "choices": {},
-  "answer": "1) HYDROPHYTE; 2) SCLERID",
-  "visual": true
  },
  {
   "id": "2025-r16-t8",
@@ -11535,7 +11379,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Suppose a twice-differentiable function 𝑓 satisfies 𝑓 (0) = 0, 𝑓 (1) = 10, and 𝑓 ′′ (𝑥) ≥ 0 for all 𝑥 ∈ [0, 1]. Identify all of the following three options that are possible values for 𝑓 (0.5): 1) 2.5; 2) 5; 3) 7.5",
+  "question": "Suppose a twice-differentiable function $f$ satisfies $f(0) = 0$, $f(1) = 10$, and $f''(x) \\ge 0$ for all $x \\in [0, 1]$. Identify all of the following three options that are possible values for $f(0.5)$: 1) 2.5; 2) 5; 3) 7.5",
   "choices": {},
   "answer": "1,2 (ACCEPT: ALL BUT 3)",
   "visual": false
@@ -11547,7 +11391,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Brian calculates the expected value of the taxicab distance in 𝑛- dimensional space between a uniformly randomly chosen point and its nearest lattice point. This quantity is directly proportional to 𝑛 raised to what power?",
+  "question": "Brian calculates the expected value of the taxicab distance in $n$-dimensional space between a uniformly randomly chosen point and its nearest lattice point. This quantity is directly proportional to $n$ raised to what power?",
   "choices": {},
   "answer": "1 (ACCEPT: FIRST)",
   "visual": false
@@ -11570,7 +11414,7 @@
   "visual": false
  },
  {
-  "id": "2025-r16-t11",
+  "id": "2025-r16-t11x2",
   "year": 2025,
   "round": 16,
   "category": "Biology",
@@ -11594,7 +11438,7 @@
   "visual": false
  },
  {
-  "id": "2025-r16-t14",
+  "id": "2025-r16-t14x2",
   "year": 2025,
   "round": 16,
   "category": "Chemistry",
@@ -11648,20 +11492,8 @@
    "Y": "40,000 to 80,000",
    "Z": "80,000 to 160,000"
   },
-  "answer": "Y) 40,000 TO 80,000",
+  "answer": "Y) 40,000 to 80,000",
   "visual": false
- },
- {
-  "id": "2025-r16-t17",
-  "year": 2025,
-  "round": 16,
-  "category": "Math",
-  "kind": "tossup",
-  "qtype": "sa",
-  "question": "Your next bonus is visual. Shown in this image are the first four iterations of a fractal. The original triangle has area 1. What is the fractal’s final area?",
-  "choices": {},
-  "answer": "8/5",
-  "visual": true
  },
  {
   "id": "2025-r16-t20",
@@ -11723,7 +11555,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "A geometric sequence has first term 4 and seventh term 9. For which of the following integers 𝑛 is the 𝑛th term of this sequence rational?",
+  "question": "A geometric sequence has first term 4 and seventh term 9. For which of the following integers $n$ is the $n$th term of this sequence rational?",
   "choices": {
    "W": "12",
    "X": "14",
@@ -11740,7 +11572,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "A rectangular field is 100 yards long and 𝑥 yards wide. A horse travels at 28 miles per hour and a donkey at 20. Suppose the horse travels from one corner of the field to the other via edges, and the donkey goes diagonally. What is the minimum value of 𝑥 such that the donkey takes at most as much time as the horse to finish this journey?",
+  "question": "A rectangular field is 100 yards long and $x$ yards wide. A horse travels at 28 miles per hour and a donkey at 20. Suppose the horse travels from one corner of the field to the other via edges, and the donkey goes diagonally. What is the minimum value of $x$ such that the donkey takes at most as much time as the horse to finish this journey?",
   "choices": {},
   "answer": "75",
   "visual": false
@@ -11909,7 +11741,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the largest prime factor of 28 + 82 (read: quantity two to the power of eight plus quantity eight squared)?",
+  "question": "What is the largest prime factor of $2^8 + 8^2$?",
   "choices": {},
   "answer": "5",
   "visual": false
@@ -11964,7 +11796,7 @@
   "qtype": "sa",
   "question": "Eric has one red, one orange, one yellow, and one green ball in a bag. He repeatedly draws balls from the bag randomly and without replacement until he draws the red ball, at which point he stops. What is the probability that all four balls are drawn?",
   "choices": {},
-  "answer": "1/4",
+  "answer": "$\\tfrac{1}{4}$",
   "visual": false
  },
  {
@@ -12020,7 +11852,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "If the energy difference between the 𝑛 = 3 and 𝑛 = 2 levels in a hydrogen atom is 1.9 electron-volts, then to two significant figures and in electron-volts, what is the energy difference between the 𝑛 = 3 and 𝑛 = 2 levels in a 𝐻𝑒 + (read: Helium 1+) cation?",
+  "question": "If the energy difference between the $n = 3$ and $n = 2$ levels in a hydrogen atom is 1.9 electron-volts, then to two significant figures and in electron-volts, what is the energy difference between the $n = 3$ and $n = 2$ levels in a $\\mathrm{He}^+$ cation?",
   "choices": {},
   "answer": "7.6",
   "visual": false
@@ -12155,7 +11987,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "In a 1 molar solution of a weak acid, the concentration of hydronium is 1 × 10−6 (read: one times ten to the negative sixth). To the nearest whole number, what is the pKa of the acid?",
+  "question": "In a 1 molar solution of a weak acid, the concentration of hydronium is $1 \\times 10^{-6}$. To the nearest whole number, what is the pKa of the acid?",
   "choices": {},
   "answer": "12",
   "visual": false
@@ -12201,7 +12033,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "If 3𝑥 + 26 = 307 (read: quantity 3 to the power of x plus quantity 2 to the power of six equals 307), what is 𝑥?",
+  "question": "If $3^x + 2^6 = 307$, what is $x$?",
   "choices": {},
   "answer": "5",
   "visual": false
@@ -12213,9 +12045,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "A hexagonal pyramid has a height of 2 and a base of side length 3. What is the volume of the pyramid? √",
+  "question": "A hexagonal pyramid has a height of 2 and a base of side length 3. What is the volume of the pyramid?",
   "choices": {},
-  "answer": "9 3",
+  "answer": "$9\\sqrt{3}$",
   "visual": false
  },
  {
@@ -12266,9 +12098,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "For a function 𝑓 and all reals 𝑥, 𝑓 (2𝑥) = 2𝑥 2 + 4𝑥 (read: f of 2x equals 2 x squared plus 4 x). What is 𝑓 (1/2)?",
+  "question": "For a function $f$ and all reals $x$, $f(2x) = 2x^2 + 4x$. What is $f(1/2)$?",
   "choices": {},
-  "answer": "9/8",
+  "answer": "$\\tfrac{9}{8}$",
   "visual": false
  },
  {
@@ -12353,7 +12185,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Identify all of the following length 2𝜋 intervals over which the integral of the sine function is equal to 0: 1) Negative 𝜋 to 𝜋; 2) 0 to 2𝜋; 3) 𝜋 to 3𝜋.",
+  "question": "Identify all of the following length $2\\pi$ intervals over which the integral of the sine function is equal to 0: 1) $-\\pi$ to $\\pi$; 2) 0 to $2\\pi$; 3) $\\pi$ to $3\\pi$.",
   "choices": {},
   "answer": "ALL",
   "visual": false
@@ -12420,7 +12252,7 @@
   "qtype": "sa",
   "question": "Tristan starts with $50 and a fair six-sided die. He rolls the die each second, gaining one dollar if the result is prime and losing one dollar otherwise. He continues this until he either reaches $100 or loses all his money. What is the probability that he loses all his money?",
   "choices": {},
-  "answer": "1/2",
+  "answer": "$\\tfrac{1}{2}$",
   "visual": false
  },
  {
@@ -12461,12 +12293,12 @@
   "qtype": "mc",
   "question": "After 20.5 grams of an unknown hydrocarbon are fully combusted in a sealed chamber, 66 grams of carbon dioxide are collected. Which of the following could be the molecular formula of the unknown hydrocarbon?",
   "choices": {
-   "W": "C4 H8 (read: C four H eight)",
-   "X": "C5 H8",
-   "Y": "C6 H10",
-   "Z": "C7 H10"
+   "W": "$C_4H_8$",
+   "X": "$C_5H_8$",
+   "Y": "$C_6H_{10}$",
+   "Z": "$C_7H_{10}$"
   },
-  "answer": "Y) C6 H10",
+  "answer": "Y) $C_6H_{10}$",
   "visual": false
  },
  {
@@ -12695,7 +12527,7 @@
   "qtype": "sa",
   "question": "A cube is divided into two identical pieces by a cut parallel to one of its faces. What is the ratio of the combined surface area of the two resulting pieces to the surface area of the initial cube?",
   "choices": {},
-  "answer": "4/3",
+  "answer": "$\\tfrac{4}{3}$",
   "visual": false
  },
  {
@@ -12705,7 +12537,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the exponent of the largest power of 8 that evenly divides 20! (read: 20 factorial)?",
+  "question": "What is the exponent of the largest power of 8 that evenly divides $20!$?",
   "choices": {},
   "answer": "6",
   "visual": false
@@ -12763,9 +12595,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the sum of the coefficients of the polynomial (𝑥 − 2) 2 (2𝑥 − 3) (3𝑥 + 5) (read: quantity x minus two squared times quantity two x minus three times quantity three x plus five)?",
+  "question": "What is the sum of the coefficients of the polynomial $(x - 2)^2 (2x - 3)(3x + 5)$?",
   "choices": {},
-  "answer": "-8",
+  "answer": "$-8$",
   "visual": false
  },
  {
@@ -12867,9 +12699,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "In terms of a single trigonometric function, what is the simplest form of the trigonometric expression cot 𝑥 sin2 𝑥/cos 𝑥 (read: quantity cotangent of x times quantity sine of x squared divided by quantity cosine of x)?",
+  "question": "In terms of a single trigonometric function, what is the simplest form of the trigonometric expression $\\dfrac{\\cot x \\, \\sin^2 x}{\\cos x}$?",
   "choices": {},
-  "answer": "sin 𝑥",
+  "answer": "$\\sin x$",
   "visual": false
  },
  {
@@ -12879,7 +12711,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the remainder when the polynomial 2𝑥 4 − 3𝑥 3 + 5𝑥 − 9 (read: 2 x to the power of 4 minus 3 x cubed plus 5 x minus 9) is divided by the monomial 𝑥 − 2?",
+  "question": "What is the remainder when the polynomial $2x^4 - 3x^3 + 5x - 9$ is divided by the monomial $x - 2$?",
   "choices": {},
   "answer": "9",
   "visual": false
@@ -12908,7 +12740,7 @@
   "category": "Chemistry",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "What is the average oxidation state of technetium in the polyoxotechnetate (read: poly-oxo-tech-nuh-tate) ion 𝑇 𝑐 20 𝑂 4− 68 (read: T-c 20 O 68 four minus)?",
+  "question": "What is the average oxidation state of technetium in the polyoxotechnetate (read: poly-oxo-tech-nuh-tate) ion $\\text{Tc}_{20}\\text{O}_{68}^{4-}$?",
   "choices": {
    "W": "+6.4",
    "X": "+6.6",
@@ -12956,7 +12788,7 @@
   "qtype": "sa",
   "question": "Two vertices of a regular decagon are selected at random. What is the probability that the segment connecting them is not one of the sides of the decagon?",
   "choices": {},
-  "answer": "7/9",
+  "answer": "$\\tfrac{7}{9}$",
   "visual": false
  },
  {
@@ -13009,7 +12841,7 @@
   "qtype": "sa",
   "question": "Bronya has a weighted six-sided die, where the probability of rolling each face is proportional to the number on the face. What is the probability that Bronya rolls a one?",
   "choices": {},
-  "answer": "1/21",
+  "answer": "$\\tfrac{1}{21}$",
   "visual": false
  },
  {
@@ -13019,7 +12851,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The log* (read: log star) operation, often known as the binary iterated logarithm, is the number of times a base two logarithm must be applied to a number until it is less than or equal to 1. What is the smallest positive integer such that when the log* operation is applied, the result is 4?",
+  "question": "The $\\log^*$ operation, often known as the binary iterated logarithm, is the number of times a base two logarithm must be applied to a number until it is less than or equal to 1. What is the smallest positive integer such that when the $\\log^*$ operation is applied, the result is 4?",
   "choices": {},
   "answer": "17",
   "visual": false
@@ -13311,7 +13143,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Hua is simplifying the expression 60𝑥 (read: the cube root of the quantity sixty x). For which of the following values of 𝑥 will Hua not be able to simplify the expression by taking some factors out of the cube root?",
+  "question": "Hua is simplifying the expression $\\sqrt[3]{60x}$. For which of the following values of $x$ will Hua not be able to simplify the expression by taking some factors out of the cube root?",
   "choices": {
    "W": "6",
    "X": "9",
@@ -13328,14 +13160,14 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "mc",
-  "question": "A large 𝑛-by-𝑛-by-𝑛 cube is painted maroon on all faces and cut into 𝑛3 unit cubes. If a unit cube is selected uniformly at random, what is the expected number of maroon faces on the unit cube?",
+  "question": "A large $n$-by-$n$-by-$n$ cube is painted maroon on all faces and cut into $n^3$ unit cubes. If a unit cube is selected uniformly at random, what is the expected number of maroon faces on the unit cube?",
   "choices": {
-   "W": "1/6𝑛2 (read: 1 divided by the quantity 6 times n squared)",
-   "X": "6/𝑛2 (read: 6 divided by the quantity n squared)",
-   "Y": "1/6𝑛 (read: 1 divided by 6n)",
-   "Z": "6/n (read: 6 divided by n)"
+   "W": "$\\tfrac{1}{6n^2}$",
+   "X": "$\\tfrac{6}{n^2}$",
+   "Y": "$\\tfrac{1}{6n}$",
+   "Z": "$\\tfrac{6}{n}$"
   },
-  "answer": "Z) 6/N (READ: 6 DIVIDED BY N)",
+  "answer": "Z) $\\tfrac{6}{n}$",
   "visual": false
  },
  {
@@ -13369,7 +13201,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "The equations 𝑦 = 𝑒 𝑥 − 1 and 𝑦 = 𝑥 are graphed on the x-y plane. Which of the following is the number of intersection points between these two graphs?",
+  "question": "The equations $y = e^x - 1$ and $y = x$ are graphed on the x-y plane. Which of the following is the number of intersection points between these two graphs?",
   "choices": {
    "W": "0",
    "X": "1",
@@ -13475,9 +13307,9 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Adeline says that \"the absolute value of the secant of theta is greater than 𝑎 if and only if the absolute value of the cosecant of theta is less than 𝑎.\" What is the unique real value of 𝑎 for which Adeline’s statement is always true? √",
+  "question": "Adeline says that \"the absolute value of the secant of theta is greater than $a$ if and only if the absolute value of the cosecant of theta is less than $a$.\" What is the unique real value of $a$ for which Adeline’s statement is always true?",
   "choices": {},
-  "answer": "2 (READ: THE SQUARE ROOT OF TWO)",
+  "answer": "$\\sqrt{2}$",
   "visual": false
  },
  {
@@ -13487,7 +13319,7 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the tens digit of 112025 (read: 11 raised to the power of 2025)?",
+  "question": "What is the tens digit of $11^{2025}$?",
   "choices": {},
   "answer": "5",
   "visual": false
@@ -13554,7 +13386,7 @@
   "qtype": "sa",
   "question": "If Caroline gets a good night of sleep, then she has a 50% chance of falling asleep in lecture, but if she pulls an all-nighter, she has a 90% chance of falling asleep. If Caroline has a 20% chance of pulling an all nighter tonight, what is the probability that she falls asleep in lecture tomorrow?",
   "choices": {},
-  "answer": "58% (ACCEPT: 0.58, 29/50)",
+  "answer": "58% (ACCEPT: 0.58, $\\tfrac{29}{50}$)",
   "visual": false
  },
  {
@@ -13564,9 +13396,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Two concentric circles 𝑂 1 and 𝑂 2 are drawn with 𝑂 1 having a smaller radius. Chord 𝐴𝐵 of circle 𝑂 2 is drawn such that 𝐴𝐵 is tangent to 𝑂 1 . Given that 𝐴𝐵 = 12, what is the difference between the areas of the two circles?",
+  "question": "Two concentric circles $O_1$ and $O_2$ are drawn with $O_1$ having a smaller radius. Chord $AB$ of circle $O_2$ is drawn such that $AB$ is tangent to $O_1$. Given that $AB = 12$, what is the difference between the areas of the two circles?",
   "choices": {},
-  "answer": "36𝜋",
+  "answer": "$36\\pi$",
   "visual": false
  },
  {
@@ -13576,7 +13408,7 @@
   "category": "Biology",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "In order to oppose the action of the renin angiotensin aldosterone (read: al-DOSS-tuh-rohn) system, the atria of the heart release what hormone to inhibit Na+ reabsorption?",
+  "question": "In order to oppose the action of the renin angiotensin aldosterone (read: al-DOSS-tuh-rohn) system, the atria of the heart release what hormone to inhibit $\\mathrm{Na^+}$ reabsorption?",
   "choices": {},
   "answer": "ATRIAL NATRIURETIC FACTOR (ACCEPT: ATRIAL NATRIURETIC PEPTIDE, ANP, ANF, ATRIAL NATRIURETIC HORMONE)",
   "visual": false
@@ -13600,7 +13432,7 @@
   "category": "Chemistry",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following molecular geometries for a coor- dination complex with non-chiral (read: non-KAI-ral) ligands (read: lig-unds) could give both optical and geometric isomers?",
+  "question": "Which of the following molecular geometries for a coordination complex with non-chiral (read: non-KAI-ral) ligands (read: lig-unds) could give both optical and geometric isomers?",
   "choices": {
    "W": "Linear",
    "X": "Tetrahedral",
@@ -13629,14 +13461,14 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "An unfair coin has a probability 𝑝 of landing heads on each flip. If the coin is flipped three times, the probability of landing three heads is the same as the probability of landing two heads. Which of the following is the value of 𝑝?",
+  "question": "An unfair coin has a probability $p$ of landing heads on each flip. If the coin is flipped three times, the probability of landing three heads is the same as the probability of landing two heads. Which of the following is the value of $p$?",
   "choices": {
-   "W": "5/8",
-   "X": "2/3",
-   "Y": "3/4",
-   "Z": "5/6"
+   "W": "$\\tfrac{5}{8}$",
+   "X": "$\\tfrac{2}{3}$",
+   "Y": "$\\tfrac{3}{4}$",
+   "Z": "$\\tfrac{5}{6}$"
   },
-  "answer": "Y) 3/4",
+  "answer": "Y) $\\tfrac{3}{4}$",
   "visual": false
  },
  {
@@ -13648,7 +13480,7 @@
   "qtype": "sa",
   "question": "Stella is hauling her suitcase along Vassar Street in the middle of the night. Her usual walking speed is one meter per second, but two percent of the distance that she has to walk is covered in snow. Assuming that Stella can drag her suitcase through snow at 0.5 meters per second, what is her average speed over her journey, expressed in meters per second and expressed as a fraction in simplest form?",
   "choices": {},
-  "answer": "50/51",
+  "answer": "$\\tfrac{50}{51}$",
   "visual": false
  },
  {
@@ -13682,7 +13514,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following best describes the plot of the equation 𝑦 = 1/𝑥 2 (read: y equals 1 over the quantity x squared) on a log-log scale?",
+  "question": "Which of the following best describes the plot of the equation $y = \\tfrac{1}{x^2}$ on a log-log scale?",
   "choices": {
    "W": "A line with negative slope",
    "X": "A line with positive slope",
@@ -13699,9 +13531,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "What is the minimum positive value of 𝑎 such that the graph 𝑥 + 𝑦 = 𝑎 does NOT pass through the region 𝑥 2 + 𝑦 2 < 2025 (read: x squared plus y squared less than 2025)? √",
+  "question": "What is the minimum positive value of $a$ such that the graph $x + y = a$ does NOT pass through the region $x^2 + y^2 < 2025$?",
   "choices": {},
-  "answer": "45 2",
+  "answer": "$45\\sqrt{2}$",
   "visual": false
  },
  {
@@ -13766,7 +13598,7 @@
   "qtype": "sa",
   "question": "Five students take an exam and all receive positive integer scores. Given that the unique mode of their scores is 5, what is the smallest possible mean of their scores?",
   "choices": {},
-  "answer": "16/5 (ACCEPT: 3.2)",
+  "answer": "$\\tfrac{16}{5}$ (ACCEPT: 3.2)",
   "visual": false
  },
  {
@@ -13776,9 +13608,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "The radius of a sphere is growing at a constant rate of 2 centimeters per second. In cubic centimeters per second, at what rate is the volume of the sphere growing when the surface area of the sphere is 400𝜋 square centimeters?",
+  "question": "The radius of a sphere is growing at a constant rate of 2 centimeters per second. In cubic centimeters per second, at what rate is the volume of the sphere growing when the surface area of the sphere is $400\\pi$ square centimeters?",
   "choices": {},
-  "answer": "800𝜋",
+  "answer": "$800\\pi$",
   "visual": false
  },
  {
@@ -13851,7 +13683,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "The sum of the first 𝑛 terms of an infinite geometric sequence with first three terms 1/4, 1/8, and 1/16 is 63/128. What is the value of 𝑛?",
+  "question": "The sum of the first $n$ terms of an infinite geometric sequence with first three terms $\\tfrac{1}{4}$, $\\tfrac{1}{8}$, and $\\tfrac{1}{16}$ is $\\tfrac{63}{128}$. What is the value of $n$?",
   "choices": {},
   "answer": "6",
   "visual": false
@@ -13865,7 +13697,7 @@
   "qtype": "sa",
   "question": "A bag contains 4 red balls and 5 orange balls. Boheng draws two balls from the bag, without replacement. Given that at least one of the drawn balls is red, what is the probability that both drawn balls are red?",
   "choices": {},
-  "answer": "3/13",
+  "answer": "$\\tfrac{3}{13}$",
   "visual": false
  },
  {
@@ -13947,7 +13779,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "A perfect number is a positive integer equal to the sum of its proper divisors. What is the smallest positive integer 𝑛 such that the number of positive divisors of 𝑛 is a perfect number?",
+  "question": "A perfect number is a positive integer equal to the sum of its proper divisors. What is the smallest positive integer $n$ such that the number of positive divisors of $n$ is a perfect number?",
   "choices": {},
   "answer": "12",
   "visual": false
@@ -14116,7 +13948,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "mc",
-  "question": "Which of the following is closest to the area under the curve 𝑦 = 1 + (sin(𝑥)) 2025 (read: y equals 1 plus open parentheses, sine of x, close parentheses to the power of 2025) from 𝑥 = 0 to 𝜋/2?",
+  "question": "Which of the following is closest to the area under the curve $y = 1 + (\\sin(x))^{2025}$ from $x = 0$ to $\\pi/2$?",
   "choices": {
    "W": "0.8",
    "X": "1.6",
@@ -14133,9 +13965,9 @@
   "category": "Math",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Consider a tetrahedron of side length 1. A number is uniformly randomly selected between 0 and the tetrahedron’s height; then, a cross-section is drawn at that height above the base. What is the cross-section’s expected area? √",
+  "question": "Consider a tetrahedron of side length 1. A number is uniformly randomly selected between 0 and the tetrahedron’s height; then, a cross-section is drawn at that height above the base. What is the cross-section’s expected area?",
   "choices": {},
-  "answer": "3/12",
+  "answer": "$\\tfrac{\\sqrt{3}}{12}$",
   "visual": false
  },
  {
@@ -14203,7 +14035,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "The point (−3, 8) is rotated 90◦ (read: 90 degrees) clockwise around the origin, then reflected across the line 𝑦 = 𝑥. What is the coordinates of the image of these transformations?",
+  "question": "The point (−3, 8) is rotated $90^\\circ$ clockwise around the origin, then reflected across the line $y = x$. What is the coordinates of the image of these transformations?",
   "choices": {},
   "answer": "(3, 8)",
   "visual": false
@@ -14285,7 +14117,7 @@
   "category": "Math",
   "kind": "tossup",
   "qtype": "sa",
-  "question": "Simmons Hall has 5500 windows across 300 dorm rooms. What is the maximum number 𝑛 such that at least one dorm room is guaranteed to have at least 𝑛 windows?",
+  "question": "Simmons Hall has 5500 windows across 300 dorm rooms. What is the maximum number $n$ such that at least one dorm room is guaranteed to have at least $n$ windows?",
   "choices": {},
   "answer": "19",
   "visual": false
@@ -14471,7 +14303,7 @@
   "category": "Biology",
   "kind": "bonus",
   "qtype": "sa",
-  "question": "Hybridomas (read: high-bruh-DOH-muhs) are a type of syn- thetic tumor used to produce monoclonal antibodies. They are made by fusing immortal myeloma cells with what immune cell type?",
+  "question": "Hybridomas (read: high-bruh-DOH-muhs) are a type of synthetic tumor used to produce monoclonal antibodies. They are made by fusing immortal myeloma cells with what immune cell type?",
   "choices": {},
   "answer": "B CELL (ACCEPT: PLASMA B CELL)",
   "visual": false

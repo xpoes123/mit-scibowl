@@ -123,6 +123,22 @@ def main():
         qs = parse_pdf(pdf)
         all_q.extend(qs)
         print(f"{pdf.name}: {len(qs)} kept", file=sys.stderr)
+    # dedup exact repeats and disambiguate id collisions (pdftotext can double-parse
+    # a question, and multi-part "visual bonus" blocks can mis-detect kind -> same id)
+    seen, deduped = {}, []
+    for q in all_q:
+        qid = q["id"]
+        if qid not in seen:
+            seen[qid] = q["question"]; deduped.append(q)
+        elif q["question"] == seen[qid]:
+            continue  # exact duplicate
+        else:
+            k = 2
+            while f"{qid}x{k}" in seen:
+                k += 1
+            q["id"] = f"{qid}x{k}"; seen[q["id"]] = q["question"]; deduped.append(q)
+    all_q = deduped
+
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(all_q, ensure_ascii=False, indent=1))
     from collections import Counter

@@ -382,15 +382,20 @@ function testIntro(v){
     <b>personalized study plan</b>.</p>
     <p class="hint">Takes ~30–45 min. Your progress isn't saved mid-test, so do it in one sitting.</p>`;
   const row=el('div','row');
-  row.append(mkBtn('Start test','act primary',startTest));
+  row.append(mkBtn('Start full test (24 Q)','act primary',()=>startTest(false)));
+  row.append(mkBtn('Quick 3-Q demo','act ghost',()=>startTest(true)));
   c.append(row); v.append(c);
 }
-async function startTest(){
+async function startTest(demo){
   const t=state.test;
-  if(!t.set.length){
-    try{ t.set=await (await fetch('placement-math.json')).json(); }
+  if(!t.full){
+    try{ t.full=await (await fetch('placement-math.json')).json(); }
     catch(e){ $('#view').innerHTML='<div class="empty">Placement test not available.</div>'; return; }
   }
+  if(demo){
+    const s=[...t.full]; for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]];}
+    t.set=s.slice(0,3);
+  } else { t.set=t.full; }
   t.idx=0; t.results=[]; t.phase='q'; render();
 }
 function beginTimer(){
@@ -407,7 +412,7 @@ function submitAnswer(){
   const seconds=Math.round((performance.now()-t.startT)/10)/100;
   if(t.tick)clearInterval(t.tick);
   const meta=t.set[t.idx];
-  t.draft={id:meta.id,topic:meta.topic,
+  t.draft={id:meta.id,topic:meta.topic,difficulty:meta.difficulty,
     userAnswer:$('#ans').value.trim(),work:$('#work').value.trim(),seconds};
   t.phase='graded'; render();
 }
@@ -432,11 +437,41 @@ function testDone(v){
   c.insertAdjacentHTML('beforeend',
     `<table class="res"><tr><th>#</th><th>Topic</th><th></th><th>Time</th></tr>${rows}</table>`);
   const row=el('div','row');
-  row.append(mkBtn('🧠 Generate my study plan','act primary',generatePlan));
+  row.append(mkBtn('⬇ Download results (.txt)','act primary',downloadResults));
+  row.append(mkBtn('🧠 Generate plan in-app','act ghost',generatePlan));
   row.append(mkBtn('Retake','act ghost',()=>{state.test.phase='intro';render();}));
   c.append(row);
   const out=el('div','md');out.id='planout';out.style.marginTop='1rem';c.append(out);
   v.append(c);
+}
+function downloadResults(){
+  const r=state.test.results;
+  const total=Math.round(r.reduce((a,x)=>a+x.seconds,0));
+  const right=r.filter(x=>x.correct).length;
+  const pad=s=>String(s).replace(/\n/g,'\n    ');
+  let out=[];
+  out.push('MIT SCIENCE BOWL — MATH PLACEMENT TEST RESULTS');
+  out.push('Date: '+new Date().toString());
+  out.push(`Score: ${right}/${r.length}  |  Total time: ${total}s  |  Avg: ${(total/r.length).toFixed(1)}s/question`);
+  out.push('='.repeat(70));
+  r.forEach((x,i)=>{
+    const q=state.byId[x.id]||{};
+    out.push('');
+    out.push(`Q${i+1}  [${x.topic} · ${x.difficulty||'?'}]  id=${x.id}`);
+    out.push(`Result: ${x.correct?'CORRECT':'WRONG'}   Time: ${x.seconds}s`);
+    out.push(`Question: ${pad(q.question||'(missing)')}`);
+    if(q.choices&&Object.keys(q.choices).length)
+      out.push('Choices: '+Object.entries(q.choices).map(([k,y])=>`${k}) ${y}`).join('  '));
+    out.push(`Correct answer: ${q.answer||'?'}`);
+    out.push(`Your answer:    ${x.userAnswer||'(blank)'}`);
+    out.push('Your work:');
+    out.push('    '+pad(x.work||'(none written)'));
+    out.push('-'.repeat(70));
+  });
+  const blob=new Blob([out.join('\n')],{type:'text/plain'});
+  const d=new Date(), stamp=`${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}-${String(d.getHours()).padStart(2,'0')}${String(d.getMinutes()).padStart(2,'0')}`;
+  const a=el('a'); a.href=URL.createObjectURL(blob); a.download=`scibowl-placement-${stamp}.txt`;
+  document.body.append(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
 }
 async function generatePlan(){
   const out=$('#planout'); out.innerHTML='<p class="hint">Analyzing your work and building a personalized plan…</p>';

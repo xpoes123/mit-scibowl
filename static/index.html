@@ -338,25 +338,36 @@ function renderTest(){
   if(t.phase==='done') return testDone(v);
   const q=state.byId[t.set[t.idx].id], meta=t.set[t.idx];
   const card=el('div','card');
+  const solved = t.phase!=='q' && t.draft;
   card.innerHTML=`<div class="progress"><i style="width:${100*t.idx/t.set.length}%"></i></div>`+
     `<div class="meta"><span>Question ${t.idx+1} / ${t.set.length}</span>`+
     `<span class="badge">${meta.topic}</span><span>${meta.difficulty}</span>`+
-    `<span class="timer" id="timer">0.0s</span></div>`+
+    `<span class="timer" id="timer">${solved?t.draft.seconds+'s ⏱':'0.0s'}</span></div>`+
     `<div class="qtext">${q.question}</div>`+
     (q.qtype==='mc'&&q.choices?'<ul class="choices">'+
       Object.entries(q.choices).map(([k,x])=>`<li><b>${k})</b> ${x}</li>`).join('')+'</ul>':'');
   if(t.phase==='q'){
     card.insertAdjacentHTML('beforeend',
-      `<div class="lbl">Your work (show your steps)</div>
-       <textarea id="work" placeholder="Write out how you solved it…"></textarea>
-       <div class="lbl">Your answer</div>
+      `<div class="lbl">Solve it, then submit — this stops the clock</div>
        <input class="ans" id="ans" placeholder="Final answer" autocomplete="off">`);
     const row=el('div','row');
-    row.append(mkBtn('Submit answer','act primary',submitAnswer));
+    row.append(mkBtn('Submit answer ⏱','act primary',submitAnswer));
     card.append(row);
     v.append(card);
-    $('#ans').focus();
+    const ans=$('#ans'); ans.focus();
+    ans.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitAnswer();}});
     beginTimer();
+  }else if(t.phase==='work'){
+    card.insertAdjacentHTML('beforeend',
+      `<div class="lbl">Your answer — locked in at ${t.draft.seconds}s</div>
+       <div class="answer" style="border-color:var(--blue)">${t.draft.userAnswer||'<i>blank</i>'}</div>
+       <div class="lbl">Now write up how you did it (untimed — this is for the gap analysis)</div>
+       <textarea id="work" placeholder="Write out your steps, or note where you got stuck…"></textarea>`);
+    const row=el('div','row');
+    row.append(mkBtn('Continue','act primary',submitWork));
+    card.append(row);
+    v.append(card);
+    $('#work').focus();
   }else{ // graded
     const d=t.draft;
     card.insertAdjacentHTML('beforeend',
@@ -375,8 +386,9 @@ function testIntro(v){
   const c=el('div','card');
   c.innerHTML=`<h2 style="margin-top:0;color:var(--blue)">Math Placement Test</h2>
     <p><b>24 questions</b> spanning every major math topic, curated to pinpoint your weak areas.
-    For each one: <b>write out your work</b>, type your answer, then self-grade against the real answer.
-    Each question is <b>timed</b> — speed counts in Science Bowl.</p>
+    For each one: <b>solve it while the clock runs</b> and submit your answer (that stops the timer, so it
+    measures real solving speed), <b>then write up your work untimed</b>, then self-grade against the real answer.
+    Speed counts in Science Bowl.</p>
     <p>At the end, your results (right/wrong, times, and your written work) go to Claude, which
     diagnoses your gaps — including mistakes visible in your steps — and writes a
     <b>personalized study plan</b>.</p>
@@ -413,7 +425,12 @@ function submitAnswer(){
   if(t.tick)clearInterval(t.tick);
   const meta=t.set[t.idx];
   t.draft={id:meta.id,topic:meta.topic,difficulty:meta.difficulty,
-    userAnswer:$('#ans').value.trim(),work:$('#work').value.trim(),seconds};
+    userAnswer:$('#ans').value.trim(),work:'',seconds};
+  t.phase='work'; render();
+}
+function submitWork(){
+  const t=state.test;
+  t.draft.work=$('#work').value.trim();
   t.phase='graded'; render();
 }
 function gradeQuestion(correct){

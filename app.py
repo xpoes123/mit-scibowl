@@ -22,6 +22,8 @@ CACHE = json.loads(CACHE_FILE.read_text()) if CACHE_FILE.exists() else {}
 PLACEMENT_FILE = ROOT / "data" / "placement-math.json"
 LESSONS_FILE = ROOT / "data" / "lessons.json"
 BIO_FILE = ROOT / "data" / "bio-topics.json"
+PROFILE_FILE = ROOT / "data" / "profile.md"
+PROFILE = PROFILE_FILE.read_text() if PROFILE_FILE.exists() else ""
 
 MODEL = "claude-sonnet-5"
 client = anthropic.Anthropic() if os.getenv("ANTHROPIC_API_KEY") else None
@@ -72,6 +74,39 @@ def explain(req: ExplainReq):
     CACHE[req.id] = text
     CACHE_FILE.write_text(json.dumps(CACHE, ensure_ascii=False))
     return {"explanation": text, "cached": False}
+
+
+ASK_SYSTEM = (
+    "You are David's personal Science Bowl coach, embedded as a help assistant inside "
+    "his study app. Here is everything you know about him — tailor every answer to it:\n\n"
+    + PROFILE +
+    "\n\nAnswer his question directly and concisely. Always give the WHY / the intuition, "
+    "not just the answer. Write math as LaTeX ($...$ inline, $$...$$ display). Use short "
+    "paragraphs and bullets — never a wall of text. If page context is provided, he is "
+    "probably asking about that; use it."
+)
+
+
+class AskReq(BaseModel):
+    messages: list[dict]  # [{role: 'user'|'assistant', content: str}]
+    context: str | None = None
+
+
+@app.post("/ask")
+def ask(req: AskReq):
+    if client is None:
+        raise HTTPException(503, "ANTHROPIC_API_KEY not set on server")
+    system = ASK_SYSTEM
+    if req.context:
+        system += f"\n\n## What David is currently looking at\n{req.context[:6000]}"
+    msgs = [{"role": m["role"], "content": m["content"]}
+            for m in req.messages if m.get("content")][-20:]
+    if not msgs:
+        raise HTTPException(400, "no message")
+    resp = client.messages.create(
+        model=MODEL, max_tokens=1024, system=system, messages=msgs)
+    text = "".join(b.text for b in resp.content if b.type == "text").strip()
+    return {"reply": text}
 
 
 @app.get("/questions.json")

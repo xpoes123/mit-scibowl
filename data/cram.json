@@ -462,7 +462,7 @@
    {
     "tag": "stoich",
     "front": "Molar mass to nearest — method",
-    "back": "Sum atomic masses (Hg₂Cl₂: 2·200+2·35 = 470)"
+    "back": "Sum atomic masses (Hg₂Cl₂: 2·200.6 + 2·35.45 ≈ 472 g/mol)"
    },
    {
     "tag": "quantum",
@@ -687,7 +687,7 @@
    },
    {
     "front": "Golden Gate & Gibson assembly cut DNA with what enzyme class?",
-    "back": "Restriction enzymes (bacterial endonucleases; cleave at specific sites)",
+    "back": "Golden Gate uses Type IIS restriction enzymes (e.g. BsaI); Gibson assembly does NOT use restriction enzymes — it is scarless, using a 5′ exonuclease + DNA polymerase + DNA ligase",
     "tag": "lab-techniques"
    },
    {

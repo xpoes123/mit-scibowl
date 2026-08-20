@@ -97,6 +97,17 @@ table.res .t-slow{color:var(--orange)}
 .lesson-card .pri.p1{color:var(--red)} .lesson-card .pri.p2{color:var(--yellow)} .lesson-card .pri.p3{color:var(--muted)}
 .lesson-card h3{margin:0 0 .2rem;color:var(--blue)}
 .lesson-card p{margin:0;color:var(--muted);font-size:.88rem}
+.biocat{background:var(--bg2);border:1px solid var(--bg3);border-radius:12px;padding:.85rem 1.1rem;cursor:pointer;margin:.55rem 0}
+.biocat:hover{border-color:var(--green)}
+.biocat .top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.biocat h3{margin:0;color:var(--green);font-size:1.02rem}
+.biocat .cnt{color:var(--muted);font-size:.8rem;white-space:nowrap}
+.bar-lev{height:7px;background:var(--bg3);border-radius:4px;margin-top:.5rem;overflow:hidden}
+.bar-lev>i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--cyan))}
+.kfact{background:var(--bg2);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:.7rem .95rem;margin:.5rem 0}
+.kfact .f{font-weight:600} .kfact .w{color:var(--muted);margin-top:.25rem;font-size:.92rem}
+.kfact .w b,.kfact .f b{color:var(--green)}
+.kfact p{margin:0} .kfact ul{margin:.3rem 0;padding-left:1.2rem}
 .lcard{border-left:3px solid var(--bg3);background:var(--bg2);border-radius:0 10px 10px 0;padding:1.1rem 1.3rem;margin:1rem 0;line-height:1.62}
 .lcard .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;font-weight:800;margin-bottom:.4rem}
 .lcard>b{display:block;margin-bottom:.5rem;font-size:1.05rem}
@@ -139,6 +150,7 @@ table.res .t-slow{color:var(--orange)}
   <h1><span class="m">MIT</span> <span class="s">SciBowl</span> Trainer</h1>
   <div class="tabs">
     <button class="tab active" data-mode="learn">Learn</button>
+    <button class="tab" data-mode="bio">Biology</button>
     <button class="tab" data-mode="flash">Flashcards</button>
     <button class="tab" data-mode="buzz">Buzz Trainer</button>
     <button class="tab" data-mode="test">Placement Test</button>
@@ -163,6 +175,7 @@ function typeset(node){
 const state={
   mode:'learn', all:[], deck:[], idx:0, revealed:false,
   lessons:null, lessonOpen:null,
+  bio:{topics:null,open:null,drill:null},
   expCache:JSON.parse(localStorage.getItem('sb_exp')||'{}'),
   subjects:new Set(['Math','Chemistry','Biology']),
   qtype:'all', kind:'all', year:'all', noVisual:true,
@@ -197,7 +210,7 @@ function rebuild(){
 }
 function renderFilters(){
   const f=$('#filters'); f.innerHTML='';
-  if(state.mode==='plan'||state.mode==='test'||state.mode==='learn') return;
+  if(state.mode==='plan'||state.mode==='test'||state.mode==='learn'||state.mode==='bio') return;
   const subj=el('div','grp');
   ['Math','Chemistry','Biology'].forEach(s=>{
     const c=el('span','chip '+s.toLowerCase()+(state.subjects.has(s)?' on':''),s);
@@ -235,6 +248,7 @@ function renderFilters(){
 // ---------- render dispatch ----------
 function render(){
   if(state.mode==='learn') return renderLearn();
+  if(state.mode==='bio') return renderBio();
   if(state.mode==='plan') return renderPlan();
   if(state.mode==='test'){ renderTest(); return typeset($('#view')); }
   if(!state.deck.length){$('#view').innerHTML='<div class="empty">No questions match these filters.</div>';return;}
@@ -296,8 +310,8 @@ function next(){state.idx=(state.idx+1)%state.deck.length;state.revealed=false;
 function showExplanation(exp,text){
   exp.innerHTML='<div class="k">Fast approach</div>'+mdToHtml(text); typeset(exp);
 }
-async function explain(){
-  const q=curr(); const exp=$('#exp'); if(!exp)return;
+async function explainFor(q){
+  const exp=$('#exp'); if(!exp||!q)return;
   exp.style.display='block';
   if(state.expCache[q.id]){ showExplanation(exp,state.expCache[q.id]); return; } // client cache -> instant
   exp.innerHTML='<b>Thinking…</b>';
@@ -311,6 +325,7 @@ async function explain(){
     showExplanation(exp,d.explanation);
   }catch(e){exp.innerHTML='<b>⚠</b> '+e.message;}
 }
+function explain(){ return explainFor(curr()); }
 
 // ---------- buzz trainer ----------
 let buzzTimer=null,buzzWords=[],buzzPos=0,buzzed=false;
@@ -632,6 +647,87 @@ function renderLesson(v,slug){
   }
   const b2=mkBtn('← All lessons','act ghost',()=>{state.lessonOpen=null;render();});
   const wrap=el('div','row');wrap.append(b2);v.append(wrap);
+  typeset(v);
+}
+
+// ---------- biology by topic ----------
+async function renderBio(){
+  const v=$('#view'), b=state.bio;
+  if(b.topics===null){
+    v.innerHTML='<div class="empty">Loading biology topics…</div>';
+    try{ b.topics=await (await fetch('bio-topics.json')).json(); }catch(e){ b.topics=[]; }
+  }
+  if(!b.topics.length){ v.innerHTML='<div class="empty">Biology topics are being generated — check back shortly.</div>'; return; }
+  if(b.drill) return renderBioDrill(v);
+  if(b.open) return renderBioTopic(v,b.open);
+  v.innerHTML='<p class="hint">Biology by topic, highest-leverage first (longer bar = shows up more often). Learn the high-yield facts, then drill that topic\'s questions.</p>';
+  const list=el('div'); const max=Math.max(...b.topics.map(t=>t.count));
+  const total=b.topics.reduce((a,t)=>a+t.count,0);
+  b.topics.forEach(t=>{
+    const c=el('div','biocat');
+    const share=t.share||Math.round(100*t.count/total);
+    c.innerHTML=`<div class="top"><h3>${t.name}</h3><span class="cnt">${t.count} Qs · ${Math.round(share)}%</span></div>
+      <div class="bar-lev"><i style="width:${100*t.count/max}%"></i></div>`;
+    c.onclick=()=>{b.open=t.slug;render();};
+    list.append(c);
+  });
+  v.append(list);
+}
+function renderBioTopic(v,slug){
+  const b=state.bio, t=b.topics.find(x=>x.slug===slug);
+  if(!t){b.open=null;return renderBio();}
+  v.innerHTML='';
+  v.append(mkBtn('← All topics','act ghost',()=>{b.open=null;render();}));
+  const head=el('div','card');
+  head.innerHTML=`<h2 style="margin:0 0 .3rem;color:var(--green)">${t.name}</h2>`+
+    `<p class="hint" style="margin:0">${t.count} questions in the bank</p>`+
+    (t.overview?`<div class="lesson-overview">${mdToHtml(t.overview)}</div>`:'');
+  v.append(head);
+  v.append(el('div','sec-h','⭐ High-yield — learn these first'));
+  (t.key_facts||[]).forEach(k=>{
+    v.append(el('div','kfact',`<div class="f">${mdToHtml(k.fact)}</div><div class="w">${mdToHtml(k.why)}</div>`));
+  });
+  if(t.drill_tips){ v.append(el('div','sec-h','🎯 At the buzzer')); v.append(el('div','lcard trigger',mdToHtml(t.drill_tips))); }
+  const row=el('div','row');
+  row.append(mkBtn(`▶ Drill these ${(t.question_ids||[]).length} questions`,'act good',()=>startBioDrill(slug)));
+  v.append(row);
+  typeset(v);
+}
+function startBioDrill(slug){
+  const b=state.bio, t=b.topics.find(x=>x.slug===slug);
+  const deck=(t.question_ids||[]).map(id=>state.byId[id]).filter(Boolean);
+  for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];}
+  b.drill={slug,deck,idx:0,revealed:false,right:0,seen:0}; render();
+}
+function bioNext(){const d=state.bio.drill; d.idx++; d.revealed=false; if(d.idx>=d.deck.length)d.idx=0; render();}
+function explainBio(){ return explainFor(state.bio.drill.deck[state.bio.drill.idx]); }
+function renderBioDrill(v){
+  const b=state.bio, d=b.drill, q=d.deck[d.idx];
+  v.innerHTML='';
+  v.append(mkBtn('← Back to topic','act ghost',()=>{b.drill=null;render();}));
+  if(!q){ v.append(el('div','empty','No questions in this topic.')); return; }
+  const card=el('div','card');
+  let html=metaEl(q)+`<div class="progress"><i style="width:${100*d.idx/d.deck.length}%"></i></div>`+
+    `<div class="qtext">${q.question}</div>`;
+  if(q.qtype==='mc'&&q.choices) html+='<ul class="choices">'+
+    Object.entries(q.choices).map(([k,x])=>`<li><b>${k})</b> ${x}</li>`).join('')+'</ul>';
+  card.innerHTML=html;
+  if(d.revealed){
+    card.append(el('div','answer',`<b>Answer:</b> ${q.answer}`));
+    const exp=el('div','explain');exp.id='exp';exp.style.display='none';card.append(exp);
+    const row=el('div','row');
+    row.append(mkBtn('✓ Got it','act good',()=>{d.right++;d.seen++;bioNext();}));
+    row.append(mkBtn('✗ Missed','act bad',()=>{d.seen++;bioNext();}));
+    row.append(mkBtn('💡 Explain','act ghost',explainBio));
+    card.append(row);
+  }else{
+    const row=el('div','row');
+    row.append(mkBtn('Show answer','act primary',()=>{d.revealed=true;render();}));
+    row.append(mkBtn('Skip','act ghost',bioNext));
+    card.append(row);
+  }
+  v.append(card);
+  v.append(el('div','stats',`${d.idx+1} / ${d.deck.length} · ${d.right}/${d.seen} correct this session`));
   typeset(v);
 }
 

@@ -21,6 +21,7 @@ CACHE_FILE = ROOT / "data" / "explanations.json"
 CACHE = json.loads(CACHE_FILE.read_text()) if CACHE_FILE.exists() else {}
 PLACEMENT_FILE = ROOT / "data" / "placement-math.json"
 LESSONS_FILE = ROOT / "data" / "lessons.json"
+BIO_FILE = ROOT / "data" / "bio-topics.json"
 
 MODEL = "claude-sonnet-5"
 client = anthropic.Anthropic() if os.getenv("ANTHROPIC_API_KEY") else None
@@ -90,6 +91,13 @@ def lessons():
     if not LESSONS_FILE.exists():
         raise HTTPException(404, "lessons not generated")
     return JSONResponse(json.loads(LESSONS_FILE.read_text()))
+
+
+@app.get("/bio-topics.json")
+def bio_topics():
+    if not BIO_FILE.exists():
+        raise HTTPException(404, "bio topics not generated")
+    return JSONResponse(json.loads(BIO_FILE.read_text()))
 
 
 ANALYZE_SYSTEM = (

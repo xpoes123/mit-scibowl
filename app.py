@@ -101,6 +101,8 @@ def ask(req: AskReq):
         system += f"\n\n## What David is currently looking at\n{req.context[:6000]}"
     msgs = [{"role": m["role"], "content": m["content"]}
             for m in req.messages if m.get("content")][-20:]
+    while msgs and msgs[0]["role"] != "user":  # Anthropic requires the first turn to be user
+        msgs.pop(0)
     if not msgs:
         raise HTTPException(400, "no message")
     resp = client.messages.create(

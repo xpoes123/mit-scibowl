@@ -146,16 +146,23 @@ table.res .t-slow{color:var(--orange)}
 .lcard td,.md td{border-bottom:1px solid var(--bg3);padding:.35rem .55rem;vertical-align:top}
 .katex{font-size:1.05em}
 .empty{color:var(--muted);text-align:center;padding:3rem}
+.daily-head{display:flex;align-items:center;gap:1.2rem;background:var(--bg2);border:1px solid var(--bg3);border-radius:12px;padding:.8rem 1.1rem;margin-bottom:1rem}
+.daily-head .streak{display:flex;flex-direction:column;align-items:center;line-height:1.1;font-size:1.4rem}
+.daily-head .streak b{color:var(--orange)} .daily-head .streak span{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.daily-head .dprog{flex:1} .daily-head .dprog>div{font-size:.9rem;margin-bottom:.4rem}
 #askBtn{position:fixed;bottom:1.1rem;right:1.1rem;z-index:50;border:none;cursor:pointer;
-  background:var(--purple);color:var(--bg);font-weight:700;padding:.7rem 1.1rem;border-radius:24px;
-  box-shadow:0 6px 20px rgba(0,0,0,.35);font-size:.9rem}
-#askBtn:hover{filter:brightness(1.1)}
-#askPanel{position:fixed;bottom:1.1rem;right:1.1rem;z-index:51;width:min(420px,calc(100vw - 2rem));
-  height:min(600px,calc(100vh - 2rem));background:var(--bg2);border:1px solid var(--bg3);border-radius:14px;
-  display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.5);overflow:hidden}
-.ask-head{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;
-  background:var(--bg3);font-weight:700;font-size:.9rem}
-.ask-head #askClose{cursor:pointer;color:var(--muted);font-size:1.1rem}
+  width:48px;height:48px;background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;
+  border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,.4);font-size:1.4rem;line-height:1;
+  display:flex;align-items:center;justify-content:center}
+#askBtn:hover{filter:brightness(1.15);transform:scale(1.05)}
+#askPanel{position:fixed;bottom:1.1rem;right:1.1rem;z-index:51;width:340px;height:460px;
+  min-width:260px;min-height:220px;max-width:calc(100vw - 1rem);max-height:calc(100vh - 1rem);
+  background:var(--bg2);border:1px solid var(--bg3);border-radius:14px;
+  display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.5);overflow:hidden;resize:both}
+.ask-head{display:flex;justify-content:space-between;align-items:center;padding:.6rem .9rem;
+  background:var(--bg3);font-weight:700;font-size:.9rem;cursor:move;user-select:none}
+.ask-head .ask-drag-hint{color:var(--muted);font-weight:400;font-size:.72rem}
+.ask-head #askClose{cursor:pointer;color:var(--muted);font-size:1rem;padding:0 .3rem}
 #askLog{flex:1;overflow-y:auto;padding:.8rem;display:flex;flex-direction:column;gap:.6rem}
 .ask-msg{padding:.6rem .8rem;border-radius:10px;line-height:1.55;max-width:92%;overflow-x:auto}
 .ask-msg.user{background:var(--blue);color:var(--bg);align-self:flex-end}
@@ -174,7 +181,8 @@ table.res .t-slow{color:var(--orange)}
 <header>
   <h1><span class="m">MIT</span> <span class="s">SciBowl</span> Trainer</h1>
   <div class="tabs">
-    <button class="tab active" data-mode="learn">Learn</button>
+    <button class="tab active" data-mode="daily">Daily</button>
+    <button class="tab" data-mode="learn">Learn</button>
     <button class="tab" data-mode="bio">Biology</button>
     <button class="tab" data-mode="flash">Flashcards</button>
     <button class="tab" data-mode="buzz">Buzz Trainer</button>
@@ -186,9 +194,9 @@ table.res .t-slow{color:var(--orange)}
   <div id="filters" class="bar"></div>
   <div id="view"></div>
 </main>
-<button id="askBtn" title="Ask your coach">💬 Ask coach</button>
+<button id="askBtn" title="Ask your coach">✨</button>
 <div id="askPanel" hidden>
-  <div class="ask-head"><span>💬 Your Science Bowl coach</span><span id="askClose">✕</span></div>
+  <div class="ask-head"><span>✨ Coach<span class="ask-drag-hint"> · drag to move</span></span><span id="askClose" title="Collapse">▁</span></div>
   <div id="askLog"></div>
   <div class="ask-input">
     <textarea id="askText" rows="1" placeholder="Ask anything — a concept, a shortcut, what's on screen…"></textarea>
@@ -207,9 +215,10 @@ function typeset(node){
   }else{ setTimeout(()=>typeset(node),150); } // KaTeX loads via defer; retry until ready
 }
 const state={
-  mode:'learn', all:[], deck:[], idx:0, revealed:false,
+  mode:'daily', all:[], deck:[], idx:0, revealed:false,
   lessons:null, lessonOpen:null,
   bio:{topics:null,open:null,drill:null},
+  daily:{deck:null,idx:0,goal:15},
   expCache:JSON.parse(localStorage.getItem('sb_exp')||'{}'),
   subjects:new Set(['Math','Chemistry','Biology']),
   qtype:'all', kind:'all', year:'all', noVisual:true,
@@ -229,13 +238,28 @@ async function boot(){
 }
 
 // ---------- ask coach widget ----------
-const askConvo=[];
+const askConvo=JSON.parse(localStorage.getItem('sb_askconvo')||'[]'); // persisted across sessions
+function saveConvo(){ localStorage.setItem('sb_askconvo',JSON.stringify(askConvo.slice(-400))); }
 function initAsk(){
   const panel=$('#askPanel'), btn=$('#askBtn');
-  const open=()=>{panel.hidden=false;btn.style.display='none';$('#askText').focus();
-    if(!askConvo.length)$('#askLog').innerHTML='<div class="ask-hint">Ask about a concept, a shortcut, a question on screen, or how to study. I know your placement results and what you\'re working on.</div>';};
-  const close=()=>{panel.hidden=true;btn.style.display='block';};
+  const saveGeom=()=>{const r=panel.getBoundingClientRect();localStorage.setItem('sb_askui',JSON.stringify({l:r.left,t:r.top,w:r.width,h:r.height}));};
+  const restoreGeom=()=>{const g=JSON.parse(localStorage.getItem('sb_askui')||'null');if(g){panel.style.left=g.l+'px';panel.style.top=g.t+'px';panel.style.right='auto';panel.style.bottom='auto';panel.style.width=g.w+'px';panel.style.height=g.h+'px';}};
+  const open=()=>{panel.hidden=false;btn.style.display='none';restoreGeom();
+    askConvo.length?askRender():$('#askLog').innerHTML='<div class="ask-hint">Ask about a concept, a shortcut, a question on screen, or how to study. I know your placement results, what you\'re working on, and our past chats.</div>';
+    $('#askText').focus();};
+  const close=()=>{saveGeom();panel.hidden=true;btn.style.display='flex';};
   btn.onclick=open; $('#askClose').onclick=close;
+  // drag to move via header
+  const head=panel.querySelector('.ask-head'); let drag=null;
+  head.addEventListener('mousedown',e=>{ if(e.target.id==='askClose')return;
+    const r=panel.getBoundingClientRect(); drag={dx:e.clientX-r.left,dy:e.clientY-r.top};
+    panel.style.right='auto';panel.style.bottom='auto'; e.preventDefault(); });
+  window.addEventListener('mousemove',e=>{ if(!drag)return;
+    let x=Math.max(0,Math.min(window.innerWidth-80,e.clientX-drag.dx));
+    let y=Math.max(0,Math.min(window.innerHeight-40,e.clientY-drag.dy));
+    panel.style.left=x+'px'; panel.style.top=y+'px'; });
+  window.addEventListener('mouseup',()=>{ if(drag){drag=null;saveGeom();} });
+  new ResizeObserver(()=>{ if(!panel.hidden) saveGeom(); }).observe(panel);
   const ta=$('#askText');
   ta.addEventListener('input',()=>{ta.style.height='auto';ta.style.height=Math.min(120,ta.scrollHeight)+'px';});
   ta.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();askSend();}});
@@ -268,14 +292,14 @@ function askRender(){
 async function askSend(){
   const ta=$('#askText'), text=ta.value.trim(); if(!text)return;
   ta.value=''; ta.style.height='auto';
-  askConvo.push({role:'user',content:text}); askRender();
+  askConvo.push({role:'user',content:text}); saveConvo(); askRender();
   const log=$('#askLog'); const wait=el('div','ask-msg bot','<i>thinking…</i>'); log.append(wait); log.scrollTop=log.scrollHeight;
   try{
     const r=await fetch('ask',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({messages:askConvo,context:currentContext()})});
+      body:JSON.stringify({messages:askConvo.slice(-24),context:currentContext()})});
     if(!r.ok){wait.innerHTML='⚠ '+(await r.text());return;}
     const d=await r.json();
-    askConvo.push({role:'assistant',content:d.reply}); askRender();
+    askConvo.push({role:'assistant',content:d.reply}); saveConvo(); askRender();
   }catch(e){ wait.innerHTML='⚠ '+e.message; }
 }
 function setMode(m){
@@ -296,7 +320,7 @@ function rebuild(){
 }
 function renderFilters(){
   const f=$('#filters'); f.innerHTML='';
-  if(state.mode==='plan'||state.mode==='test'||state.mode==='learn'||state.mode==='bio') return;
+  if(state.mode==='plan'||state.mode==='test'||state.mode==='learn'||state.mode==='bio'||state.mode==='daily') return;
   const subj=el('div','grp');
   ['Math','Chemistry','Biology'].forEach(s=>{
     const c=el('span','chip '+s.toLowerCase()+(state.subjects.has(s)?' on':''),s);
@@ -333,6 +357,7 @@ function renderFilters(){
 
 // ---------- render dispatch ----------
 function render(){
+  if(state.mode==='daily') return renderDaily();
   if(state.mode==='learn') return renderLearn();
   if(state.mode==='bio') return renderBio();
   if(state.mode==='plan') return renderPlan();
@@ -436,10 +461,11 @@ function renderBuzz(){
   v.append(el('div','stats',subjStat()));
   buzzPos=0;buzzed=false;
 }
+function activeQuestion(){ return state.mode==='daily' ? state.daily.deck[state.daily.idx] : curr(); }
 function startBuzz(){
   stopBuzz(); buzzPos=0;buzzed=false;
   const ph=$('#stage .ph'); if(ph)ph.style.display='none';
-  const q=curr();
+  const q=activeQuestion();
   if(state.tts&&window.speechSynthesis){
     const u=new SpeechSynthesisUtterance(q.question);
     u.rate=Math.max(.5,Math.min(2,state.wpm/150));
@@ -455,7 +481,7 @@ function startBuzz(){
   }
 }
 function charToWord(ci){ // map a char index in the question to a word index
-  const q=curr().question; let count=0;
+  const q=activeQuestion().question; let count=0;
   for(let i=0;i<buzzWords.length;i++){count+=buzzWords[i].length+1;if(ci<count)return i;}
   return buzzWords.length-1;
 }
@@ -474,7 +500,7 @@ function stopBuzz(){
 }
 function doBuzz(){
   if(buzzed)return; buzzed=true; stopBuzz();
-  const q=curr(); const shown=buzzPos;
+  const q=activeQuestion(); const shown=buzzPos;
   const pct=Math.round(100*shown/buzzWords.length);
   const ans=$('#bans'); if(!ans)return;
   // reveal full question so you can self-check
@@ -482,10 +508,102 @@ function doBuzz(){
   ans.style.display='block';
   ans.innerHTML=`<span class="buzzed">🔔 Buzzed at word ${shown}/${buzzWords.length} (${pct}% in)</span><br>
     <b>Answer:</b> ${q.answer}`;
+  const row=el('div','row');
+  row.append(mkBtn('✓ Got it','act good',()=>afterBuzz(q,pct,true)));
+  row.append(mkBtn('✗ Missed','act bad',()=>afterBuzz(q,pct,false)));
+  ans.append(row); typeset(ans);
+}
+function afterBuzz(q,pct,got){
+  logBuzz({t:Date.now(),id:q.id,cat:q.category,pct,got});
+  if(state.mode==='daily') dailyAdvance(); else next();
+}
+
+// ---------- daily drill + buzz tracking ----------
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function buzzLog(){ return JSON.parse(localStorage.getItem('sb_buzzlog')||'[]'); }
+function logBuzz(rec){ const l=buzzLog(); l.push(rec); localStorage.setItem('sb_buzzlog',JSON.stringify(l.slice(-3000))); }
+function todayStr(d){ d=d||new Date(); return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(); }
+function getDaily(){ return JSON.parse(localStorage.getItem('sb_daily')||'{"date":"","count":0,"streak":0,"lastDone":""}'); }
+function setDaily(s){ localStorage.setItem('sb_daily',JSON.stringify(s)); }
+function buildDailyDeck(goal){
+  const log=buzzLog();
+  const missed=shuffle([...new Set(log.filter(r=>!r.got).map(r=>r.id))].map(id=>state.byId[id]).filter(Boolean));
+  const pool=state.all.filter(q=>!q.visual);
+  const math=shuffle(pool.filter(q=>q.category==='Math'));
+  const other=shuffle(pool.filter(q=>q.category!=='Math'));
+  const deck=[], seen=new Set();
+  const add=q=>{ if(q&&!seen.has(q.id)){seen.add(q.id);deck.push(q);} };
+  missed.slice(0,Math.floor(goal*0.4)).forEach(add);      // re-surface what you miss (spaced repetition)
+  let mi=0,oi=0;
+  while(deck.length<goal&&(mi<math.length||oi<other.length)){ deck.length%10<7?add(math[mi++]):add(other[oi++]); }
+  return deck;
+}
+function renderDaily(){
+  const v=$('#view'), D=state.daily; let st=getDaily();
+  if(st.date!==todayStr()){ st.date=todayStr(); st.count=0; setDaily(st); D.deck=null; }
+  if(!D.deck){ D.deck=buildDailyDeck(D.goal); D.idx=0; }
+  v.innerHTML='';
+  v.append(el('div','daily-head',
+    `<div class="streak">🔥 <b>${st.streak}</b><span>day streak</span></div>
+     <div class="dprog"><div>Today: <b>${Math.min(st.count,D.goal)}/${D.goal}</b> buzzed</div>
+       <div class="bar-lev"><i style="width:${Math.min(100,100*st.count/D.goal)}%"></i></div></div>`));
+  if(st.count>=D.goal) return dailyDone(v,st);
+  if(D.idx>=D.deck.length) D.deck.push(...buildDailyDeck(D.goal));
+  const q=D.deck[D.idx];
+  const card=el('div','card'); card.innerHTML=metaEl(q);
+  const stage=el('div','buzz-stage');stage.id='stage';
+  buzzWords=q.question.match(/\$[^$]+\$|\S+/g)||[];
+  stage.innerHTML='<span class="ph">Press <b>Start</b> (<kbd>enter</kbd>) — reads word by word. Hit <b>Buzz</b> (<kbd>space</kbd>) the instant you know it, then mark if you got it.</span>'
+    +buzzWords.map((w,i)=>`<span class="w" data-i="${i}">${w}</span>`).join(' ');
+  card.append(stage);
+  const row=el('div','row');
+  row.append(mkBtn('▶ Start','act primary',startBuzz));
+  row.append(mkBtn('🔔 BUZZ','act good',doBuzz));
+  row.append(mkBtn('Skip','act ghost',dailyNext));
+  card.append(row);
+  const ans=el('div','answer');ans.id='bans';ans.style.display='none';card.append(ans);
+  v.append(card);
+  buzzPos=0;buzzed=false; typeset(card);
+}
+function dailyNext(){ stopBuzz(); state.daily.idx++; render(); }
+function dailyAdvance(){        // called after a scored buzz
+  let st=getDaily(); const D=state.daily;
+  st.count=(st.count||0)+1;
+  if(st.count===D.goal){        // hit today's goal -> update streak once
+    const today=todayStr(), y=todayStr(new Date(Date.now()-86400000));
+    if(st.lastDone!==today){ st.streak=(st.lastDone===y?st.streak+1:1); st.lastDone=today; }
+  }
+  setDaily(st); state.daily.idx++; render();
+}
+function dailyDone(v,st){
+  const c=el('div','card');
+  c.innerHTML=`<div class="score">Done for today 🎉</div>
+    <p class="hint">🔥 ${st.streak}-day streak. Come back tomorrow — the streak grows and tomorrow's deck leans harder on what you miss.</p>`;
+  const row=el('div','row');
+  row.append(mkBtn('Bonus round →','act primary',()=>{const s=getDaily();s.count=0;setDaily(s);state.daily.deck=buildDailyDeck(state.daily.goal);state.daily.idx=0;render();}));
+  c.append(row); v.append(c); v.append(buzzStatsEl());
+}
+function buzzStatsEl(){
+  const log=buzzLog(), wrap=el('div','card'); wrap.style.marginTop='1rem';
+  if(!log.length){ wrap.innerHTML='<p class="hint">No buzzes logged yet — buzz a few and your stats appear here.</p>'; return wrap; }
+  const got=log.filter(r=>r.got).length, avgPct=Math.round(log.reduce((a,r)=>a+(r.pct||0),0)/log.length);
+  const last7=log.filter(r=>r.t>Date.now()-7*86400000);
+  const byCat={}; log.forEach(r=>{const c=byCat[r.cat]||(byCat[r.cat]={n:0,g:0});c.n++;if(r.got)c.g++;});
+  const cats=Object.entries(byCat).map(([k,v])=>`${k} ${Math.round(100*v.g/v.n)}% (${v.n})`).join(' · ');
+  wrap.innerHTML=`<div class="sec-h" style="margin-top:0">📊 Your buzz stats</div>
+    <p>Total buzzes <b>${log.length}</b> · Accuracy <b>${Math.round(100*got/log.length)}%</b> · Avg buzz point <b>${avgPct}%</b> through the question <span class="hint">(lower = recognizing earlier)</span></p>
+    <p class="hint">Last 7 days: ${last7.length} buzzes, ${last7.length?Math.round(100*last7.filter(r=>r.got).length/last7.length):0}% correct · By subject — ${cats}</p>`;
+  return wrap;
 }
 
 // ---------- keyboard ----------
 function onKey(e){
+  if(state.mode==='daily'){
+    if(e.code==='Space'){e.preventDefault();doBuzz();}
+    else if(e.code==='Enter'){e.preventDefault();startBuzz();}
+    else if(e.code==='ArrowRight'){e.preventDefault();dailyNext();}
+    return;
+  }
   if(state.mode==='flash'){
     if(e.code==='Space'){e.preventDefault(); state.revealed?null:(state.revealed=true,render());}
     else if(e.code==='ArrowRight'){e.preventDefault();next();}

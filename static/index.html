@@ -123,6 +123,9 @@ table.res .t-slow{color:var(--orange)}
 .lcard.trigger{border-color:var(--cyan)} .lcard.trigger .k{color:var(--cyan)}
 .lcard.example{border-color:var(--purple)} .lcard.example .k{color:var(--purple)}
 .lcard.intuition{border-color:var(--yellow)} .lcard.intuition .k{color:var(--yellow)}
+.lcard button.act{margin-top:.7rem}
+.ex-sol{margin-top:.8rem;border-top:1px dashed var(--muted);padding-top:.7rem}
+.ex-sol .k{color:var(--purple)}
 .lcard.pitfall{border-color:var(--red)} .lcard.pitfall .k{color:var(--red)}
 .lesson-overview{background:var(--bg3);border-radius:10px;padding:.9rem 1.1rem;margin:.7rem 0 0;color:var(--fg)}
 .solution{margin-top:.6rem;padding:.8rem 1rem;border-left:3px solid var(--purple);background:var(--bg3);border-radius:0 8px 8px 0}
@@ -625,7 +628,14 @@ function renderLesson(v,slug){
   v.append(head);
   (L.cards||[]).forEach(card=>{
     const c=el('div','lcard '+card.kind);
-    c.innerHTML=`<div class="k">${card.kind}</div><b>${card.title}</b><div>${mdToHtml(card.body)}</div>`;
+    if(card.kind==='example'&&card.solution){
+      c.innerHTML=`<div class="k">example — try it first</div><b>${card.title}</b><div>${mdToHtml(card.body)}</div>`;
+      const sol=el('div','ex-sol');sol.style.display='none';sol.innerHTML='<div class="k">solution</div>'+mdToHtml(card.solution);
+      const btn=mkBtn('🧠 Show solution','act ghost',()=>{sol.style.display='block';btn.style.display='none';typeset(sol);});
+      c.append(btn);c.append(sol);
+    }else{
+      c.innerHTML=`<div class="k">${card.kind}</div><b>${card.title}</b><div>${mdToHtml(card.body)}</div>`;
+    }
     v.append(c);
   });
   if((L.memorize||[]).length){

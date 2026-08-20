@@ -1,0 +1,1152 @@
+[
+ {
+  "slug": "molbio-biochem",
+  "name": "Molecular Biology & Biochemistry",
+  "count": 75,
+  "share": 21.7,
+  "overview": "This is the single densest bio topic in the bank, and it splits into four recurring buckets. Learn the buckets, not 75 isolated cards:\n\n- **Metabolism (~1/3 of questions):** glycolysis → Krebs (citric acid) cycle → electron transport / chemiosmosis, plus photosynthesis/Calvin cycle, beta-oxidation, and gluconeogenesis. This is the highest-leverage cluster. Know the *shape* of each pathway (what goes in, what comes out, which step does what) and you'll answer most of them.\n- **Proteins & amino acids:** structure levels, functional groups, hydrophobic vs polar/charged residues, phosphorylation chemistry, and \"which substitution is most/least damaging.\"\n- **DNA/RNA machinery:** replication (leading/lagging, topoisomerase, repair pathways), transcription/translation (codons, wobble, ribosome sites, prokaryote vs eukaryote), and gene regulation (lac operon, miRNA/piRNA, transposons).\n- **Lab techniques:** Western blot / SDS-PAGE, gel electrophoresis, PCR/qPCR, sequencing (Sanger, sequencing-by-synthesis, Nanopore), CRISPR, restriction cloning (Gibson/Golden Gate, Cre-lox).\n\n**How it shows up:** heavy on \"identify all that are true\" multi-select and \"order these steps\" bonuses. Both reward knowing *mechanism*, not just vocab. The smartest prep is to draw the central-dogma and respiration/photosynthesis flowcharts once from memory, then hang every fact on that scaffold. When you see a question, first ask \"which of the four buckets is this?\" — that alone narrows the answer fast.",
+  "key_facts": [
+   {
+    "fact": "**Krebs / citric acid cycle**: the CO2-releasing steps make **alpha-ketoglutarate** (isocitrate → α-KG + CO2) and then succinyl-CoA + CO2. **Aconitase** does the citrate→isocitrate isomerization; **fluoroacetate poisons aconitase**, so citrate piles up.",
+    "why": "Science Bowl loves 'which intermediate is made alongside CO2' (α-KG) and 'what enzyme does fluoroacetate/citrate-buildup point to' (aconitase). Also called TCA or tricarboxylic acid cycle — all three names are accepted. The glyoxylate shunt in plant seeds bypasses these carbon-losing steps."
+   },
+   {
+    "fact": "**Respiration flow & chemiosmosis**: glucose phosphorylation (hexokinase) → citrate formation (Krebs) → cytochrome c reduction (ETC). Respiration is **catabolic and exergonic**. **Hexokinase traps glucose in the cell** by adding a charged phosphate; **brown fat uncouples** the proton gradient (via UCP1/thermogenin) so it makes heat instead of ATP.",
+    "why": "The ordering bonus 1,3,2 (phosphorylation → citrate → cyt c) tests that you know glycolysis precedes Krebs precedes ETC. 'Uncoupling' = protons leak back without making ATP, so O2 consumption stays high but ATP drops — exactly the pH 9.5 mitochondria question (ATP decreases, O2 consumption increases)."
+   },
+   {
+    "fact": "**Photosynthesis / Calvin cycle**: **RuBisCO** (most abundant protein on Earth) fixes CO2 onto the 5-carbon sugar **RuBP** — the first Calvin step reacts CO2 with a 5-carbon sugar. In the light reactions, electrons from **splitting water end up in NADPH**.",
+    "why": "'Most abundant protein / fixes carbon onto RuBP' is always RuBisCO. Memory hook: Calvin cycle takes a 5C sugar + 1C CO2 to make an unstable 6C that splits into two 3C (3-PGA). Oxidation-strength ordering: NAD+ < cytochrome c < P680+ (P680+ is the strongest oxidant in biology — it rips electrons off water)."
+   },
+   {
+    "fact": "**Amino acid substitutions**: conservative swaps (**Met→Val**, both nonpolar) barely change function; drastic ones (**Trp→Asn**, big hydrophobic→polar; or **Val→Asp**, nonpolar→charged) break structure. A buried membrane residue should be very hydrophobic — **tryptophan** over polar Tyr/Thr.",
+    "why": "Rank damage by how much the chemistry changes: size + polarity + charge. Val→Asp in myoglobin disrupts primary, secondary, AND tertiary structure (but not quaternary — myoglobin is a monomer). This 'which mutation hurts most/least' framing is a repeat favorite."
+   },
+   {
+    "fact": "**Protein functional groups & phosphorylation**: every amino acid has a **carboxyl and an amino group** (thiol/phosphate are side-chain-specific). **Tyrosine** (like phenylalanine + OH) gets phosphorylated on receptor tyrosine kinases like the insulin receptor. **Glutamate mimics phosphoserine** — its negative charge makes a kinase constitutively active (phosphomimetic).",
+    "why": "Phosphorylation adds negative charge; Glu/Asp are the natural negative residues, so they're the phosphomimetic stand-ins. AUG codes methionine (start codon; Met derives from cysteine). SAM's methyl is reactive because it's bonded to sulfur — the polarizable element also found in cysteine."
+   },
+   {
+    "fact": "**DNA replication mechanics**: the **lagging strand is synthesized 5'→3' and is discontinuous** (Okazaki fragments) because polymerase only extends 5'→3'. **Topoisomerases/gyrase** relieve supercoiling (targeted by quinolones/camptothecins). **FEN1 (flap endonuclease)** trims primer flaps displaced by Pol δ during replication.",
+    "why": "ALL DNA polymerase works 5'→3', so the strand running the 'wrong' way must be made in backward chunks = discontinuous. Quinolone/camptothecin + 'toroidal/plectonemic supercoils' → topoisomerase, every time."
+   },
+   {
+    "fact": "**DNA repair pathways**: **nucleotide excision** repair fixes bulky UV damage (thymine dimers); **base excision** removes single damaged bases like uracil/hypoxanthine; **homologous recombination** repairs **double-strand breaks**. The **Ames test** screens mutagens — adding an antioxidant like **ascorbic acid** reduces mutagenesis (fewer revertant colonies).",
+    "why": "Match by damage size: bulky/UV = nucleotide, single-base = base, whole-break = HR/NHEJ. Watch the classic swap trap — questions deliberately pair 'base excision with UV' (wrong) to catch you."
+   },
+   {
+    "fact": "**Translation machinery**: tRNA visits ribosome sites in **A → P → E** order (Aminoacyl arrives, Peptidyl holds chain, Exit). **Peptidyl transferase** (a ribozyme in the 50S/large subunit) forms peptide bonds — target of macrolides. **61 sense codons** code amino acids (64 − 3 stops). **Wobble** at the 3rd position lets one tRNA read several codons; **inosine/hypoxanthine** enables most wobble pairs.",
+    "why": "APE order = the ribosome is a conveyor belt: enter A, work at P, leave E. Wobble base pairing question (AGU/AGC read by one tRNA) tests that the 3rd base is flexible. Inosine (deaminated adenine = hypoxanthine base) pairs with U, C, and A."
+   },
+   {
+    "fact": "**Prokaryotic vs eukaryotic gene expression**: prokaryotes **transcribe and translate simultaneously** (no nucleus) and often make **polycistronic** mRNA (multiple proteins per transcript); eukaryotes do NOT couple the two. In both, mRNA first binds the **small ribosomal subunit**. Eukaryotic translation is regulated by **miRNA** (imperfect matching) and uses **polyribosomes** on one mRNA.",
+    "why": "The one-line discriminator: 'transcription + translation at the same time' is prokaryote-only (eukaryote mRNA must exit the nucleus first). Multi-select bonuses hammer this exact contrast repeatedly."
+   },
+   {
+    "fact": "**Lab techniques cheat-sheet**: **SDS** coats proteins with uniform negative charge so **SDS-PAGE** separates by size only. Western blot order: run SDS-PAGE → transfer to nitrocellulose → block with milk. **qPCR** = viral load; **Sanger/PCR need NTPs**; **Nanopore is NOT sequencing-by-synthesis**; **tandem mass spec** = protein sequencing; **circular dichroism** analyzes 2° structure, NOT size.",
+    "why": "SDS-PAGE separates by size because SDS erases the protein's own charge — so it CAN'T distinguish same-size residues like Leu vs Ile. Pulsed-field gel electrophoresis is for large nucleic acids. Memory: 'sequencing by synthesis' builds a new strand (Sanger, Illumina); Nanopore reads the strand directly through a pore."
+   },
+   {
+    "fact": "**Enzyme kinetics — Km ranking**: uncompetitive **lowers Km**, noncompetitive **leaves Km unchanged**, competitive **raises Km** → order of increasing Km is uncompetitive < noncompetitive < competitive. **Burst-phase kinetics** (fast then slow) signals a **covalent enzyme intermediate**, e.g. chymotrypsin's acyl-enzyme.",
+    "why": "Km = substrate needed for half-max speed. Competitive inhibitors fight for the active site, so you need MORE substrate (higher Km); uncompetitive binds only the ES complex and pulls the equilibrium, lowering apparent Km. Chymotrypsin forms a covalent acyl-enzyme, releasing product in a fast burst before the slow deacylation step."
+   },
+   {
+    "fact": "**Gene regulation & mobile elements**: **lac operon** gene order from operator is **lacZ, lacY, lacA**; max expression at **high lactose, low glucose** (CAP + no repressor). **Retrotransposons copy-and-paste via RNA** (LINEs are retrotransposons); **AZT** (azidothymidine) blocks reverse transcriptase → stops HIV, retrotransposons, and telomerase. **piRNA** silences LINE elements.",
+    "why": "'Copy-paste vs cut-paste': retrotransposons go through an RNA intermediate (copy), DNA transposons cut-paste. AZT is a chain-terminating thymidine analog, so anything using reverse transcriptase (HIV, retrotransposons, telomerase) is hit. Epigenetic opening = remove DNA methylation OR add histone acetylation."
+   },
+   {
+    "fact": "**Hemoglobin & cofactors**: Hb iron is coordinated to a **histidine** in the porphyrin ring (not aspartate); the **T (tense) state has low O2 affinity**; Hb is a tetramer, so it elutes FASTER than monomeric myoglobin in gel filtration (bigger = out first). **Nitrogenase** needs **iron and molybdenum** cofactors.",
+    "why": "Gel filtration (size-exclusion): big molecules can't enter the beads so they take the short path and exit first — tetrameric Hb beats little myoglobin. T state = 'Tense' = Taut = grips less O2; R state relaxed = high affinity. Nitrogenase's FeMo-cofactor is the classic 'which metals' answer."
+   },
+   {
+    "fact": "**Vitamins & small molecules**: **Vitamin A** is a **conjugated polyene** (retinal, the light-absorbing chromophore). **Cobalamin (B12) regenerates folic acid** (the methionine synthase / methyl-trap link). **Signal peptides** at the N-terminus get cleaved during maturation (e.g., insulin, angiotensin II — secreted/processed proteins).",
+    "why": "Conjugated polyene = alternating double bonds = absorbs light, which is why retinal works in vision. B12 and folate are linked in one-carbon metabolism; B12 deficiency traps folate. N-terminal cleavage happens to proteins that are secreted or proteolytically activated, not cytosolic ones like hexokinase or calmodulin."
+   }
+  ],
+  "drill_tips": "**Buzz triggers → instant answers**\n- \"Most abundant protein / fixes CO2 onto RuBP\" → **RuBisCO**\n- \"Fluoroacetate / citrate builds up\" → **aconitase**; \"intermediate made with CO2\" → **alpha-ketoglutarate**\n- \"Toroidal/plectonemic supercoils, quinolone/camptothecin\" → **topoisomerase (gyrase)**\n- \"Coats proteins with uniform negative charge\" → **SDS**\n- \"Viral load quantification\" → **qPCR**; \"protein sequencing by mass\" → **tandem mass spec**\n- \"Peptide-bond-forming enzyme in large subunit\" → **peptidyl transferase**\n- \"AZT / azidothymidine\" → blocks **reverse transcriptase** (HIV, retrotransposons, telomerase)\n- \"Uncouples / brown fat\" → proton gradient leak, heat not ATP\n\n**Classic distractor pairs to nail cold**\n- **Base excision vs nucleotide excision**: nucleotide = bulky UV dimers; base = single damaged base (uracil, hypoxanthine). Questions deliberately swap these.\n- **Retrotransposon (copy-paste, RNA intermediate) vs DNA transposon (cut-paste)**. LINEs = retrotransposons.\n- **T state (low O2 affinity) vs R state (high)**. Left-shifted curve = high affinity = R, not T.\n- **Sequencing-by-synthesis (Sanger, Illumina) vs Nanopore** (reads strand directly — NOT by synthesis).\n- **SDS-PAGE separates by size only** — so it canNOT tell apart same-size residues (Leu/Ile) or measure charge; **circular dichroism = secondary structure, not size**.\n- **Km direction**: competitive ↑Km, noncompetitive =Km, uncompetitive ↓Km. Increasing order: uncompetitive < noncompetitive < competitive.\n- **Hb iron → histidine**, not aspartate. Bigger molecule (Hb tetramer) elutes FIRST in gel filtration.\n- **Phosphomimetic = Glu/Asp** (negative), mimicking phospho-Ser/Thr/Tyr.\n- **Conservative substitution (least harmful): Met→Val**; **most harmful: big→charged/polar (Trp→Asn, Val→Asp)**.\n\n**Memorize cold**\n- Respiration order: glycolysis (hexokinase, glucose phosphorylation) → Krebs (citrate) → ETC (cytochrome c). Ribosome sites: **A→P→E**. lac genes: **Z, Y, A** from operator.\n- 61 sense codons; AUG = Met = start. Wobble 3rd position via **inosine/hypoxanthine**.\n- Nitrogenase cofactors: **Fe + Mo**. Vitamin A = conjugated polyene. B12 regenerates folate.\n- Every amino acid has carboxyl + amino group. All DNA/RNA polymerases work **5'→3'** → lagging strand discontinuous.\n- Glycosidic bond / disaccharide formula = two monomers minus one H2O.",
+  "question_ids": [
+   "2023-r1-b12",
+   "2023-r10-b9",
+   "2023-r10-t22",
+   "2023-r11-t4",
+   "2023-r11-b4",
+   "2023-r11-b19",
+   "2023-r12-t6",
+   "2023-r12-b11",
+   "2023-r12-t21",
+   "2023-r13-t15",
+   "2023-r13-b15",
+   "2023-r3-b14",
+   "2023-r4-t5",
+   "2023-r4-b18",
+   "2023-r5-t6",
+   "2023-r5-b10",
+   "2023-r6-b23",
+   "2023-r7-t17",
+   "2023-r7-b17",
+   "2024-r1-b3",
+   "2024-r1-t9",
+   "2024-r10-t4",
+   "2024-r10-b4",
+   "2024-r10-t16",
+   "2024-r11-t4",
+   "2024-r11-b14",
+   "2024-r11-t19",
+   "2024-r12-t11",
+   "2024-r12-b11",
+   "2024-r13-t15",
+   "2024-r14-t11x2",
+   "2024-r14-t17",
+   "2024-r14-b23",
+   "2024-r2-t2",
+   "2024-r3-t2",
+   "2024-r3-t12",
+   "2024-r3-b15",
+   "2024-r4-b20",
+   "2024-r5-b23",
+   "2024-r6-t13",
+   "2024-r7-t4",
+   "2024-r7-b12",
+   "2024-r7-t17",
+   "2024-r9-t18",
+   "2025-r1-b17",
+   "2025-r10-b9",
+   "2025-r11-b11",
+   "2025-r11-b18",
+   "2025-r12-b7",
+   "2025-r13-t1",
+   "2025-r13-t22",
+   "2025-r14-t5",
+   "2025-r14-t5x2",
+   "2025-r15-t4",
+   "2025-r15-t17",
+   "2025-r16-b15",
+   "2025-r16-t25",
+   "2025-r16-b25",
+   "2025-r2-t3",
+   "2025-r3-t3",
+   "2025-r3-b3",
+   "2025-r3-b7",
+   "2025-r4-t2",
+   "2025-r4-b2",
+   "2025-r4-t11",
+   "2025-r4-b11",
+   "2025-r5-t1",
+   "2025-r5-b11",
+   "2025-r5-t23",
+   "2025-r6-t9",
+   "2025-r7-t19",
+   "2025-r8-t13",
+   "2025-r8-t25",
+   "2025-r8-b25",
+   "2025-r9-t10"
+  ]
+ },
+ {
+  "slug": "anatomy-physiology",
+  "name": "Anatomy & Physiology",
+  "count": 63,
+  "share": 18.2,
+  "overview": "**What it covers:** Human (and comparative-animal) organ systems — cardiovascular, endocrine, digestive, respiratory/blood, muscle, and kidney/osmoregulation — plus a steady trickle of comparative-physiology curveballs (birds, insects, sharks, fish).\n\n**How it shows up in Science Bowl:** Two clusters dominate this bank. **The heart** (SA node, cardiac cycle ordering, valves, pressure-volume loops, intercalated discs, RAAS/ANP) and **the endocrine system** (hypothalamus-pituitary axis, thyroid, steroid vs. peptide hormones, POMC/ACTH family) together are roughly half the questions. Digestion, hemoglobin/blood gas transport, and muscle physiology fill most of the rest. Formats are heavy on \"**order these 3/4 events**\" (cardiac cycle, digestive enzymes, blood-vessel sequence), \"**identify all that are true**\" multi-selects, and \"NOT true\" negation tossups.\n\n**Smartest way to learn it:** Don't memorize organs in isolation — learn the **pathways and feedback loops** as stories. Trace one drop of blood through the heart, one bite of food through digestion, one signal down the hypothalamus→pituitary→gland axis. The ordering questions become free once you own the sequence. Then layer on the ~15 \"trigger term\" facts (aromatase, inhibin, thermogenin, hemocyanin) that are just one-to-one name recalls.",
+  "key_facts": [
+   {
+    "fact": "**The cardiac conduction pathway: SA node → AV node → bundle of His → Purkinje fibers.** The SA node sits in the right atrium and sets the heart's rate (the pacemaker).",
+    "why": "Ordering questions ask you to sequence these every year. The SA node's spontaneous firing comes from **HCN / 'funny' (F-type) channels** — so 'F-type receptor' questions point to the SA node. Note: 'Sinoatrial node' is the accepted answer, NOT 'pacemaker' — they explicitly reject the descriptive word."
+   },
+   {
+    "fact": "**Cardiac cycle = ventricular filling → mitral valve closes → isovolumetric contraction → ejection → isovolumetric relaxation.** Left ventricle has the thickest myocardium.",
+    "why": "On a **pressure-volume loop**, start where the mitral valve opens (filling), go around, and read **end-diastolic volume ≈ 120 mL** off the right side. Left ventricle is thickest because it pumps to the whole body (systemic circuit) vs. the right ventricle's short trip to the lungs. 'Iso-volumetric' = valves shut, volume constant, pressure changing."
+   },
+   {
+    "fact": "**Steroid hormones cross the phospholipid bilayer and bind intracellular (cytoplasmic/nuclear) receptors; peptide hormones bind surface receptors.** Aldosterone and cortisol are steroids.",
+    "why": "This is THE recurring endocrine distinction. Steroids are lipid-soluble (made from cholesterol), so they slip through membranes. **Cortisol comes from the zona fasciculata** of the adrenal cortex (and drives smoltification in salmon). Aldosterone = the one that 'crosses to a cytoplasmic receptor.'"
+   },
+   {
+    "fact": "**The hypothalamus secretes releasing hormones (TRH, CRH, GHRH) and connects to the posterior pituitary via the infundibulum.** Prolactin is both positively and negatively regulated by the hypothalamus.",
+    "why": "The hypothalamus is the master switchboard. Most anterior-pituitary hormones get one releasing signal; **prolactin is the exception** — dopamine inhibits it AND TRH stimulates it, so 'both positively and negatively regulated' = prolactin. The **hypothalamic-pituitary portal system** (median eminence of the infundibulum) is one of the body's portal systems, alongside the hepatic portal system."
+   },
+   {
+    "fact": "**POMC is the precursor cleaved into ACTH and MSH** (melanocyte-stimulating hormone). Thyroid hormone (T3/T4) requires iodine and raises basal metabolic rate.",
+    "why": "'Same precursor as ACTH' = MSH (both from pro-opiomelanocortin), NOT vasopressin or melatonin. Thyroid trivia: **iodine** is the trace element; too much causes the **Wolff-Chaikoff effect** (shutdown). **Graves' disease** = hyperthyroid, **myxedema** = hypothyroid — both are thyroid imbalances (Addison's is adrenal, a distractor)."
+   },
+   {
+    "fact": "**RAAS raises blood pressure; ANP (atrial natriuretic peptide) opposes it.** ACE converts angiotensin I → angiotensin II (a vasoconstrictor); ACE inhibitors (e.g., Zestril/lisinopril) lower BP.",
+    "why": "Learn the loop as a tug-of-war: **RAAS** (renin→angiotensin II→aldosterone) retains Na⁺/water and constricts vessels to RAISE pressure; the heart's atria fire back with **ANP** to promote Na⁺ excretion and LOWER it. Classic 'NOT true' trap: ANP does NOT increase aldosterone — it inhibits the whole RAAS."
+   },
+   {
+    "fact": "**Hemoglobin has a sigmoidal O₂-saturation curve (cooperative binding); myoglobin is hyperbolic.** Fetal hemoglobin has HIGHER O₂ affinity than adult.",
+    "why": "Sigmoidal = the 4 subunits cooperate, so Hb loads/unloads efficiently across tissues. Myoglobin (1 subunit) grabs O₂ hard and holds — hyperbolic. Fetal Hb must pull O₂ FROM maternal blood, so it binds tighter. At **high altitude** the body compensates with ↑hematocrit, ↑EPO, and ↑2,3-BPG (which shifts the curve to unload more O₂)."
+   },
+   {
+    "fact": "**Carbonic anhydrase in red blood cells converts CO₂ + H₂O ⇌ bicarbonate.** Bicarbonate is the major blood buffer.",
+    "why": "This enzyme is why RBCs transport CO₂ efficiently as $HCO_3^-$. Bicarbonate beats phosphate as a buffer because it's more abundant AND coupled to the respiratory system (you can breathe off CO₂ to adjust pH) — though phosphate's pKa is actually closer to physiological pH."
+   },
+   {
+    "fact": "**Digestive enzyme order: salivary amylase → pepsin (stomach) → trypsin (small intestine).** Trypsin is activated when enterokinase cleaves the zymogen trypsinogen.",
+    "why": "Follow the food: mouth (amylase) → stomach (pepsin, acidic) → small intestine (trypsin). **Zymogens** are inactive enzyme precursors activated by cleavage — enterokinase→trypsin is the trigger. **Intrinsic factor comes from parietal cells** (which also make stomach acid); **CCK** triggers bile RELEASE (not synthesis) and pancreatic enzymes."
+   },
+   {
+    "fact": "**Lipid digestion: emulsification by bile salts → assembly into chylomicrons → entry into circulation (via lymph).** Fat-soluble vitamins (A, D, E, K) cause hypervitaminosis; water-soluble (B, C) are excreted in urine.",
+    "why": "Fats need bile to break into droplets first, get packaged into chylomicrons, then enter the lymphatic/circulatory system. **Vitamin A** is the classic hypervitaminosis answer because fat-soluble vitamins accumulate in tissue; water-soluble ones (thiamine, niacin, ascorbic acid) just get peed out, so they can't build up."
+   },
+   {
+    "fact": "**Intercalated discs (desmosomes + gap junctions) join cardiomyocytes at the Z line** and let the heart contract as a syncytium. Smooth muscle's dense bodies are analogous to skeletal muscle's Z discs.",
+    "why": "Gap junctions spread the electrical signal cell-to-cell so the heart beats in unison; desmosomes hold cells together mechanically. **Ryanodine receptors** (named for the plant alkaloid ryanodine) release Ca²⁺ from the sarcoplasmic reticulum — the calcium-induced calcium release of contraction. Myosin ATPase speed: smooth < cardiac < skeletal."
+   },
+   {
+    "fact": "**The Loop of Henle creates the highest osmolarity in the kidney; ADH makes the collecting duct permeable to water.** Sharks retain urea (buffered by TMAO) for osmoregulation.",
+    "why": "The loop's countercurrent multiplier builds a salty medulla so water can be reabsorbed. **ADH (vasopressin)** inserts aquaporins → more water permeability in the collecting duct. Excretory-system matching: flatworms use flame cells, annelids use **metanephridia**, insects use Malpighian tubules — molluscs use metanephridia too, so 'mollusc + metanephridia' being called wrong is the trap."
+   },
+   {
+    "fact": "**Comparative trigger terms:** hemocyanin (copper-based blood pigment in insect hemolymph), chitin (rings holding insect tracheae open), cloaca (shared reproductive/digestive/excretory opening in birds), torpor (hibernation + estivation), thermogenin/UCP1 (proton-leak heat channel in brown fat).",
+    "why": "These are near-1:1 recalls that show up as single tossups. Bird facts recur: **enucleated? No — birds have NUCLEATED RBCs** (unlike mammals), and they use positive-pressure? No — birds use a highly efficient cross-current air-sac system. Insects breathe via tracheae directly (open circulatory system, hemolymph in the hemocoel)."
+   },
+   {
+    "fact": "**Reproductive/other trigger terms:** inhibin (from Sertoli cells, inhibits FSH), aromatase (converts androgens→estrogens in theca/granulosa cells), incretins (GIP & GLP, boost insulin after eating), oxytocin + prostaglandins (positive-feedback loop of labor).",
+    "why": "Inhibin = the 'inhibits FSH' negative-feedback answer. Aromatase = the 'testosterone → estrogen' enzyme. **Labor is the go-to positive-feedback example** — oxytocin and prostaglandins amplify contractions (PYY is a digestion distractor). Bilirubin is the pigment from heme/hemoglobin breakdown that colors bile."
+   }
+  ],
+  "drill_tips": "## Buzz triggers (word → answer)\n- \"sets the rate / timing,\" \"right atrium,\" \"F-type / funny channel\" → **SA node** (say \"sinoatrial,\" never \"pacemaker\")\n- \"crosses the bilayer / cytoplasmic (intracellular) receptor\" → **steroid hormone** (aldosterone, cortisol)\n- \"infundibulum,\" \"releasing hormones,\" \"median eminence\" → **hypothalamus** / hypothalamic-pituitary portal\n- \"same precursor as ACTH,\" \"POMC\" → **MSH**\n- \"inhibits FSH,\" \"Sertoli cells\" → **inhibin**\n- \"androgen → estrogen,\" \"theca cells\" → **aromatase**\n- \"converts CO₂ + water in RBCs\" → **carbonic anhydrase**\n- \"proton leak channel,\" \"brown fat,\" \"nonshivering thermogenesis\" → **thermogenin / UCP1**\n- \"copper pigment in hemolymph\" → **hemocyanin**\n- \"inactive precursor cleaved to activate\" → **zymogen** (trypsinogen → trypsin via enterokinase)\n- \"vasoconstrictor made by ACE\" → **angiotensin II**; \"atria release to oppose RAAS\" → **ANP**\n\n## Classic distractor pairs (memorize the split)\n- **Sigmoidal vs. hyperbolic** → hemoglobin (cooperative) vs. myoglobin\n- **Fetal vs. adult Hb** → fetal has HIGHER O₂ affinity\n- **Steroid vs. peptide** → intracellular receptor vs. surface receptor\n- **Graves' / myxedema (thyroid) vs. Addison's (adrenal)** → don't lump Addison's with thyroid\n- **Parietal cells (intrinsic factor, HCl) vs. chief cells (pepsinogen)**\n- **Fat-soluble (A,D,E,K → hypervitaminosis) vs. water-soluble (B,C → excreted)**\n- **Veins have THINNER walls than arteries** (the \"NOT true\" is always \"veins thicker\")\n- **Birds: nucleated RBCs, cross-current air-sac (efficient) breathing** — not enucleated, not simple positive-pressure\n- **ANP inhibits RAAS** — the negation trap says it \"increases aldosterone\" (false)\n\n## Memorize cold\n- Conduction order: **SA → AV → His → Purkinje**\n- Cardiac cycle order + PV loop (EDV ≈ 120 mL)\n- Digestive enzyme order: **amylase → pepsin → trypsin**; lipid order: **emulsify → chylomicron → circulation**\n- RAAS loop and its ANP counter-regulator; ACE inhibitors lower BP\n- Excretory systems: flame cells / metanephridia / Malpighian tubules; sharks retain **urea** (+ TMAO)\n- Muscle myosin-ATPase speed: **smooth < cardiac < skeletal**; intercalated discs = desmosomes + gap junctions at the Z line",
+  "question_ids": [
+   "2023-r1-t22",
+   "2023-r10-t9",
+   "2023-r11-b7",
+   "2023-r11-t14",
+   "2023-r11-b14",
+   "2023-r13-t7",
+   "2023-r2-t17",
+   "2023-r3-t7",
+   "2023-r4-b7",
+   "2023-r4-t21",
+   "2023-r6-t5",
+   "2023-r8-t9",
+   "2023-r8-b9",
+   "2023-r8-t22",
+   "2023-r9-b21",
+   "2024-r1-t3",
+   "2024-r10-b9",
+   "2024-r11-t14",
+   "2024-r12-t6",
+   "2024-r12-t15x2",
+   "2024-r14-t6",
+   "2024-r14-t11",
+   "2024-r2-b2",
+   "2024-r2-b16",
+   "2024-r3-b2",
+   "2024-r4-b5",
+   "2024-r4-b7",
+   "2024-r5-t9",
+   "2024-r6-t7",
+   "2024-r8-b5",
+   "2024-r9-t6",
+   "2024-r9-b6",
+   "2024-r9-t10",
+   "2024-r9-b18",
+   "2024-r9-t21",
+   "2025-r1-t22",
+   "2025-r1-b22",
+   "2025-r10-t15",
+   "2025-r10-b15",
+   "2025-r11-t23",
+   "2025-r12-t2",
+   "2025-r12-t18",
+   "2025-r12-t23",
+   "2025-r13-t8",
+   "2025-r14-t23",
+   "2025-r15-t9x2",
+   "2025-r16-t11",
+   "2025-r16-t22",
+   "2025-r16-b22",
+   "2025-r2-t20",
+   "2025-r2-t25",
+   "2025-r3-t20",
+   "2025-r3-b20",
+   "2025-r4-t23",
+   "2025-r4-b23",
+   "2025-r5-b23",
+   "2025-r6-b9",
+   "2025-r6-t18",
+   "2025-r6-b18",
+   "2025-r6-t23",
+   "2025-r7-t7",
+   "2025-r7-t17",
+   "2025-r8-b21"
+  ]
+ },
+ {
+  "slug": "plant-biology",
+  "name": "Plant Biology",
+  "count": 47,
+  "share": 13.6,
+  "overview": "Plant Biology is one of the densest, most predictable bio topics in the bank — 47 questions clustered around a handful of themes that repeat year after year. If you learn the **six hormones**, the **three ground tissues**, **flower/seed anatomy**, and the **soil/transport** vocabulary, you can buzz on the large majority of these.\n\nHow it shows up: about a third of questions are **hormone-identification** (\"which hormone does X?\"), another chunk is **anatomy ID** (name the tissue/structure from a description), and the rest are **repro** (ABC model, endosperm ploidy, self-incompatibility), **nutrition/transport** (Casparian strip, cation exchange, transpiration), and **phylogeny** (bryophytes, ferns, vascular-plant traits). Formats lean heavily on multiple-choice \"which is LEAST/NOT\" and \"identify all that are true\" — so you need clean either/or distinctions, not vibes.\n\nSmartest way to learn: don't memorize isolated flashcards — build the **plant's cause-and-effect story**. A hormone is defined by the phenotype it causes; a tissue by whether it's alive and lignified; a structure by where water/genes flow through it. Anchor every fact to a mechanism (\"ethylene = triple response = short, thick, horizontal\") and the flashcards drill themselves.",
+  "key_facts": [
+   {
+    "fact": "**Abscisic acid (ABA)** = stress/dormancy hormone: closes stomata and inhibits germination; it's acidic and gets **washed out by imbibition** (water uptake) to permit sprouting.",
+    "why": "Nearly every ABA clue names one of these three: 'closes stomata,' 'inhibits germination,' or 'acidic.' Mnemonic: ABA = 'Away, Bad, Away' — shuts things down under drought. To DELAY germination you ADD ABA (or far-red light); white light promotes it."
+   },
+   {
+    "fact": "**Ethylene** causes the triple response — **short, thick, horizontal** growth — and is induced by high auxin.",
+    "why": "The stem 'bumps into an obstacle' and reroutes: slows elongation (short), thickens, bends sideways (horizontal). A gaseous ripening hormone. Auxin only elongates at LOW concentration; above ~0.1 mM it triggers ethylene, which then inhibits growth — the classic 'auxin backfires' question."
+   },
+   {
+    "fact": "**Gibberellins (GA)** promote stem elongation — the cause of 'foolish seedling' disease where rice grows too tall and topples.",
+    "why": "Discovered from the fungus Gibberella infecting rice (bakanae). GA = 'Grow Angry/tall.' Also breaks seed dormancy and promotes germination — the functional opposite of ABA."
+   },
+   {
+    "fact": "**Auxin** drives acid growth: it pumps protons ($H^+$) into the cell wall, and **expansins** then loosen the cellulose microfibrils so the wall stretches.",
+    "why": "Low wall pH activates expansins that break the hydrogen bonds gluing cellulose together → wall creeps → cell elongates. This is the mechanism behind phototropism and gravitropism. Buzzword pairing: 'proton pump + wall loosening = expansins.'"
+   },
+   {
+    "fact": "**Strigolactones** inhibit axillary bud growth and attract mycorrhizal fungi; **jasmonates** are 5-carbon-ring lipids driving fertility, germination inhibition, and systemic acquired resistance.",
+    "why": "The two 'newer' hormones SciBowl loves for hard questions. Strigolactones: 'strig' → they reach OUT to fungi in the soil and enforce apical dominance. Jasmonates (jasmonic acid) = the wound/defense lipid hormone, releases methylsalicylic acid for SAR."
+   },
+   {
+    "fact": "The three ground tissues by life status: **parenchyma** (alive, thin-walled), **collenchyma** (alive, flexible — the crunch of celery), **sclerenchyma** (DEAD at maturity, lignified secondary walls — stains red with phloroglucinol-HCl).",
+    "why": "The dividing line is alive-vs-dead + lignified-vs-not. Collenchyma = living support (bends), sclerenchyma = dead rigid support (fibers/sclereids, e.g. the cherry PIT and nutshells = lignin). Phloroglucinol-HCl staining red = lignin present = sclerenchyma."
+   },
+   {
+    "fact": "**Pericycle** gives rise to lateral roots; the **Casparian strip** (suberin + lignin) blocks the apoplast and forces water into the **symplastic** route before the vascular cylinder.",
+    "why": "Lateral roots punch outward from the pericycle (the outermost layer of the vascular cylinder). The Casparian strip is a waxy 'checkpoint' — suberin is the key waterproofing beyond lignin, ensuring minerals cross a living membrane (selective) rather than sneaking through cell walls."
+   },
+   {
+    "fact": "Root growth zones outward from the tip: **cell division → elongation → differentiation**. Woody stem layers inward→outward: **pith → vascular cambium → secondary phloem → periderm**.",
+    "why": "Meristem at the tip makes cells (division), which then stretch (elongation), then specialize (differentiation). For wood: cambium is the living factory in the middle producing xylem inward and phloem outward; periderm (bark) is the protective skin. Killing a tree = removing sapwood (functional xylem) or girdling the phloem."
+   },
+   {
+    "fact": "**Endosperm is triploid (3n)**: double fertilization fuses one sperm with the two polar nuclei. If a cell has $n=11$ chromosomes, endosperm = $33$.",
+    "why": "One sperm (n) + central cell's two polar nuclei (n + n) = 3n. The megagametophyte's 8 nuclei include 2 **synergids** (flank the egg, guide pollen tube) and 3 **antipodal cells** (at the chalazal/far end). Zygote is 2n, endosperm is 3n — the single most common ploidy question."
+   },
+   {
+    "fact": "**ABC model** of flower identity: A→sepals, A+B→petals, B+C→stamens, C→carpels. Lose gene C and A spreads → **sepal-petal-petal-sepal**. These are **MADS-box** genes (AGAMOUS, DEFICIENS), the plant analog of animal HOX.",
+    "why": "A and C are mutually antagonistic — knock out C and A takes over its whorls, converting reproductive parts back to sterile leaves-like organs. MADS-box = the conserved DNA-binding motif; homeotic like HOX but a totally separate gene family."
+   },
+   {
+    "fact": "**Cation exchange**: roots pump $H^+$ into soil, displacing mineral cations ($K^+$, $Ca^{2+}$) off clay particles so roots can absorb them. Lowering soil pH (adding acid) frees $Al$ and $Fe$.",
+    "why": "Clay is negatively charged and grips positive nutrients; protons act as the 'bidding currency' to knock them loose. Acidifying soil increases availability of metal cations (aluminum, iron) but not phosphate. Nitrogen deficiency shows on OLDER leaves first because N is mobile — the plant reallocates it to new growth."
+   },
+   {
+    "fact": "**Statoliths = amyloplasts** (starch-filled plastids) that settle by gravity to tell roots which way is down; **guttation** is water forced out of leaves by root pressure at night.",
+    "why": "Dense starch grains sink → cells sense 'down' → gravitropism. Say 'amyloplast,' NOT just 'plastid.' Guttation (droplets on leaf edges, via hydathodes) is push from below (root pressure), distinct from transpiration pull from above. Transpiration is DECREASED by high humidity and by ABA (closes stomata)."
+   },
+   {
+    "fact": "Land plants and charophytes share the **phragmoplast** mode of cytokinesis (cell plate forms); bryophytes have **hydroids/leptoids** (proto water/food conducting cells) but no true vascular tissue.",
+    "why": "Phragmoplast + cell plate distinguishes streptophytes (charophytes + land plants) from chlorophytes and red algae, which pinch differently. Bryophytes (mosses) are the transitional group: hydroids ≈ primitive xylem, leptoids ≈ primitive phloem, but not lignified true vascular tissue. Liverworts predate vascular plants."
+   },
+   {
+    "fact": "Fruit anatomy and repro traits: most **apple flesh comes from the receptacle** (accessory fruit), **bracts** are modified leaves that mimic petals (poinsettia, euphorbs), and **gametophytic self-incompatibility** rejects pollen matching either maternal S-allele.",
+    "why": "The receptacle is the swollen stem base, not the ovary — apples/pears are 'false fruits.' Bracts advertise when petals are absent. Gametophytic SI: an S1S2 plant accepts pollen only if the pollen's own haploid allele (e.g. S3) differs from both — so S2S3 pollen works (the S3 tube succeeds)."
+   }
+  ],
+  "drill_tips": "**Buzz triggers (word → answer):**\n- \"closes stomata / inhibits germination / acidic / imbibition washes out\" → **ABA**\n- \"short, thick, horizontal / triple response / high auxin induces\" → **ethylene**\n- \"foolish seedling / too tall / rice topples\" → **gibberellins**\n- \"proton pump + loosens cell wall\" → **expansins** (mechanism is auxin's acid growth)\n- \"attracts mycorrhizae / inhibits axillary buds\" → **strigolactones**\n- \"5-carbon ring lipid / SAR / methylsalicylic acid\" → **jasmonates**\n- \"dead at maturity + lignified + phloroglucinol red\" → **sclerenchyma**; \"alive + celery crunch\" → **collenchyma**\n- \"settles by gravity / starch / statolith\" → **amyloplast** (never just \"plastid\")\n- \"root pressure pushes water out of leaf\" → **guttation**\n- \"lateral roots originate from\" → **pericycle**\n- \"apple flesh from\" → **receptacle**; \"modified leaves attracting pollinators\" → **bracts**\n\n**Classic distractor pairs to keep straight:**\n- **Collenchyma vs sclerenchyma** — living/flexible vs dead/rigid+lignified. If it says \"alive,\" it's collenchyma.\n- **Modified STEM vs ROOT** — rhizomes, tubers, stolons = stems; **pneumatophores** and taproots = ROOTS (the trap in \"which is NOT a modified stem\").\n- **Auxin low vs high concentration** — low = elongation; high = triggers ethylene = inhibition.\n- **ABA vs gibberellin** — dormancy-enforcer vs germination-promoter; direct antagonists.\n- **Monocot vs eudicot** — SCATTERED vascular bundles = monocot (maize has fibrous roots, not taproot); ringed bundles + taproot = eudicot. \"Eudicot stems have scattered bundles\" is FALSE.\n- **Endosperm 3n vs zygote 2n** — double fertilization; multiply the given n by 3 for endosperm.\n- **Suberin vs lignin** in the Casparian strip — both present, but **suberin** is the answer when lignin is already named.\n- **C4 bundle-sheath vs mesophyll** — PEP carboxylase lives in the MESOPHYLL (fixes CO2 first); Rubisco + concentrated CO2 are in the bundle sheath.\n\n**Memorize cold:** the 6 hormones with their signature phenotype; the alive/dead status of the 3 ground tissues; ABC-model whorl shifts (loss of C → sepal-petal-petal-sepal); endosperm = 3n; Casparian strip = suberin + lignin → symplastic route; statolith = amyloplast; pericycle → lateral roots; receptacle → apple flesh.",
+  "question_ids": [
+   "2023-r1-t16",
+   "2023-r10-b22",
+   "2023-r12-t11",
+   "2023-r2-t2",
+   "2023-r3-b7",
+   "2023-r3-t22",
+   "2023-r6-b5",
+   "2023-r6-t13",
+   "2023-r6-t23",
+   "2023-r7-t4",
+   "2023-r7-b12",
+   "2023-r7-t23",
+   "2023-r8-t14",
+   "2023-r8-b14",
+   "2023-r8-b22",
+   "2023-r9-t6",
+   "2023-r9-b6",
+   "2024-r1-t17",
+   "2024-r10-b16",
+   "2024-r10-t22",
+   "2024-r12-t21x2",
+   "2024-r13-t22",
+   "2024-r14-b17",
+   "2024-r14-t23",
+   "2024-r3-t20",
+   "2024-r4-t17",
+   "2024-r5-t15",
+   "2024-r6-t23",
+   "2024-r6-b23",
+   "2024-r7-t23",
+   "2024-r8-t14",
+   "2024-r8-t22",
+   "2024-r8-b22",
+   "2024-r9-b21",
+   "2025-r1-t9",
+   "2025-r10-t4",
+   "2025-r10-b24",
+   "2025-r11-t5",
+   "2025-r11-t11",
+   "2025-r14-b23",
+   "2025-r2-t14",
+   "2025-r4-b13",
+   "2025-r5-b1",
+   "2025-r5-t11",
+   "2025-r8-t6",
+   "2025-r8-b6",
+   "2025-r8-b8"
+  ]
+ },
+ {
+  "slug": "genetics-heredity",
+  "name": "Genetics & Heredity",
+  "count": 26,
+  "share": 7.5,
+  "overview": "## What this topic is\n\nGenetics & Heredity in Science Bowl is **80% math, 20% vocabulary**. The bank is dominated by *calculation* questions — Punnett-square probabilities, Hardy-Weinberg allele frequencies, recombination frequencies — plus a smaller set of *recognition* questions (which inheritance pattern? which mutation type? which disorder?).\n\n## How it shows up\n\nTwo flavors:\n- **\"Compute the number/fraction\"** bonuses: cross two heterozygotes, apply Hardy-Weinberg, work a linkage problem, count Barr bodies or chromosomes after nondisjunction. These reward a handful of reusable formulas, not memorization.\n- **\"Which pattern/term\"** tossups: recognize X-linked vs. mitochondrial vs. Z-linked inheritance from a verbal clue, name a mutation (frameshift, trinucleotide expansion), or match a disorder to its enzyme (albinism → tyrosinase).\n\n## Smartest way to learn it\n\nDon't flashcard the questions — **learn ~6 formulas and ~5 pattern-recognition rules cold**, and every question becomes plug-and-play. The single most valuable skill is the **multiplication rule**: break any multi-gene cross into independent single-gene probabilities and multiply. Master that plus Hardy-Weinberg ($p^2 + 2pq + q^2 = 1$) and you can brute-force half the bank. Then layer on the inheritance-pattern tells and the chromosome-disorder facts, which are pure recognition.",
+  "key_facts": [
+   {
+    "fact": "**Multiplication rule / the $3^n$ genotype shortcut**: for a self-cross of an $n$-way heterozygote, there are $3^n$ genotypes and $2^n$ phenotypes; multiply single-gene probabilities for any combination.",
+    "why": "Each heterozygous locus ($Aa \\times Aa$) independently gives 3 genotypes (1 AA : 2 Aa : 1 aa) and 2 phenotypes. Genes assort independently, so you *multiply*. 4 traits → $3^4 = 81$ genotypes. A trihybrid asking P(all dominant) = $(3/4)^3 = 27/64$. This one rule cracks the most questions in the bank."
+   },
+   {
+    "fact": "**Hardy-Weinberg**: $p^2 + 2pq + q^2 = 1$ and $p + q = 1$. Recessive phenotype frequency $= q^2$, so $q = \\sqrt{q^2}$; carriers (heterozygotes) $= 2pq$.",
+    "why": "The gateway trick is always the same: a recessive *disease/phenotype* frequency IS $q^2$, so take its square root to get $q$. Prevalence 1/400 → $q = 1/20$, $p = 19/20$, carriers $2pq = 19/200$. Memorize that carrier frequency is $2pq$, not $q$ — that's the classic trap."
+   },
+   {
+    "fact": "**Recombination frequency (RF)**: RF = 50% for genes on different chromosomes (or very far apart); RF = 0% for completely linked genes; $1\\%$ RF $= 1$ map unit (centimorgan).",
+    "why": "Independent assortment produces 50% recombinants — that's the ceiling, so RF can never exceed 50%. Genes on the *same* chromosome close together are 'linked' and recombine less (RF < 50%). Completely linked → parental gametes only → a wrinkled-yellow offspring can NEVER be smooth (P = 0)."
+   },
+   {
+    "fact": "**Linked-gene cross math**: gamete frequency = parental gametes get $(1-\\text{RF})/2$ each, recombinant gametes get $\\text{RF}/2$ each.",
+    "why": "With RF = 20%, recombinants total 20% (10% each of two types), parentals total 80% (40% each). To get a double-recessive offspring you need a recessive recombinant gamete from *each* parent. This is just the multiplication rule applied to non-independent genes."
+   },
+   {
+    "fact": "**Inheritance-pattern tells**: Mitochondrial = passed by mothers to ALL children, never by fathers. Y-linked = fathers to all sons only. X-linked recessive = skips generations, mostly affects males, no male-to-male transmission. Autosomal dominant = every affected child has an affected parent, no skipping.",
+    "why": "These are recognition scripts. 'Mom passes to all 6 kids but her brother passes to none of his 54' = mitochondrial (only females transmit). The male-to-male transmission question rules OUT everything X-linked and mitochondrial instantly."
+   },
+   {
+    "fact": "**Z-linked (birds/reptiles) is X-linked flipped**: males are ZZ, females are ZW. For a Z-linked recessive trait, the *female* is the hemizygous one that shows it with a single allele.",
+    "why": "In birds the female is ZW (heterogametic), so she's like a human male for sex-linked traits. A daughter (ZW) of an affected male (Z^a Z^a) gets his $Z^a$ → she's $Z^a W$ → affected 100%. Just swap 'affected males' reasoning to 'affected females' for birds/butterflies/reptiles."
+   },
+   {
+    "fact": "**Barr bodies = (number of X chromosomes) − 1** per cell.",
+    "why": "Dosage compensation inactivates all but one X. Normal female (XX) → 1 Barr body; normal male (XY) → 0. XXXYY has three X's → $3 - 1 = 2$ Barr bodies. Just count X's and subtract one."
+   },
+   {
+    "fact": "**Nondisjunction & aneuploidy**: failure of chromosomes to separate. Meiosis I failure = homologs don't separate; meiosis II failure = sister chromatids don't separate (affects fewer gametes). Down (trisomy 21), Klinefelter (XXY), Turner (X0), Cri-du-chat (5p deletion).",
+    "why": "Trisomies/monosomies ADD or SUBTRACT chromosomes from the normal 46. The trick 'Turner + Down' = 45 + 47 essentials... but Turner is 45 and Down is 47, and one deletion + one addition can net back to 46 total — read carefully whether syndromes are aneuploidies (change count) vs. deletions/imprinting (Prader-Willi/Angelman, same count)."
+   },
+   {
+    "fact": "**Polyploidy & sterility**: odd-ploidy organisms (triploid, 3n) are sterile/seedless because chromosomes can't pair evenly in meiosis. Triploid banana = seedless.",
+    "why": "Meiosis needs chromosomes to pair as homologous *pairs*. With 3 copies, pairing is uneven → unbalanced gametes → sterility. Even polyploids (tetraploid, octoploid) pair fine. So 'seedless due to meiosis problems' = the odd multiple."
+   },
+   {
+    "fact": "**Mutation types by effect**: insertion/deletion not a multiple of 3 = **frameshift** (shifts reading frame downstream). **Trinucleotide repeat expansion** causes *anticipation* — disease worsens each generation (Huntington's, Fragile X).",
+    "why": "Tay-Sachs from a 4-bp insertion = frameshift (4 isn't a multiple of 3). 'Gets worse every generation' is the buzz phrase for trinucleotide/triplet repeat expansion — repeats grow longer when passed down, so onset is earlier and severity greater in later generations."
+   },
+   {
+    "fact": "**Epistasis & modified ratios**: standard dihybrid is 9:3:3:1; a **15:1** ratio means two genes redundantly produce the same product (either dominant allele suffices); **9:7** or **9:3:4** signal genes in the same pathway.",
+    "why": "15:1 = only the double-recessive (1/16) lacks the trait, so having a dominant of *either* gene works → the enzymes act in independent/parallel pathways. Recognizing the modified ratio tells you the gene-interaction architecture."
+   },
+   {
+    "fact": "**Coefficient of relatedness (r)**: parent-offspring = full sibs = 1/2; grandparent/half-sib/aunt = 1/4; first cousins = 1/8. Inbreeding raises these.",
+    "why": "r = probability a gene is shared by common descent. Mother-daughter is always 1/2 baseline — but if there's inbreeding the value climbs (e.g., 0.75). Kin-selection and pedigree questions lean on these fixed fractions; memorize the ladder (halving each step of relatedness)."
+   },
+   {
+    "fact": "**Key autosomal recessive metabolic disorders**: Albinism (tyrosinase deficiency → no melanin in keratinocytes), PKU (phenylalanine hydroxylase), Tay-Sachs (hexosaminidase A). Huntington's is autosomal DOMINANT.",
+    "why": "Enzyme-deficiency diseases are almost all recessive (one working copy makes enough enzyme). The trap is Huntington's — it's dominant (a late-onset gain-of-function). Pair each disorder with its missing enzyme; albinism↔tyrosinase is the most-asked."
+   },
+   {
+    "fact": "**Incomplete dominance in Hardy-Weinberg**: heterozygotes show a distinct intermediate phenotype, so the heterozygote class ($2pq$) is directly visible.",
+    "why": "Black × white chickens → blue heterozygotes (incomplete dominance). If 16% are black ($q^2 = 0.16$, black = homozygous), then $q = 0.4$, $p = 0.6$, and blue $= 2pq = 2(0.6)(0.4) = 0.48 = 48\\%$. Unlike full dominance, you can 'see' and count the heterozygotes here."
+   },
+   {
+    "fact": "**Selection against a lethal recessive**: among *surviving* offspring of two carriers ($Aa \\times Aa$), the aa class is removed, leaving 1 AA : 2 Aa → 2/3 of survivors are carriers.",
+    "why": "The Punnett square gives 1 AA : 2 Aa : 1 aa, but if aa die, you renormalize over the surviving 3/4. Carriers = 2 out of the 3 survivors = 2/3. So of 120 surviving kids, $120 \\times 2/3 = 80$ carriers. Conditioning on survival is the whole trick."
+   }
+  ],
+  "drill_tips": "## Buzz triggers (words that scream this topic)\n- **\"heterozygous for N traits,\" \"dihybrid/trihybrid,\" \"true-breeding,\" \"self-cross F1\"** → Punnett multiplication rule ($3^n$ / $2^n$, multiply single-gene odds).\n- **\"Hardy-Weinberg,\" \"prevalence,\" \"carrier frequency,\" \"% affected\"** → $p^2 + 2pq + q^2 = 1$; recessive % $= q^2$, take the square root first.\n- **\"recombination frequency,\" \"map units,\" \"linked,\" \"crossing over\"** → RF: 50% = different chromosomes, 0% = completely linked.\n- **\"passes to all her children / none of his\"** → mitochondrial (maternal) or Y-linked.\n- **\"gets worse each generation,\" \"anticipation\"** → trinucleotide repeat expansion.\n- **\"karyotype,\" \"nondisjunction,\" \"trisomy/monosomy,\" \"Barr body\"** → chromosome counting.\n\n## Classic distractor pairs (memorize the distinction)\n- **Carrier frequency $2pq$ vs. recessive-allele frequency $q$** — the #1 HW trap. \"Carriers/heterozygotes\" = $2pq$.\n- **Frameshift vs. point/missense** — indel NOT a multiple of 3 = frameshift; a multiple of 3 keeps the frame.\n- **Huntington's (dominant) vs. albinism/PKU/Tay-Sachs (recessive)** — the odd-one-out on \"which are autosomal recessive.\"\n- **X-linked recessive vs. mitochondrial vs. Y-linked** — mito = mother→ALL; Y = father→sons only; X-linked recessive = no male-to-male, skips generations.\n- **Aneuploidy (Down/Turner/Klinefelter, changes chromosome number) vs. deletion/imprinting (Cri-du-chat, Prader-Willi/Angelman, normal number or structural)** — the \"normal chromosome count\" karyotype question hinges on this.\n- **Odd polyploid (triploid, sterile/seedless) vs. even polyploid (tetraploid, fertile)** — sterility comes from *odd* ploidy.\n- **Z-linked (birds: females ZW are the affected/hemizygous sex) vs. X-linked (mammals: males XY)** — flip the sex.\n\n## Memorize cold\n- $3^n$ genotypes, $2^n$ phenotypes for an $n$-way heterozygote self-cross.\n- Recessive phenotype $= q^2 \\Rightarrow q = \\sqrt{q^2}$; carriers $= 2pq$.\n- RF: 50% unlinked, 0% fully linked; recombinants split RF, parentals split $(1-\\text{RF})$.\n- Barr bodies $= (\\#X) - 1$.\n- Lethal-recessive survivors → 2/3 carriers.\n- Coefficient of relatedness ladder: 1/2 (sib/parent) → 1/4 → 1/8, doubled by inbreeding.\n- Albinism ↔ tyrosinase; PKU ↔ phenylalanine hydroxylase; \"worsens each generation\" ↔ triplet-repeat expansion.",
+  "question_ids": [
+   "2023-r1-b22",
+   "2023-r10-b16",
+   "2023-r12-b21",
+   "2023-r13-b7",
+   "2023-r2-t20",
+   "2023-r3-b22",
+   "2023-r6-b13",
+   "2023-r8-t5",
+   "2023-r9-b18",
+   "2024-r1-b17",
+   "2024-r11-b19",
+   "2024-r13-b7",
+   "2024-r13-t15x2",
+   "2024-r2-t19",
+   "2024-r5-b5",
+   "2024-r6-b5",
+   "2024-r8-b14",
+   "2024-r9-b10",
+   "2025-r1-t3",
+   "2025-r2-b7",
+   "2025-r3-b18",
+   "2025-r6-t3",
+   "2025-r7-b1",
+   "2025-r8-t21",
+   "2025-r9-t4",
+   "2025-r9-t13"
+  ]
+ },
+ {
+  "slug": "ecology-behavior",
+  "name": "Ecology & Behavior",
+  "count": 24,
+  "share": 6.9,
+  "overview": "Ecology is a **vocabulary-and-model** topic, not a memorize-the-pathway topic like biochem. Nearly every question is one of a handful of recurring themes, and once you know the *model* behind each, the answer falls out. The bank splits into five clusters:\n\n- **Population ecology** (the biggest): r/K selection, carrying capacity, survivorship curves, dispersion patterns, per-capita growth, the Allee effect, and the two Lotka-Volterra models.\n- **Community ecology**: niches (fundamental vs. realized), competitive exclusion, keystone species, species interactions, island biogeography.\n- **Biogeochemical cycles**: nitrogen (fixation + eutrophication) and phosphorus (the one with no atmospheric step).\n- **Ecosystem energetics**: production/trophic efficiency, the 10% rule.\n- **Behavior**: taxis, habituation, mating systems, Bergmann's/Allen's rules.\n\nSmartest way to learn it: don't flashcard terms in isolation — **learn the 4-5 core models** (logistic/carrying capacity, r vs K, Lotka-Volterra predator-prey and competition, survivorship curves) as pictures, and hang every term on the model it belongs to. About a third of questions are \"which is NOT true\" or \"identify all\" formats, so you need the concept solidly enough to test each option, not just recognize a keyword.",
+  "key_facts": [
+   {
+    "fact": "**r-selected vs. K-selected species** — K-selected are **iteroparous** (reproduce multiple times), few large offspring, live near carrying capacity; r-selected are **semelparous** (one big reproductive event), many small offspring, boom-bust.",
+    "why": "Tested three separate times, and the trap answer every time is **semelparous** listed as a K-trait — it is the opposite. K = 'carrying-capacity' species = stable, competitive, invest in few offspring over a long life. Memory hook: **K = 'Keep having babies' (iteroparous); r = 'run once' (semelparous)**."
+   },
+   {
+    "fact": "**Allee effect** — at *small* population sizes, per-capita growth *slows* (individuals do worse when rare).",
+    "why": "Causes are things that need a crowd: mate-finding, cooperative defense/hunting, **living in colonies**, **reciprocal altruism**. The classic distractor is **disease spreading faster** — that HELPS at high density, so it's NOT an Allee cause. Hook: Allee = 'strength in numbers,' so anything requiring numbers (colonies, altruism) qualifies; anything worsened by crowding (disease) does not."
+   },
+   {
+    "fact": "**Lotka-Volterra predator-prey model** — predator equilibrium is set by *prey* parameters and prey equilibrium by *predator* parameters (the counter-intuitive cross-dependence).",
+    "why": "So changing rabbit reproduction rate does NOT change equilibrium rabbit number (it changes the fox equilibrium), and scaling both populations down proportionally doesn't shift equilibria. Hook: **each species' equilibrium is controlled by the OTHER species' rates.** This cross-wiring is exactly what the 'identify all that will NOT affect fox equilibrium' question exploits."
+   },
+   {
+    "fact": "**Lotka-Volterra competition model / isoclines** — plot zero-growth isoclines for two species; intersections and axis endpoints are equilibria, and which species wins depends on which side of the isoclines the starting point falls.",
+    "why": "The visual bonus asks for equilibrium coordinates (the isocline intercepts, e.g. carrying-capacity points on each axis plus interior crossing) and which species dominates from a given start. Read the graph: the species whose isocline lies *outside* the other's at the start point wins. This is competitive exclusion drawn as lines."
+   },
+   {
+    "fact": "**Fundamental vs. realized niche** — fundamental = full range a species *could* occupy; realized = the smaller range it *actually* occupies after competition.",
+    "why": "In the pine-pushed-to-high-altitude question, the pine's fundamental niche (whole mountain) is larger than its realized niche (only the top) because a competitor excludes it below. Hook: **realized is always ≤ fundamental**; competition and predators shrink fundamental down to realized. This is competitive exclusion in action."
+   },
+   {
+    "fact": "**Nitrogen cycle: fixation is anaerobic-sensitive; eutrophication is the runoff→bloom→oxygen-crash cascade.** Nitrogen fixation (N₂ → ammonia) is the step MOST inhibited by oxygen.",
+    "why": "Nitrogenase, the fixation enzyme, is destroyed by O₂ — that's why fixers use anaerobic microenvironments (root nodules, heterocysts). **Eutrophication**: N-rich runoff fertilizes algae → algal bloom → decomposers consume O₂ → hypoxia/dead zone. Two separate high-frequency questions live here."
+   },
+   {
+    "fact": "**Phosphorus cycle has NO significant atmospheric reservoir** — unlike carbon, nitrogen, and sulfur.",
+    "why": "Phosphorus has no common gaseous form, so it cycles through rock, soil, and water only (weathering → uptake → sediment). When asked 'which biogeochemical cycle does NOT use the atmosphere,' the answer is essentially always **phosphorus**. Hook: 'P for Pavement/rock, not air.'"
+   },
+   {
+    "fact": "**Survivorship curves** — Type I (high early survival, die old: humans), Type II (constant death rate at all ages: many birds, small mammals), Type III (massive early death, few survive: oysters, most fish).",
+    "why": "Type II is a **straight line on a log scale** because the *proportion* dying is constant. Trap: describing it as 'linear' on a normal-numbers plot is wrong — it's linear only on a semi-log axis. Type III species produce huge numbers of offspring (r-selected); Type I invest heavily in few (K-selected)."
+   },
+   {
+    "fact": "**Keystone species** — a species with disproportionate impact on ecosystem structure relative to its abundance (sea otters in kelp forests, sea stars).",
+    "why": "Otters eat urchins that would otherwise mow down kelp — remove the otter and the whole forest collapses. Distinguish from **foundation/dominant species** (impact comes from sheer abundance, e.g. corals, kelp itself). Keystone = small number, huge effect; foundation = big number, big effect."
+   },
+   {
+    "fact": "**Production (trophic) efficiency** = biomass produced ÷ energy assimilated. Assimilated = ingested − egested (waste).",
+    "why": "Bear question: ingests 400, egests 150 as waste → assimilated = 250; of that, 130 goes to new biomass → 130/250 = **52%**. Key trick: **you divide by ASSIMILATED (ingested minus feces), not by total ingested.** The ~10% rule is the *trophic-level* transfer efficiency; production efficiency within an organism is separate."
+   },
+   {
+    "fact": "**Per-capita rate of increase (r)** = (Nₜ₊₁ − Nₜ)/Nₜ during exponential growth. Dispersion patterns: clumped (most common), uniform (territorial/competition), random (rare).",
+    "why": "Wolves 16→28→49 give r = (28−16)/16 = 0.75 (75%) — check it's constant: (49−28)/28 = 0.75. **Starfish in tide pools are clumped** because resources (prey, moisture) are patchy. Clumped is the default in nature; uniform implies active spacing (allelopathy, territoriality)."
+   },
+   {
+    "fact": "**Island biogeography (MacArthur-Wilson)** — species richness rises with island *size* and *proximity to mainland*. Biggest biodiversity = **large island close to mainland**.",
+    "why": "Large = more habitat, lower extinction; close = higher immigration/colonization. So the two effects stack: **big + near = max diversity**, small + far = min. Equilibrium richness is where immigration rate = extinction rate."
+   },
+   {
+    "fact": "**Species interactions & benefit signs** — mutualism (+/+), commensalism (+/0), parasitism (+/−), competition (−/−).",
+    "why": "'Identify all where at least one organism benefits' → mutualism, commensalism, AND parasitism all have a '+' — only competition (−/−) has no beneficiary. Hook: parasitism trips people up, but the parasite clearly benefits, so it counts."
+   },
+   {
+    "fact": "**Behavior terms: taxis, habituation, mating systems.** Taxis = directed movement relative to a stimulus (moths orienting to light = phototaxis). Habituation = learning to stop responding to a repeated harmless stimulus (turtle stops retracting).",
+    "why": "Distinguish **taxis** (directed, toward/away) from **kinesis** (undirected change in speed/turning). Habituation is the simplest form of learning — 'crying wolf' desensitization. **Polygyny** (one male, many females) is signaled by strong sexual dimorphism/ornamentation in males (elk antlers) — showy males compete for many females."
+   },
+   {
+    "fact": "**Bergmann's & Allen's rules** — cold-climate endotherms have LARGER bodies (lower surface-area-to-volume, retain heat) and SHORTER appendages (less surface to lose heat).",
+    "why": "Heat loss ∝ surface area; heat production ∝ volume. Bigger animals have a smaller SA:V ratio, so they conserve heat better → poles favor **large body, short appendages** (arctic fox vs. desert fox ears). This is the surface-area/volume argument dressed as an ecology question."
+   }
+  ],
+  "drill_tips": "**Buzz triggers — the word tells you the answer type:**\n- \"reproduces once / one reproductive event\" → **semelparous** (r-selected); \"reproduces repeatedly\" → **iteroparous** (K-selected).\n- \"runoff → algal bloom → oxygen drops\" → **eutrophication**; \"which N-step is O₂-sensitive\" → **nitrogen fixation**.\n- \"no atmospheric reservoir\" → **phosphorus cycle**.\n- \"disproportionate impact / sea otters / small numbers big effect\" → **keystone species**.\n- \"directed movement toward/away from stimulus / moth to light\" → **taxis**; \"stops responding to repeated harmless stimulus\" → **habituation**.\n- \"ornamented males, one male many females\" → **polygyny**.\n- \"large island close to mainland\" → **island equilibrium (MacArthur-Wilson)**.\n- \"cold climate, body shape\" → **Bergmann (bigger) / Allen (shorter appendages)**.\n\n**Classic distractor pairs (memorize the difference cold):**\n- **Semelparous vs. iteroparous** — the #1 trap. K-selected = iteroparous; the \"NOT a K-trait\" answer is *always* semelparous.\n- **Fundamental vs. realized niche** — realized is the SMALLER (post-competition) one; fundamental is the potential max.\n- **Keystone vs. foundation/dominant** — keystone = low abundance, high impact; foundation = high abundance drives impact.\n- **Taxis vs. kinesis** — taxis is directed; kinesis is undirected (random speed/turning change).\n- **Assimilated vs. ingested** in efficiency math — production efficiency divides by *assimilated* (ingested − feces), not total ingested.\n- **Allee causes vs. non-causes** — cooperation/colonies/altruism cause it; faster disease spread at high density does NOT.\n- **Type II survivorship** — constant per-capita death rate; linear only on a *log* axis, not a raw-count axis.\n\n**Memorize cold:**\n- r vs K full trait lists (offspring number/size, lifespan, semel/itero, survivorship type).\n- Lotka-Volterra predator-prey cross-dependence: each species' equilibrium is set by the *other's* parameters.\n- Interaction sign table: mutualism +/+, commensalism +/0, parasitism +/−, competition −/−.\n- Per-capita growth formula r = (N₁−N₀)/N₀ and production efficiency = new biomass ÷ assimilated.\n- Nitrogen fixation needs anaerobic conditions (nitrogenase killed by O₂).\n\n**Format warning:** ~1/3 are \"which is NOT true\" or \"identify all\" — you must be able to evaluate *each* option against the model, not just spot one keyword. Slow down on these.",
+  "question_ids": [
+   "2023-r2-t11",
+   "2023-r3-t3",
+   "2023-r3-b3",
+   "2023-r3-t14",
+   "2023-r4-t7",
+   "2023-r5-t13",
+   "2023-r5-t20",
+   "2023-r6-b7",
+   "2023-r7-b23",
+   "2023-r9-b10",
+   "2024-r1-t19",
+   "2024-r12-t15",
+   "2024-r2-b9",
+   "2024-r3-b12",
+   "2024-r4-t5",
+   "2024-r4-t7",
+   "2024-r4-b17",
+   "2024-r7-b17",
+   "2025-r1-b9",
+   "2025-r1-t17",
+   "2025-r16-t11x2",
+   "2025-r3-t7",
+   "2025-r4-t13",
+   "2025-r5-t14"
+  ]
+ },
+ {
+  "slug": "microbiology-virology",
+  "name": "Microbiology, Virology & Protists",
+  "count": 23,
+  "share": 6.6,
+  "overview": "This topic is the \"small living things\" cluster: **bacteria, archaea, viruses/viroids, protists, and a bit of fungi**. In the National Science Bowl bank it is dominated by a handful of repeat-offender ideas — Gram staining, protist endosymbiosis lineages, dinoflagellate closed mitosis, malaria, and HIV/retroviruses — so learning ~10 concepts cold covers most of the 23 questions.\n\nHow it shows up: about a third are straight recall (\"what appendage in conjugation?\" → pilus), a third are **NOT/EXCEPT** questions (which feature is *not* shared by archaea and bacteria? which HIV part is *not* genome-encoded?), and a third are **ordering/ranking** (Gram reagent sequence, Winogradsky column depth, relatedness of algal clades). The ordering questions are the ones people whiff — they require a mechanism, not a flashcard.\n\nSmartest way to learn it: don't memorize protists as a list of weird names. Learn the **endosymbiosis family tree** (who ate a green vs. red alga) and the **Gram-stain mechanism** (thick vs. thin peptidoglycan → dye retention). Those two frameworks alone answer at least 8 questions and turn \"ranking\" problems into logic instead of guessing.",
+  "key_facts": [
+   {
+    "fact": "**Gram stain distinguishes cell WALL structure** (thick peptidoglycan = Gram+, stains purple; thin wall + outer membrane = Gram−, stains pink). Reagent order: **crystal violet → iodine (mordant) → alcohol decolorize → safranin (counterstain)**.",
+    "why": "The cell WALL is the answer, never the membrane — the thick peptidoglycan mesh traps the crystal violet–iodine complex when alcohol washes it. Memory hook 'Come In And Stain' = Crystal violet, Iodine, Alcohol, Safranin. If a Gram− sample looks purple, common cause is too many cell layers (alcohol can't reach/decolorize) — a tested distractor."
+   },
+   {
+    "fact": "**Secondary endosymbiosis: who ate which alga.** Green alga → **Euglenids** (also chlorarachniophytes). Red alga → **Apicomplexans (Plasmodium/malaria)** and **Dinoflagellates (red tide)**, plus diatoms & brown algae.",
+    "why": "This single tree answers 3+ questions. 'African sleeping sickness' = Trypanosoma (a euglenozoan relative, but NOT a red-alga engulfer in the tested sets). The malaria + red-tide organisms are the classic red-algae pair. All the stramenopile/alveolate photosynthesizers (diatoms, dinos, apicomplexans, brown algae) trace to a RED alga."
+   },
+   {
+    "fact": "**Malaria = protist-borne, phylum Apicomplexa, genus *Plasmodium*, vector *Anopheles* mosquito.**",
+    "why": "Malaria is the go-to 'protist disease' answer (NOT bacterial, NOT viral). Apicomplexans are named for the 'apical complex' of organelles for host-cell invasion. Anopheles is the SOLE vector — a phrasing they use to point at Plasmodium without naming it."
+   },
+   {
+    "fact": "**Dinoflagellates use closed mitosis**: the nuclear envelope stays intact and spindle microtubules pass through cytoplasmic channels/tunnels running through the nucleus.",
+    "why": "Asked essentially twice, verbatim. Hook: dinoflagellates are so weird (permanently condensed chromosomes, no histones like typical eukaryotes) that even their mitosis is unusual — the spindle never enters the nucleus, it tunnels through it. 'Cytoplasmic channels through an intact nucleus' = dinoflagellate, reflexively."
+   },
+   {
+    "fact": "**HIV is a retrovirus with a single-stranded RNA genome; it uses reverse transcriptase.** Its lipid ENVELOPE is stolen from the host membrane and is NOT encoded by the viral genome.",
+    "why": "Two separate questions. Retro = RNA→DNA via reverse transcriptase. The envelope is host-derived lipid (only the envelope *proteins* are viral), so 'which part is NOT genome-encoded?' → the envelope itself. Coronaviridae are ALSO ssRNA — SARS/COVID."
+   },
+   {
+    "fact": "**Viroids are naked RNA — no protein, no capsid.** So a stain that binds sulfur shows the lowest signal for viroids.",
+    "why": "Sulfur lives in the amino acids cysteine and methionine (proteins). Viroids are pure RNA circles (no protein at all), so they have essentially no sulfur → lowest fluorescence. This is the trick that separates viroid from virus/bacteria/prion."
+   },
+   {
+    "fact": "**Archaea vs. Bacteria: archaea HAVE histones, bacteria do not.** Shared traits: both prokaryotic, no nucleus, single circular chromosome, no membrane organelles.",
+    "why": "Archaea are the 'eukaryote-like prokaryotes' — histone-wrapped DNA and different membrane lipids. So 'lack of histones' is NOT shared. Frame it: archaea sit closer to us than bacteria do."
+   },
+   {
+    "fact": "**Bacterial conjugation uses a (sex) pilus** — the donor's pilus attaches to the recipient and retracts to pull the cells together for plasmid transfer.",
+    "why": "Pilus = the bridge for horizontal gene transfer (often antibiotic-resistance plasmids). Don't confuse with flagellum (motility) — pilus is for attachment/conjugation."
+   },
+   {
+    "fact": "**Diatoms = photosynthetic protists with silica ($SiO_2$) glass cell walls (frustules); major global oxygen producers.**",
+    "why": "Glass-like wall of silicon dioxide is the unique tell. Diatoms + cyanobacteria + other phytoplankton generate a huge share of Earth's $O_2$. Diatoms are stramenopiles, red-algae lineage."
+   },
+   {
+    "fact": "**Quorum sensing** = bacteria sensing population density via signaling molecules to coordinate behavior (e.g. biofilm formation); analogous to density-dependent inhibition in cells.",
+    "why": "Both are 'we're getting crowded, change behavior' systems. Bacteria release autoinducers; above a threshold concentration they switch on biofilm/virulence genes. The cancer analogy: cancer cells LOSE density-dependent inhibition."
+   },
+   {
+    "fact": "**Zoonotic** = a pathogen that jumps from animals to humans (COVID from bats, etc.). **Thermophiles** = organisms living at high temperatures (black-smoker hydrothermal vents, up to ~480 °C).",
+    "why": "Two quick vocab hits. Zoo = animal → human spillover. Thermo = heat-lovers; extremophiles at vents are often archaea. Both are pure-recall gimmes."
+   },
+   {
+    "fact": "**Winogradsky column layers by oxygen/light: top = aerobic phototrophs (cyanobacteria), middle = facultative (yeast), bottom = strict anaerobes (*C. difficile*).**",
+    "why": "It's an oxygen gradient in mud: light + $O_2$ at top favors cyanobacteria; obligate anaerobes like C. diff survive only in the anoxic bottom. Order top→bottom by decreasing oxygen tolerance."
+   },
+   {
+    "fact": "**Hydrogenosomes** = reduced, anaerobic 'mitochondria' that make ATP without oxygen — found in *Trichomonas vaginalis*.",
+    "why": "Trichomonas lives in anaerobic niches, so it swapped mitochondria for hydrogenosomes (produce $H_2$ + ATP anaerobically). 'Anaerobic reduced mitochondria in a protist' → Trichomonas."
+   },
+   {
+    "fact": "**Basidiomycetes (club fungi) life cycle: plasmogamy → long dikaryotic stage → karyogamy → meiosis.** Karyogamy (nuclear fusion) comes BEFORE meiosis.",
+    "why": "In fungi, cytoplasm fuses first (plasmogamy), then the two nuclei stay separate as a dikaryon for a long time, fuse (karyogamy), and only then meiosis happens. So 'meiosis precedes karyogamy' is FALSE — the order is reversed."
+   }
+  ],
+  "drill_tips": "## Buzz triggers (word → answer)\n- \"differentiates bacteria by structure\" / \"crystal violet\" / \"safranin\" → **Gram stain (cell wall)**\n- \"cytoplasmic channels/tunnels through intact nucleus during mitosis\" → **dinoflagellate (closed mitosis)**\n- \"sole vector Anopheles\" / \"protist-borne disease\" / \"apical complex\" → **Plasmodium / Apicomplexa / malaria**\n- \"reverse transcriptase\" / \"retrovirus\" → **HIV, single-stranded RNA**\n- \"glass-like / silica / $SiO_2$ cell wall, makes oxygen\" → **diatoms**\n- \"hairlike appendage, conjugation, retracts\" → **pilus**\n- \"jumps from animals to humans\" → **zoonotic**; \"survives high temp / hydrothermal vents\" → **thermophiles**\n- \"regulates biofilm by population density\" → **quorum sensing**\n- \"naked RNA, no protein\" / lowest sulfur signal → **viroid**\n- \"anaerobic reduced mitochondria\" → **hydrogenosome (Trichomonas)**\n\n## Classic distractor pairs (memorize the split)\n- **Cell wall vs. cell membrane** — Gram stain is ALWAYS the wall; membrane is an explicit DO-NOT-ACCEPT.\n- **Green-algae vs. red-algae endosymbiosis** — Euglenids = GREEN; Plasmodium, dinoflagellates, diatoms, brown algae = RED.\n- **Archaea vs. bacteria** — archaea HAVE histones (and eukaryote-like features); \"lack of histones\" is bacteria-only.\n- **Envelope proteins (viral) vs. envelope lipid (host)** — HIV genome encodes the spike proteins but NOT the lipid envelope.\n- **Viroid (RNA only) vs. virus (RNA/DNA + capsid) vs. prion (protein only)** — sulfur binds prion/protein high, viroid lowest.\n- **Pilus (conjugation/attachment) vs. flagellum (motility).**\n- **Karyogamy before meiosis** in fungi — don't let \"meiosis first\" slip past on NOT/EXCEPT questions.\n\n## Memorize cold\n- Gram reagent order: **Crystal violet → Iodine → Alcohol → Safranin** (Gram+ = purple/thick peptidoglycan; Gram− = pink).\n- The endosymbiosis tree (green = euglenids; red = alveolates/stramenopiles).\n- Winogradsky top→bottom = **cyanobacteria → yeast → C. difficile** (oxygen high→low).\n- HIV = ssRNA retrovirus; envelope not genome-encoded.\n- Watch for **NOT / EXCEPT** framing — over half these questions invert the answer.",
+  "question_ids": [
+   "2023-r1-t4",
+   "2023-r1-b4",
+   "2023-r1-t12",
+   "2023-r11-t7",
+   "2023-r2-b20",
+   "2023-r4-b5",
+   "2023-r4-t18",
+   "2024-r1-b9",
+   "2024-r11-b4",
+   "2024-r11-b7",
+   "2024-r12-b6",
+   "2024-r14-b6",
+   "2024-r2-t9",
+   "2024-r5-t5",
+   "2024-r8-b9",
+   "2025-r10-t24",
+   "2025-r13-t18",
+   "2025-r14-b9",
+   "2025-r2-b20",
+   "2025-r3-t18",
+   "2025-r6-b3",
+   "2025-r7-b17",
+   "2025-r8-t8"
+  ]
+ },
+ {
+  "slug": "cell-biology",
+  "name": "Cell Biology",
+  "count": 21,
+  "share": 6.1,
+  "overview": "**What it covers:** the eukaryotic cell as a machine — the plasma membrane, organelles, vesicle traffic, the cytoskeleton, cell junctions, and the signaling/regulation that ties them together. This is the single densest bio topic in the bank.\n\n**How it shows up in Science Bowl:** almost every question is a *distinction* or a *count*. The writers love (1) \"rank/which diffuses fastest through a bilayer,\" (2) \"how many membranes does X cross,\" (3) \"which coat/junction/organelle does Y,\" and (4) \"classify this signaling.\" They rarely ask a raw definition — they ask you to *apply* one rule under time pressure.\n\n**Smartest way to learn it:** don't memorize organelles as a list. Learn the handful of *rules* that generate the answers: the permeability rule (small + nonpolar wins), the fluidity rule (short/unsaturated/cholesterol), the membrane-count method (walk the bus through, tallying bilayers), the vesicle-coat map (COPII out, COPI back, clathrin to the cell surface), and the junction map (connexins/claudins/cadherins/keratin). Master those five rules and ~15 of the 21 questions fall instantly.",
+  "key_facts": [
+   {
+    "fact": "**Bilayer permeability ranking: small nonpolar > small polar uncharged > large polar > ions.** So $CO_2$ (fastest) > $H_2O$ > glucose > $Cl^-/Na^+$ (slowest).",
+    "why": "The hydrophobic core rejects charge first, then size. $CO_2$ is tiny and nonpolar (sails through); water is small but polar (slips through slowly); ions drag a hydration shell and are charged (need transporters). This exact rank appeared twice — memorize CO2 as always the winner over water."
+   },
+   {
+    "fact": "**Cold membranes need shorter and/or unsaturated fatty-acid tails; cholesterol is a fluidity *buffer*.**",
+    "why": "Cold makes membranes gel (too rigid), so to *keep* fluidity you shorten tails or add kinks (double bonds) so lipids pack loosely. Cholesterol is a buffer: it *raises* fluidity when cold, *lowers* it when hot — it fights whatever the temperature does."
+   },
+   {
+    "fact": "**FRAP measures fluidity; FRET measures interaction.** No fluorescence recovery after photobleaching = *decreased* membrane fluidity.",
+    "why": "FRAP bleaches a spot; if lipids are fluid they diffuse in and signal recovers. No recovery means molecules are stuck = low fluidity. FRET (energy transfer between two fluorophores) rising means two things are physically close = interacting. The tricky 2025 question stacked both."
+   },
+   {
+    "fact": "**Membrane counts: walk the path and tally bilayers.** Mitochondrion = 2, chloroplast = 2 (plus thylakoid = 3rd), nucleus = 2 (continuous with ER). Phagocytosis wraps the target in +1 membrane.",
+    "why": "Both '5' answers came from this. Protist-mito inside a macrophage: mito inner+outer (2) → protist plasma membrane (1) → macrophage phagosome membrane (1) → macrophage plasma membrane (1) = 5. Thylakoid-to-nucleus: thylakoid (1) → 2 chloroplast membranes (2) → 2 nuclear membranes (2) = 5. Always draw the route."
+   },
+   {
+    "fact": "**Vesicle coats: COPII = anterograde (ER→Golgi), COPI = retrograde (Golgi→ER), clathrin = Golgi/plasma membrane→endosome.** KDEL is an ER-retrieval tag, brought back by COPI.",
+    "why": "Memory hook: 'COPII goes to*II* (toward) the Golgi, COPI comes back (I = return).' A KDEL-tagged protein escaping to the Golgi gets grabbed into a COPI vesicle and shipped back. 'Away from Golgi' = COPI (to ER) + clathrin (to cell), *not* COPII."
+   },
+   {
+    "fact": "**Junction map: gap = connexins, tight = claudin/occludin, adherens = cadherin+actin, desmosome = cadherin+keratin (intermediate filaments).**",
+    "why": "Connexins build the connexon channels of gap junctions (electrical/chemical coupling). Desmosomes are the 'spot welds' anchored by keratin intermediate filaments — that's why keratin (coiled-coil, width between microfilaments and microtubules) shows up there, not in gap/tight/adherens."
+   },
+   {
+    "fact": "**Peroxisome: β-oxidation of *very-long-chain* fatty acids (>C22) and the oxidative/respiratory burst (ROS like superoxide, then $H_2O_2$ handled by catalase).**",
+    "why": "Mitochondria oxidize normal-length fats; peroxisomes take the extra-long ones (lignoceric acid, C26). They're built to handle reactive oxygen, so the phagocyte respiratory burst that makes superoxide implicates the peroxisome — a common trap where people guess lysosome or mitochondrion."
+   },
+   {
+    "fact": "**Signaling classes: autocrine (on itself), juxtacrine (direct contact), paracrine (local neighbors), endocrine (bloodstream).** Notch = juxtacrine.",
+    "why": "Notch's ligand is *bound to the adjacent cell's membrane* — cells must touch, so it's juxtacrine ('juxta' = beside/touching). If a signal had to diffuse it'd be paracrine; through blood, endocrine."
+   },
+   {
+    "fact": "**PLC cleaves $PIP_2$ into $IP_3$ + DAG; $IP_3$ opens $Ca^{2+}$ channels on the ER.** DAG activates PKC.",
+    "why": "IP3 is the water-soluble half that diffuses to the ER and dumps stored calcium into the cytoplasm; DAG stays in the membrane and switches on PKC. Calcium is the workhorse second messenger downstream."
+   },
+   {
+    "fact": "**Extrinsic apoptosis = death receptors (Fas ligand, TNF); intrinsic apoptosis = mitochondrial (cytochrome c release, triggered by DNA damage or hypoxia).**",
+    "why": "'Extrinsic' means the death signal comes from *outside* via a receptor — Fas ligand binds Fas. Cytochrome c, DNA damage, and hypoxia are all *internal* stress cues that go through the mitochondrial (intrinsic) pathway."
+   },
+   {
+    "fact": "**Cyclins have the highest ubiquitination/degradation rates** — regulatory proteins with short, timed lifetimes are heavily tagged for the proteasome.",
+    "why": "The cell cycle only works if cyclins are destroyed on schedule, so they're built to be disposable. Structural proteins (collagen) are long-lived and rarely ubiquitinated. Rule: 'the more its job is *timing*, the shorter its half-life.'"
+   },
+   {
+    "fact": "**Spectrin forms the mesh under the red-blood-cell membrane, giving flexibility.** Cytoskeleton trio: microfilaments (actin), intermediate filaments (keratin, ~10 nm), microtubules (tubulin, widest).",
+    "why": "RBCs squeeze through capillaries because spectrin + actin make a springy lattice under the membrane. Keratin is the *intermediate*-width filament — remember the width order microfilament < intermediate < microtubule."
+   },
+   {
+    "fact": "**Mitochondria: circular chromosome, matrix pH *higher* than the intermembrane space, folds called *cristae* (NOT cisternae).**",
+    "why": "The electron transport chain pumps protons *out* into the intermembrane space, making it acidic (low pH), so the matrix is comparatively alkaline. 'Cristae' = mito folds; 'cisternae' = the flattened stacks of Golgi/ER — a classic swapped-word trap."
+   },
+   {
+    "fact": "**Potocytosis is clathrin-independent endocytosis (via caveolae) that delivers cargo straight to the cytosol.**",
+    "why": "Most receptor-mediated endocytosis uses clathrin-coated pits; potocytosis skips clathrin and dumps contents directly into the cytoplasm. Buzz signal: 'no clathrin' + 'direct to cytosol' = potocytosis."
+   }
+  ],
+  "drill_tips": "**Buzz triggers — the word tells you the answer:**\n- \"rank... cross a phospholipid bilayer\" / \"diffuse fastest\" → permeability rule, **$CO_2$ beats water beats ions**.\n- \"how many membranes/bilayers\" → **count the route**; mito = 2, chloroplast = 2, nucleus = 2, phagocytosis = +1.\n- \"away from / toward the Golgi,\" \"KDEL,\" \"coated vesicle\" → **COPII out, COPI back, clathrin to the surface**.\n- \"connexin\" → gap junction; \"keratin\" → desmosome; \"claudin/occludin\" → tight junction.\n- \"very-long-chain fatty acid,\" \"oxidative/respiratory burst,\" \"superoxide\" → **peroxisome**.\n- \"binds ligand on the *adjacent* cell\" / \"Notch\" → **juxtacrine**.\n- \"photobleach + no recovery\" → decreased **fluidity** (FRAP); \"signal rises as two things get close\" → interaction (FRET).\n\n**Classic distractor pairs (memorize which is which):**\n- **Cristae vs cisternae** — cristae = mitochondria; cisternae = Golgi/ER.\n- **COPI vs COPII** — I returns to ER (retrograde); II goes to Golgi (anterograde).\n- **Extrinsic vs intrinsic apoptosis** — Fas ligand/death receptors = extrinsic; cytochrome c / DNA damage / hypoxia = intrinsic.\n- **Peroxisome vs lysosome vs mitochondrion** — ROS burst and >C22 fatty acids = peroxisome, not lysosome.\n- **Paracrine vs juxtacrine** — diffuses to neighbor = paracrine; must physically touch = juxtacrine.\n- **Water vs $CO_2$** across a bilayer — $CO_2$ (nonpolar) is faster than water (polar).\n\n**Memorize cold:**\n- Permeability order: **nonpolar > small polar > large polar > ionic**.\n- Membrane counts for mito (2), chloroplast (2, +thylakoid), nucleus (2); add 1 per engulfment.\n- Vesicle coats + KDEL retrieval (COPI).\n- Four junctions and their proteins; three cytoskeleton filaments by width.\n- Calcium note: a **calcium chelator** disrupts Ca-dependent events (fertilization envelope, LTP, peristalsis) but **not** Na⁺-driven action-potential *initiation*.",
+  "question_ids": [
+   "2023-r1-b16",
+   "2023-r11-t19",
+   "2023-r12-b6",
+   "2023-r13-t22",
+   "2023-r5-t10",
+   "2023-r6-t7",
+   "2023-r8-b5",
+   "2023-r9-t10",
+   "2023-r9-t21",
+   "2024-r10-b22",
+   "2024-r3-t15",
+   "2024-r8-t5",
+   "2025-r11-t18",
+   "2025-r12-b23",
+   "2025-r15-b17",
+   "2025-r16-t15",
+   "2025-r2-b3",
+   "2025-r2-t7",
+   "2025-r2-b14",
+   "2025-r5-b14",
+   "2025-r7-b19"
+  ]
+ },
+ {
+  "slug": "neuroscience-senses",
+  "name": "Neuroscience & Senses",
+  "count": 19,
+  "share": 5.5,
+  "overview": "**What this topic covers:** neuron electrophysiology (resting/action potentials, synapses), neurotransmitters and the drugs that act on them, brain regions, glial cells, and — heavily — the **eye and vision**. Roughly a third of these questions are vision/optics.\n\n**How it shows up in Science Bowl:** three flavors dominate. (1) **Ordering questions** — \"order these structures/disorders by X\" (visual pathway, cone density, disorder distance from retina). (2) **Pharmacology puzzles** — a drug or toxin is described by mechanism and you name the target (MAO, adenosine, ACh) or vice versa. (3) **True/false-all** membrane physiology traps that hinge on one precise detail. The questions are mechanism-first: they describe *what something does* and want the name.\n\n**Smartest way to learn it:** don't memorize terms in isolation — learn the **three pathways/gradients cold** and everything else falls out. (a) The **visual pathway** in order, (b) the **ion story** of the neuron (K⁺ out = negative, Cl⁻ in = inhibitory), and (c) the **cholinergic autonomic map**. Then attach each drug to the pathway it hits. If you can draw the eye and the neuron, you can reason your way to most answers instead of recalling them.",
+  "key_facts": [
+   {
+    "fact": "**Visual pathway order: photoreceptor → bipolar cell → ganglion cell → optic nerve/tract → LGN (thalamus) → visual cortex**",
+    "why": "Light hits the BACK of the retina first (photoreceptors), then signal travels FORWARD through the retinal interneurons before exiting. Memory hook: 'Photo-Bi-Gang goes to the Optic LGN.' Ganglion cell axons ARE the optic nerve/tract. The LGN (lateral geniculate nucleus) is the thalamic relay — last stop before cortex."
+   },
+   {
+    "fact": "**Cone density: Fovea = highest, then outer macula, then optic disc = zero (blind spot)**",
+    "why": "The fovea is the pinpoint of sharpest color/detail vision — packed with cones, no rods. Density falls off moving outward. The optic disc is where the optic nerve exits, so it has NO photoreceptors at all — the physiological blind spot. Order by increasing cones: optic disc < outer macula < fovea."
+   },
+   {
+    "fact": "**MAO (monoamine oxidase) breaks down MONOAMINE neurotransmitters: dopamine, serotonin, norepinephrine/epinephrine**",
+    "why": "The name IS the answer — 'monoamine' = one amine group. Dopamine, serotonin, NE all qualify; glutamate/GABA/ACh do NOT. So **MAO inhibitors** raise these NTs → treat depression AND Parkinson's (boosts dopamine). Buzz: 'MAO inhibitor' → think dopamine/Parkinson's or serotonin/depression."
+   },
+   {
+    "fact": "**Myopia (nearsightedness) is corrected by a concave (biconcave/diverging) lens; convex makes it worse**",
+    "why": "Myopia = eye too long, light focuses IN FRONT of the retina. A concave lens diverges light to push focus back. Hyperopia (farsighted) is the opposite — needs convex/converging. Hook: myOPIA = 'my eye is too big,' needs a lens that spreads light out (concave)."
+   },
+   {
+    "fact": "**Glutamate is the main excitatory NT and mediates Long-Term Potentiation (LTP) via NMDA receptors**",
+    "why": "LTP = strengthening of active synapses = the molecular basis of learning/memory. Glutamate is THE excitatory workhorse of the CNS; GABA is its inhibitory counterpart. If a question says 'excitatory' + 'memory/LTP' → glutamate, reflexively."
+   },
+   {
+    "fact": "**Resting potential becomes MORE negative by increasing K⁺ permeability or raising extracellular Cl⁻; raising extracellular Na⁺ does not hyperpolarize**",
+    "why": "K⁺ leaves the cell (its equilibrium is very negative) → more K⁺ exit = more negative inside. More extracellular Cl⁻ drives Cl⁻ IN (negative charge in) → hyperpolarizes. Extracellular Na⁺ doesn't matter at rest because resting Na⁺ permeability is tiny. This is the #1 electrophysiology trap: separate 'permeability' from 'concentration.'"
+   },
+   {
+    "fact": "**Inhibitory synapses (IPSPs) work by increasing permeability to Cl⁻ (or K⁺)**",
+    "why": "In the 'neuron 2 cancels neuron 3's action potential' puzzle, the inhibitory neuron hyperpolarizes the target — done by opening Cl⁻ channels (GABA does this). Chloride in = harder to reach threshold. Excitatory = Na⁺/Ca²⁺ in; inhibitory = Cl⁻ in or K⁺ out."
+   },
+   {
+    "fact": "**Acetylcholine (ACh) is the NT at: ALL preganglionic autonomic neurons + ALL parasympathetic postganglionic neurons**",
+    "why": "The autonomic ACh map: every ganglion (sympathetic AND parasympathetic, pre-ganglionic) uses ACh; parasympathetic keeps using ACh at the target too. Only SYMPATHETIC postganglionic switches to norepinephrine. Hook: 'ACh everywhere except sympathetic's final step.'"
+   },
+   {
+    "fact": "**Fast pain = A-delta fibers (wide, myelinated); slow pain = C fibers (thin, unmyelinated)**",
+    "why": "Myelin + large diameter = fast conduction = the sharp, immediate 'first' pain. C fibers are thin and bare → slow, dull, aching 'second' pain. General rule: wider + more myelin = faster signal. Fast pain fibers are wider AND more myelinated."
+   },
+   {
+    "fact": "**Caffeine is a competitive antagonist of adenosine receptors**",
+    "why": "Adenosine accumulates during waking and promotes drowsiness by binding its receptors. Caffeine blocks those receptors → no drowsiness signal → faster reaction time, alertness. Buzz: 'substance causing drowsiness that caffeine blocks' = adenosine."
+   },
+   {
+    "fact": "**Microglia are the glial cell derived from hematopoietic stem cells (mesoderm); all other glia come from neuroectoderm**",
+    "why": "Microglia are the brain's resident IMMUNE cells (macrophage-like), so they share the blood/immune lineage — hematopoietic. Astrocytes, oligodendrocytes, ependymal, Schwann cells are all neural-crest/ectoderm. 'Immune = blood lineage' is the hook."
+   },
+   {
+    "fact": "**Ventral Tegmental Area (VTA) is the dopamine source of the brain's reward system**",
+    "why": "The VTA → nucleus accumbens 'mesolimbic pathway' is the addiction/reward circuit; it releases dopamine. To treat over-rewarding (addiction), you inhibit the VTA. Pair it with the substantia nigra (the OTHER dopamine center, for movement/Parkinson's)."
+   },
+   {
+    "fact": "**Glaucoma = increased intraocular pressure, often from fluid (aqueous/vitreous humor) buildup; tested by a puff/'blow' test**",
+    "why": "The ciliary body makes the eye's fluid; overproduction or poor drainage raises pressure → damages the optic nerve → glaucoma. The air-puff tonometry ('blow test') measures that pressure. Buzz: 'increased intraocular pressure' = glaucoma."
+   },
+   {
+    "fact": "**Horizontal cells perform lateral inhibition in the retina — sharpening edges by suppressing neighbors**",
+    "why": "Horizontal cells connect photoreceptors laterally and inhibit adjacent ones, increasing contrast — exactly analogous to STED microscopy 'deactivating neighbors' to sharpen a spot. Amacrine cells do a similar lateral job at the bipolar/ganglion layer."
+   },
+   {
+    "fact": "**The thalamus relays ALL senses to the cortex EXCEPT olfaction (smell)**",
+    "why": "Smell is the one sense that bypasses the thalamus, projecting straight to the olfactory cortex. So a thalamic stroke spares olfaction while impairing vision, hearing, touch, taste. Hook: 'smell is the odd one out — it skips the relay station.'"
+   }
+  ],
+  "drill_tips": "### Buzz triggers (words that signal an answer)\n- **\"monoamine oxidase / MAO\"** → dopamine/serotonin/NE; MAO *inhibitor* → depression or Parkinson's\n- **\"increased intraocular pressure\" / \"blow test\"** → glaucoma\n- **\"causes drowsiness\" + caffeine** → adenosine\n- **\"excitatory NT\" + \"LTP / memory\"** → glutamate\n- **\"reward system / dopamine / addiction region\"** → ventral tegmental area (VTA)\n- **\"derived from hematopoietic stem cells\" (glia)** → microglia\n- **\"lateral inhibition / sharpen / suppress neighbors\" in retina** → horizontal cells\n- **\"relayed by thalamus?\"** → everything EXCEPT olfaction\n\n### Classic distractor pairs to keep straight\n- **Myopia vs. hyperopia:** myopia (nearsighted, eye too long) → **concave/biconcave** lens; hyperopia → convex. If concave fixes it, it's myopia.\n- **Permeability vs. concentration** (resting potential): raising K⁺ *permeability* hyperpolarizes; raising extracellular Na⁺ *concentration* does basically nothing at rest. The question deliberately mixes these.\n- **VTA vs. substantia nigra:** both dopamine — VTA = reward/addiction, substantia nigra = movement/Parkinson's.\n- **A-delta vs. C fibers:** fast/sharp/myelinated/wide (A-delta) vs. slow/dull/unmyelinated/thin (C).\n- **Sympathetic postganglionic (norepinephrine)** is the ONE autonomic step that is NOT acetylcholine — every other autonomic junction is ACh.\n- **Neuromuscular toxins:** cleaving SNARE (botulinum) blocks ACh release → relaxes/alleviates *spastic* (rigid) paralysis; sarin (AChE inhibitor) → MORE ACh → worse spasticity; atropine (muscarinic blocker) doesn't act at the nicotinic NMJ.\n- **Optic disc = blind spot (zero cones)** vs. **fovea = max cones.**\n\n### Memorize cold\n- **Visual pathway:** photoreceptor → bipolar → ganglion → optic nerve/tract → LGN → cortex.\n- **Cone density:** optic disc (0) < outer macula < fovea (max).\n- **Autonomic ACh rule:** all preganglionic + all parasympathetic postganglionic = ACh; sympathetic postganglionic = NE.\n- **Ion directions:** excitatory = Na⁺/Ca²⁺ in; inhibitory (IPSP) = Cl⁻ in or K⁺ out.\n- **Action-potential facts are usually FALSE traps** — amplitude is all-or-nothing (doesn't vary with depolarization speed), and Na⁺ channels do NOT stay open longer than K⁺ channels. Read these carefully; the answer is often \"none.\"",
+  "question_ids": [
+   "2023-r10-t16",
+   "2023-r12-t15",
+   "2023-r12-b15",
+   "2023-r4-b21",
+   "2024-r13-t7",
+   "2024-r2-b19",
+   "2024-r5-b15",
+   "2024-r7-t12",
+   "2024-r7-b23",
+   "2025-r11-b5",
+   "2025-r12-b2",
+   "2025-r12-t7",
+   "2025-r14-t9",
+   "2025-r14-t13",
+   "2025-r15-t9",
+   "2025-r15-t23",
+   "2025-r3-b25",
+   "2025-r9-b4",
+   "2025-r9-t20"
+  ]
+ },
+ {
+  "slug": "evolution",
+  "name": "Evolution",
+  "count": 14,
+  "share": 4,
+  "overview": "This topic is **selection dynamics + speciation + molecular/population genetics**, and Science Bowl tests it almost entirely through a handful of recurring conceptual pairs rather than random trivia. If you own these pairs, you own the whole bank.\n\nThe single most-tested idea is **frequency-dependent selection** (positive vs. negative), which is tightly braided with **mimicry** (Batesian / Müllerian / Mertensian) and **coloration** (aposematic vs. cryptic). Roughly half these questions are really one question wearing different costumes: *is this trait fitter when common or when rare?*\n\nThe second cluster is **speciation vocabulary** (allo- vs. auto-polyploidy, sympatric vs. allopatric, character displacement, punctuated equilibrium, the biological species concept) and the third is **quantitative pop-gen** (effective population size, mutation–selection balance, Hardy-Weinberg, how a new allele's frequency changes over time).\n\nSmartest way to learn it: don't memorize terms in isolation — build **two-column tables of the confused pairs** and for each row force yourself to say the *mechanism* (why common-is-good or rare-is-good, why palatable or unpalatable). Almost every \"identify all true statements\" bonus is graded on whether you can sort a term into the right column.",
+  "key_facts": [
+   {
+    "fact": "**Positive frequency-dependent selection** = a trait gets MORE fit as it gets MORE common (fixation-seeking).",
+    "why": "Predators learn a signal only if they encounter it often. So **aposematic (warning) coloration** and **Müllerian mimicry** are positive freq-dependent: the more individuals share the warning, the faster predators learn to avoid it, protecting everyone. Memory hook: 'safety in numbers, teach the predator once.'"
+   },
+   {
+    "fact": "**Negative frequency-dependent selection** = a trait gets MORE fit as it gets RARER (equilibrium-seeking, maintains polymorphism).",
+    "why": "The rare morph wins. Covers **Batesian mimicry** (a bluff only works if bluffers stay rare), **cryptic coloration** (rare morph escapes the predator's 'search image'), **plant self-incompatibility alleles** (a rare allele finds more compatible mates), and **scale-eating cichlid mouth sidedness**. Hook: 'rare is fair.' This is exactly the NOT-answer trap — aposematic coloration is the odd one out because it's positive."
+   },
+   {
+    "fact": "**Batesian mimicry** = a harmless/PALATABLE species mimics a harmful model; it is negative freq-dependent.",
+    "why": "It's a bluff — a tasty bug wearing the wasp's stripes. If mimics become common, predators stop respecting the signal, so mimics only benefit while rare. Because the mimic is palatable, it also groups with cryptic coloration on 'behaviors found in palatable species.'"
+   },
+   {
+    "fact": "**Müllerian mimicry** = two or more UNPALATABLE species converge on a shared warning signal; it is positive freq-dependent and mutualistic.",
+    "why": "Both species are genuinely defended, so pooling one warning pattern spreads the cost of teaching predators — each death educates a predator that then spares both. Not a bluff, not palatable. Contrast: Batesian = one liar, Müllerian = honest club."
+   },
+   {
+    "fact": "**Mertensian mimicry** = a DEADLY (lethal) species mimics a LESS-harmful but memorable model.",
+    "why": "The classic coral-snake case: a predator that bites the truly lethal snake dies before it can learn, so lethality can't teach avoidance. By resembling a merely-noxious (survivable) model the predator has learned to fear, the deadly species gets protected. Ranking hook for the falcon question: a naive new predator eats the harmless Batesian mimic (milk snake) hardest, the deadly true model (Sonoran coral) suffers least."
+   },
+   {
+    "fact": "**Homologous** genes share common ancestry; split into **orthologs** (diverged by speciation) vs. **paralogs** (diverged by gene DUPLICATION).",
+    "why": "Lysozyme & α-lactalbumin = one ancestral gene duplicated then drifted to new functions within the same genome → **paralogous**. Ortholog = 'same gene, different species'; paralog = 'copy-paste then diverge, same lineage.' Trap: **analogous** = similar by convergent evolution, NOT shared ancestry, so it is never a type of homology."
+   },
+   {
+    "fact": "**Allopolyploidy** (hybrid of two species + genome doubling) vs. **autopolyploidy** (genome doubling within ONE species).",
+    "why": "A 12-chromosome species + a 10-chromosome species making a fertile 22-chromosome hybrid is ALLO-polyploidy (two genomes combined), and it's **sympatric** and **instant** — not allopatric. It's common in **plants** and arises from **meiotic nondisjunction** errors that double the chromosome set to restore fertility. 'Auto = self/one, Allo = other/two.'"
+   },
+   {
+    "fact": "**Biological species concept** (species = reproductively isolated interbreeding populations) applies ONLY to sexually reproducing organisms.",
+    "why": "Bacteria (Proteobacteria) reproduce asexually and swap genes horizontally, so the BSC breaks down — it does apply to Mammalia and to fungi like Ascomycota, which have sexual cycles. Rule of thumb: 'no sex, no biological species concept.'"
+   },
+   {
+    "fact": "**Effective population size** with skewed sex ratio: $N_e = \\dfrac{4 N_m N_f}{N_m + N_f}$.",
+    "why": "$N_e$ is dragged down toward the rarer sex — 1M/5F gives $N_e\\approx3.3$, worse than a balanced 3M/3F ($N_e=6$), while 12M/2F still beats both ($N_e\\approx6.9$). Equal sex ratio maximizes $N_e$; the limiting sex is the bottleneck for genetic diversity."
+   },
+   {
+    "fact": "A beneficial **recessive** allele's frequency rises SLOWLY at first, then RAPIDLY to fixation (Haldane's sieve).",
+    "why": "When rare, the allele hides in heterozygotes where it's masked and invisible to selection, so it creeps up. As it becomes common, homozygotes appear, the phenotype is expressed, and selection suddenly grips hard. Recessive-beneficial = 'hidden then explosive.' (A dominant beneficial allele instead rises fast then slow.)"
+   },
+   {
+    "fact": "**Mutation–selection balance**: deleterious recessive alleles reach a stable equilibrium, $\\hat{q}=\\sqrt{\\mu/s}$, and are NEVER fixed.",
+    "why": "Mutation keeps injecting the bad allele while selection keeps culling it, so frequency plateaus rather than hitting 0 or 1. More mutagens (e.g., intercalating agents) raise μ and thus raise the equilibrium frequency. A population sitting at such an equilibrium can still satisfy **Hardy-Weinberg** genotype ratios."
+   },
+   {
+    "fact": "**Punctuated equilibrium** (Eldredge & Gould) = long stasis broken by rare, rapid bursts of change tied to speciation events.",
+    "why": "It's the explicit foil to Darwinian **gradualism** (slow, steady change). Buzz phrase: 'rapid change restricted to speciation.' Pair it with **character displacement** — traits diverge MORE where species overlap (sympatry) than where they don't (allopatry), because competition selects against similarity (Galápagos finch beaks)."
+   },
+   {
+    "fact": "For comparing DISTANTLY related invertebrates, **mitochondrial DNA** is the go-to marker.",
+    "why": "Among typical choices it's the only sequence universally present across all animals — hemoglobin genes, the bacterial lac repressor, and plant-centric MADS-box genes aren't found in all invertebrates. mtDNA (e.g., COI barcoding) is present everywhere and evolves at a useful clock rate, so it wins by universality."
+   }
+  ],
+  "drill_tips": "## Buzz triggers (words that scream this topic)\n- \"frequency-dependent,\" \"aposematic,\" \"cryptic,\" \"Batesian / Müllerian / Mertensian,\" \"palatable/unpalatable\" → **selection + mimicry** cluster.\n- \"polyploidy,\" \"sympatric/allopatric,\" \"character displacement,\" \"punctuated equilibrium,\" \"biological species concept\" → **speciation** cluster.\n- \"effective population size,\" \"Hardy-Weinberg,\" \"mutation-selection,\" \"fixation,\" \"reaches equilibrium\" → **pop-gen math** cluster.\n- \"duplicated and diverged\" → **paralogous** (near-reflex).\n\n## Classic distractor pairs to keep straight\n- **Positive vs. negative freq-dependent**: aposematic & Müllerian = positive (common is good); Batesian, cryptic, self-incompatibility, cichlid sidedness = negative (rare is good). *The single most tested distinction.*\n- **Batesian (palatable liar, negative) vs. Müllerian (unpalatable honest club, positive)**.\n- **Ortholog (speciation) vs. paralog (duplication)**; and **homologous (ancestry) vs. analogous (convergence)** — analogous is the fake-homology trap.\n- **Auto- (one species doubles) vs. allo-polyploidy (two species hybridize + double)** — and note polyploid speciation is *sympatric & instant*, never allopatric.\n- **Recessive beneficial allele = slow-then-fast; dominant beneficial = fast-then-slow.**\n\n## Memorize cold\n- $N_e=\\dfrac{4N_mN_f}{N_m+N_f}$ (skewed sex ratio drags $N_e$ toward the rarer sex).\n- Deleterious recessive equilibrium $\\hat q=\\sqrt{\\mu/s}$ — never fixes; mutagens raise it.\n- \"Palatable species\" set = **Batesian mimicry + cryptic coloration** (both are undefended bluffs/hiding).\n- BSC needs sexual reproduction → excludes bacteria, includes animals & sexual fungi.\n- Distant-invertebrate comparison → **mtDNA** (universal presence beats the other options).\n- Punctuated equilibrium = Eldredge & Gould, foil to Darwin's gradualism.",
+  "question_ids": [
+   "2023-r13-t2",
+   "2023-r13-b22",
+   "2023-r7-b4",
+   "2024-r11-t7",
+   "2024-r2-t16",
+   "2024-r5-t23",
+   "2024-r6-b7",
+   "2024-r8-t9",
+   "2025-r13-t8x2",
+   "2025-r13-b22",
+   "2025-r2-b25",
+   "2025-r7-t1",
+   "2025-r7-b7",
+   "2025-r9-b10"
+  ]
+ },
+ {
+  "slug": "developmental-biology",
+  "name": "Developmental Biology",
+  "count": 13,
+  "share": 3.8,
+  "overview": "**What it covers:** how a single cell becomes an organism — fertilization, meiotic arrest of the egg, cleavage patterns, gastrulation movements, cell potency (stem cells), sex-tract determination, and plant-vs-animal / metamorphosis contrasts.\n\n**How it shows up in Science Bowl:** this bank is dominated by a few recurring clusters. The single biggest one is the **egg / fertilization / meiosis** cluster (ploidy of oocytes, what stage the egg is arrested in, and the ordered steps of sea-urchin fertilization) — three of the thirteen questions. **Stem-cell potency** and **cleavage/determination** each show up twice. The rest are one-off \"definition or contrast\" questions (parthenogenesis, folic acid, AMH, metamorphosis, plant vs animal growth) that are pure recall once you know the term.\n\n**Smartest way to learn it:** anchor everything to a timeline — egg gets arrested at metaphase II → sperm arrives → Ca²⁺ spike → cortical reaction → cleavage → gastrulation → tissue potency narrows. Most questions are \"put these in order\" or \"which one is the odd one out,\" so learn the *sequences* and the *odd-member-out* distinctions cold rather than isolated facts. The \"identify all of the following\" bonus format punishes fuzzy memory — you need each item's status individually.",
+  "key_facts": [
+   {
+    "fact": "**Oocytes are arrested at metaphase II** right before fertilization; sperm entry triggers completion of meiosis II.",
+    "why": "Human/animal eggs stall twice: primary oocyte at prophase I (before ovulation), secondary oocyte at metaphase II (awaiting sperm). Memory hook: the egg is 'frozen mid-division, poised to finish' — it only completes meiosis when fertilized. This exact stage (metaphase II) is a repeat tossup answer."
+   },
+   {
+    "fact": "**Primary oocyte = diploid (2n); secondary oocyte and mature egg = haploid (1n).**",
+    "why": "Meiosis I (primary → secondary oocyte) is what halves the chromosome number. So the primary oocyte still has 2n; everything after meiosis I is haploid — even though the egg hasn't finished meiosis II, it's already 1n because homologs (not sister chromatids) were separated first. Buzz: 'which are haploid' → secondary oocyte + egg, NOT primary."
+   },
+   {
+    "fact": "**Sea-urchin fertilization order: (1) acrosomal process binds egg receptors → (2) intracellular Ca²⁺ rises → (3) cortical granules fuse with egg membrane.**",
+    "why": "Logical chain: sperm must *touch* first (acrosomal reaction), which triggers the Ca²⁺ wave, which triggers the cortical reaction (the slow block to polyspermy that lifts the fertilization envelope). Ca²⁺ is always the middle messenger between 'contact' and 'response.'"
+   },
+   {
+    "fact": "**Potency ladder: totipotent > pluripotent > multipotent > unipotent.**",
+    "why": "Toti = whole organism + placenta (zygote); pluri = any body cell but not placenta (embryonic stem cells, iPSCs); multi = several cell types in one lineage (adult/tissue stem cells); uni = one type. Potency *narrows* as development proceeds. A **hemocytoblast** (hematopoietic stem cell) is the classic **multipotent** example — makes all blood cells but nothing else."
+   },
+   {
+    "fact": "**Induced pluripotent stem cells (iPSCs, 2007) are pluripotent** — a fibroblast reprogrammed back to embryonic-like state.",
+    "why": "Yamanaka reprogrammed an adult skin cell (fibroblast) to a stem cell — but only back to *pluripotent*, not totipotent (can't make placenta). Trap: the word 'induced' tempts a fancier answer; it's just pluripotent, the same as embryonic stem cells."
+   },
+   {
+    "fact": "**Meroblastic cleavage** occurs in yolk-rich eggs (birds, reptiles, fish) where cleavage is incomplete; **holoblastic** cleavage is complete (frogs, sea urchins, mammals, earthworms).",
+    "why": "'Mero' = partial: a huge yolk blocks the cleavage furrow, so only the yolk-free cap divides (a disc on top of the yolk). Odd-one-out among earthworms/frogs/starfish/birds → **birds** (big yolky egg). Hook: big yolk = only part cleaves."
+   },
+   {
+    "fact": "**Mosaic (determinate) development vs regulative development** — removing one cell of a 4-cell embryo yields a defective adult only in mosaic developers like **nematodes**.",
+    "why": "In mosaic/determinate cleavage (nematodes, most protostomes), cell fate is fixed early — lose a cell, lose its organs. In regulative development (echinoderms, chordates/vertebrates), remaining cells compensate → normal (or twins). Buzz 'remove a blastomere → missing organs' = mosaic = nematode-type."
+   },
+   {
+    "fact": "**Convergent extension** drives the lengthening and narrowing of the primitive streak during gastrulation.",
+    "why": "Cells intercalate between neighbors along one axis, so the tissue gets *longer and thinner* — 'converge' (narrow) + 'extend' (lengthen), literally the description. Distinguish from invagination (infolding), ingression (individual cells migrating in), involution (rolling inward)."
+   },
+   {
+    "fact": "**Anti-Müllerian hormone (AMH) from Sertoli cells** degrades the Müllerian (female) ducts; without it, an XY baby develops **both** male and female tracts.",
+    "why": "Müllerian ducts → female tract (uterus/oviducts); Wolffian ducts → male tract (maintained by testosterone from Leydig cells). Bad Sertoli cells = no AMH = Müllerian ducts persist, while testosterone still builds the male tract → both. Female is the 'default'; you actively suppress it with AMH."
+   },
+   {
+    "fact": "**Parthenogenesis is the animal equivalent of apomixis in plants** — reproduction from an unfertilized egg (asexual).",
+    "why": "Apomixis = seeds/embryos without fertilization in plants; parthenogenesis = 'virgin birth' from an unfertilized egg in animals (aphids, some lizards). Same idea: skip fertilization, offspring from the egg alone."
+   },
+   {
+    "fact": "**Neural tube defects (spina bifida) are caused by folic acid (vitamin B9 / folate) deficiency** in the mother.",
+    "why": "The neural tube must close early in development; folate is required for the rapid DNA synthesis of that closure. Deficiency → tube stays open → spina bifida. This is why prenatal vitamins push folic acid. Accept B9/folate."
+   },
+   {
+    "fact": "**Incomplete (hemimetabolous) metamorphosis: Orthoptera (grasshoppers/crickets). Complete (holometabolous): Hymenoptera (bees/ants) and Diptera (flies).**",
+    "why": "Incomplete = egg → nymph (mini-adult) → adult, no pupa. Complete = egg → larva → pupa → adult, a total rebuild. Bees, ants, flies, butterflies, beetles all have larvae/pupae (complete); grasshoppers, cockroaches, true bugs are incomplete. Hook: if it has a maggot/grub/caterpillar/pupa stage, it's complete."
+   },
+   {
+    "fact": "**Plants show indeterminate growth; animals show determinate growth** (and plants grow mainly by cell elongation, animals by cell division).",
+    "why": "Plants keep growing from meristems indefinitely (indeterminate) and can hold juvenile + adult forms on one body simultaneously; animals reach a set adult form (determinate). Trap statement: 'plants undergo determinate growth' is FALSE — it's backwards."
+   }
+  ],
+  "drill_tips": "**Buzz triggers (words that signal this topic):**\n- \"arrested in / stage of meiosis / right before fertilization\" → **metaphase II**\n- \"acrosomal / cortical granules / rank the steps of fertilization\" → acrosome → **Ca²⁺** → cortical reaction\n- \"induced... fibroblast into a stem cell / 2007\" → **pluripotent** (iPSC)\n- \"hemocytoblast / blood stem cell\" → **multipotent**\n- \"yolk-rich / birds / incomplete cleavage\" → **meroblastic**\n- \"remove one blastomere → missing organs\" → **mosaic/determinate** → nematode\n- \"primitive streak lengthens and narrows\" → **convergent extension**\n- \"Sertoli cells / anti-Müllerian hormone\" → Müllerian = female tract\n- \"unfertilized egg / apomixis in animals\" → **parthenogenesis**\n- \"neural tube not closed / spina bifida\" → **folic acid (B9)**\n\n**Classic distractor pairs to keep straight:**\n- **Primary oocyte (diploid, prophase I) vs secondary oocyte (haploid, metaphase II)** — meiosis I is the halving step.\n- **Meroblastic (partial, yolky — birds) vs holoblastic (complete — frog, urchin, mammal, earthworm).**\n- **Mosaic/determinate (nematodes — lose cell, lose organs) vs regulative (echinoderms & chordates — compensate).**\n- **Totipotent vs pluripotent** — only the zygote/early cells are toti (make placenta); ES cells & iPSCs are 'only' pluri.\n- **Müllerian (female) vs Wolffian (male) ducts**; AMH kills Müllerian, testosterone builds Wolffian. Female is default.\n- **Incomplete metamorphosis (Orthoptera, no pupa) vs complete (Hymenoptera, Diptera, Lepidoptera — has larva+pupa).**\n- **Determinate (animals) vs indeterminate (plants) growth** — do not flip these.\n\n**Memorize cold:**\n- Fertilization sequence: bind → Ca²⁺ → cortical reaction.\n- Potency ranking toti > pluri > multi > uni, with one example each (zygote / iPSC / hemocytoblast / -).\n- Which egg cells are haploid: secondary oocyte + mature egg, NOT primary oocyte.\n- Convergent extension = the primitive-streak elongation answer.\n- Folic acid = B9 = neural tube.",
+  "question_ids": [
+   "2023-r10-t4",
+   "2023-r10-b4",
+   "2023-r13-b2",
+   "2023-r2-b17",
+   "2023-r5-b13",
+   "2023-r7-t12",
+   "2024-r10-t9",
+   "2024-r13-b22",
+   "2024-r4-t20",
+   "2024-r5-b9",
+   "2025-r1-b3",
+   "2025-r11-b23",
+   "2025-r6-b23"
+  ]
+ },
+ {
+  "slug": "animal-diversity",
+  "name": "Animal Diversity & Taxonomy",
+  "count": 11,
+  "share": 3.2,
+  "overview": "This topic is **the animal tree of life** — sorting animals into phyla by diagnostic traits, and reading the branching order of major clades. In this bank it splits into three recurring flavors:\n\n1. **\"Name the phylum from a clue.\"** A signature cell type or structure is given, you buzz the phylum: nematocysts → Cnidaria, choanocytes/spongocytes → Porifera.\n2. **Body-plan grades along the tree.** Protostome vs deuterostome (blastopore fate, cleavage type), presence of a true coelom, Bilateria, and which phyla are \"least related.\" These are almost always *identify-all-that-are-true* or *which-is-NOT* formats.\n3. **Vertebrate evolution.** The nested clades (chordate → craniate → vertebrate → gnathostome → tetrapod → amniote) and the **order key traits appeared**: mineralized skeleton → jaws → digited limbs → amniotic egg. Plus fish physiology curveballs (TMAO, spiral valve, lateral line).\n\nSmartest way to learn it: **draw the tree once, then hang traits on the branches.** Every question is really asking \"where on the tree does this feature sit, and what's nested inside what?\" If you know the branching order and which trait defines each fork, the *identify-all-true* and *order-these* formats fall out mechanically instead of as 11 disconnected flashcards.",
+  "key_facts": [
+   {
+    "fact": "**Protostome vs deuterostome: blastopore fate.** In protostomes the blastopore becomes the MOUTH; in deuterostomes it becomes the ANUS (\"deutero = second\" mouth forms later).",
+    "why": "This is the single most-tested distinction here. Mnemonic: **proto = mouth-first**. Protostomes also show SPIRAL, determinate cleavage; deuterostomes show RADIAL, indeterminate cleavage — the bank deliberately flips these to trap you (a question said 'protostomes display radial cleavage' — FALSE)."
+   },
+   {
+    "fact": "**Deuterostomes = Echinodermata + Chordata + Hemichordata.** Everything else bilaterian (arthropods, molluscs, annelids, nematodes, rotifers) is a protostome.",
+    "why": "Two 'which is NOT a protostome' questions hinge on this. Memorize the SHORT list of deuterostomes (only 3 phyla) — anything not on it is a protostome. Starfish (Asteroidea, an echinoderm) is a deuterostome, so 'starfish are protostomes' is a classic FALSE trap."
+   },
+   {
+    "fact": "**True coelom (eucoelomate).** A coelom is a body cavity fully lined by mesoderm. Insects/annelids/molluscs/chordates HAVE one; cnidarians and nematodes do NOT.",
+    "why": "Tested via 'which have a true coelom' lists. Honey bee = yes (coelomate). Jellyfish = no (diploblastic, no mesoderm at all). C. elegans = no — nematodes are PSEUDOcoelomates (cavity not fully mesoderm-lined). The pseudocoelom of roundworms is the go-to distractor."
+   },
+   {
+    "fact": "**Cnidaria = nematocysts.** Stinging cells (cnidocytes fire nematocysts) define the phylum; Portuguese man o' war, jellyfish, corals, hydra, sea anemones.",
+    "why": "Direct clue-to-phylum buzz. Cnidarians are radially symmetric and DIPLOBLASTIC (two germ layers, no true mesoderm) — which is why they're also the answer to 'least related to Arthropoda': they sit OUTSIDE Bilateria entirely."
+   },
+   {
+    "fact": "**Porifera = choanocytes + spongocytes.** Sponges: choanocytes (collar cells) drive water flow and feeding; spongocytes secrete spicules/spongin.",
+    "why": "Pure clue-to-phylum. Sponges are the most basal animals — no true tissues. Distractor is Ctenophora (comb jellies) or the fake phylum 'Cyclophoria' the writers invented. Choanocytes resemble choanoflagellates, hinting sponges are near the animal root."
+   },
+   {
+    "fact": "**Vertebrate trait order: mineralized skeleton → jaws → digited limbs → amniotic egg.** Bone first, then gnathostome jaws, then tetrapod limbs, then the amniote egg.",
+    "why": "Directly asked as an 'order these' question (answer: 2,3,1 for skeleton/limbs/egg). Read it off the tree: each trait defines a deeper-nested clade in the SAME order you'd walk from fish toward reptiles/mammals. Amniotic egg is LAST — it's the innovation that freed vertebrates from water."
+   },
+   {
+    "fact": "**Nested chordate clades: Chordata ⊃ Craniata ⊃ Vertebrata ⊃ Gnathostomata ⊃ Tetrapoda ⊃ Amniota.** Each 'contains' the next.",
+    "why": "The 'which statement is FALSE' chordate question lives entirely in these nesting relations. TRUE: all vertebrates are chordates; all gnathostomes are craniates; all mammals are tetrapods. FALSE: 'all tetrapods are amniotes' — amphibians are tetrapods but NOT amniotes. Watch the direction: the bigger clade contains the smaller."
+   },
+   {
+    "fact": "**\"Contains\" = the larger clade holds the smaller.** Echinodermata contains Asteroidea (starfish) — TRUE. Protostomia contains Bilateria — FALSE (it's the reverse; Bilateria contains Protostomia).",
+    "why": "Order matters in every 'first group contains the second' item. Bilateria is the huge clade that includes BOTH protostomes and deuterostomes, so Protostomia can't contain it. Also Pancrustacea does NOT contain Myriapoda (myriapods branch separately within Arthropoda) — FALSE."
+   },
+   {
+    "fact": "**TMAO = osmolyte of cartilaginous & deep-sea fishes.** Trimethylamine oxide counteracts urea's protein damage and high-pressure protein destabilization.",
+    "why": "A fish 'making extensive TMAO' is a shark/ray/deep-sea type — so it HAS jaws (gnathostome), a lateral line (all fishes), AND is often ovoviviparous (eggs hatch internally, common in sharks). The intended read: all three statements true. TMAO is your buzz-signal for 'chondrichthyan / deep-sea.'"
+   },
+   {
+    "fact": "**Spiral valve = intestine of basal fishes (sharks, rays, lungfish, sturgeons).** A corkscrew fold that increases absorptive surface area.",
+    "why": "In the visual bonus (lungfish A, salamander C), the spiral valve is in the fish — a basal vertebrate feature LOST in tetrapods. If you see 'spiral valve,' think shark/lungfish digestive tract, not amphibians or amniotes."
+   },
+   {
+    "fact": "**Diploblastic vs triploblastic; radial vs bilateral.** Cnidaria/Ctenophora = diploblastic + radial (outside Bilateria). All coelomates are triploblastic + bilaterian.",
+    "why": "Explains why Cnidaria is 'least related to Arthropoda' and why jellyfish lack a coelom: no mesoderm (the third germ layer) means no true body cavity and no bilateral symmetry. Mesoderm is the fork that separates simple radial animals from everything complex."
+   },
+   {
+    "fact": "**Ecdysozoa vs Lophotrochozoa (the two protostome super-branches).** Ecdysozoa = molting animals (Arthropoda, Nematoda); Lophotrochozoa = Mollusca, Annelida, Rotifera.",
+    "why": "Explains phylum 'relatedness' rankings. Within protostomes, arthropods are closer to nematodes (both molt/ecdysis) than to molluscs or annelids. Pancrustacea (crustaceans + insects) and Myriapoda are the arthropod sub-branches the bank name-drops."
+   }
+  ],
+  "drill_tips": "### Buzz triggers (word → answer)\n- **\"nematocyst\" / \"man o' war\" / \"cnidocyte\"** → Cnidaria\n- **\"choanocyte\" / \"spongocyte\" / \"collar cell\" / \"spicule\"** → Porifera (sponges)\n- **\"blastopore becomes the mouth\"** → Protostome; **\"…becomes anus\"** → Deuterostome\n- **\"TMAO\" / \"spiral valve\"** → cartilaginous / basal fish (shark, lungfish)\n- **\"amniotic egg\"** in an ordering question → almost always the LAST/most-derived trait\n- **\"contains\" / \"is nested within\"** → it's a clade-hierarchy question; check direction\n\n### Classic distractor pairs (memorize the difference)\n- **Protostome cleavage = SPIRAL & determinate** ≠ deuterostome RADIAL & indeterminate. Writers swap these constantly.\n- **Coelom vs pseudocoelom vs acoelom:** insects/annelids/chordates = true coelom; **nematodes (C. elegans) = pseudocoelom**; cnidarians = none. The bee-vs-C.-elegans trap is the whole point of those items.\n- **Bilateria contains Protostomia**, NOT the reverse. Bigger clade holds smaller.\n- **Amphibians are tetrapods but NOT amniotes** — the #1 'which is false' chordate trap.\n- **Deuterostomes are only 3 phyla** (Echinodermata, Chordata, Hemichordata). Hemichordata is the sneaky one on 'which is NOT a protostome' lists.\n- **Cnidaria = 'least related'** to any bilaterian phylum because it's outside Bilateria (diploblastic, radial).\n\n### Memorize cold\n1. The **deuterostome trio**: Echinoderms, Chordates, Hemichordates. Everything else bilaterian = protostome.\n2. **Blastopore fate**: proto = mouth, deutero = anus.\n3. **Vertebrate trait order**: mineralized skeleton → jaws → digited limbs → amniotic egg.\n4. **Nested clades**: Chordata ⊃ Craniata ⊃ Vertebrata ⊃ Gnathostomata ⊃ Tetrapoda ⊃ Amniota.\n5. Two signature-cell phyla: **nematocyst = Cnidaria, choanocyte = Porifera.**",
+  "question_ids": [
+   "2023-r5-b6",
+   "2023-r5-b20",
+   "2023-r9-t18",
+   "2024-r1-b19",
+   "2024-r6-t5",
+   "2024-r6-b13",
+   "2024-r7-b4",
+   "2025-r14-t13x2",
+   "2025-r3-t25",
+   "2025-r8-b13",
+   "2025-r9-b13"
+  ]
+ },
+ {
+  "slug": "immunology",
+  "name": "Immunology",
+  "count": 10,
+  "share": 2.9,
+  "overview": "Immunology in Science Bowl is less about memorizing every interleukin and more about **clean categorical distinctions** you can buzz on instantly. Looking at the actual bank, the questions cluster into four buckets:\n\n- **Innate vs. adaptive** — which cells/processes belong to which arm (NK cells, mast cells, macrophages, neutrophils = innate; B cells, T cells, antibodies = adaptive).\n- **Blood typing & Rh** — ABO transfusion compatibility, Rh incompatibility, hemolytic disease of the newborn (HDN), and edge cases like the Bombay phenotype. This is the single most-tested sub-area here (4 of 10 questions).\n- **Antibodies (immunoglobulins)** — the five isotypes and their signature jobs, especially IgG crossing the placenta.\n- **Techniques & clinical flags** — flow cytometry side scatter, hybridomas/monoclonal antibodies, antinuclear antibodies → lupus, \"eat-me\" signals for phagocytosis.\n\nThe smartest way to learn it: **build two tables cold** — (1) innate vs. adaptive cell roster, and (2) the ABO/Rh compatibility grid — then attach one mechanistic hook to each specialty term (why IgG and not IgM crosses the placenta, why phosphatidylserine flags a cell for eating). Once those two tables are automatic, most of these questions become a 2-second recall.",
+  "key_facts": [
+   {
+    "fact": "**Innate immunity = fast, non-specific, no memory**; includes NK cells, mast cells, macrophages, neutrophils, dendritic cells, and the complement system. **Adaptive = slow, specific, has memory**; means B cells, T cells, and antibodies.",
+    "why": "The single most-tested split. Memory hook: if it involves a *specific antibody or a named T/B lymphocyte*, it's adaptive. If it's a granulocyte, phagocyte, or 'kills anything abnormal' cell, it's innate. NK cells feel adaptive (they kill infected cells) but are INNATE — they detect *missing/abnormal self* (low MHC-I), not a specific antigen."
+   },
+   {
+    "fact": "**ABO transfusion rule: you can receive blood that lacks the antigen your plasma has antibodies against.** O-negative is universal donor; AB-positive is universal recipient.",
+    "why": "You make antibodies against the A/B antigens you DON'T have. A B-positive person has anti-A antibodies, so they can receive B and O (both lack A antigen), and Rh+ can take Rh+ or Rh−. Donor RBC antigens are what matter — plasma antibodies in donor blood are dilute enough to ignore for packed cells."
+   },
+   {
+    "fact": "**Rh incompatibility / HDN: mother is Rh-negative, father (and fetus) Rh-positive.** The mother's anti-Rh antibodies attack the fetus's RBCs.",
+    "why": "An Rh− mother sensitized by an Rh+ fetus makes anti-Rh IgG. Because only IgG crosses the placenta, those antibodies reach the next Rh+ fetus and hemolyze its blood. Father Rh+ is what makes the fetus potentially Rh+. This is why the answer pattern is 'mother negative, father positive.'"
+   },
+   {
+    "fact": "**IgG is the only immunoglobulin that crosses the placenta** — giving passive immunity to the newborn and causing HDN.",
+    "why": "IgG is a monomer, small enough to be actively transported across the placenta via FcRn receptors. IgM is a huge pentamer — too big to cross (mnemonic: M = Massive/Mama-stays-out). So HDN and newborn passive immunity are always IgG."
+   },
+   {
+    "fact": "**Bombay phenotype = no H antigen**, so no A, B, or O antigens can be built. Bombay patients can ONLY receive blood from another Bombay individual.",
+    "why": "The H antigen is the base sugar that A and B enzymes decorate. No H means even 'O' blood (which still displays H antigen) triggers a reaction — their plasma has anti-A, anti-B, AND anti-H antibodies. So O is NOT safe for them; the answer to 'who can donate: A/B/O/AB?' is NONE."
+   },
+   {
+    "fact": "**Diapedesis (a.k.a. leukocyte extravasation)** — how neutrophils squeeze through gaps between endothelial cells to exit blood vessels into infected tissue.",
+    "why": "The sequence: margination (cells drift to vessel wall) → rolling → adhesion → diapedesis (crossing the wall) → chemotaxis. 'Dia-' = across, '-pedesis' = stepping. Both diapedesis and 'leukocyte extravasation' are accepted."
+   },
+   {
+    "fact": "**Antinuclear antibodies (ANA) → Systemic Lupus Erythematosus (SLE).** ANA are autoantibodies against the cell's own nuclear contents.",
+    "why": "Lupus is the classic autoimmune disease where the body attacks its own nuclei (DNA, histones). ANA is the screening test for it. Buzz phrase 'antinuclear antibodies' = lupus, distinct from other autoimmune markers."
+   },
+   {
+    "fact": "**Hybridomas = myeloma (immortal tumor) cell fused with a B cell (plasma B cell), producing monoclonal antibodies.**",
+    "why": "You want an antibody-producing cell that never dies. B cells make one specific antibody but die; myeloma cells are immortal but don't make the antibody you want. Fuse them → immortal antibody factory. The immune cell fused in is the B/plasma cell."
+   },
+   {
+    "fact": "**Macrophages recognize phosphatidylserine as the 'eat-me' signal on apoptotic cells.**",
+    "why": "Phosphatidylserine normally sits on the INNER leaflet of the plasma membrane. When a cell undergoes apoptosis, it flips PS to the OUTER surface — flagging itself for phagocytosis. The distractor lipids (phosphatidylcholine, sphingomyelin, cholesterol) are normal outer-membrane residents and signal nothing."
+   },
+   {
+    "fact": "**Flow cytometry side scatter (SSC) measures internal granularity/complexity.** Increasing SSC: T cell (lymphocyte, low) < monocyte < basophil/granulocyte (high).",
+    "why": "Side scatter = how granular/complex a cell is inside. Lymphocytes (T cells) are small and agranular → low SSC. Granulocytes (basophils, neutrophils, eosinophils) are packed with granules → high SSC. Forward scatter (FSC) measures size instead. Order granulocytes highest."
+   },
+   {
+    "fact": "**Mast cells release histamine → local inflammation and allergy; this is an INNATE process.**",
+    "why": "Histamine causes vasodilation and increased vessel permeability (the redness/swelling of inflammation and allergic reactions). Mast cells are innate effectors — no antigen-specific memory. Pairs with the innate/adaptive sorting questions."
+   },
+   {
+    "fact": "**NK cells kill virus-infected and tumor cells by detecting abnormal/absent surface proteins (low MHC-I) — innate, not adaptive.**",
+    "why": "Healthy cells display normal MHC-I ('I'm fine' signal). Infected/cancerous cells downregulate MHC-I to hide from T cells — but that missing signal is exactly what NK cells detect ('missing-self'). No specific antigen recognition = innate."
+   }
+  ],
+  "drill_tips": "**Buzz triggers (words that flag this topic):**\n- \"innate\" / \"adaptive,\" \"natural killer,\" \"mast cell,\" \"complement\" → immune-arm sorting\n- \"Rh factor,\" \"hemolytic disease of the newborn,\" \"blood type,\" \"transfusion,\" \"Bombay phenotype\" → blood/transfusion grid\n- \"immunoglobulin,\" \"IgG/IgM/IgA,\" \"cross the placenta,\" \"passive immunity\" → antibody isotypes\n- \"monoclonal antibody,\" \"hybridoma,\" \"flow cytometry,\" \"side/forward scatter,\" \"antinuclear antibodies\" → techniques/clinical\n\n**Classic distractor pairs to keep straight:**\n- **NK cells: innate, NOT adaptive** — the trap is that they kill infected cells like cytotoxic T cells. Difference: NK = missing-self, no antigen specificity.\n- **IgG vs. IgM** — IgG crosses placenta (small monomer); IgM does NOT (huge pentamer, first antibody made in a response).\n- **Bombay 'O' trap** — Bombay patients cannot take type O; they need Bombay blood. O is only universal *for normal ABO*, not for missing-H.\n- **Rh direction** — HDN needs mother Rh−, father/fetus Rh+ (NOT the reverse).\n- **Phosphatidylserine vs. phosphatidylcholine** — PS (inner leaflet, flips out = eat-me) is the answer; PC is a normal outer-leaflet lipid.\n- **Side scatter (granularity) vs. forward scatter (size)** — granulocytes win on SSC, not necessarily FSC.\n- **Diapedesis vs. margination vs. chemotaxis** — diapedesis is the *crossing the vessel wall* step specifically.\n\n**Memorize cold:**\n1. **Innate roster:** NK, mast, macrophage, neutrophil, dendritic, complement. Everything with a named T/B cell or specific antibody = adaptive.\n2. **ABO/Rh grid:** universal donor O−, universal recipient AB+; you can receive anything lacking your antibodies' target antigen.\n3. **IgG = placenta = HDN = passive immunity.**\n4. **SSC order:** lymphocyte < monocyte < granulocyte (basophil).",
+  "question_ids": [
+   "2023-r2-b2",
+   "2023-r2-b11",
+   "2024-r12-t21",
+   "2024-r13-t2",
+   "2024-r3-b20",
+   "2025-r10-b4",
+   "2025-r10-t9",
+   "2025-r12-b18",
+   "2025-r16-t6",
+   "2025-r9-b20"
+  ]
+ }
+]

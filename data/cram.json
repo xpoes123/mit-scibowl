@@ -1,0 +1,975 @@
+[
+ {
+  "subject": "Math",
+  "strategy": "## Math Cram Plan (1 day, max points/minute)\n\n**The data (333 Math Qs):** trig (tan 38, sin 25, cos 11, angle 23), area/geometry (area 29, triangle 19, circle 9), probability (28), base/digit conversion (base 17 + digit 25 — HUGE), roots/polynomials (root 17, polynomial 9), primes/divisors/NT (~30), sequences/series (13), stats (mean 10, deviation 6, variance 3), vectors/matrices (12). Cram in that order.\n\n**PRIORITIZE (80% of points):**\n1. **Trig instant-recall** — double-angle, Pythagorean identities, 30-60-90 / 45-45-90 / 3-4-5 / 5-12-13, area = ½ab·sinC, Law of Sines/Cosines. Single biggest bucket.\n2. **Base conversion** — base-b to base-10 (Horner), largest k-digit = b^k−1. Under-rated: base+digit is ~40 questions combined and pure procedure.\n3. **Geometry shortcuts** — Heron, inradius r=A/s, circumradius R=abc/4A, hexagon/equilateral area, space diagonal, triangle inequality, Euler V−E+F=2.\n4. **Probability reflexes** — \"at least one\" = 1−P(none), linearity of EV (works even when dependent), inclusion-exclusion, circular arrangements, C(n,k).\n5. **Number theory** — σ and τ from prime factorization, Fermat/Wilson, φ(n), CRT.\n\n**MEMORIZE COLD (cheap points):** Vieta's, x+1/x tricks, variance scales by k², independent variances add, det(kM)=kⁿ·det, roots of unity count, geometric series sum, harmonic mean 2ab/(a+b).\n\n**SKIP:** calculus limits, obscure distributions, heavy graph proofs. If you don't recognize it in 5 seconds, guess and move on — tossups are speed.\n\n**Method:** Blitz 3–4 times, say the answer OUT LOUD before flipping. On multiple choice, eliminate then guess — never leave blank. Buzz on pattern recognition, not full derivation.",
+  "cards": [
+   {
+    "front": "$\\cos(2x) = ?$ (three forms)",
+    "back": "$\\cos^2x-\\sin^2x = 1-2\\sin^2x = 2\\cos^2x-1$",
+    "tag": "trig"
+   },
+   {
+    "front": "$\\sin(2x) = ?$",
+    "back": "$2\\sin x\\cos x$",
+    "tag": "trig"
+   },
+   {
+    "front": "Area of triangle: two sides $a,b$, included angle $C$",
+    "back": "$\\tfrac{1}{2}ab\\sin C$",
+    "tag": "trig/geometry"
+   },
+   {
+    "front": "Pythagorean identity + tan identity",
+    "back": "$\\sin^2x+\\cos^2x=1$; $1+\\tan^2x=\\sec^2x$",
+    "tag": "trig"
+   },
+   {
+    "front": "Law of Cosines",
+    "back": "$c^2=a^2+b^2-2ab\\cos C$",
+    "tag": "trig"
+   },
+   {
+    "front": "Law of Sines",
+    "back": "$\\dfrac{a}{\\sin A}=\\dfrac{b}{\\sin B}=\\dfrac{c}{\\sin C}=2R$",
+    "tag": "trig"
+   },
+   {
+    "front": "30-60-90 side ratios (opp 30 : 60 : 90)",
+    "back": "$1 : \\sqrt{3} : 2$",
+    "tag": "triangles"
+   },
+   {
+    "front": "45-45-90 side ratios",
+    "back": "$1:1:\\sqrt{2}$",
+    "tag": "triangles"
+   },
+   {
+    "front": "Common Pythagorean triples",
+    "back": "3-4-5, 5-12-13, 8-15-17, 7-24-25, 9-40-41",
+    "tag": "triangles"
+   },
+   {
+    "front": "$\\cos x=\\tfrac35\\Rightarrow \\cos 2x=?$",
+    "back": "$2(\\tfrac35)^2-1=-\\tfrac{7}{25}$",
+    "tag": "trig"
+   },
+   {
+    "front": "Sum of divisors $\\sigma(n)$ for $n=\\prod p_i^{a_i}$",
+    "back": "$\\prod \\dfrac{p_i^{a_i+1}-1}{p_i-1}$",
+    "tag": "number theory"
+   },
+   {
+    "front": "Number of divisors $\\tau(n)$",
+    "back": "$\\prod (a_i+1)$",
+    "tag": "number theory"
+   },
+   {
+    "front": "$\\sigma(1024)=\\sigma(2^{10})=?$",
+    "back": "$2^{11}-1=2047$",
+    "tag": "number theory"
+   },
+   {
+    "front": "Fermat's Little Theorem",
+    "back": "$a^{p-1}\\equiv 1 \\pmod p$ if $p\\nmid a$ ($p$ prime)",
+    "tag": "number theory"
+   },
+   {
+    "front": "Wilson's Theorem",
+    "back": "$(p-1)!\\equiv -1 \\pmod p$ for prime $p$",
+    "tag": "number theory"
+   },
+   {
+    "front": "$11!\\bmod 13 = ?$ (use Wilson)",
+    "back": "$12!\\equiv-1$ and $12\\equiv-1$, so $11!\\equiv 1$",
+    "tag": "number theory"
+   },
+   {
+    "front": "Euler totient $\\varphi(n)$ for $n=\\prod p_i^{a_i}$",
+    "back": "$n\\prod\\left(1-\\tfrac{1}{p_i}\\right)$",
+    "tag": "number theory"
+   },
+   {
+    "front": "CRT: $x\\equiv a\\ (m),\\ x\\equiv b\\ (n)$, $\\gcd(m,n)=1$",
+    "back": "Unique solution mod $mn$; search $x=b+kn$ until $\\equiv a\\ (m)$",
+    "tag": "number theory"
+   },
+   {
+    "front": "P(at least one) = ?",
+    "back": "$1 - P(\\text{none})$",
+    "tag": "probability"
+   },
+   {
+    "front": "Linearity of expectation (the caveat)",
+    "back": "$E[X+Y]=E[X]+E[Y]$ ALWAYS — even if dependent",
+    "tag": "probability"
+   },
+   {
+    "front": "Inclusion-exclusion: $P(A\\cup B)=?$",
+    "back": "$P(A)+P(B)-P(A\\cap B)$",
+    "tag": "probability"
+   },
+   {
+    "front": "Conditional probability formula",
+    "back": "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$",
+    "tag": "probability"
+   },
+   {
+    "front": "Combinations $\\binom{n}{k}=?$",
+    "back": "$\\dfrac{n!}{k!(n-k)!}$; note $\\binom{n}{2}=\\dfrac{n(n-1)}{2}$",
+    "tag": "combinatorics"
+   },
+   {
+    "front": "# circular arrangements of $n$ distinct objects",
+    "back": "$(n-1)!$",
+    "tag": "combinatorics"
+   },
+   {
+    "front": "Vieta: $x^2+bx+c=0$ roots",
+    "back": "Sum $=-b$, product $=c$",
+    "tag": "algebra"
+   },
+   {
+    "front": "Vieta: cubic $x^3+bx^2+cx+d$",
+    "back": "$\\sum r=-b$, $\\sum r_ir_j=c$, $\\prod r=-d$",
+    "tag": "algebra"
+   },
+   {
+    "front": "Given $x+\\tfrac1x=k$, find $x^2+\\tfrac1{x^2}$",
+    "back": "$k^2-2$",
+    "tag": "algebra"
+   },
+   {
+    "front": "$x^3+\\tfrac1{x^3}$ in terms of $k=x+\\tfrac1x$",
+    "back": "$k^3-3k$",
+    "tag": "algebra"
+   },
+   {
+    "front": "Variance under scaling: $\\mathrm{Var}(kX)=?$",
+    "back": "$k^2\\mathrm{Var}(X)$ (SD scales by $|k|$)",
+    "tag": "statistics"
+   },
+   {
+    "front": "Variance of sum of INDEPENDENT $X,Y$",
+    "back": "$\\mathrm{Var}(X)+\\mathrm{Var}(Y)$; SDs add in quadrature: $\\sqrt{\\sigma_1^2+\\sigma_2^2}$",
+    "tag": "statistics"
+   },
+   {
+    "front": "Variance from RMS and mean",
+    "back": "$\\mathrm{Var}=\\overline{x^2}-\\bar x^2=\\text{RMS}^2-\\text{mean}^2$",
+    "tag": "statistics"
+   },
+   {
+    "front": "Harmonic mean of two numbers $a,b$",
+    "back": "$\\dfrac{2ab}{a+b}$",
+    "tag": "statistics"
+   },
+   {
+    "front": "Determinant of $kM$ for $n\\times n$ matrix",
+    "back": "$k^n\\det(M)$",
+    "tag": "linear algebra"
+   },
+   {
+    "front": "Two vectors orthogonal iff",
+    "back": "dot product $=0$",
+    "tag": "vectors"
+   },
+   {
+    "front": "$|\\vec A\\times\\vec B| = ?$",
+    "back": "$|\\vec A||\\vec B|\\sin\\theta$ = area of parallelogram",
+    "tag": "vectors"
+   },
+   {
+    "front": "$\\vec A\\cdot\\vec B = ?$",
+    "back": "$|\\vec A||\\vec B|\\cos\\theta = A_xB_x+A_yB_y+A_zB_z$",
+    "tag": "vectors"
+   },
+   {
+    "front": "Change of base for logs",
+    "back": "$\\log_b a=\\dfrac{\\ln a}{\\ln b}=\\dfrac{\\log a}{\\log b}$",
+    "tag": "logs"
+   },
+   {
+    "front": "$\\log(ab),\\ \\log(a/b),\\ \\log(a^n)$",
+    "back": "$\\log a+\\log b$; $\\log a-\\log b$; $n\\log a$",
+    "tag": "logs"
+   },
+   {
+    "front": "$\\log_{10}(7!) = \\log_{10}(5040) \\approx ?$",
+    "back": "$\\approx 3.7$ (so 4 digits)",
+    "tag": "logs"
+   },
+   {
+    "front": "Infinite geometric series sum ($|r|<1$)",
+    "back": "$\\dfrac{a}{1-r}$",
+    "tag": "series"
+   },
+   {
+    "front": "Finite geometric series sum",
+    "back": "$a\\dfrac{1-r^n}{1-r}$",
+    "tag": "series"
+   },
+   {
+    "front": "Arithmetic series sum of $n$ terms",
+    "back": "$\\dfrac{n}{2}(\\text{first}+\\text{last})$",
+    "tag": "series"
+   },
+   {
+    "front": "Sum of first $n$ integers / squares",
+    "back": "$\\dfrac{n(n+1)}{2}$; $\\dfrac{n(n+1)(2n+1)}{6}$",
+    "tag": "series"
+   },
+   {
+    "front": "# $n$-th roots of unity total; # primitive",
+    "back": "Total $n$ (at angles $2\\pi k/n$); primitive $\\varphi(n)$",
+    "tag": "complex"
+   },
+   {
+    "front": "Complex $z=re^{i\\theta}$: $z^n=?$ (De Moivre)",
+    "back": "$r^n(\\cos n\\theta+i\\sin n\\theta)$",
+    "tag": "complex"
+   },
+   {
+    "front": "Heron's formula (area from 3 sides)",
+    "back": "$A=\\sqrt{s(s-a)(s-b)(s-c)}$, $s=\\tfrac{a+b+c}{2}$",
+    "tag": "geometry"
+   },
+   {
+    "front": "Inradius from area and semiperimeter",
+    "back": "$r=\\dfrac{A}{s}$",
+    "tag": "geometry"
+   },
+   {
+    "front": "Circumradius from sides and area",
+    "back": "$R=\\dfrac{abc}{4A}$",
+    "tag": "geometry"
+   },
+   {
+    "front": "Space diagonal of box $a\\times b\\times c$",
+    "back": "$\\sqrt{a^2+b^2+c^2}$",
+    "tag": "geometry"
+   },
+   {
+    "front": "Regular hexagon side $s$: area",
+    "back": "$\\dfrac{3\\sqrt3}{2}s^2$ (= 6 equilateral triangles)",
+    "tag": "geometry"
+   },
+   {
+    "front": "Equilateral triangle side $s$: area",
+    "back": "$\\dfrac{\\sqrt3}{4}s^2$",
+    "tag": "geometry"
+   },
+   {
+    "front": "Triangle inequality: # integer 3rd sides given $a,b$",
+    "back": "$|a-b|<x<a+b$; count integers strictly between",
+    "tag": "geometry"
+   },
+   {
+    "front": "Euler's formula (polyhedra / planar graphs)",
+    "back": "$V-E+F=2$",
+    "tag": "geometry/graph"
+   },
+   {
+    "front": "Sum of interior angles of $n$-gon",
+    "back": "$(n-2)\\cdot 180^\\circ$",
+    "tag": "geometry"
+   },
+   {
+    "front": "Largest $k$-digit number in base $b$ → base 10",
+    "back": "$b^k-1$",
+    "tag": "bases"
+   },
+   {
+    "front": "Convert base-$b$ digits $d_n\\dots d_0$ to base 10",
+    "back": "$\\sum d_i b^i$ (Horner: multiply-and-add left to right)",
+    "tag": "bases"
+   },
+   {
+    "front": "Polynomial remainder when divided by $(x-a)$",
+    "back": "Remainder Theorem: $= P(a)$",
+    "tag": "algebra"
+   },
+   {
+    "front": "Expected value of fair $n$-sided die",
+    "back": "$\\dfrac{n+1}{2}$",
+    "tag": "probability"
+   },
+   {
+    "front": "Perfect number (definition + smallest two)",
+    "back": "Equals sum of proper divisors; 6, 28",
+    "tag": "number theory"
+   },
+   {
+    "front": "Expected # trials until first success, prob $p$",
+    "back": "$\\dfrac{1}{p}$ (geometric distribution)",
+    "tag": "probability"
+   }
+  ]
+ },
+ {
+  "subject": "Chemistry",
+  "strategy": "## Chemistry cram plan (~1 day, points-per-minute)\n\nMIT-style Science Bowl chem is HARD, but the question bank is lopsided. Frequency counts from the actual set (356 chem Qs): **orgo ~96, gas ~54, acid/base ~44, quantum ~30, spectroscopy ~27, redox ~22, thermo ~20, MO ~19, VSEPR ~19**. The old advice to \"skip orgo\" is wrong — it's the *biggest* bucket. You can't learn mechanisms cold, but you CAN pattern-match directors, NMR shifts, SN1/SN2, and mass-spec carbon counts. Farm the computable stuff; recognize the rest.\n\n**Tier 1 — memorize cold, drill until automatic (55%):**\n- **Acid/base + pH:** weak-acid pH `½(pKa − log C)`, Henderson–Hasselbalch, salt/buffer pH, strong-acid list, Kw. Nearest-integer answers are gifts.\n- **Gas laws / kinetic theory:** ideal gas, Graham's law, v_rms, KE = 3/2 RT (mass-independent), Cv/Cp, \"high T low P → ideal,\" R values.\n- **VSEPR + polarity + hybridization:** the geometry table and angle order H₂O<NH₃<CH₄. Instant recall.\n- **Oxidation states / formal charge / molar mass to nearest:** pure arithmetic points.\n- **Periodic trends + rankings:** IE/EN up-right, the N>O and Be>B bumps, isoelectronic radius. Half of chem is \"rank these three.\"\n\n**Tier 2 — high-value recognition (35%):**\nOrgo pattern-match (EAS o/p vs meta directors, NMR ppm landmarks, mass-spec #C = (M+1)/1.1, SN1/SN2 conditions, branching→lower bp), Hückel 4n+2, bond order from MO, packing efficiencies (BCC .68/FCC .74), high/low-spin + spectrochemical series, ΔG=ΔH−TΔS sign logic, Nernst/E°cell, normal modes 3N−5/3N−6, quantum-number rules, Cr/Cu configs.\n\n**Tier 3 — skim/guess (10%):** rigid-rotor/particle-in-a-box math, named reactions (Mond, Favorskii), obscure reagents, IR-activity fine detail. Take the free 25% MC guess and move on.\n\n**Match strategy:** buzz Tier-1 numerics with confidence, recognize Tier-2, guess Tier-3 MC. Flip this deck top-to-bottom 4–5×; the first ~30 cards hold most of the points.",
+  "cards": [
+   {
+    "tag": "acid-base",
+    "front": "Weak-acid pH (conc C, given pKa) = ?",
+    "back": "$pH = \\tfrac{1}{2}(pK_a - \\log C)$"
+   },
+   {
+    "tag": "acid-base",
+    "front": "Henderson–Hasselbalch",
+    "back": "$pH = pK_a + \\log\\dfrac{[A^-]}{[HA]}$; equal conc $\\Rightarrow pH=pK_a$"
+   },
+   {
+    "tag": "acid-base",
+    "front": "7 strong acids (fully dissociate)",
+    "back": "HCl, HBr, HI, HNO₃, H₂SO₄, HClO₄, HClO₃"
+   },
+   {
+    "tag": "acid-base",
+    "front": "pH of strong acid, conc C",
+    "back": "$pH=-\\log C$ (0.01 M ⇒ pH 2)"
+   },
+   {
+    "tag": "acid-base",
+    "front": "$K_w$ and pH + pOH",
+    "back": "$K_w=[H^+][OH^-]=10^{-14}$; $pH+pOH=14$"
+   },
+   {
+    "tag": "acid-base",
+    "front": "pH of basic salt (conjugate base, conc C)",
+    "back": "$pK_b=14-pK_a$; $pOH=\\tfrac12(pK_b-\\log C)$; $pH=14-pOH$"
+   },
+   {
+    "tag": "acid-base",
+    "front": "Doubling [H₃O⁺] changes pH by?",
+    "back": "$-\\log 2 = -0.30$ (pH drops 0.3)"
+   },
+   {
+    "tag": "acid-base",
+    "front": "What makes a buffer?",
+    "back": "Weak acid + its conjugate base (e.g. acetic acid + acetate)"
+   },
+   {
+    "tag": "periodic",
+    "front": "Ionization energy & electronegativity trend",
+    "back": "Increase up and to the right (toward F)"
+   },
+   {
+    "tag": "periodic",
+    "front": "Two IE exceptions in period 2",
+    "back": "N > O (half-filled 2p³); Be > B (2s vs 2p). So IE: C < O < N"
+   },
+   {
+    "tag": "periodic",
+    "front": "Atomic radius trend",
+    "back": "Increases down and to the left"
+   },
+   {
+    "tag": "periodic",
+    "front": "Isoelectronic ionic radius",
+    "back": "More protons ⇒ smaller: Mg²⁺ < Na⁺ < F⁻"
+   },
+   {
+    "tag": "gas-laws",
+    "front": "Ideal gas law + R values",
+    "back": "$PV=nRT$; $R=0.0821\\,\\tfrac{L\\,atm}{mol\\,K}=8.314\\,\\tfrac{J}{mol\\,K}$"
+   },
+   {
+    "tag": "gas-laws",
+    "front": "Molar volume of ideal gas at STP",
+    "back": "$22.4$ L/mol (1 atm, 273 K)"
+   },
+   {
+    "tag": "gas-laws",
+    "front": "Graham's law of effusion",
+    "back": "$\\dfrac{r_1}{r_2}=\\sqrt{\\dfrac{M_2}{M_1}}$ (lighter effuses faster)"
+   },
+   {
+    "tag": "gas-laws",
+    "front": "RMS speed",
+    "back": "$v_{rms}=\\sqrt{\\dfrac{3RT}{M}}$ (lighter & hotter ⇒ faster)"
+   },
+   {
+    "tag": "gas-laws",
+    "front": "Avg translational KE per mole",
+    "back": "$\\tfrac{3}{2}RT$ (depends on T only, not mass)"
+   },
+   {
+    "tag": "gas-laws",
+    "front": "Conditions for most ideal behavior",
+    "back": "High temperature, low pressure"
+   },
+   {
+    "tag": "gas-laws",
+    "front": "Charles's law (isobaric)",
+    "back": "$\\dfrac{V_1}{T_1}=\\dfrac{V_2}{T_2}$ (T in kelvin)"
+   },
+   {
+    "tag": "thermo",
+    "front": "$C_v$ / $C_p$: monatomic vs diatomic",
+    "back": "Mono $C_v=\\tfrac32R$; diatomic $C_v=\\tfrac52R$; always $C_p=C_v+R$"
+   },
+   {
+    "tag": "vsepr",
+    "front": "VSEPR: 2, 3, 4 electron domains",
+    "back": "linear 180°; trigonal planar 120°; tetrahedral 109.5°"
+   },
+   {
+    "tag": "vsepr",
+    "front": "VSEPR: 5 and 6 domains",
+    "back": "trigonal bipyramidal (90/120°); octahedral (90°)"
+   },
+   {
+    "tag": "vsepr",
+    "front": "AX₄E₂ and AX₄E geometry",
+    "back": "AX₄E₂ = square planar (XeF₄); AX₄E = seesaw (SF₄)"
+   },
+   {
+    "tag": "vsepr",
+    "front": "AX₅E and AX₃E₂ geometry",
+    "back": "AX₅E = square pyramidal (IF₅); AX₃E₂ = T-shaped (ClF₃)"
+   },
+   {
+    "tag": "vsepr",
+    "front": "Bond-angle order: H₂O, NH₃, CH₄",
+    "back": "H₂O 104.5° < NH₃ 107° < CH₄ 109.5° (lone pairs shrink angle)"
+   },
+   {
+    "tag": "vsepr",
+    "front": "Hybridization from domains 2/3/4/5/6",
+    "back": "sp, sp², sp³, sp³d, sp³d²"
+   },
+   {
+    "tag": "vsepr",
+    "front": "Nonpolar despite polar bonds?",
+    "back": "Symmetric geometry cancels dipoles: CO₂, CH₄, SF₆, BF₃, XeF₄"
+   },
+   {
+    "tag": "redox",
+    "front": "Oxidation-state rules",
+    "back": "O=−2, H=+1, F=−1, sum=charge; fractions OK (Fe in Fe₃O₄ = +8/3)"
+   },
+   {
+    "tag": "redox",
+    "front": "Cell voltage (galvanic)",
+    "back": "$E^\\circ_{cell}=E^\\circ_{cath}-E^\\circ_{an}$; Zn/Cu = 0.34−(−0.76)=1.10 V"
+   },
+   {
+    "tag": "redox",
+    "front": "Formal charge",
+    "back": "$FC=V-(\\text{lone }e^-)-\\tfrac12(\\text{bonding }e^-)$"
+   },
+   {
+    "tag": "stoich",
+    "front": "Molar mass to nearest — method",
+    "back": "Sum atomic masses (Hg₂Cl₂: 2·200+2·35 = 470)"
+   },
+   {
+    "tag": "quantum",
+    "front": "Electron-config anomalies Cr & Cu",
+    "back": "Cr = [Ar]3d⁵4s¹, Cu = [Ar]3d¹⁰4s¹ (half/full-d stability)"
+   },
+   {
+    "tag": "quantum",
+    "front": "Quantum-number allowed ranges",
+    "back": "$l=0..n{-}1$; $m_l=-l..{+}l$; $m_s=\\pm\\tfrac12$. $l=n$ forbidden"
+   },
+   {
+    "tag": "quantum",
+    "front": "Aufbau / Hund / Pauli in one line",
+    "back": "Fill lowest E; singly fill degenerate before pairing; no two e⁻ share all 4 numbers"
+   },
+   {
+    "tag": "quantum",
+    "front": "Rydberg photon energy scaling",
+    "back": "$E\\propto\\left|\\dfrac{1}{n_f^2}-\\dfrac{1}{n_i^2}\\right|$"
+   },
+   {
+    "tag": "mo-theory",
+    "front": "Bond order (MO theory)",
+    "back": "$BO=\\tfrac12(\\text{bonding}-\\text{antibonding})$"
+   },
+   {
+    "tag": "mo-theory",
+    "front": "Bond orders: O₂, superoxide, peroxide",
+    "back": "O₂ = 2; O₂⁻ (superoxide) = 1.5; O₂²⁻ (peroxide) = 1"
+   },
+   {
+    "tag": "thermo",
+    "front": "Gibbs free energy",
+    "back": "$\\Delta G=\\Delta H-T\\Delta S$; spontaneous if $\\Delta G<0$"
+   },
+   {
+    "tag": "thermo",
+    "front": "Spontaneity from ΔH, ΔS signs",
+    "back": "(−,+) always; (+,−) never; same signs ⇒ T-dependent"
+   },
+   {
+    "tag": "bonding",
+    "front": "IMF strength order",
+    "back": "Ion-dipole > H-bond > dipole-dipole > London dispersion"
+   },
+   {
+    "tag": "bonding",
+    "front": "H-bonding requires",
+    "back": "H bonded directly to N, O, or F"
+   },
+   {
+    "tag": "bonding",
+    "front": "Lattice energy trend",
+    "back": "$\\propto\\dfrac{q_1q_2}{r}$; higher charge, smaller ions ⇒ larger (MgO ≫ NaCl > KCl)"
+   },
+   {
+    "tag": "solid-state",
+    "front": "Packing efficiency: SCC / BCC / FCC-HCP",
+    "back": "52% / 68% / 74%"
+   },
+   {
+    "tag": "solid-state",
+    "front": "Coordination number: SCC / BCC / FCC",
+    "back": "6 / 8 / 12; FCC stacking = ABCABC"
+   },
+   {
+    "tag": "kinetics",
+    "front": "Second-order linear plot",
+    "back": "$\\tfrac{1}{[A]}$ vs t (1st order: ln[A] vs t; 0th: [A] vs t)"
+   },
+   {
+    "tag": "kinetics",
+    "front": "Catalyst / enzyme effect",
+    "back": "Lowers Eₐ via alternate path; does NOT change ΔG or K"
+   },
+   {
+    "tag": "equilibrium",
+    "front": "Reaction quotient / Le Chatelier",
+    "back": "Q<K ⇒ forward; add reactant/remove product ⇒ forward; $K_p=K_c(RT)^{\\Delta n_{gas}}$"
+   },
+   {
+    "tag": "orgo",
+    "front": "Hückel's rule for aromaticity",
+    "back": "Planar, cyclic, fully conjugated, $4n+2$ π electrons; $4n$ = antiaromatic"
+   },
+   {
+    "tag": "orgo",
+    "front": "EAS: activating vs deactivating directors",
+    "back": "o/p-directing activators: –OR, –NH₂, –OH, alkyl. meta-directing deactivators: –NO₂, –CN, –C=O. Halogens deactivate but o/p"
+   },
+   {
+    "tag": "orgo",
+    "front": "NMR ¹H chemical shift landmarks (ppm)",
+    "back": "alkyl ~1; vinyl ~5–6; aromatic ~7; aldehyde ~9–10; –COOH ~10–12"
+   },
+   {
+    "tag": "orgo",
+    "front": "Mass spec: # of carbons from M+1",
+    "back": "$\\#C\\approx\\dfrac{(M{+}1)\\text{ intensity}}{1.1\\%\\times M}$ (M+1 = 12 ⇒ ~11 C)"
+   },
+   {
+    "tag": "orgo",
+    "front": "SN2 vs SN1 conditions",
+    "back": "SN2: strong nucleophile, polar aprotic (acetone/DMSO), 1° carbon. SN1: weak Nu, polar protic, 3° carbon"
+   },
+   {
+    "tag": "orgo",
+    "front": "Alkane boiling point vs branching",
+    "back": "More branching ⇒ lower bp (less surface area/London); neopentane < pentane"
+   },
+   {
+    "tag": "coord",
+    "front": "Spectrochemical series (weak→strong)",
+    "back": "I⁻<Br⁻<Cl⁻<F⁻<OH⁻<H₂O<NH₃<en<CN⁻<CO"
+   },
+   {
+    "tag": "coord",
+    "front": "High-spin vs low-spin",
+    "back": "Weak field/small Δ ⇒ high-spin; strong field (CN⁻,CO)/large Δ ⇒ low-spin; tetrahedral usually high-spin"
+   },
+   {
+    "tag": "spectroscopy",
+    "front": "Normal modes of vibration",
+    "back": "linear $3N-5$; nonlinear $3N-6$ (CO₂→4, H₂O→3)"
+   },
+   {
+    "tag": "constants",
+    "front": "Boltzmann constant",
+    "back": "$k_B=R/N_A=1.38\\times10^{-23}\\,J/K$"
+   },
+   {
+    "tag": "phase",
+    "front": "Triple point / water's odd slope",
+    "back": "Triple point: solid+liquid+gas coexist. Water's negative solid–liquid slope ⇒ ice less dense than water"
+   },
+   {
+    "tag": "periodic",
+    "front": "Inert pair effect",
+    "back": "Heavy p-block (Tl,Pb,Bi) favor oxidation state 2 below group max (Tl⁺,Pb²⁺,Bi³⁺); strongest for heaviest"
+   },
+   {
+    "tag": "analysis",
+    "front": "Silver halide precipitate colors",
+    "back": "AgCl white, AgBr cream, AgI yellow; also insoluble: most sulfides, PbI₂, BaSO₄"
+   }
+  ]
+ },
+ {
+  "strategy": "\n## Biology cram plan (1 day, points-per-minute)\n\n**The data says:** SciBowl bio is ~60% pure-recall triggers + ~40% ordering/\"identify-all\" reasoning. You can't out-study the reasoning bonuses in a day — so **bank the recall.** Every card here is a fact verified against the actual question set.\n\n**Priority order (spend your day here):**\n1. **Metabolism landmarks** (glycolysis / Krebs / ETC / photosynthesis / RuBisCO) — highest frequency, pure recall. Memorize *what/where/how-many* cold: yields, locations, final electron acceptors, the CO₂-releasing Krebs steps.\n2. **Lab techniques + micro** — one-word triggers: Western=protein, SDS coats protein, Gram=cell wall, Sanger=ddNTP, restriction enzymes, pilus=conjugation. Free points.\n3. **Central dogma + lac operon** — start codon, stop codons, A/P/E sites, wobble, peptidyl transferase, lac regulation. Small closed set.\n4. **Botany** — 5 hormones (each one's ONE signature effect), xylem vs phloem, ground tissues, Casparian strip, pericycle, flower parts/double fertilization. Under-studied by most teams = your edge.\n5. **Ecology terms** — Batesian vs Müllerian, survivorship types, keystone, r/K, N-cycle, the 10% rule. All one-liners.\n6. **Genetics quick-math** — 3ⁿ genotypes, unlinked=50%, Barr=X−1, dihybrid 9:3:3:1, Hardy-Weinberg. Drill the *procedure*, not memorized answers.\n\n**Skip / don't cram:** deep physiology mechanism chains (full RAAS cascade order, cardiac PV loops), obscure named diseases, secondary-endosymbiosis phylogenetics. Recognize the term, move on.\n\n**Method:** Blitz the whole deck 3× fast (recognition), then a 4th pass out loud (recall). Front-load the metabolism + technique cards — that's where the density is.\n",
+  "subject": "Biology",
+  "cards": [
+   {
+    "front": "Glycolysis: net yield per glucose & location?",
+    "back": "$2$ ATP, $2$ NADH, $2$ pyruvate. In the cytosol",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Krebs cycle: yield per ONE turn & location?",
+    "back": "$3$ NADH, $1$ FADH₂, $1$ GTP/ATP, $2$ CO₂ (×2 per glucose). Mitochondrial matrix",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Which 2 Krebs steps release CO₂?",
+    "back": "Isocitrate → α-ketoglutarate, and α-ketoglutarate → succinyl-CoA",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Pyruvate → acetyl-CoA: enzyme & what's lost?",
+    "back": "Pyruvate dehydrogenase; releases $1$ CO₂, makes $1$ NADH",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Final electron acceptor of the ETC & location?",
+    "back": "O₂ (forms water). ETC is on the inner mitochondrial membrane",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Total ATP from aerobic respiration of one glucose?",
+    "back": "~$30$–$32$ (modern); older texts cite $36$–$38$",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Most abundant protein on Earth / fixes CO₂ in Calvin cycle?",
+    "back": "RuBisCO (ribulose-1,5-bisphosphate carboxylase/oxygenase)",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Light reactions: products & location?",
+    "back": "ATP, NADPH, O₂ (from splitting water). Thylakoid membrane",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Calvin cycle: location & CO₂ is added to what?",
+    "back": "Stroma; CO₂ fixed onto RuBP (a 5-carbon sugar)",
+    "tag": "metabolism"
+   },
+   {
+    "front": "P680 vs P700 — which photosystem?",
+    "back": "P680 = Photosystem II; P700 = Photosystem I (electron flow PSII → PSI)",
+    "tag": "metabolism"
+   },
+   {
+    "front": "β-oxidation of fatty acids releases which 2-carbon molecule?",
+    "back": "Acetyl-CoA (in mitochondrial matrix)",
+    "tag": "metabolism"
+   },
+   {
+    "front": "Western blot detects ___",
+    "back": "Protein (Southern = DNA, Northern = RNA)",
+    "tag": "lab-techniques"
+   },
+   {
+    "front": "SDS in a Western blot does what to proteins?",
+    "back": "Coats them in uniform negative charge so they separate by size alone (SDS-PAGE)",
+    "tag": "lab-techniques"
+   },
+   {
+    "front": "Gram stain differentiates bacteria by which structure?",
+    "back": "Cell wall (peptidoglycan). NOT membrane. Gram+ = thick, purple; Gram− = thin, pink",
+    "tag": "lab-techniques"
+   },
+   {
+    "front": "Golden Gate & Gibson assembly cut DNA with what enzyme class?",
+    "back": "Restriction enzymes (bacterial endonucleases; cleave at specific sites)",
+    "tag": "lab-techniques"
+   },
+   {
+    "front": "Sanger sequencing terminates chains using what?",
+    "back": "Dideoxynucleotides (ddNTPs) — lack a 3′-OH so extension stops",
+    "tag": "lab-techniques"
+   },
+   {
+    "front": "Bacterial conjugation: hairlike appendage that pulls cells together?",
+    "back": "Pilus (sex pilus)",
+    "tag": "lab-techniques"
+   },
+   {
+    "front": "Start codon AUG codes for which amino acid?",
+    "back": "Methionine",
+    "tag": "central-dogma"
+   },
+   {
+    "front": "The three stop codons?",
+    "back": "UAA, UAG, UGA",
+    "tag": "central-dogma"
+   },
+   {
+    "front": "Ribosome A / P / E sites = ?",
+    "back": "A = Aminoacyl (incoming tRNA), P = Peptidyl (growing chain), E = Exit. tRNA moves A→P→E",
+    "tag": "central-dogma"
+   },
+   {
+    "front": "Enzyme that forms peptide bonds on the ribosome?",
+    "back": "Peptidyl transferase — a ribozyme (rRNA) in the large (50S/60S) subunit",
+    "tag": "central-dogma"
+   },
+   {
+    "front": "Wobble pairing: which codon position & the flexible base?",
+    "back": "3rd (last) position; inosine (base = hypoxanthine)",
+    "tag": "central-dogma"
+   },
+   {
+    "front": "Insertion/deletion not a multiple of 3 causes what mutation?",
+    "back": "Frameshift mutation",
+    "tag": "central-dogma"
+   },
+   {
+    "front": "lac operon: conditions for HIGHEST expression?",
+    "back": "High lactose, LOW glucose (low glucose → high cAMP → CAP binds)",
+    "tag": "central-dogma"
+   },
+   {
+    "front": "The 5 classic plant hormones?",
+    "back": "Auxin, Gibberellin, Cytokinin, Abscisic acid (ABA), Ethylene",
+    "tag": "botany"
+   },
+   {
+    "front": "Auxin — signature effect?",
+    "back": "Cell elongation & apical dominance (acid growth: expansins loosen the wall)",
+    "tag": "botany"
+   },
+   {
+    "front": "Gibberellin — signature effect?",
+    "back": "Stem elongation & seed germination ('foolish rice' disease)",
+    "tag": "botany"
+   },
+   {
+    "front": "ABA (abscisic acid) — signature effect?",
+    "back": "Stomatal closure & seed/bud dormancy",
+    "tag": "botany"
+   },
+   {
+    "front": "Cytokinin — signature effect?",
+    "back": "Promotes cell division; delays senescence",
+    "tag": "botany"
+   },
+   {
+    "front": "Ethylene — signature effect?",
+    "back": "Fruit ripening, abscission (leaf/fruit drop), senescence",
+    "tag": "botany"
+   },
+   {
+    "front": "Xylem vs phloem: what & direction?",
+    "back": "Xylem = water/minerals UP (dead tracheids/vessels). Phloem = sugars (sieve tubes, living)",
+    "tag": "botany"
+   },
+   {
+    "front": "The 3 plant ground tissue types?",
+    "back": "Parenchyma (thin-walled), Collenchyma (flexible support), Sclerenchyma (rigid, lignified)",
+    "tag": "botany"
+   },
+   {
+    "front": "Casparian strip: made of what & what does it do?",
+    "back": "Suberin (waxy); blocks the apoplast, forcing water into the symplast at the endodermis",
+    "tag": "botany"
+   },
+   {
+    "front": "Lateral (branch) roots originate from which tissue?",
+    "back": "Pericycle",
+    "tag": "botany"
+   },
+   {
+    "front": "Statoliths that sense gravity in roots are what organelle?",
+    "back": "Amyloplasts (dense starch-filled plastids). NOT just 'plastid'",
+    "tag": "botany"
+   },
+   {
+    "front": "Flower whorls from outside in?",
+    "back": "Sepals → Petals → Stamens (anther+filament) → Carpels/pistil (stigma, style, ovary)",
+    "tag": "botany"
+   },
+   {
+    "front": "Angiosperm double fertilization: products & ploidy?",
+    "back": "Sperm+egg → zygote ($2n$); sperm+2 polar nuclei → endosperm ($3n$)",
+    "tag": "botany"
+   },
+   {
+    "front": "Batesian mimicry = ?",
+    "back": "HARMLESS species mimics a harmful/toxic one (only the mimic is protected)",
+    "tag": "ecology"
+   },
+   {
+    "front": "Müllerian mimicry = ?",
+    "back": "TWO+ harmful species resemble each other (mutual protection)",
+    "tag": "ecology"
+   },
+   {
+    "front": "Keystone species = ?",
+    "back": "Disproportionately large community effect relative to abundance (sea otter in kelp forest)",
+    "tag": "ecology"
+   },
+   {
+    "front": "Survivorship curves Type I / II / III?",
+    "back": "I = low early mortality (humans); II = constant rate (many birds); III = high early mortality, many offspring (fish, plants)",
+    "tag": "ecology"
+   },
+   {
+    "front": "r-selected vs K-selected?",
+    "back": "r = many offspring, little care, unstable env (Type III). K = few offspring, high care, near carrying capacity (Type I)",
+    "tag": "ecology"
+   },
+   {
+    "front": "Energy transfer efficiency between trophic levels?",
+    "back": "~$10\\%$ (the 10% rule)",
+    "tag": "ecology"
+   },
+   {
+    "front": "Nitrogen fixation: converts ___; cofactors & what inhibits it?",
+    "back": "N₂ → NH₃ by nitrogenase (cofactors Fe & Mo); inhibited by O₂",
+    "tag": "ecology"
+   },
+   {
+    "front": "Nutrient-rich runoff → algal bloom → O₂ depletion = ?",
+    "back": "Eutrophication",
+    "tag": "ecology"
+   },
+   {
+    "front": "Eldredge & Gould's model of rapid-then-static evolution?",
+    "back": "Punctuated equilibrium",
+    "tag": "ecology"
+   },
+   {
+    "front": "Trait divergence where two species overlap (finch beaks)?",
+    "back": "Character displacement",
+    "tag": "ecology"
+   },
+   {
+    "front": "Decreased-activity state covering hibernation & estivation?",
+    "back": "Torpor",
+    "tag": "ecology"
+   },
+   {
+    "front": "# of genotypes from selfing an n-heterozygote?",
+    "back": "$3^n$ (e.g., 4 traits → $3^4 = 81$)",
+    "tag": "genetics-math"
+   },
+   {
+    "front": "Recombination frequency for genes on DIFFERENT chromosomes?",
+    "back": "$50\\%$ (unlinked). Also: 1% recombination = 1 map unit (cM)",
+    "tag": "genetics-math"
+   },
+   {
+    "front": "Number of Barr bodies in a cell?",
+    "back": "(# of X chromosomes) $-1$. E.g., XXXYY → $2$ Barr bodies",
+    "tag": "genetics-math"
+   },
+   {
+    "front": "Dihybrid cross (AaBb × AaBb) phenotype ratio?",
+    "back": "$9:3:3:1$",
+    "tag": "genetics-math"
+   },
+   {
+    "front": "Hardy-Weinberg equations?",
+    "back": "$p+q=1$ and $p^2+2pq+q^2=1$ ($q^2$ = homozygous-recessive frequency)",
+    "tag": "genetics-math"
+   },
+   {
+    "front": "Phylum with nematocysts (jellyfish, Portuguese man o' war)?",
+    "back": "Cnidaria",
+    "tag": "phyla"
+   },
+   {
+    "front": "Hemocyanin uses which metal? Hemoglobin?",
+    "back": "Hemocyanin = copper (Cu, blue). Hemoglobin/myoglobin = iron (Fe)",
+    "tag": "phyla"
+   },
+   {
+    "front": "Chitin is found in?",
+    "back": "Arthropod exoskeletons and fungal cell walls",
+    "tag": "phyla"
+   },
+   {
+    "front": "Protostome vs deuterostome — what does the blastopore become?",
+    "back": "Protostome → mouth first; Deuterostome → anus first (mouth second)",
+    "tag": "phyla"
+   },
+   {
+    "front": "Malaria is caused by what type of organism?",
+    "back": "A protist — Plasmodium",
+    "tag": "phyla"
+   },
+   {
+    "front": "Photosynthetic protists with silica (glass) cell walls?",
+    "back": "Diatoms",
+    "tag": "phyla"
+   },
+   {
+    "front": "Feature archaea have that bacteria LACK?",
+    "back": "Histones (archaea package DNA with histones; bacteria don't)",
+    "tag": "phyla"
+   },
+   {
+    "front": "Competitive vs noncompetitive inhibition — effect on Km & Vmax?",
+    "back": "Competitive: Km ↑, Vmax unchanged. Noncompetitive: Vmax ↓, Km unchanged",
+    "tag": "physiology"
+   },
+   {
+    "front": "Intrinsic factor (B12 absorption) is secreted by?",
+    "back": "Parietal cells of the stomach (also secrete HCl). Chief cells = pepsinogen",
+    "tag": "physiology"
+   },
+   {
+    "front": "Which structure sets the heartbeat (in the right atrium)?",
+    "back": "Sinoatrial (SA) node — do NOT just say 'pacemaker'",
+    "tag": "physiology"
+   },
+   {
+    "front": "Which antibody crosses the placenta?",
+    "back": "IgG",
+    "tag": "physiology"
+   },
+   {
+    "front": "Oocytes are arrested at which meiotic stage until fertilization?",
+    "back": "Metaphase II (primary oocytes arrest at prophase I)",
+    "tag": "physiology"
+   },
+   {
+    "front": "Steroid hormone (e.g. aldosterone) binds receptor where?",
+    "back": "Crosses the membrane to a cytoplasmic/nuclear receptor (lipid-soluble)",
+    "tag": "physiology"
+   },
+   {
+    "front": "Trace element required to make thyroid hormone (T3/T4)?",
+    "back": "Iodine",
+    "tag": "physiology"
+   },
+   {
+    "front": "Extrinsic activator of apoptosis (death-receptor pathway)?",
+    "back": "Fas ligand (binds Fas death receptor)",
+    "tag": "physiology"
+   },
+   {
+    "front": "Uncoupling protein in brown fat for nonshivering thermogenesis?",
+    "back": "Thermogenin (UCP1) — dissipates the proton gradient as heat",
+    "tag": "physiology"
+   },
+   {
+    "front": "Universal blood donor / universal recipient?",
+    "back": "Donor = O negative; Recipient = AB positive",
+    "tag": "physiology"
+   },
+   {
+    "front": "Evidence for endosymbiotic origin of mitochondria/chloroplasts?",
+    "back": "Double membrane, own circular DNA, own 70S ribosomes, binary fission",
+    "tag": "cell-bio"
+   }
+  ]
+ }
+]

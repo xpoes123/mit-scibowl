@@ -126,7 +126,8 @@
     "note": "Population standard deviation of roots of $x^3-24x+5$. Vieta in disguise — 'population' means divide variance by $n=3$, not $n-1$.",
     "solution": "- mean $= \\tfrac{-b}{3} = 0$ (no $x^2$ term).\n- $\\Sigma r^2 = (\\text{sum})^2-2(\\text{pairwise}) = 0-2(-24) = 48$.\n- Var $= \\tfrac{48}{3} - 0^2 = 16 \\Rightarrow$ std $=$ **4**.\n\nNo cubic solving — three reads and a subtraction."
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "probability",
@@ -265,7 +266,8 @@
     "note": "Best-of-seven 'in game 7' pattern — recurring shape. Recognize instantly: tied 3-3, then win game 7.",
     "solution": "MIT wins in game 7 $\\Leftrightarrow$ series is 3-3 after 6 games, then MIT wins game 7.\n\nWith a fair coin, $P(\\text{3-3 after 6}) = \\binom{6}{3}/2^6 = \\tfrac{20}{64} = \\tfrac{5}{16}$, then win game 7 $= \\tfrac{1}{2}$.\n\nAnswer $= \\left(\\tfrac{5}{16}\\right)\\left(\\tfrac{1}{2}\\right) = $ **$\\tfrac{5}{32}$**."
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "statistics",
@@ -393,7 +395,8 @@
     "note": "The $\\text{Var} = E[X^2]-(E[X])^2$ identity in disguise: RMS and mean given, find SD. Two sig figs.",
     "solution": "$$\\text{Var} = \\text{RMS}^2 - \\text{mean}^2 = 60^2 - 50^2 = 3600 - 2500 = 1100$$\n\n$\\text{SD} = \\sqrt{1100} \\approx 33.2 \\to$ **33**.\n\nThis is exactly $\\text{Var} = E[X^2]-(E[X])^2$ because $\\text{RMS}^2 = E[X^2]$ and $\\text{mean}^2 = (E[X])^2$.\n\n**Trigger:** both an RMS and an arithmetic mean in one stem → subtract the squares, take the root."
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "fast-geometry",
@@ -521,7 +524,8 @@
     "note": "Rhombus + integer diagonals = hidden 3-4-5. Trap: using half-diagonals as the area diagonals. Answer 24.",
     "solution": "Diagonals bisect perpendicularly → half-diagonals $p,q$ satisfy $p^2+q^2=\\text{side}^2=25$ → $p=3,q=4$ (3-4-5).\n\nFull diagonals $= 6$ and 8.\n\nArea $= \\tfrac{1}{2}\\cdot d_1\\cdot d_2 = \\tfrac{1}{2}\\cdot 6\\cdot 8 =$ **24** (not $\\tfrac{1}{2}\\cdot 3\\cdot 4=6$ — that's the half-diagonal trap)."
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "logarithms",
@@ -654,7 +658,8 @@
     "note": "'Squares each day' builds a tower of exponents; 'natural log each day' pulls the top exponent down. Tests that $\\ln(a^2)=2\\ln a$, so the log value doubles.",
     "solution": "After $n$ days the value is $3^{(2^n)}$. $\\ln(3^{(2^n)}) = 2^n\\cdot\\ln 3$; the next day gives $2^{n+1}\\cdot\\ln 3 =$ double.\n\nSo Vigyan's number **increases by a factor of two → W)** each day."
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "number-theory",
@@ -774,7 +779,8 @@
     "note": "Totient maximized at the largest prime in range. All four choices (95/96/97/98) are near-misses meant to bait guessing.",
     "solution": "$\\phi$ is largest at the biggest prime $\\le 100$, which is 97, giving $\\phi(97) = 97-1 =$ **96**.\n\n(Not 97 or 98: a prime $p$ gives $p-1$, and composites near 100 give far less — $\\phi(98)=42$, $\\phi(99)=60$, $\\phi(100)=40$.)"
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "trig-identities",
@@ -894,7 +900,8 @@
     "note": "Amplitude identity hidden under an exponential. $e^u$ is increasing, so just maximize the exponent $u = \\sin x + \\cos x$.",
     "solution": "$\\max(\\sin x + \\cos x) = \\sqrt{1^2+1^2} = \\sqrt{2}$ (amplitude of $a\\sin x + b\\cos x$).\n\nSince $e^u$ increases in $u$, the maximum is **$e^{\\sqrt{2}}$** (matches bank; $\\approx 4.11$).\n\nDistractor: $e^2$, from wrongly using $a+b=2$ instead of $\\sqrt{a^2+b^2}$."
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "vectors",
@@ -1014,7 +1021,8 @@
     "note": "Harder orthogonality — the unknown appears nonlinearly, giving a quadratic in $u = a^2$. 'Largest possible real value' selects the positive root, and don't forget the final $\\sqrt{\\,}$.",
     "solution": "Dot $= a\\cdot a + a^2\\cdot a^2 + (2)(-3) = a^4 + a^2 - 6 = 0$.\n\nLet $u = a^2$: $u^2 + u - 6 = (u+3)(u-2) = 0$ → $u = 2$ ($u = -3$ rejected).\n\n$a = \\pm\\sqrt{2}$ → largest $=$ **$\\sqrt{2}$**."
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "coordinate-geometry",
@@ -1139,7 +1147,8 @@
     "note": "Line-meets-curve, the anti-'guess-the-intercept' drill: you must SET the equations equal, not read a crossing. Then Vieta beats solving for the roots.",
     "solution": "$y=x^2+9x$ meets $y=36$: $x^2+9x-36=0$.\n\nSum of the two $x$-coordinates $= -(\\text{coeff of }x)/(\\text{leading coeff}) = -\\tfrac{9}{1} = $ **$-9$** (Vieta — no need to factor or find each root). ✓"
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "rate-word-problems",
@@ -1268,7 +1277,8 @@
     "note": "**Percent-stacking.** 'Both coupons simultaneously' means multiply the remaining-fractions; do NOT add $10\\%+20\\% = 30\\%$.\n\nOrder doesn't matter — multiplication commutes.",
     "solution": "Remaining fraction $= (1 - 0.10)(1 - 0.20) = 0.9\\cdot 0.8 = 0.72$.\n\n→ 72% of price paid → discount $= 1 - 0.72 = 0.28 =$ **$28\\%$**."
    }
-  ]
+  ],
+  "subject": "math"
  },
  {
   "slug": "sequences-series",
@@ -1406,6 +1416,7 @@
     "note": "Fibonacci-style recurrence (each term = sum of previous two), $a_2$ and $a_6$ given $\\to$ back-solve for $a_1$.\n\nCarry one unknown forward; don't guess-and-check.",
     "solution": "Let $a_1=x$, $a_2=5$. Then:\n\n- $a_3=x+5$\n- $a_4=x+10$\n- $a_5=2x+15$\n- $a_6=a_4+a_5=3x+25$\n\nSet $3x+25 = 1 \\Rightarrow x =$ **$-8$** (sequence $-8,5,-3,2,-1,1$ ✓).\n\n**Speed shortcut:** coefficients are Fibonacci — $a_6 = F_4\\cdot a_1 + F_5\\cdot a_2 = 3a_1 + 5a_2 = 3x+25$, same equation instantly."
    }
-  ]
+  ],
+  "subject": "math"
  }
 ]

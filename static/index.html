@@ -591,16 +591,28 @@ async function renderLearn(){
   }
   if(!state.lessons.length){ v.innerHTML='<div class="empty">Lessons are still being generated — check back shortly.</div>'; return; }
   if(state.lessonOpen) return renderLesson(v, state.lessonOpen);
-  v.innerHTML='<p class="hint">Speed-focused Science Bowl lessons built from your placement test. Priority 1 = your highest-leverage gaps. Each ends with real questions to answer as you learn.</p>';
-  const list=el('div','lesson-list');
-  [...state.lessons].sort((a,b)=>a.priority-b.priority).forEach(L=>{
-    const c=el('div','lesson-card');
-    c.innerHTML=`<span class="pri p${L.priority}">P${L.priority}</span>
-      <div><h3>${L.topic}</h3><p>${L.why}</p></div>`;
-    c.onclick=()=>{state.lessonOpen=L.slug;render();};
-    list.append(c);
+  v.innerHTML='<p class="hint">Speed-focused Science Bowl lessons. Priority 1 = highest-leverage (most-tested). Each teaches the why, then ends with real questions to answer as you learn.</p>';
+  const subjects=[['math','📐 Math'],['bio','🧬 Biology']];
+  const seen=new Set();
+  subjects.forEach(([subj,label])=>{
+    const ls=state.lessons.filter(L=>(L.subject||'math')===subj).sort((a,b)=>a.priority-b.priority);
+    if(!ls.length) return;
+    ls.forEach(L=>seen.add(L.slug));
+    v.append(el('div','sec-h',label));
+    const list=el('div','lesson-list');
+    ls.forEach(L=>list.append(lessonCardEl(L)));
+    v.append(list);
   });
-  v.append(list);
+  // any lesson with an unrecognized subject
+  const rest=state.lessons.filter(L=>!seen.has(L.slug)).sort((a,b)=>a.priority-b.priority);
+  if(rest.length){ const list=el('div','lesson-list'); rest.forEach(L=>list.append(lessonCardEl(L))); v.append(list); }
+}
+function lessonCardEl(L){
+  const c=el('div','lesson-card');
+  c.innerHTML=`<span class="pri p${L.priority}">P${L.priority}</span>
+    <div><h3>${L.topic}</h3><p>${L.why}</p></div>`;
+  c.onclick=()=>{state.lessonOpen=L.slug;render();};
+  return c;
 }
 function renderLesson(v,slug){
   const L=state.lessons.find(x=>x.slug===slug); if(!L){state.lessonOpen=null;return renderLearn(v);}

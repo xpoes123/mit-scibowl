@@ -22,6 +22,7 @@ CACHE = json.loads(CACHE_FILE.read_text()) if CACHE_FILE.exists() else {}
 PLACEMENT_FILE = ROOT / "data" / "placement-math.json"
 LESSONS_FILE = ROOT / "data" / "lessons.json"
 BIO_FILE = ROOT / "data" / "bio-topics.json"
+CRAM_FILE = ROOT / "data" / "cram.json"
 PROFILE_FILE = ROOT / "data" / "profile.md"
 PROFILE = PROFILE_FILE.read_text() if PROFILE_FILE.exists() else ""
 
@@ -135,6 +136,13 @@ def bio_topics():
     if not BIO_FILE.exists():
         raise HTTPException(404, "bio topics not generated")
     return JSONResponse(json.loads(BIO_FILE.read_text()))
+
+
+@app.get("/cram.json")
+def cram():
+    if not CRAM_FILE.exists():
+        raise HTTPException(404, "cram not generated")
+    return JSONResponse(json.loads(CRAM_FILE.read_text()))
 
 
 ANALYZE_SYSTEM = (

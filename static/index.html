@@ -150,6 +150,17 @@ table.res .t-slow{color:var(--orange)}
 .daily-head .streak{display:flex;flex-direction:column;align-items:center;line-height:1.1;font-size:1.4rem}
 .daily-head .streak b{color:var(--orange)} .daily-head .streak span{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .daily-head .dprog{flex:1} .daily-head .dprog>div{font-size:.9rem;margin-bottom:.4rem}
+.cram-flip{background:var(--bg2);border:1px solid var(--bg3);border-radius:16px;min-height:240px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;padding:2rem;margin:.5rem 0;
+  box-shadow:0 6px 24px rgba(0,0,0,.25);transition:border-color .1s}
+.cram-flip:hover{border-color:var(--blue)}
+.cram-flip.flipped{border-color:var(--green)}
+.cram-face{text-align:center;width:100%;position:relative}
+.cram-side{position:absolute;top:-1.4rem;left:0;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.cram-flip.flipped .cram-side{color:var(--green)}
+.cram-content{font-size:1.5rem;line-height:1.4}
+.cram-flip.flipped .cram-content{font-size:1.35rem}
+.cram-tag{margin-top:1rem;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 #askBtn{position:fixed;bottom:1.1rem;right:1.1rem;z-index:50;border:none;cursor:pointer;
   width:48px;height:48px;background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;
   border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,.4);font-size:1.4rem;line-height:1;
@@ -182,6 +193,7 @@ table.res .t-slow{color:var(--orange)}
   <h1><span class="m">MIT</span> <span class="s">SciBowl</span> Trainer</h1>
   <div class="tabs">
     <button class="tab active" data-mode="daily">Daily</button>
+    <button class="tab" data-mode="cram">Cram</button>
     <button class="tab" data-mode="learn">Learn</button>
     <button class="tab" data-mode="bio">Biology</button>
     <button class="tab" data-mode="flash">Flashcards</button>
@@ -219,6 +231,7 @@ const state={
   lessons:null, lessonOpen:null,
   bio:{topics:null,open:null,drill:null},
   daily:{deck:null,idx:0,goal:15},
+  cram:{decks:null,subj:null,cards:null,idx:0,flipped:false},
   expCache:JSON.parse(localStorage.getItem('sb_exp')||'{}'),
   subjects:new Set(['Math','Chemistry','Biology']),
   qtype:'all', kind:'all', year:'all', noVisual:true,
@@ -320,7 +333,7 @@ function rebuild(){
 }
 function renderFilters(){
   const f=$('#filters'); f.innerHTML='';
-  if(state.mode==='plan'||state.mode==='test'||state.mode==='learn'||state.mode==='bio'||state.mode==='daily') return;
+  if(['plan','test','learn','bio','daily','cram'].includes(state.mode)) return;
   const subj=el('div','grp');
   ['Math','Chemistry','Biology'].forEach(s=>{
     const c=el('span','chip '+s.toLowerCase()+(state.subjects.has(s)?' on':''),s);
@@ -358,6 +371,7 @@ function renderFilters(){
 // ---------- render dispatch ----------
 function render(){
   if(state.mode==='daily') return renderDaily();
+  if(state.mode==='cram') return renderCram();
   if(state.mode==='learn') return renderLearn();
   if(state.mode==='bio') return renderBio();
   if(state.mode==='plan') return renderPlan();
@@ -596,8 +610,52 @@ function buzzStatsEl(){
   return wrap;
 }
 
+// ---------- cram (high-yield flip decks) ----------
+async function renderCram(){
+  const v=$('#view'), C=state.cram;
+  if(C.decks===null){ v.innerHTML='<div class="empty">Loading cram decks…</div>';
+    try{ C.decks=await (await fetch('cram.json')).json(); }catch(e){ C.decks=[]; } }
+  if(!C.decks.length){ v.innerHTML='<div class="empty">Cram decks are being generated — check back shortly.</div>'; return; }
+  if(!C.subj) return cramList(v);
+  return cramCard(v);
+}
+function cramList(v){
+  v.innerHTML='<p class="hint">High-yield flip decks — the fewest facts for the most points, highest-leverage first. Blitz a deck over and over until every answer fires instantly.</p>';
+  const list=el('div','lesson-list');
+  state.cram.decks.forEach(d=>{
+    const c=el('div','lesson-card');
+    c.innerHTML=`<span class="pri p1">${d.cards.length}</span><div><h3>${d.subject}</h3><p>${(d.strategy||'').replace(/[*#`]/g,'').slice(0,120)}…</p></div>`;
+    c.onclick=()=>{state.cram.subj=d.subject;state.cram.cards=d.cards;state.cram.idx=0;state.cram.flipped=false;render();};
+    list.append(c);
+  });
+  v.append(list);
+}
+function cramCard(v){
+  const C=state.cram, card=C.cards[C.idx];
+  v.innerHTML='';
+  v.append(mkBtn('← All decks','act ghost',()=>{C.subj=null;render();}));
+  const box=el('div','cram-flip'+(C.flipped?' flipped':''));
+  box.innerHTML=`<div class="cram-face"><div class="cram-side">${C.flipped?'answer':'recall'}</div>
+    <div class="cram-content">${mdToHtml(C.flipped?card.back:card.front)}</div>
+    ${card.tag?`<div class="cram-tag">${card.tag}</div>`:''}</div>`;
+  box.onclick=()=>{C.flipped=!C.flipped;render();};
+  v.append(box);
+  const row=el('div','row');
+  row.append(mkBtn(C.flipped?'Next →':'Flip','act primary',()=>{ if(C.flipped){cramNext();} else {C.flipped=true;render();} }));
+  row.append(mkBtn('Shuffle','act ghost',()=>{C.cards=shuffle(C.cards);C.idx=0;C.flipped=false;render();}));
+  v.append(row);
+  v.append(el('div','stats',`${C.idx+1} / ${C.cards.length} · ${C.subj} · space = flip/next`));
+  typeset(v);
+}
+function cramNext(){ const C=state.cram; C.idx=(C.idx+1)%C.cards.length; C.flipped=false; render(); }
+
 // ---------- keyboard ----------
 function onKey(e){
+  if(state.mode==='cram'&&state.cram.subj){
+    if(e.code==='Space'){e.preventDefault(); state.cram.flipped?cramNext():(state.cram.flipped=true,render());}
+    else if(e.code==='ArrowRight'){e.preventDefault();cramNext();}
+    return;
+  }
   if(state.mode==='daily'){
     if(e.code==='Space'){e.preventDefault();doBuzz();}
     else if(e.code==='Enter'){e.preventDefault();startBuzz();}
